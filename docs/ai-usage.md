@@ -12,17 +12,18 @@ AI wird zur Strukturierung der Idee, Anforderungsanalyse und Prüfung auf Unklar
 | 14.10.2026 | Codex im Chat | Aus Vorratsliste und Rezeptarchiv eine einfache App-Idee und Use Cases entwickeln. | Vorschlag „Rezepte mit dem, was du daheim hast“; der Nutzer hat das Konzept angenommen. |
 | 14.10.2026 | Codex im Chat | Die vier Phase-1-Dokumente erstellen und fortlaufende Dokumentationspflege als Projektregel festhalten. | Projektüberblick, priorisierte Stories mit Akzeptanzkriterien, Anforderungen, MVP und Reflexion erstellt. Gemeinsame Teamprüfung steht aus. |
 | 14.10.2026 | Codex im Chat | Bestehende Spezifikation anhand der vollständigen Kursvorgaben auf Widersprüche, Lücken, unnötige Musts und Vorarbeit prüfen. | Suche zu Should verschoben, Phase-1- und Produktabnahme getrennt, fachliche Kataloglücke und unbestätigtes Leistungsziel ausgewiesen sowie externe Abhängigkeiten berücksichtigt. Nutzer begrenzt die Arbeit ausdrücklich auf Phase 1; Teamprüfung der Korrekturen bleibt offen. |
+| 07.11.2026 | Claude (Sonnet 5.5) im Chat | `requirements.md` und `mvp.md` auf sprachliche Fehler, inkonsistente Begriffe, Widersprüche und Lücken prüfen | Befunde u. a.: unklare Formulierungen (z. B. „Daten erhalten“, „Inventur“), uneinheitliche Begriffe (Zutatenkatalog/Zutatenliste, Vorrat/Vorratsliste/Bestand), „Matching“ ohne Definition, widersprüchlicher Demo-Schritt in `mvp.md`. Vorschläge geprüft und überwiegend übernommen |                                                                                                                                                                        |
 
-Damit sind zwei unterschiedliche AI-Anwendungen dokumentiert: **Generierung und Strukturierung von Anforderungen** sowie **kritische Validierung der Spezifikation**. Dafür wurde dasselbe Werkzeug verwendet; die Vorgabe verlangt unterschiedliche Anwendungen, nicht ausdrücklich unterschiedliche AI-Tools.
+Damit sind zwei unterschiedliche AI-Anwendungen dokumentiert: **Generierung und Strukturierung von Anforderungen** sowie **kritische Validierung der Spezifikation**. Die Generierung und die erste Prüfung erfolgten mit Codex; die sprachliche und inhaltliche Nachprüfung am 07.11.2026 erfolgte mit einem zweiten Werkzeug (Claude) und diente zugleich als unabhängige zweite Meinung.
 
 ## Verwendete Eingaben
 
 - „Wir wollen eine Jausi app machen. Diese soll ein einfaches SemesterProjekt sein.“
 - Vorgaben: Rezeptarchiv und Inventurliste als Must-haves; Wunsch nach kombinierten Use Cases.
 - Anschlussauftrag: Konzept übernehmen, vier Pflichtdokumente dauerhaft anlegen und aktualisieren; Teamgröße vier.
-
 - Weitere Nutzereingabe: vollständige Phase-1-Aufgabenbeschreibung und Phasenplan sowie „Wir sind noch in der Phase 1!!!“ und „Also noch nicht vorarbeiten!!!“.
 - Arbeitsauftrag für die AI-Prüfung, aus dieser Eingabe abgeleitet: Bestehende Dokumente mit den vollständigen Phase-1-Vorgaben abgleichen; Widersprüche, Lücken und überflüssige Musts identifizieren; die Spezifikation korrigieren und spätere Phasen klar abgrenzen.
+- Prüfe `requirements.md` und `mvp.md`.
 
 Die vollständigen Phase-1-Vorgaben und Phasentermine wurden vom Nutzer im Chat bereitgestellt. Die verlinkte Moodle-Seite wurde nicht separat geprüft.
 
@@ -31,12 +32,14 @@ Die vollständigen Phase-1-Vorgaben und Phasentermine wurden vom Nutzer im Chat 
 - **Nützlich:** AI hat die grobe Idee in überprüfbare Anforderungen übersetzt und Vorrat und Rezepte durch ein einfaches Matching verbunden.
 - **Scope begrenzt:** Einkaufsliste, Favoriten und Ablaufdaten erweitern den Aufwand. Sie wurden nicht in den MVP aufgenommen.
 - **Unklarheit aufgelöst:** „Vorhanden“ prüft ausschließlich die Existenz einer Zutat. Mengen werden nicht verrechnet; die Oberfläche muss das kenntlich machen.
-- **Datenkonsistenz:** Eine gemeinsame Zutatenliste verhindert, dass unterschiedliche Schreibweisen den Vergleich verfälschen. Ihr konkreter Umfang ist noch offen.
+- **Datenkonsistenz:** Ein gemeinsamer Zutatenkatalog mit einer verbindlichen Schreibweise je Zutat verhindert, dass unterschiedliche Schreibweisen den Vergleich verfälschen. Sein konkreter Umfang ist noch offen.
 - **Grenzen:** AI kennt weder den verfügbaren Zeitrahmen noch die technische Erfahrung des Teams. Machbarkeit und vorgeschlagene Leistungsgrenze müssen vom Team geprüft werden.
 - **Validierung offen:** Es wurden noch keine Nutzerinterviews, Implementierung oder App-Tests durchgeführt. Die Akzeptanz des Konzepts durch den Nutzer ersetzt keine gemeinsame Abnahme der gesamten Spezifikation.
 - **AI-Empfehlung korrigiert:** Die frühere Empfehlung, Technik und ein Grundgerüst vorzubereiten, ging über die aktuelle Phase hinaus. Sie wurde nach der Nutzerklarstellung zurückgenommen und die Phasengrenze in den Projektanweisungen festgehalten.
 - **Priorisierung korrigiert:** Suche nach Namen ist für den vollständigen Kernablauf nicht unverzichtbar und wurde von Must auf Should verschoben. Die acht verbleibenden Must-Stories beschreiben Vorrat, Rezeptverwaltung und Zutatenvergleich.
-- **Nachvollziehbare Prüfung:** Einzelbefunde und Korrekturen stehen in [requirements.md](requirements.md). Eine AI-Prüfung ersetzt keine unabhängige Bewertung durch die Studierenden.
+- **Fachbegriff falsch gedeutet:** Die AI hat „Zutatenkatalog“ zunächst als Synonym für „Zutatenliste“ behandelt. Fachliche Begriffe müssen daher vom Team und nicht von der AI festgelegt werden.
+- **Sprachliche Prüfung:** AI hat unklare und fehlerhafte Formulierungen sowie inkonsistente Begriffe zuverlässig gefunden. Das Kursvokabular und die Dozentenvorgaben kennt sie nicht; deren Einhaltung bleibt Aufgabe des Teams.
+- **Nachvollziehbare Prüfung:** Einzelbefunde und Korrekturen stehen in [requirements.md](https://github.com/NeloBorcram/Jausi/blob/main/docs/requirements.md). Eine AI-Prüfung ersetzt keine unabhängige Bewertung durch die Studierenden.
 
 ## Fortlaufende Pflege
 
