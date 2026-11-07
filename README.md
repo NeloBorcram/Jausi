@@ -11,12 +11,12 @@ Studierende und Personen, die unkompliziert kochen möchten, verlieren leicht de
 ## Geplanter Funktionsumfang
 
 - Zutaten im Vorrat erfassen und entfernen.
-- Eigene Rezepte mit Zutaten, Mengenangaben und Zubereitung verwalten.
+- Eigene Rezepte mit Zutaten, optionalen Mengenangaben und Zubereitung verwalten.
 - Passende Rezepte finden und fehlende Zutaten anzeigen.
 
-Eine Suche nach Rezeptnamen ist eine priorisierte Erweiterung (Should).
+Die Suche nach Rezeptnamen gehört nicht zum MVP (Should).
 
-Der MVP prüft ausschließlich, ob Zutaten vorhanden sind. Mengen werden im Rezept dokumentiert, aber nicht mit Vorratsmengen verglichen. Eine gemeinsame Zutatenliste verhindert unterschiedliche Schreibweisen beim Vergleich. AI unterstützt die Projektarbeit; eine AI-Funktion in der App ist nicht vorgesehen.
+Der MVP prüft ausschließlich, ob Zutaten vorhanden sind. Mengen werden im Rezept dokumentiert, aber nicht mit Vorratsmengen verglichen. Ein gemeinsamer Zutatenkatalog mit einer verbindlichen Schreibweise je Zutat verhindert unterschiedliche Schreibweisen beim Vergleich. AI unterstützt die Projektarbeit; eine AI-Funktion in der App ist nicht vorgesehen.
 
 ## Projektdokumentation
 
@@ -24,7 +24,7 @@ Der MVP prüft ausschließlich, ob Zutaten vorhanden sind. Mengen werden im Reze
 - [MVP-Scope](docs/mvp.md)
 - [AI-Einsatz und Reflexion](docs/ai-usage.md)
 
-Diese vier Dokumente werden bei jeder Projektänderung auf Aktualität geprüft und bei betroffenen Inhalten gemeinsam mit der Änderung aktualisiert. Weitere Dokumentation liegt ausschließlich in `docs/`.
+Diese vier Dokumente (einschließlich dieser README) werden bei jeder Projektänderung auf Aktualität geprüft und bei betroffenen Inhalten gemeinsam mit der Änderung aktualisiert. Weitere Dokumentation liegt ausschließlich in `docs/`.
 
 ## Zusammenarbeit
 
