@@ -2,26 +2,26 @@
 
 ## Ziel
 
-Ein Nutzer erfasst vorhandene Zutaten und eigene Rezepte. Jausi zeigt, welche Rezepte anhand der vorhandenen Zutaten passen und welche Zutaten fehlen. Der Umfang soll für ein vierköpfiges Team innerhalb des Semesterprojekts realistisch bleiben.
+Ein Nutzer erfasst vorhandene Zutaten und eigene Rezepte. Jausi zeigt, welche Rezepte zu den vorhandenen Zutaten passen und welche Zutaten fehlen. Der Umfang soll für ein vierköpfiges Team innerhalb des Semesterprojekts realistisch bleiben.
 
 ## Im MVP enthalten
 
-- Vorgegebene gemeinsame Zutatenliste mit eindeutig unterscheidbaren Einträgen.
-- Vorratsliste mit Hinzufügen und Entfernen von Zutaten.
-- Rezeptarchiv mit Anlegen, Details, Bearbeiten und bestätigtem Löschen.
-- Vollständig passende Rezepte filtern; fehlende Zutaten je Rezept anzeigen.
+- Zutatenkatalog: vorgegebene Zutaten mit jeweils einer verbindlichen Schreibweise.
+- Vorrat: Zutaten hinzufügen und entfernen.
+- Rezeptarchiv: Rezepte anlegen, anzeigen, bearbeiten und nach Bestätigung löschen.
+- Matching mit dem Vorrat: Filter für vollständig passende Rezepte; fehlende Zutaten je Rezept anzeigen.
 - Dauerhafte Speicherung eines persönlichen Datenbestands.
-- Eingabevalidierung und verständliche Leerzustände.
+- Eingabevalidierung und verständliche Hinweise bei leerem Vorrat oder Archiv.
 
-Der MVP umfasst US-01 bis US-06 sowie US-08 und US-09, FR-01 bis FR-03 sowie FR-05 und FR-06 und NFR-01 bis NFR-06 aus [requirements.md](requirements.md). Die gemeinsame Teamprüfung der Spezifikation steht noch aus.
+Der MVP umfasst aus [requirements.md](https://github.com/NeloBorcram/Jausi/blob/main/docs/requirements.md) die User Stories US-01 bis US-06, US-08 und US-09, die funktionalen Anforderungen FR-01 bis FR-03, FR-05 und FR-06 sowie die nichtfunktionalen Anforderungen NFR-01 bis NFR-06. Begriffe wie Zutatenkatalog und Matching sind dort im Abschnitt „Begriffe“ definiert. Die gemeinsame Teamprüfung der Spezifikation steht noch aus.
 
 ## Außerhalb des MVP
 
 - Mengenvergleich, Umrechnung von Einheiten und automatische Verbrauchsbuchung.
 - Nutzerkonten, gemeinsame Haushalte und Synchronisierung.
-- Pflege oder freie Erweiterung des Zutatenkatalogs durch Nutzer.
+- Pflege und freie Erweiterung des Zutatenkatalogs durch Nutzer.
 - AI-Rezeptgenerierung, externe Rezeptimporte, Barcode- oder Bilderkennung.
-- Ablaufdaten, Benachrichtigungen und Ernährungs-/Allergiefilter.
+- Ablaufdaten, Benachrichtigungen sowie Ernährungs- und Allergiefilter.
 - Favoriten und Einkaufsliste (Could).
 - Suche nach Rezeptnamen (Should).
 - Filter für höchstens zwei fehlende Zutaten (Should; erst nach Abschluss des MVP).
@@ -30,11 +30,13 @@ Der MVP umfasst US-01 bis US-06 sowie US-08 und US-09, FR-01 bis FR-03 sowie FR-
 
 Dieser Ablauf beschreibt die spätere Produktabnahme. In Phase 1 wird seine Eindeutigkeit geprüft; die Software wird noch nicht umgesetzt oder getestet.
 
+Voraussetzung: Reis, Tomate und Ei sind im Zutatenkatalog enthalten; Vorrat und Archiv sind leer.
+
 1. Reis und Tomate zum Vorrat hinzufügen.
-2. „Tomatenreis“ mit Reis und Tomate als Zutaten speichern.
-3. „Eierreis“ mit Reis und Ei als Zutaten speichern.
-4. Der Filter für vollständig passende Rezepte zeigt nur Tomatenreis. Eierreis zeigt Ei als fehlende Zutat.
-5. Tomate aus dem Vorrat entfernen: Tomatenreis passt nicht mehr vollständig und zeigt Tomate als fehlend.
+2. Das Rezept „Tomatenreis“ mit den Zutaten Reis und Tomate speichern.
+3. Das Rezept „Eierreis“ mit den Zutaten Reis und Ei speichern.
+4. Der Filter für vollständig passende Rezepte zeigt nur Tomatenreis. In den Details von Eierreis wird Ei als fehlende Zutat angezeigt.
+5. Tomate aus dem Vorrat entfernen: Tomatenreis passt nicht mehr vollständig und zeigt Tomate als fehlende Zutat.
 6. Die App neu starten: Rezepte und aktualisierter Vorrat sind weiterhin vorhanden.
 
 ## Definition of Done für Phase 1
@@ -59,4 +61,8 @@ Status: Dokumentationsentwurf vorhanden; gemeinsame Teamprüfung ausstehend. Pha
 
 ## Noch in Phase 1 klären
 
-Fachlicher Startumfang des Zutatenkatalogs, Angemessenheit der Priorisierung und Leistungsgrenze sowie gemeinsame Verständlichkeit der Akzeptanzkriterien. Architektur und Technologieauswahl gehören in Phase 2; Implementierung in Phase 3; Qualitätssicherung und Testausführung in Phase 4; abschließende Evaluation und Reflexion in Phase 5.
+- Fachlicher Startumfang des Zutatenkatalogs.
+- Angemessenheit der Priorisierung und der Leistungsgrenze.
+- Gleiches Verständnis der Akzeptanzkriterien im gesamten Team.
+
+Architektur und Technologieauswahl gehören in Phase 2, die Implementierung in Phase 3, Qualitätssicherung und Testausführung in Phase 4 sowie abschließende Evaluation und Reflexion in Phase 5.
