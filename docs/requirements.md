@@ -142,290 +142,452 @@ Must-Anforderungen umfassen den vollständigen Kernanwendungsfall auf dem Smartp
 
 ## User Stories mit Akzeptanzkriterien
 
-Die Stories sind nach Anwendungsfall gruppiert; jede Story steht direkt bei ihren Akzeptanzkriterien. Alle Kriterien folgen dem Format **Gegeben / Wenn / Dann**. Der genaue Wortlaut von Hinweistexten kann im Design (Phase 2) angepasst werden; ihre Aussage bleibt gleich.
+Die Stories sind nach Anwendungsfall gruppiert; jede Story ist eine Karte in der Farbe ihrer Priorität. Ein Klick auf „Akzeptanzkriterien“ klappt die Szenarien auf. Alle Kriterien folgen dem Format **Gegeben / Wenn / Dann**; der genaue Wortlaut von Hinweistexten kann im Design (Phase 2) angepasst werden, ihre Aussage bleibt gleich.
 
 US-06 und US-19 sowie US-13, US-17 und US-18 entstanden am 09.11.2026 durch Aufteilung größerer Stories, damit jede Story einzeln umsetzbar und testbar ist.
 
-**Übersicht**
+### Story Map
 
-| ID | Story | Priorität | Anwendungsfall |
-| --- | --- | --- | --- |
-| [US-01](#us-01) | Zutat zum Vorrat hinzufügen | Must | AF-1 |
-| [US-02](#us-02) | Vorrat anzeigen | Must | AF-1 |
-| [US-03](#us-03) | Zutat aus dem Vorrat entfernen | Must | AF-1 |
-| [US-04](#us-04) | Rezept anlegen | Must | AF-2 |
-| [US-05](#us-05) | Archiv und Rezept öffnen | Must | AF-2, AF-5 |
-| [US-06](#us-06) | Rezept bearbeiten | Must | AF-2 |
-| [US-07](#us-07) | Rezepte suchen | Should | AF-2 |
-| [US-08](#us-08) | Vollständig passende Rezepte anzeigen | Must | AF-3 |
-| [US-09](#us-09) | Fehlende Zutaten anzeigen | Must | AF-3, AF-4 |
-| [US-10](#us-10) | Höchstens zwei fehlende Zutaten | Should | AF-4 |
-| [US-11](#us-11) | Favoriten | Could | AF-2 |
-| [US-12](#us-12) | Einkaufsliste | Could | AF-4 |
-| [US-13](#us-13) | Zutatenvorschläge beim Tippen | Must | AF-1, AF-2 |
-| [US-14](#us-14) | Zutaten umbenennen oder zusammenführen | Should | AF-1 |
-| [US-15](#us-15) | Unbenutzte Zutaten löschen | Could | AF-1 |
-| [US-16](#us-16) | Abschnitte in der Zubereitung | Could | AF-5 |
-| [US-17](#us-17) | Neue Zutat anlegen | Must | AF-1, AF-2 |
-| [US-18](#us-18) | Doppelte Zutaten verhindern | Must | AF-1, AF-2 |
-| [US-19](#us-19) | Rezept löschen | Must | AF-2 |
+Spalten sind die Anwendungsfälle, Zeilen die Prioritäten. Die Must-Zeile ist der MVP.
 
-### AF-1 · Vorrat pflegen
+| | 🥕 AF-1<br>Vorrat pflegen | 📖 AF-2<br>Rezepte sammeln | 🍳 AF-3<br>Was kann ich kochen? | 🛒 AF-4<br>Einkauf planen | 👩‍🍳 AF-5<br>Nach Rezept kochen |
+| --- | --- | --- | --- | --- | --- |
+| 🟣 **Must** | [US-01](#us-01)<br>[US-02](#us-02)<br>[US-03](#us-03)<br>[US-13](#us-13)<br>[US-17](#us-17)<br>[US-18](#us-18) | [US-04](#us-04)<br>[US-05](#us-05)<br>[US-06](#us-06)<br>[US-19](#us-19) | [US-08](#us-08)<br>[US-09](#us-09) | – | – |
+| 🟢 **Should** | [US-14](#us-14) | [US-07](#us-07) | – | [US-10](#us-10) | – |
+| 🔵 **Could** | [US-15](#us-15) | [US-11](#us-11) | – | [US-12](#us-12) | [US-16](#us-16) |
+
+Farben: 🟣 Must · 🟢 Should · 🔵 Could
+
+### 🥕 AF-1 · Vorrat pflegen
 
 <a id="us-01"></a>
 
-#### US-01 · Zutat zum Vorrat hinzufügen
-
-`Must` · AF-1
-
-> Als Nutzer möchte ich eine Zutat aus dem Zutatenkatalog zum Vorrat hinzufügen, damit Jausi weiß, welche Rezepte ich kochen kann.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** „Reis“ steht im Zutatenkatalog, aber nicht im Vorrat, **wenn** die Person „Reis“ zum Vorrat hinzufügt, **dann** steht „Reis“ im Vorrat.
-- **Gegeben** „Reis“ steht bereits im Vorrat, **wenn** die Person „Reis“ erneut hinzufügt, **dann** steht „Reis“ weiterhin genau einmal im Vorrat.
+> [!IMPORTANT]
+> 🟣 **US-01 · Zutat zum Vorrat hinzufügen** · Must · AF-1
+>
+> *Als Nutzer möchte ich eine Zutat aus dem Zutatenkatalog zum Vorrat hinzufügen, damit Jausi weiß, welche Rezepte ich kochen kann.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (2 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** „Reis“ steht im Zutatenkatalog, aber nicht im Vorrat
+> - **Wenn** die Person „Reis“ zum Vorrat hinzufügt
+> - **Dann** steht „Reis“ im Vorrat.
+>
+> **Szenario 2**
+> - **Gegeben** „Reis“ steht bereits im Vorrat
+> - **Wenn** die Person „Reis“ erneut hinzufügt
+> - **Dann** steht „Reis“ weiterhin genau einmal im Vorrat.
+>
+> </details>
 
 <a id="us-02"></a>
 
-#### US-02 · Vorrat anzeigen
-
-`Must` · AF-1
-
-> Als Nutzer möchte ich meinen Vorrat sehen, damit ich vorhandene Lebensmittel überblicken kann.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** der Vorrat enthält Reis und Tomate, **wenn** die Person den Vorrat öffnet, **dann** werden genau Reis und Tomate angezeigt.
-- **Gegeben** der Vorrat ist leer, **wenn** die Person den Vorrat öffnet, **dann** erscheint der Hinweis „Noch keine Zutaten im Vorrat“, und das Hinzufügen einer Zutat ist mit einem Tipp erreichbar.
+> [!IMPORTANT]
+> 🟣 **US-02 · Vorrat anzeigen** · Must · AF-1
+>
+> *Als Nutzer möchte ich meinen Vorrat sehen, damit ich vorhandene Lebensmittel überblicken kann.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (2 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** der Vorrat enthält Reis und Tomate
+> - **Wenn** die Person den Vorrat öffnet
+> - **Dann** werden genau Reis und Tomate angezeigt.
+>
+> **Szenario 2**
+> - **Gegeben** der Vorrat ist leer
+> - **Wenn** die Person den Vorrat öffnet
+> - **Dann** erscheint der Hinweis „Noch keine Zutaten im Vorrat“, und das Hinzufügen einer Zutat ist mit einem Tipp erreichbar.
+>
+> </details>
 
 <a id="us-03"></a>
 
-#### US-03 · Zutat aus dem Vorrat entfernen
-
-`Must` · AF-1
-
-> Als Nutzer möchte ich verbrauchte Zutaten entfernen, damit mein Vorrat aktuell bleibt.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** Tomate steht im Vorrat und im Rezept „Tomatenreis“, **wenn** die Person Tomate aus dem Vorrat entfernt, **dann** steht Tomate nicht mehr im Vorrat, das Rezept „Tomatenreis“ bleibt unverändert und zeigt Tomate als fehlende Zutat.
+> [!IMPORTANT]
+> 🟣 **US-03 · Zutat aus dem Vorrat entfernen** · Must · AF-1
+>
+> *Als Nutzer möchte ich verbrauchte Zutaten entfernen, damit mein Vorrat aktuell bleibt.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (1 Szenario)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** Tomate steht im Vorrat und im Rezept „Tomatenreis“
+> - **Wenn** die Person Tomate aus dem Vorrat entfernt
+> - **Dann** steht Tomate nicht mehr im Vorrat, das Rezept „Tomatenreis“ bleibt unverändert und zeigt Tomate als fehlende Zutat.
+>
+> </details>
 
 <a id="us-13"></a>
 
-#### US-13 · Zutatenvorschläge beim Tippen
-
-`Must` · AF-1, AF-2
-
-> Als Nutzer möchte ich beim Eintippen einer Zutat passende Zutaten aus meinem Zutatenkatalog vorgeschlagen bekommen, damit ich schnell auswähle, statt neu zu tippen.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** „Reis“ und „Paprika“ stehen im Zutatenkatalog, **wenn** die Person „RE“ eintippt, **dann** wird „Reis“ vorgeschlagen und „Paprika“ nicht.
-- **Gegeben** „Reis“ wird vorgeschlagen, **wenn** die Person den Vorschlag wählt, **dann** wird „Reis“ übernommen, ohne dass eine neue Zutat entsteht.
+> [!IMPORTANT]
+> 🟣 **US-13 · Zutatenvorschläge beim Tippen** · Must · AF-1, AF-2
+>
+> *Als Nutzer möchte ich beim Eintippen einer Zutat passende Zutaten aus meinem Zutatenkatalog vorgeschlagen bekommen, damit ich schnell auswähle, statt neu zu tippen.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (2 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** „Reis“ und „Paprika“ stehen im Zutatenkatalog
+> - **Wenn** die Person „RE“ eintippt
+> - **Dann** wird „Reis“ vorgeschlagen und „Paprika“ nicht.
+>
+> **Szenario 2**
+> - **Gegeben** „Reis“ wird vorgeschlagen
+> - **Wenn** die Person den Vorschlag wählt
+> - **Dann** wird „Reis“ übernommen, ohne dass eine neue Zutat entsteht.
+>
+> </details>
 
 <a id="us-17"></a>
 
-#### US-17 · Neue Zutat anlegen
-
-`Must` · AF-1, AF-2
-
-> Als Nutzer möchte ich eine Zutat neu anlegen, wenn sie noch nicht im Zutatenkatalog steht, damit ich alle Zutaten meiner eigenen Rezepte verwenden kann.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** „Ei“ steht nicht im Zutatenkatalog, **wenn** die Person „Ei“ eintippt und neu anlegt, **dann** steht „Ei“ im Zutatenkatalog und ist in Vorrat und Rezepten auswählbar.
-- **Gegeben** die Eingabe ist leer oder besteht nur aus Leerzeichen, **wenn** die Person eine Zutat anlegen will, **dann** wird keine Zutat angelegt, und ein Hinweis erscheint.
+> [!IMPORTANT]
+> 🟣 **US-17 · Neue Zutat anlegen** · Must · AF-1, AF-2
+>
+> *Als Nutzer möchte ich eine Zutat neu anlegen, wenn sie noch nicht im Zutatenkatalog steht, damit ich alle Zutaten meiner eigenen Rezepte verwenden kann.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (2 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** „Ei“ steht nicht im Zutatenkatalog
+> - **Wenn** die Person „Ei“ eintippt und neu anlegt
+> - **Dann** steht „Ei“ im Zutatenkatalog und ist in Vorrat und Rezepten auswählbar.
+>
+> **Szenario 2**
+> - **Gegeben** die Eingabe ist leer oder besteht nur aus Leerzeichen
+> - **Wenn** die Person eine Zutat anlegen will
+> - **Dann** wird keine Zutat angelegt, und ein Hinweis erscheint.
+>
+> </details>
 
 <a id="us-18"></a>
 
-#### US-18 · Doppelte Zutaten verhindern
-
-`Must` · AF-1, AF-2
-
-> Als Nutzer möchte ich, dass Jausi doppelte Zutaten verhindert, damit das Matching nicht an unterschiedlichen Schreibweisen scheitert.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** „Reis“ steht im Zutatenkatalog, **wenn** die Person „ reis “ neu anlegen will, **dann** wird keine neue Zutat angelegt, sondern „Reis“ verwendet.
-- **Gegeben** „Tomate“ steht im Zutatenkatalog, **wenn** die Person „Tomaten“ anlegt, **dann** entsteht eine zweite Zutat. Das ist die dokumentierte Einschränkung bei Pluralformen.
+> [!IMPORTANT]
+> 🟣 **US-18 · Doppelte Zutaten verhindern** · Must · AF-1, AF-2
+>
+> *Als Nutzer möchte ich, dass Jausi doppelte Zutaten verhindert, damit das Matching nicht an unterschiedlichen Schreibweisen scheitert.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (2 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** „Reis“ steht im Zutatenkatalog
+> - **Wenn** die Person „ reis “ neu anlegen will
+> - **Dann** wird keine neue Zutat angelegt, sondern „Reis“ verwendet.
+>
+> **Szenario 2**
+> - **Gegeben** „Tomate“ steht im Zutatenkatalog
+> - **Wenn** die Person „Tomaten“ anlegt
+> - **Dann** entsteht eine zweite Zutat. Das ist die dokumentierte Einschränkung bei Pluralformen.
+>
+> </details>
 
 <a id="us-14"></a>
 
-#### US-14 · Zutaten umbenennen oder zusammenführen
-
-`Should` · AF-1
-
-> Als Nutzer möchte ich Zutaten umbenennen oder zusammenführen, damit ich Tippfehler und Duplikate korrigieren kann.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** „Tomatte“ steht im Vorrat und im Rezept „Tomatenreis“, **wenn** die Person sie in „Tomate“ umbenennt, **dann** erscheint „Tomate“ in Vorrat und Rezept.
-- **Gegeben** „Tomate“ und „Tomaten“ existieren, **wenn** die Person „Tomaten“ mit „Tomate“ zusammenführt, **dann** verweisen Vorrat und alle Rezepte nur noch auf „Tomate“, und „Tomaten“ ist nicht mehr im Zutatenkatalog.
+> [!TIP]
+> 🟢 **US-14 · Zutaten umbenennen oder zusammenführen** · Should · AF-1
+>
+> *Als Nutzer möchte ich Zutaten umbenennen oder zusammenführen, damit ich Tippfehler und Duplikate korrigieren kann.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (2 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** „Tomatte“ steht im Vorrat und im Rezept „Tomatenreis“
+> - **Wenn** die Person sie in „Tomate“ umbenennt
+> - **Dann** erscheint „Tomate“ in Vorrat und Rezept.
+>
+> **Szenario 2**
+> - **Gegeben** „Tomate“ und „Tomaten“ existieren
+> - **Wenn** die Person „Tomaten“ mit „Tomate“ zusammenführt
+> - **Dann** verweisen Vorrat und alle Rezepte nur noch auf „Tomate“, und „Tomaten“ ist nicht mehr im Zutatenkatalog.
+>
+> </details>
 
 <a id="us-15"></a>
 
-#### US-15 · Unbenutzte Zutaten löschen
+> [!NOTE]
+> 🔵 **US-15 · Unbenutzte Zutaten löschen** · Could · AF-1
+>
+> *Als Nutzer möchte ich unbenutzte Zutaten löschen, damit der Zutatenkatalog übersichtlich bleibt.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (2 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** „Zimt“ kommt weder im Vorrat noch in einem Rezept vor
+> - **Wenn** die Person „Zimt“ löscht
+> - **Dann** ist „Zimt“ nicht mehr im Zutatenkatalog.
+>
+> **Szenario 2**
+> - **Gegeben** „Reis“ kommt in einem Rezept vor
+> - **Wenn** die Person „Reis“ löschen will
+> - **Dann** ist das nicht möglich, und ein Hinweis nennt den Grund.
+>
+> </details>
 
-`Could` · AF-1
-
-> Als Nutzer möchte ich unbenutzte Zutaten löschen, damit der Zutatenkatalog übersichtlich bleibt.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** „Zimt“ kommt weder im Vorrat noch in einem Rezept vor, **wenn** die Person „Zimt“ löscht, **dann** ist „Zimt“ nicht mehr im Zutatenkatalog.
-- **Gegeben** „Reis“ kommt in einem Rezept vor, **wenn** die Person „Reis“ löschen will, **dann** ist das nicht möglich, und ein Hinweis nennt den Grund.
-
-### AF-2 · Rezepte sammeln
+### 📖 AF-2 · Rezepte sammeln
 
 <a id="us-04"></a>
 
-#### US-04 · Rezept anlegen
-
-`Must` · AF-2
-
-> Als Nutzer möchte ich ein Rezept anlegen, damit ich es später wieder verwenden kann.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** es gibt kein Rezept „Tomatenreis“, **wenn** die Person ein Rezept mit dem Namen „Tomatenreis“, den Zutaten Reis und Tomate und einer Zubereitung speichert, **dann** erscheint es im Archiv.
-- **Gegeben** Name, Zutaten oder Zubereitung fehlen, **wenn** die Person speichert, **dann** wird nicht gespeichert, und eine Fehlermeldung nennt das fehlende Feld.
-- **Gegeben** es gibt bereits „Tomatenreis“, **wenn** die Person ein neues Rezept „tomatenreis“ speichert, **dann** wird nicht gespeichert, und eine Fehlermeldung weist auf den vorhandenen Namen hin.
-- **Gegeben** Reis steht bereits im Rezept, **wenn** die Person Reis erneut hinzufügt, **dann** erscheint ein Hinweis, und Reis steht weiterhin genau einmal im Rezept.
+> [!IMPORTANT]
+> 🟣 **US-04 · Rezept anlegen** · Must · AF-2
+>
+> *Als Nutzer möchte ich ein Rezept anlegen, damit ich es später wieder verwenden kann.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (4 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** es gibt kein Rezept „Tomatenreis“
+> - **Wenn** die Person ein Rezept mit dem Namen „Tomatenreis“, den Zutaten Reis und Tomate und einer Zubereitung speichert
+> - **Dann** erscheint es im Archiv.
+>
+> **Szenario 2**
+> - **Gegeben** Name, Zutaten oder Zubereitung fehlen
+> - **Wenn** die Person speichert
+> - **Dann** wird nicht gespeichert, und eine Fehlermeldung nennt das fehlende Feld.
+>
+> **Szenario 3**
+> - **Gegeben** es gibt bereits „Tomatenreis“
+> - **Wenn** die Person ein neues Rezept „tomatenreis“ speichert
+> - **Dann** wird nicht gespeichert, und eine Fehlermeldung weist auf den vorhandenen Namen hin.
+>
+> **Szenario 4**
+> - **Gegeben** Reis steht bereits im Rezept
+> - **Wenn** die Person Reis erneut hinzufügt
+> - **Dann** erscheint ein Hinweis, und Reis steht weiterhin genau einmal im Rezept.
+>
+> </details>
 
 <a id="us-05"></a>
 
-#### US-05 · Archiv und Rezept öffnen
-
-`Must` · AF-2, AF-5
-
-> Als Nutzer möchte ich das Rezeptarchiv und einzelne Rezepte öffnen, damit ich Zutaten und Zubereitung lesen kann.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** das Archiv enthält „Tomatenreis“ und „Eierreis“, **wenn** die Person das Archiv öffnet, **dann** werden beide Rezepte mit Namen angezeigt.
-- **Gegeben** ein Rezept mit Zutaten, Mengenangaben und Zubereitung, **wenn** die Person es öffnet, **dann** werden alle erfassten Angaben angezeigt.
-- **Gegeben** das Archiv ist leer, **wenn** die Person es öffnet, **dann** erscheint der Hinweis „Noch keine Rezepte“, und das Anlegen eines Rezepts ist mit einem Tipp erreichbar.
+> [!IMPORTANT]
+> 🟣 **US-05 · Archiv und Rezept öffnen** · Must · AF-2, AF-5
+>
+> *Als Nutzer möchte ich das Rezeptarchiv und einzelne Rezepte öffnen, damit ich Zutaten und Zubereitung lesen kann.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (3 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** das Archiv enthält „Tomatenreis“ und „Eierreis“
+> - **Wenn** die Person das Archiv öffnet
+> - **Dann** werden beide Rezepte mit Namen angezeigt.
+>
+> **Szenario 2**
+> - **Gegeben** ein Rezept mit Zutaten, Mengenangaben und Zubereitung
+> - **Wenn** die Person es öffnet
+> - **Dann** werden alle erfassten Angaben angezeigt.
+>
+> **Szenario 3**
+> - **Gegeben** das Archiv ist leer
+> - **Wenn** die Person es öffnet
+> - **Dann** erscheint der Hinweis „Noch keine Rezepte“, und das Anlegen eines Rezepts ist mit einem Tipp erreichbar.
+>
+> </details>
 
 <a id="us-06"></a>
 
-#### US-06 · Rezept bearbeiten
-
-`Must` · AF-2
-
-> Als Nutzer möchte ich ein Rezept bearbeiten, damit ich Korrekturen und Änderungen festhalten kann.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** ein gespeichertes Rezept, **wenn** die Person die Zubereitung ändert und speichert, **dann** ist die Änderung nach erneutem Öffnen sichtbar.
-- **Gegeben** die Änderung verletzt eine Regel aus US-04, etwa ein leerer Name, **wenn** die Person speichert, **dann** wird nicht gespeichert, und eine Fehlermeldung erscheint.
+> [!IMPORTANT]
+> 🟣 **US-06 · Rezept bearbeiten** · Must · AF-2
+>
+> *Als Nutzer möchte ich ein Rezept bearbeiten, damit ich Korrekturen und Änderungen festhalten kann.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (2 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** ein gespeichertes Rezept
+> - **Wenn** die Person die Zubereitung ändert und speichert
+> - **Dann** ist die Änderung nach erneutem Öffnen sichtbar.
+>
+> **Szenario 2**
+> - **Gegeben** die Änderung verletzt eine Regel aus US-04, etwa ein leerer Name
+> - **Wenn** die Person speichert
+> - **Dann** wird nicht gespeichert, und eine Fehlermeldung erscheint.
+>
+> </details>
 
 <a id="us-19"></a>
 
-#### US-19 · Rezept löschen
-
-`Must` · AF-2
-
-> Als Nutzer möchte ich ein Rezept löschen, damit mein Archiv nur Rezepte enthält, die ich noch nutze.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** ein gespeichertes Rezept, **wenn** die Person „Löschen“ wählt, **dann** erscheint eine Sicherheitsabfrage.
-- **Gegeben** die Sicherheitsabfrage, **wenn** die Person bestätigt, **dann** ist das Rezept nicht mehr im Archiv, und seine Zutaten bleiben im Zutatenkatalog; **wenn** sie abbricht, bleibt das Rezept unverändert.
+> [!IMPORTANT]
+> 🟣 **US-19 · Rezept löschen** · Must · AF-2
+>
+> *Als Nutzer möchte ich ein Rezept löschen, damit mein Archiv nur Rezepte enthält, die ich noch nutze.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (2 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** ein gespeichertes Rezept
+> - **Wenn** die Person „Löschen“ wählt
+> - **Dann** erscheint eine Sicherheitsabfrage.
+>
+> **Szenario 2**
+> - **Gegeben** die Sicherheitsabfrage
+> - **Wenn** die Person bestätigt
+> - **Dann** ist das Rezept nicht mehr im Archiv, und seine Zutaten bleiben im Zutatenkatalog
+> - **Wenn** sie abbricht, bleibt das Rezept unverändert.
+>
+> </details>
 
 <a id="us-07"></a>
 
-#### US-07 · Rezepte suchen
-
-`Should` · AF-2
-
-> Als Nutzer möchte ich Rezepte nach Namen suchen, damit ich ein bestimmtes Gericht finde.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** das Archiv enthält „Tomatenreis“ und „Eierreis“, **wenn** die Person „REIS“ sucht, **dann** werden beide Rezepte angezeigt.
-- **Gegeben** kein Rezeptname enthält den Suchbegriff, **wenn** die Person sucht, **dann** erscheint der Hinweis „Keine Rezepte gefunden“.
+> [!TIP]
+> 🟢 **US-07 · Rezepte suchen** · Should · AF-2
+>
+> *Als Nutzer möchte ich Rezepte nach Namen suchen, damit ich ein bestimmtes Gericht finde.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (2 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** das Archiv enthält „Tomatenreis“ und „Eierreis“
+> - **Wenn** die Person „REIS“ sucht
+> - **Dann** werden beide Rezepte angezeigt.
+>
+> **Szenario 2**
+> - **Gegeben** kein Rezeptname enthält den Suchbegriff
+> - **Wenn** die Person sucht
+> - **Dann** erscheint der Hinweis „Keine Rezepte gefunden“.
+>
+> </details>
 
 <a id="us-11"></a>
 
-#### US-11 · Favoriten
+> [!NOTE]
+> 🔵 **US-11 · Favoriten** · Could · AF-2
+>
+> *Als Nutzer möchte ich Rezepte als Favoriten markieren, damit ich sie schnell wiederfinde.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (1 Szenario)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** ein Rezept
+> - **Wenn** die Person es als Favorit markiert
+> - **Dann** erscheint es im Favoritenfilter
+> - **Wenn** sie die Markierung entfernt
+> - **Dann** nicht mehr.
+>
+> </details>
 
-`Could` · AF-2
-
-> Als Nutzer möchte ich Rezepte als Favoriten markieren, damit ich sie schnell wiederfinde.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** ein Rezept, **wenn** die Person es als Favorit markiert, **dann** erscheint es im Favoritenfilter; **wenn** sie die Markierung entfernt, **dann** nicht mehr.
-
-### AF-3 · Was kann ich kochen?
+### 🍳 AF-3 · Was kann ich kochen?
 
 <a id="us-08"></a>
 
-#### US-08 · Vollständig passende Rezepte anzeigen
-
-`Must` · AF-3
-
-> Als Nutzerin wie Lena möchte ich vollständig passende Rezepte anzeigen, damit ich ohne Einkauf schnell etwas kochen kann.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** der Vorrat enthält Reis und Tomate, das Archiv „Tomatenreis“ (Reis, Tomate) und „Eierreis“ (Reis, Ei), **wenn** die Person den Filter für vollständig passende Rezepte wählt, **dann** wird nur „Tomatenreis“ angezeigt.
-- **Gegeben** ein Rezept verlangt „500 g Reis“ und Reis steht im Vorrat, **wenn** das Matching läuft, **dann** gilt Reis als vorhanden; Mengen werden nicht geprüft.
-- **Gegeben** kein Rezept passt vollständig, **wenn** die Person den Filter wählt, **dann** erscheint der Hinweis „Keine Rezepte mit allen Zutaten vorhanden“.
+> [!IMPORTANT]
+> 🟣 **US-08 · Vollständig passende Rezepte anzeigen** · Must · AF-3
+>
+> *Als Nutzerin wie Lena möchte ich vollständig passende Rezepte anzeigen, damit ich ohne Einkauf schnell etwas kochen kann.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (3 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** der Vorrat enthält Reis und Tomate, das Archiv „Tomatenreis“ (Reis, Tomate) und „Eierreis“ (Reis, Ei)
+> - **Wenn** die Person den Filter für vollständig passende Rezepte wählt
+> - **Dann** wird nur „Tomatenreis“ angezeigt.
+>
+> **Szenario 2**
+> - **Gegeben** ein Rezept verlangt „500 g Reis“ und Reis steht im Vorrat
+> - **Wenn** das Matching läuft
+> - **Dann** gilt Reis als vorhanden; Mengen werden nicht geprüft.
+>
+> **Szenario 3**
+> - **Gegeben** kein Rezept passt vollständig
+> - **Wenn** die Person den Filter wählt
+> - **Dann** erscheint der Hinweis „Keine Rezepte mit allen Zutaten vorhanden“.
+>
+> </details>
 
 <a id="us-09"></a>
 
-#### US-09 · Fehlende Zutaten anzeigen
+> [!IMPORTANT]
+> 🟣 **US-09 · Fehlende Zutaten anzeigen** · Must · AF-3, AF-4
+>
+> *Als Nutzer möchte ich fehlende Zutaten sehen, damit ich meinen Einkauf planen kann.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (2 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** der Vorrat enthält Reis, das Rezept „Eierreis“ verlangt Reis und Ei
+> - **Wenn** die Person „Eierreis“ öffnet
+> - **Dann** wird genau Ei als fehlende Zutat angezeigt.
+>
+> **Szenario 2**
+> - **Gegeben** alle Zutaten von „Tomatenreis“ stehen im Vorrat
+> - **Wenn** die Person es öffnet
+> - **Dann** erscheint „Alle Zutaten vorhanden – Mengen nicht geprüft“.
+>
+> </details>
 
-`Must` · AF-3, AF-4
-
-> Als Nutzer möchte ich fehlende Zutaten sehen, damit ich meinen Einkauf planen kann.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** der Vorrat enthält Reis, das Rezept „Eierreis“ verlangt Reis und Ei, **wenn** die Person „Eierreis“ öffnet, **dann** wird genau Ei als fehlende Zutat angezeigt.
-- **Gegeben** alle Zutaten von „Tomatenreis“ stehen im Vorrat, **wenn** die Person es öffnet, **dann** erscheint „Alle Zutaten vorhanden – Mengen nicht geprüft“.
-
-### AF-4 · Einkauf planen
+### 🛒 AF-4 · Einkauf planen
 
 <a id="us-10"></a>
 
-#### US-10 · Höchstens zwei fehlende Zutaten
-
-`Should` · AF-4
-
-> Als Nutzerin wie Andrea möchte ich Rezepte mit höchstens zwei fehlenden Zutaten finden, damit ich vorhandene Lebensmittel aufbrauche, statt viel neu einzukaufen.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** drei Rezepte, denen null, zwei und drei Zutaten fehlen, **wenn** die Person den Filter „höchstens zwei fehlende Zutaten“ wählt, **dann** werden die Rezepte mit null und zwei fehlenden Zutaten samt Anzahl angezeigt, das mit drei nicht.
+> [!TIP]
+> 🟢 **US-10 · Höchstens zwei fehlende Zutaten** · Should · AF-4
+>
+> *Als Nutzerin wie Andrea möchte ich Rezepte mit höchstens zwei fehlenden Zutaten finden, damit ich vorhandene Lebensmittel aufbrauche, statt viel neu einzukaufen.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (1 Szenario)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** drei Rezepte, denen null, zwei und drei Zutaten fehlen
+> - **Wenn** die Person den Filter „höchstens zwei fehlende Zutaten“ wählt
+> - **Dann** werden die Rezepte mit null und zwei fehlenden Zutaten samt Anzahl angezeigt, das mit drei nicht.
+>
+> </details>
 
 <a id="us-12"></a>
 
-#### US-12 · Einkaufsliste
+> [!NOTE]
+> 🔵 **US-12 · Einkaufsliste** · Could · AF-4
+>
+> *Als Nutzer möchte ich fehlende Zutaten auf eine Einkaufsliste übernehmen, damit ich sie gesammelt sehe.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (1 Szenario)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** Ei fehlt für „Eierreis“ und steht bereits auf der Einkaufsliste
+> - **Wenn** die Person die fehlenden Zutaten von „Eierreis“ übernimmt
+> - **Dann** steht Ei genau einmal auf der Einkaufsliste.
+>
+> </details>
 
-`Could` · AF-4
-
-> Als Nutzer möchte ich fehlende Zutaten auf eine Einkaufsliste übernehmen, damit ich sie gesammelt sehe.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** Ei fehlt für „Eierreis“ und steht bereits auf der Einkaufsliste, **wenn** die Person die fehlenden Zutaten von „Eierreis“ übernimmt, **dann** steht Ei genau einmal auf der Einkaufsliste.
-
-### AF-5 · Nach Rezept kochen
+### 👩‍🍳 AF-5 · Nach Rezept kochen
 
 <a id="us-16"></a>
 
-#### US-16 · Abschnitte in der Zubereitung
-
-`Could` · AF-5
-
-> Als Nutzer möchte ich die Zubereitung eines Rezepts in Abschnitte gliedern, damit ich beim Kochen nur den aktuellen Teil sehe, etwa „Boden“, „Füllung“ oder „Glasur“.
-
-**Akzeptanzkriterien**
-
-- **Gegeben** ein Rezept mit den Abschnitten „Boden“ und „Füllung“, **wenn** die Person nur „Füllung“ aufklappt, **dann** ist nur deren Text sichtbar, und die Zutaten stehen weiterhin in einer gemeinsamen Liste.
-- **Gegeben** ein Rezept ohne Abschnitte, **wenn** die Person es speichert, **dann** ist es gültig.
+> [!NOTE]
+> 🔵 **US-16 · Abschnitte in der Zubereitung** · Could · AF-5
+>
+> *Als Nutzer möchte ich die Zubereitung eines Rezepts in Abschnitte gliedern, damit ich beim Kochen nur den aktuellen Teil sehe, etwa „Boden“, „Füllung“ oder „Glasur“.*
+>
+> <details>
+> <summary>Akzeptanzkriterien (2 Szenarien)</summary>
+>
+> **Szenario 1**
+> - **Gegeben** ein Rezept mit den Abschnitten „Boden“ und „Füllung“
+> - **Wenn** die Person nur „Füllung“ aufklappt
+> - **Dann** ist nur deren Text sichtbar, und die Zutaten stehen weiterhin in einer gemeinsamen Liste.
+>
+> **Szenario 2**
+> - **Gegeben** ein Rezept ohne Abschnitte
+> - **Wenn** die Person es speichert
+> - **Dann** ist es gültig.
+>
+> </details>
 
 ## Funktionale Anforderungen
 
