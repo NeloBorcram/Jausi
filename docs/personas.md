@@ -37,5 +37,5 @@ Sie unterscheiden sich in Motivation, Erfahrung und Nutzungssituation.
 - **Ziele:** Sein kleines Repertoire nutzen und Schritt für Schritt erweitern.
 - **Frust:** Rezepte aus dem Internet passen nie zu dem, was er daheim hat.
 - **Sicht auf Jausi:** Einstieg. Rezepte einfach anlegen und wiederfinden.
-- **Wichtigste User Stories:** US-04, US-05, US-13.
+- **Wichtigste User Stories:** US-04, US-05, US-13, US-17.
 - **Erkannte Lücke:** Mit einem leeren Rezeptarchiv bietet Jausi am Anfang wenig Nutzen. Beispielrezepte wären eine mögliche spätere Erweiterung; sie sind nicht Teil des MVP und noch nicht als Anforderung erfasst.

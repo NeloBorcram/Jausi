@@ -14,12 +14,12 @@ Ein Nutzer erfasst vorhandene Zutaten und eigene Rezepte. Jausi zeigt, welche Re
 - Eingabevalidierung und verständliche Hinweise bei leerem Vorrat oder Archiv.
 - Bedienung auf dem Smartphone, auch ohne Internetverbindung.
 
-Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bis US-06, US-08, US-09 und US-13, die funktionalen Anforderungen FR-01 bis FR-03, FR-05 und FR-06 sowie die nichtfunktionalen Anforderungen NFR-01, NFR-03 bis NFR-06 und NFR-09. Begriffe wie Zutatenkatalog und Matching sind dort im Abschnitt „Begriffe“ definiert. Die gemeinsame Teamprüfung der Spezifikation steht noch aus.
+Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bis US-06, US-08, US-09, US-13 und US-17 bis US-19, die funktionalen Anforderungen FR-01 bis FR-03, FR-05 und FR-06 sowie die nichtfunktionalen Anforderungen NFR-01, NFR-03 bis NFR-06 und NFR-09. Begriffe wie Zutatenkatalog und Matching sind dort im Abschnitt „Begriffe“ definiert. Die gemeinsame Teamprüfung der Spezifikation steht noch aus.
 
 ## ❌ Außerhalb des MVP
 
 - Mengenvergleich, Umrechnung von Einheiten und automatische Verbrauchsbuchung.
-- Nutzerkonten, gemeinsame Haushalte und Synchronisierung.
+- Nutzerkonten, gemeinsame Haushalte, Synchronisierung sowie Datensicherung und Export.
 - Zutaten umbenennen und zusammenführen (Should) sowie unbenutzte Zutaten löschen (Could).
 - Erkennung von Plural- und Schreibvarianten wie „Tomate“ und „Tomaten“.
 - AI-Rezeptgenerierung, externe Rezeptimporte, Barcode- oder Bilderkennung.
@@ -27,7 +27,7 @@ Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bi
 - Favoriten, Einkaufsliste und Abschnitte in der Zubereitung (Could).
 - Suche nach Rezeptnamen (Should).
 - Filter für höchstens zwei fehlende Zutaten (Should; erst nach Abschluss des MVP).
-- Leistungsziele NFR-02, NFR-07 und NFR-08 (Should): werden gemessen und dokumentiert, sind aber keine Abnahmebedingung des MVP.
+- Leistungsziele NFR-02, NFR-07 und NFR-08 sowie Lesbarkeit NFR-10 (Should): werden gemessen und dokumentiert, sind aber keine Abnahmebedingung des MVP.
 
 ## 🎬 Geplanter vollständiger Demo-Anwendungsfall
 
@@ -69,13 +69,14 @@ Abgehakt sind nur Punkte, die sich anhand der Dokumente nachprüfen lassen. Die 
 
 Vom Team beim Termin zu bestätigen (Vorschläge vom 09.11.2026). Nach dem Termin wird jeder Punkt abgehakt oder mit der abweichenden Entscheidung ergänzt.
 
-- [ ] Mitwachsender Zutatenkatalog statt festem Katalog (US-13 bis US-15).
+- [ ] Mitwachsender Zutatenkatalog statt festem Katalog (US-13 bis US-15, US-17, US-18).
 - [ ] Personas Lena, Andrea und Jonas sowie Lena als primäre Persona.
 - [ ] Nutzungskontext Smartphone und Offline-Nutzung (NFR-01, NFR-09).
 - [ ] Aufteilung der Leistungsziele (NFR-02, NFR-07, NFR-08), alle Should.
 - [ ] Sonderfälle: Zutat höchstens einmal je Rezept, eindeutige Rezeptnamen, Zubereitung als Freitext.
 - [ ] Abschnitte in der Zubereitung (US-16, Could).
-- [ ] Wichtigste Anwendungsfälle AF-1 bis AF-5 und die zwei dokumentierten Risiken.
+- [ ] Wichtigste Anwendungsfälle AF-1 bis AF-5 sowie die dokumentierten Risiken und Einschränkungen, inklusive Datenverlust bei Geräteverlust.
+- [ ] Aufteilung von US-06 und US-13, Akzeptanzkriterien im Format Gegeben/Wenn/Dann und Lesbarkeit (NFR-10, Should).
 - [ ] Gleiches Verständnis der Akzeptanzkriterien im gesamten Team.
 
 Architektur und Technologieauswahl gehören in Phase 2, die Implementierung in Phase 3, Qualitätssicherung und Testausführung in Phase 4 sowie abschließende Evaluation und Reflexion in Phase 5.
