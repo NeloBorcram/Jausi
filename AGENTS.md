@@ -10,3 +10,4 @@
 - Aktueller Arbeitsumfang ist ausschließlich Phase 1: Projektdefinition und Requirements. Arbeite nicht an Technologieauswahl, Architektur, Implementierung oder Testausführung vor. Beginne spätere Phasen erst nach ausdrücklichem Auftrag des Nutzers; ein Kalenderdatum allein ist keine Freigabe.
 - Behalte Mengenvergleich, automatische Verbrauchsbuchung und AI-Rezeptgenerierung außerhalb des MVP, solange das Team keine dokumentierte Scope-Änderung beschließt.
 - Dokumentiere tatsächlichen AI-Einsatz und offene Entscheidungen ehrlich. Erfinde keine Teamfreigaben, Tests oder implementierten Funktionen.
+- Dokumentiere folgenreiche Architektur-, Infrastruktur- und Deploymententscheidungen vor ihrer Umsetzung mit der Vorlage unter `docs/adr/adr-template.md`. Führe vorgeschlagene Entscheidungen in `docs/adr/README.md`; markiere sie erst nach tatsächlicher Teamfreigabe als angenommen.

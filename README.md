@@ -70,6 +70,7 @@ Zutaten werden beim Tippen aus dem eigenen Zutatenkatalog vorgeschlagen oder neu
 | [Personas](docs/personas.md) | Lena, Andrea und Jonas im Detail |
 | [AI-Einsatz](docs/ai-usage.md) | Wo und wie AI eingesetzt wurde, Prompts und kritische Bewertung |
 | [Branding](docs/branding.md) | Logo- und Maskottchen-Ideen (nicht Teil des MVP) |
+| [Architekturentscheidungen](docs/adr/README.md) | Verbindliche ADR-Vorlage und erste Entscheidungsvorschläge |
 
 ## Team
 
@@ -84,7 +85,7 @@ In der Projektdokumentation verwenden wir ausschließlich Vornamen. Die Verantwo
 
 ## Projektstand
 
-Aktuell läuft nur **Phase 1**; es gibt noch keinen Code. Technik, Architektur und Tests folgen in späteren Phasen. Die Termine stammen aus dem Kursplan und sind keine bestätigten Abgabefristen.
+Phase 1 wartet auf die Teamprüfung. Ein erster Architekturvorschlag ist auf ausdrücklichen Auftrag als ADR dokumentiert; daraus folgt keine Freigabe zur Umsetzung. Es gibt noch keinen App-Code. Die Termine stammen aus dem Kursplan und sind keine bestätigten Abgabefristen.
 
 | Phase laut Kursplan | Datum | Stand |
 | --- | --- | --- |
