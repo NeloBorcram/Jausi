@@ -29,12 +29,13 @@ AI hat uns geholfen, die Idee zu strukturieren, Anforderungen zu formulieren und
 **Was wir geändert haben**
 - Suche von Must auf Should, Leistungsziele je Story aufgeteilt und als Should eingestuft.
 - Große Stories aufgeteilt, alle Akzeptanzkriterien im Format Gegeben/Wenn/Dann.
+- Aus Sicht eines Developers geprüft: Lücken bei Mengenformat, Sortierung, Bearbeiten von Zutaten und ein Widerspruch zur Sicherheitsabfrage geschlossen.
 - Nicht übernommen: Gespräche mit echten Nutzern. Das bleibt eine bekannte Lücke.
 
 ## Kritische Bewertung
 
 - **Nützlich:** AI übersetzt eine grobe Idee schnell in überprüfbare Anforderungen und findet Begriffsfehler und Widersprüche zuverlässig.
-- **Entscheidende Ideen kamen vom Team:** Den mitwachsenden Katalog und zusammengesetzte Rezepte (daraus US-16) brachte der Nutzer ein. Die AI fragte nach dem Nutzungskontext; Smartphone und Offline-Nutzung hat der Nutzer entschieden.
+- **Entscheidende Ideen kamen vom Team:** Den mitwachsenden Katalog und zusammengesetzte Rezepte (daraus US-16) brachte der Nutzer ein. Die AI fragte nach dem Nutzungskontext; Smartphone und Offline-Nutzung hat der Nutzer entschieden. Statt der AI-Idee, fehlende Zutaten einzeln in den Vorrat zu übernehmen, schlug der Nutzer eine Einkaufsliste zum Abhaken während des Einkaufs vor (US-20).
 - **AI geht zu weit:** Sie empfahl früh Technik und ein Grundgerüst, also Arbeit aus späteren Phasen. Das wurde zurückgenommen und als Projektregel festgehalten.
 - **AI verwendet eigene statt geforderter Begriffe:** Beim Umstellen auf Gegeben/Wenn/Dann benannte die AI die Akzeptanzkriterien als „Szenario 1, 2 …“ (Begriff aus BDD). Die Aufgabe verlangt ausdrücklich „Akzeptanzkriterien“; der Nutzer bemerkte das, die AI hatte es nicht angesprochen. Umbenannt in „Akzeptanzkriterien“ mit AK 1, AK 2 …
 - **AI deutet Fachbegriffe falsch:** „Zutatenkatalog“ wurde zunächst als Synonym für „Zutatenliste“ behandelt. Fachbegriffe legt das Team fest.
@@ -61,7 +62,7 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team
 Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 
 <details>
-<summary><strong>Protokoll anzeigen (19 Einträge)</strong></summary>
+<summary><strong>Protokoll anzeigen (20 Einträge)</strong></summary>
 
 | Datum | Werkzeug | Aufgabe | Ergebnis / menschliche Entscheidung |
 | --- | --- | --- | --- |
@@ -84,6 +85,7 @@ Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Frage des Nutzers, ob alle Requirements dem besten Stand entsprechen | AI bewertete die Anforderungen selbstkritisch und nannte fünf Schwächen: zu große Stories, subjektive Akzeptanzkriterien, Überschneidungen, fehlende NFRs für Lesbarkeit und Datenverlust, keine Gespräche mit echten Nutzern. Der Nutzer ließ alle außer den Nutzergesprächen umsetzen: US-06 und US-13 aufgeteilt (neu US-17 bis US-19), alle Akzeptanzkriterien im Format Gegeben/Wenn/Dann, FRs als Systemverhalten formuliert, NFR-04 geschärft, NFR-10 Lesbarkeit (Should) und Datenverlust als bekannte Einschränkung ergänzt. Teamentscheidung ausstehend. |
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Teamentscheidungen eintragen und wieder zurücknehmen | Kein inhaltlicher AI-Beitrag. Der Nutzer meldete zunächst die Zustimmung des Teams; AI trug sie ein. Danach stellte der Nutzer klar, dass die Teamprüfung erst in der Lehrveranstaltung am 09.11.2026 stattfindet; die Einträge wurden zurückgenommen. Bleibende Korrektur: Die Bilder stammen von Google Gemini. Logo und Maskottchen als Idee beibehalten steht jetzt mit auf der Agenda. |
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Bezeichnung „Szenario“ bei den User Stories korrigieren | **Fehler der AI:** Sie hatte die Akzeptanzkriterien beim Umstellen auf Gegeben/Wenn/Dann als „Szenario“ bezeichnet, obwohl die Aufgabe „Akzeptanzkriterien“ verlangt. Der Nutzer fragte nach; die AI bestätigte den Fehler. Alle 38 Kriterien umbenannt (AK 1, AK 2 …). Inhalte unverändert. |
+| 09.11.2026 | Claude (Opus 5.5) im Chat | Prüfen, ob alle User Stories erfasst sind und ein Developer beginnen könnte | AI fand drei Lücken (Bearbeiten von Zutaten in US-06, Format der Mengen, Widerspruch NFR-04 zu US-03), zwei Unklarheiten (Sortierung, zwei „Wenn“ in US-19) und einen fehlenden Schritt nach dem Einkauf. Der Nutzer entschied: Zutaten und Mengen beim Bearbeiten änderbar, Mengen als Freitext, Sicherheitsabfrage nur für Rezepte und Katalog-Zutaten, alphabetische Sortierung, US-19 aufgeteilt. Statt des AI-Vorschlags „fehlende Zutat in den Vorrat übernehmen“ schlug der Nutzer das Abhaken auf der Einkaufsliste vor (US-20) und ergänzte Kategorien für Zutaten und Rezepte (US-21, US-22); alle drei Could, nicht im MVP. Teamentscheidung ausstehend. |
 
 </details>
 

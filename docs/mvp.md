@@ -22,7 +22,7 @@ Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bi
 - **Konten und Daten:** Nutzerkonten, gemeinsame Haushalte, Synchronisierung, Sicherung und Export.
 - **Automatik:** AI-Rezeptgenerierung, Rezeptimporte, Barcode- oder Bilderkennung, Erkennung von Plural- und Schreibvarianten.
 - **Weitere Themen:** Ablaufdaten, Benachrichtigungen, Ernährungs- und Allergiefilter.
-- **Should/Could-Stories (nach dem MVP):** Suche (US-07), Filter „höchstens zwei fehlende Zutaten“ (US-10), Zutaten umbenennen (US-14), Favoriten (US-11), Einkaufsliste (US-12), unbenutzte Zutaten löschen (US-15), Abschnitte in der Zubereitung (US-16).
+- **Should/Could-Stories (nach dem MVP):** Suche (US-07), Filter „höchstens zwei fehlende Zutaten“ (US-10), Zutaten umbenennen (US-14), Favoriten (US-11), Einkaufsliste (US-12) und Abhaken beim Einkaufen (US-20), Kategorien für Zutaten und Rezepte (US-21, US-22), unbenutzte Zutaten löschen (US-15), Abschnitte in der Zubereitung (US-16).
 - **Should-NFRs:** Leistungsziele NFR-02, NFR-07, NFR-08 und Lesbarkeit NFR-10 werden gemessen und dokumentiert, sind aber keine Abnahmebedingung.
 
 ## 🎬 Geplanter vollständiger Demo-Anwendungsfall
@@ -74,4 +74,5 @@ Vom Team in der Lehrveranstaltung am 09.11.2026 zu bestätigen. Nach dem Termin 
 - [ ] Wichtigste Anwendungsfälle AF-1 bis AF-5 sowie die dokumentierten Risiken und Einschränkungen, inklusive Datenverlust bei Geräteverlust.
 - [ ] Aufteilung von US-06 und US-13, Akzeptanzkriterien im Format Gegeben/Wenn/Dann und Lesbarkeit (NFR-10, Should).
 - [ ] Gleiches Verständnis der Akzeptanzkriterien im gesamten Team.
+- [ ] Developer-Review vom 09.11.2026: Mengen als Freitext, Sicherheitsabfrage nur für Rezepte und Katalog-Zutaten (nicht Vorrat), alphabetische Sortierung, Zutaten beim Bearbeiten änderbar; neue Could-Stories US-20 bis US-22.
 - [ ] Logo und Maskottchen als Idee beibehalten; Verwendung später entscheiden (nicht Teil des MVP).

@@ -59,7 +59,7 @@ Zutaten werden beim Tippen aus dem eigenen Zutatenkatalog vorgeschlagen oder neu
 - Passende Rezepte finden und fehlende Zutaten anzeigen.
 - Auf dem Smartphone nutzbar, auch ohne Internet.
 
-**Bewusst nicht im MVP:** Mengenvergleich, Suche nach Rezeptnamen (Should), Favoriten und Einkaufsliste (Could), Nutzerkonten. AI unterstützt die Projektarbeit; eine AI-Funktion in der App ist nicht vorgesehen. Details stehen im [MVP-Scope](docs/mvp.md).
+**Bewusst nicht im MVP:** Mengenvergleich, Suche nach Rezeptnamen (Should), Favoriten, Einkaufsliste und Kategorien (Could), Nutzerkonten. AI unterstützt die Projektarbeit; eine AI-Funktion in der App ist nicht vorgesehen. Details stehen im [MVP-Scope](docs/mvp.md).
 
 ## Projektdokumentation
 

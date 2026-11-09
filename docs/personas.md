@@ -28,7 +28,7 @@ Sie unterscheiden sich in Motivation, Erfahrung und Nutzungssituation.
 - **Ziele:** Vorhandenes zuerst aufbrauchen; nichts wegwerfen; gezielt nachkaufen.
 - **Frust:** Zutaten bleiben liegen, weil ihr kein passendes Rezept einfällt.
 - **Sicht auf Jausi:** Resteverwertung. Rezepte mit wenigen fehlenden Zutaten finden und den Einkauf daraus planen.
-- **Wichtigste User Stories:** US-08, US-09, US-10, US-12.
+- **Wichtigste User Stories:** US-08, US-09, US-10, US-12, US-20.
 
 ## Jonas, 19 – Lehrling, erste eigene Wohnung
 

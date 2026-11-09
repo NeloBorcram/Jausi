@@ -18,10 +18,10 @@ Jeder Anwendungsfall beschreibt, wer wann warum handelt und was danach gilt. Jed
 
 | ID | Anwendungsfall | Persona | Auslöser | Ergebnis | User Stories | Im MVP |
 | --- | --- | --- | --- | --- | --- | --- |
-| AF-1 | Vorrat pflegen | alle | nach dem Einkauf oder Kochen | Der Vorrat stimmt mit den Zutaten daheim überein. | US-01–03, US-13–15, US-17, US-18 | Ja (Kern) |
-| AF-2 | Rezepte sammeln | Jonas | ein neues Gericht gekocht oder entdeckt | Das Rezept ist im Archiv und wiederauffindbar. | US-04–07, US-11, US-13, US-17–19 | Ja (Kern) |
+| AF-1 | Vorrat pflegen | alle | nach dem Einkauf oder Kochen | Der Vorrat stimmt mit den Zutaten daheim überein. | US-01–03, US-13–15, US-17, US-18, US-21 | Ja (Kern) |
+| AF-2 | Rezepte sammeln | Jonas | ein neues Gericht gekocht oder entdeckt | Das Rezept ist im Archiv und wiederauffindbar. | US-04–07, US-11, US-13, US-17–19, US-22 | Ja (Kern) |
 | AF-3 | Was kann ich kochen? | Lena | Hunger, Blick in den Kühlschrank | Ein Rezept ist gewählt, dessen Zutaten alle vorhanden sind. | US-08, US-09 | Ja (Hauptanwendungsfall) |
-| AF-4 | Einkauf planen | Andrea | vor dem Wocheneinkauf | Sie weiß, welche Zutaten sie für welche Rezepte nachkaufen muss. | US-09, US-10, US-12 | Teilweise (nur US-09) |
+| AF-4 | Einkauf planen | Andrea | vor dem Wocheneinkauf | Sie weiß, welche Zutaten sie für welche Rezepte nachkaufen muss. | US-09, US-10, US-12, US-20 | Teilweise (nur US-09) |
 | AF-5 | Nach Rezept kochen | alle | am Herd, Smartphone in der Hand | Das Gericht ist zubereitet, ohne lange im Rezept zu suchen. | US-05, US-16 | Teilweise (nur US-05) |
 
 AF-1 und AF-2 sind die Voraussetzung für den Hauptanwendungsfall AF-3:
@@ -43,7 +43,7 @@ Die Begriffe gelten verbindlich für alle Projektdokumente; wörtliche Zitate in
 | --- | --- | --- |
 | **Zutatenkatalog** | Persönliche Liste aller Zutaten mit genau einer Schreibweise je Zutat. Startet leer und wächst mit jeder neuen Zutat. Vorrat und Rezepte verwenden nur Zutaten daraus. | Zutatenliste |
 | **Vorrat** | Zutaten aus dem Katalog, die gerade daheim sind, ohne Mengen. | Bestand, Vorratsliste, Inventur, Inventurliste |
-| **Rezept** | Name, mindestens eine Zutat und eine Zubereitung als Freitext; Mengen sind optional. | – |
+| **Rezept** | Name, mindestens eine Zutat und eine Zubereitung als Freitext; Mengen sind optional und Freitext. | – |
 | **Rezeptarchiv** (kurz: Archiv) | Alle gespeicherten Rezepte. | Rezeptliste, Rezeptsammlung |
 | **Zutatenvorschlag** | Zutat aus dem Katalog, die beim Eintippen angezeigt wird (US-13). Nicht dasselbe wie Matching. | – |
 | **Matching** | Abgleich eines Rezepts mit dem Vorrat: Welche Zutaten sind da, welche fehlen? Mengen zählen nicht. | Rezeptvorschlag |
@@ -75,7 +75,10 @@ erDiagram
 - Ein Rezept ist gültig mit Name, mindestens einer Zutat und einer nicht leeren Zubereitung (Freitext).
 - Jede Zutat steht höchstens einmal in einem Rezept; erneutes Hinzufügen zeigt einen Hinweis.
 - Rezeptnamen sind eindeutig, nach derselben Regel wie Zutatennamen.
-- Mengen und Einheiten sind optional.
+- Mengen sind optional und werden je Zutat als Freitext erfasst, etwa „500 g“ oder „1 Prise“.
+
+**Anzeige**
+- Vorrat und Archiv sind alphabetisch sortiert, ohne Beachtung der Groß-/Kleinschreibung.
 
 **Matching**
 - Ein Rezept passt vollständig, wenn alle seine Zutaten im Vorrat stehen. Mengen werden nicht geprüft.
@@ -93,7 +96,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 | --- | --- | --- | --- | --- | --- |
 | **Must** | [US-01](#us-01)<br>[US-02](#us-02)<br>[US-03](#us-03)<br>[US-13](#us-13)<br>[US-17](#us-17)<br>[US-18](#us-18) | [US-04](#us-04)<br>[US-05](#us-05)<br>[US-06](#us-06)<br>[US-19](#us-19) | [US-08](#us-08)<br>[US-09](#us-09) | – | – |
 | **Should** | [US-14](#us-14) | [US-07](#us-07) | – | [US-10](#us-10) | – |
-| **Could** | [US-15](#us-15) | [US-11](#us-11) | – | [US-12](#us-12) | [US-16](#us-16) |
+| **Could** | [US-15](#us-15)<br>[US-21](#us-21) | [US-11](#us-11)<br>[US-22](#us-22) | – | [US-12](#us-12)<br>[US-20](#us-20) | [US-16](#us-16) |
 
 ### 🥕 AF-1 · Vorrat pflegen
 
@@ -126,9 +129,9 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 **Akzeptanzkriterien**
 
 **AK 1**
-- **Gegeben** der Vorrat enthält Reis und Tomate
+- **Gegeben** der Vorrat enthält Tomate und Reis
 - **Wenn** die Person den Vorrat öffnet
-- **Dann** werden genau Reis und Tomate angezeigt.
+- **Dann** werden genau Reis und Tomate angezeigt, in dieser Reihenfolge (alphabetisch).
 
 **AK 2**
 - **Gegeben** der Vorrat ist leer
@@ -149,6 +152,11 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Gegeben** Tomate steht im Vorrat und im Rezept „Tomatenreis“
 - **Wenn** die Person Tomate aus dem Vorrat entfernt
 - **Dann** steht Tomate nicht mehr im Vorrat, das Rezept „Tomatenreis“ bleibt unverändert und zeigt Tomate als fehlende Zutat.
+
+**AK 2**
+- **Gegeben** Tomate steht im Vorrat
+- **Wenn** die Person Tomate entfernt
+- **Dann** geschieht das sofort, ohne Sicherheitsabfrage.
 
 </details>
 
@@ -248,13 +256,33 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 **AK 1**
 - **Gegeben** „Zimt“ kommt weder im Vorrat noch in einem Rezept vor
-- **Wenn** die Person „Zimt“ löscht
+- **Wenn** die Person „Zimt“ löscht und die Sicherheitsabfrage bestätigt
 - **Dann** ist „Zimt“ nicht mehr im Zutatenkatalog.
 
 **AK 2**
 - **Gegeben** „Reis“ kommt in einem Rezept vor
 - **Wenn** die Person „Reis“ löschen will
 - **Dann** ist das nicht möglich, und ein Hinweis nennt den Grund.
+
+</details>
+
+<a id="us-21"></a>
+<details>
+<summary><strong>US-21 · Zutaten kategorisieren</strong> · Could</summary>
+
+> Als Nutzer möchte ich Zutaten einer Kategorie wie „Gemüse“ oder „Milchprodukte“ zuordnen und den Vorrat danach filtern, damit ich bei vielen Zutaten den Überblick behalte.
+
+**Akzeptanzkriterien**
+
+**AK 1**
+- **Gegeben** Tomate gehört zur Kategorie „Gemüse“, Milch zu „Milchprodukte“, beide stehen im Vorrat
+- **Wenn** die Person den Vorrat nach „Gemüse“ filtert
+- **Dann** wird nur Tomate angezeigt.
+
+**AK 2**
+- **Gegeben** eine Zutat ohne Kategorie
+- **Wenn** die Person sie zum Vorrat hinzufügt
+- **Dann** ist das möglich; die Kategorie ist optional.
 
 </details>
 
@@ -303,7 +331,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 **AK 1**
 - **Gegeben** das Archiv enthält „Tomatenreis“ und „Eierreis“
 - **Wenn** die Person das Archiv öffnet
-- **Dann** werden beide Rezepte mit Namen angezeigt.
+- **Dann** werden beide Rezepte mit Namen angezeigt, alphabetisch sortiert („Eierreis“ vor „Tomatenreis“).
 
 **AK 2**
 - **Gegeben** ein Rezept mit Zutaten, Mengenangaben und Zubereitung
@@ -331,6 +359,11 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Dann** ist die Änderung nach erneutem Öffnen sichtbar.
 
 **AK 2**
+- **Gegeben** „Tomatenreis“ enthält Reis und Tomate
+- **Wenn** die Person Tomate entfernt, Zwiebel hinzufügt, bei Reis die Menge „200 g“ einträgt und speichert
+- **Dann** enthält das Rezept nach erneutem Öffnen Reis (200 g) und Zwiebel.
+
+**AK 3**
 - **Gegeben** die Änderung verletzt eine Regel aus US-04, etwa ein leerer Name
 - **Wenn** die Person speichert
 - **Dann** wird nicht gespeichert, und eine Fehlermeldung erscheint.
@@ -353,8 +386,12 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 **AK 2**
 - **Gegeben** die Sicherheitsabfrage
 - **Wenn** die Person bestätigt
-- **Dann** ist das Rezept nicht mehr im Archiv, und seine Zutaten bleiben im Zutatenkatalog
-- **Wenn** sie abbricht, bleibt das Rezept unverändert.
+- **Dann** ist das Rezept nicht mehr im Archiv, und seine Zutaten bleiben im Zutatenkatalog.
+
+**AK 3**
+- **Gegeben** die Sicherheitsabfrage
+- **Wenn** die Person abbricht
+- **Dann** bleibt das Rezept unverändert im Archiv.
 
 </details>
 
@@ -392,6 +429,26 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Dann** erscheint es im Favoritenfilter
 - **Wenn** sie die Markierung entfernt
 - **Dann** nicht mehr.
+
+</details>
+
+<a id="us-22"></a>
+<details>
+<summary><strong>US-22 · Rezepte kategorisieren</strong> · Could</summary>
+
+> Als Nutzer möchte ich Rezepte einer Kategorie wie „Frühstück“ oder „Hauptspeise“ zuordnen und das Archiv danach filtern, damit ich passende Gerichte schneller finde.
+
+**Akzeptanzkriterien**
+
+**AK 1**
+- **Gegeben** „Eierreis“ gehört zu „Hauptspeise“, „Porridge“ zu „Frühstück“
+- **Wenn** die Person das Archiv nach „Frühstück“ filtert
+- **Dann** wird nur „Porridge“ angezeigt.
+
+**AK 2**
+- **Gegeben** ein Rezept ohne Kategorie
+- **Wenn** die Person es speichert
+- **Dann** ist es gültig; die Kategorie ist optional.
 
 </details>
 
@@ -476,6 +533,31 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 </details>
 
+<a id="us-20"></a>
+<details>
+<summary><strong>US-20 · Einkaufsliste abhaken</strong> · Could</summary>
+
+> Als Nutzerin wie Andrea möchte ich beim Einkaufen gefundene Zutaten auf der Einkaufsliste abhaken, damit sie ohne erneutes Eintippen in meinem Vorrat stehen.
+
+**Akzeptanzkriterien**
+
+**AK 1**
+- **Gegeben** Ei steht auf der Einkaufsliste, aber nicht im Vorrat
+- **Wenn** die Person Ei abhakt
+- **Dann** steht Ei im Vorrat und nicht mehr auf der Einkaufsliste.
+
+**AK 2**
+- **Gegeben** Ei und Milch stehen auf der Einkaufsliste
+- **Wenn** die Person nur Ei abhakt
+- **Dann** bleibt Milch auf der Einkaufsliste und steht nicht im Vorrat.
+
+**AK 3**
+- **Gegeben** das Smartphone hat keine Internetverbindung
+- **Wenn** die Person Ei abhakt
+- **Dann** steht Ei trotzdem im Vorrat.
+
+</details>
+
 ### 👩‍🍳 AF-5 · Nach Rezept kochen
 
 <a id="us-16"></a>
@@ -512,8 +594,10 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 | FR-08 | Das System erlaubt, Rezepte als Favoriten zu markieren und nach Favoriten zu filtern. | Could | US-11 |
 | FR-09 | Das System übernimmt die fehlenden Zutaten eines Rezepts ohne Duplikate auf eine Einkaufsliste. | Could | US-12 |
 | FR-10 | Das System erlaubt, Zutaten umzubenennen und zusammenzuführen, und aktualisiert dabei Vorrat und alle Rezepte. | Should | US-14 |
-| FR-11 | Das System erlaubt, Zutaten zu löschen, die weder im Vorrat noch in einem Rezept vorkommen. | Could | US-15 |
+| FR-11 | Das System erlaubt, Zutaten nach einer Sicherheitsabfrage zu löschen, wenn sie weder im Vorrat noch in einem Rezept vorkommen. | Could | US-15 |
 | FR-12 | Das System erlaubt, die Zubereitung in benannte, einklappbare Abschnitte zu gliedern. | Could | US-16 |
+| FR-13 | Das System übernimmt abgehakte Zutaten der Einkaufsliste in den Vorrat und entfernt sie von der Liste. | Could | US-20 |
+| FR-14 | Das System erlaubt, Zutaten und Rezepten optional eine Kategorie zuzuordnen und Vorrat und Archiv danach zu filtern. | Could | US-21, US-22 |
 
 ## Nichtfunktionale Anforderungen
 
@@ -522,7 +606,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 | NFR-01 | Deutschsprachige Oberfläche, die auf einem Smartphone-Bildschirm mit 360 Pixel Breite ohne horizontales Scrollen bedienbar ist; Vorrat und Archiv sind von der Hauptnavigation mit einem Tipp erreichbar. Prüfung durch manuellen Durchlauf aller Must-Stories auf dem dokumentierten Testgerät. | Must |
 | NFR-02 | Matching (US-08, US-09): Mit dem Referenzdatensatz erscheinen die vollständig passenden Rezepte und die fehlenden Zutaten je Rezept innerhalb einer Sekunde auf dem dokumentierten Testgerät. | Should |
 | NFR-03 | Nach Speichern und Neustart sind Zutatenkatalog, Vorrat und Rezepte unverändert vorhanden. Prüfung mit einem gespeicherten Beispieldatensatz. | Must |
-| NFR-04 | Fehlermeldungen nennen das betroffene Feld und den Grund; bereits eingegebene Daten bleiben nach einer Fehlermeldung erhalten. Löschende Aktionen erfordern eine Sicherheitsabfrage. Prüfung mit ungültigen Eingaben und Abbruch einer Löschaktion. | Must |
+| NFR-04 | Fehlermeldungen nennen das betroffene Feld und den Grund; bereits eingegebene Daten bleiben nach einer Fehlermeldung erhalten. Das Löschen von Rezepten und Zutaten aus dem Zutatenkatalog erfordert eine Sicherheitsabfrage; das Entfernen einer Zutat aus dem Vorrat nicht. Prüfung mit ungültigen Eingaben und Abbruch einer Löschaktion. | Must |
 | NFR-05 | Das Matching ist unabhängig von der Oberfläche testbar; automatisierte Tests prüfen vollständige, teilweise und fehlende Übereinstimmung sowie leeren Vorrat. | Must |
 | NFR-06 | Der MVP erfordert keine personenbezogenen Angaben und übermittelt Vorrats- oder Rezeptdaten an keinen AI-Dienst. Prüfung der Eingabefelder und Datenflüsse. | Must |
 | NFR-07 | Zutatenvorschläge (US-13): Mit dem Referenzdatensatz erscheinen die Zutatenvorschläge innerhalb einer Sekunde nach jeder Eingabe auf dem dokumentierten Testgerät. | Should |
@@ -537,7 +621,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Mengen:** „Zutat vorhanden“ heißt nicht „genug davon“. Rezeptmengen werden angezeigt, aber nicht mit dem Vorrat verglichen; die Oberfläche macht das sichtbar.
 - **Pluralformen:** „Tomate“ und „Tomaten“ gelten als verschiedene Zutaten. Die Zutatenvorschläge sollen solche Duplikate vermeiden.
 - **Leeres Archiv (AF-3):** Jausi nützt erst, wenn Rezepte erfasst sind; beim ersten Start findet das Matching nichts.
-- **Einzelerfassung (AF-1, Risiko):** Nach einem großen Einkauf müssen Zutaten einzeln eingetragen werden. Ist das zu mühsam, veraltet der Vorrat. Mehrere Zutaten auf einmal hinzuzufügen wäre eine mögliche spätere Erweiterung.
+- **Einzelerfassung (AF-1, Risiko):** Nach einem großen Einkauf müssen Zutaten einzeln eingetragen werden. Ist das zu mühsam, veraltet der Vorrat. Das Abhaken auf der Einkaufsliste (US-20, Could) mildert das nach dem MVP; mehrere Zutaten auf einmal hinzuzufügen wäre eine weitere mögliche Erweiterung.
 - **Datenverlust:** Die Daten liegen nur auf dem Gerät, ohne Konto oder Synchronisierung. Bei Geräteverlust oder Löschen der App sind sie weg; Sicherung und Export gehören nicht zum MVP.
 - **Externe Dienste:** Der MVP braucht keine externen APIs oder kostenpflichtigen Dienste. Werden später welche gewählt, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren.
 - **Offen für Phase 2:** Plattform und Speichermethode.
