@@ -26,6 +26,7 @@ AI wird zur Strukturierung der Idee, Anforderungsanalyse und Prüfung auf Unklar
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Frage des Nutzers, ob alle Requirements dem besten Stand entsprechen | AI bewertete die Anforderungen selbstkritisch und nannte fünf Schwächen: zu große Stories, subjektive Akzeptanzkriterien, Überschneidungen, fehlende NFRs für Lesbarkeit und Datenverlust, keine Gespräche mit echten Nutzern. Der Nutzer ließ alle außer den Nutzergesprächen umsetzen: US-06 und US-13 aufgeteilt (neu US-17 bis US-19), alle Akzeptanzkriterien im Format Gegeben/Wenn/Dann, FRs als Systemverhalten formuliert, NFR-04 geschärft, NFR-10 Lesbarkeit (Should) und Datenverlust als bekannte Einschränkung ergänzt. Teamentscheidung ausstehend. |
 | 09.11.2026 | Claude (Opus 5.5) im Chat | User Stories und Akzeptanzkriterien übersichtlicher anordnen | Der Nutzer empfand die Trennung von Story-Tabelle und Kriterien als unübersichtlich. AI schlug drei Gruppierungen vor; der Nutzer wählte die Gruppierung nach Anwendungsfall. Jede Story steht jetzt direkt bei ihren Kriterien, oben eine verlinkte Übersicht. Inhalte unverändert. |
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Darstellung der User Stories weiter verbessern | Der Nutzer lehnte die ersten zwei Stilvorschläge ab und bat um weitere Ideen. Aus vier Vorschlägen wählte er farbige Karten, aufklappbare Kriterien und eine Story Map. AI prüfte die Darstellung mit dem GitHub-Markdown-Renderer: Hinweisboxen funktionieren nicht innerhalb aufklappbarer Bereiche, daher sind die Karten immer sichtbar und nur die Akzeptanzkriterien aufklappbar. Inhalte unverändert. |
+| 09.11.2026 | Claude (Opus 5.5) im Chat | Hinweisboxen bei den User Stories entfernen | Der Nutzer empfand die englischen Kartentitel („Important“, „Tip“, „Note“) als störend. Die Boxen wurden entfernt; jede Story ist jetzt vollständig aufklappbar, die Priorität zeigt der Farbpunkt. Darstellung erneut mit dem GitHub-Markdown-Renderer geprüft. Inhalte unverändert. |
 
 Damit sind zwei unterschiedliche AI-Anwendungen dokumentiert: **Generierung und Strukturierung von Anforderungen** sowie **kritische Validierung der Spezifikation**. Die Generierung und die erste Prüfung erfolgten mit Codex; die sprachliche und inhaltliche Nachprüfung am 07.11.2026 erfolgte mit einem zweiten Werkzeug (Claude) und diente zugleich als unabhängige zweite Meinung. Darüber hinaus wurde AI am 09.11.2026 für Webrecherche, die Ausarbeitung von Personas und Bildentwürfe (Branding) eingesetzt.
 
@@ -47,6 +48,7 @@ Damit sind zwei unterschiedliche AI-Anwendungen dokumentiert: **Generierung und 
 - „Alle Requirements sind nach dem besten Stand geschrieben?“
 - „Geht das eventuell schöner formatiert? Wirkt ein bissel durcheinander, wenn die User Stories oben sind und meine Akzeptanzkriterien unten.“
 - „Können wir das irgendwie noch schöner formatieren?“
+- „Die Box kann weg – das mit dem Important. Das stört dann doch mehr, als es nützt.“
 
 Die vollständigen Phase-1-Vorgaben und Phasentermine wurden vom Nutzer im Chat bereitgestellt. Die verlinkte Moodle-Seite wurde nicht separat geprüft.
 
