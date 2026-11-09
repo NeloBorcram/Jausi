@@ -1,8 +1,8 @@
 # Projektanweisungen für Jausi
 
 - Erstelle oder ändere Git-Commits nur auf ausdrücklichen Auftrag des Nutzers. Ein Auftrag gilt für die konkret angeforderte Aktion und ist keine dauerhafte Commit-Erlaubnis. Änderungen bleiben ansonsten uncommitted.
-- Halte `README.md`, `docs/requirements.md`, `docs/mvp.md` und `docs/ai-usage.md` dauerhaft vorhanden und aktuell.
-- Prüfe bei jeder Aufgabe alle vier Dokumente. Aktualisiere betroffene Inhalte im selben Änderungssatz; vermeide inhaltslose Änderungen an unveränderten Dokumenten.
+- Halte `README.md`, `docs/requirements.md`, `docs/mvp.md`, `docs/ai-usage.md` und `docs/personas.md` dauerhaft vorhanden und aktuell.
+- Prüfe bei jeder Aufgabe alle fünf Dokumente. Aktualisiere betroffene Inhalte im selben Änderungssatz; vermeide inhaltslose Änderungen an unveränderten Dokumenten.
 - Lege zusätzliche Projektdokumentation immer in `docs/` ab. `README.md` und diese Projektanweisungen bleiben im Repository-Stamm.
 - Schreibe Projektdokumentation auf Deutsch.
 - Das Team besteht aus vier Personen. Plane einen kleinen, realistischen Semesterprojekt-MVP.

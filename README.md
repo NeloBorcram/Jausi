@@ -6,7 +6,7 @@ Jausi ist ein Semesterprojekt eines vierköpfigen Teams. Die App verbindet einen
 
 ## Problem und Zielgruppe
 
-Studierende und Personen, die unkompliziert kochen möchten, verlieren leicht den Überblick über ihre Lebensmittel. Jausi beantwortet die Frage: „Was kann ich heute mit meinem Vorrat kochen?“ und unterstützt dabei, vorhandene Zutaten zu nutzen und unnötige Einkäufe zu vermeiden.
+Menschen, die unkompliziert kochen möchten, allen voran Studierende, verlieren leicht den Überblick über ihre Lebensmittel. Jausi beantwortet die Frage: „Was kann ich heute mit meinem Vorrat kochen?“ und unterstützt dabei, vorhandene Zutaten zu nutzen und unnötige Einkäufe zu vermeiden.
 
 Das Problem ist relevant: In österreichischen Haushalten werden pro Person und Jahr rund 69 kg Lebensmittel weggeworfen, davon etwa 37 kg vermeidbar ([BMLUK, Daten 2024](https://www.bmluk.gv.at/themen/abfall-und-kreislaufwirtschaft/abfallvermeidung/lebensmittel/oesterreich/haushalte.html)). In einer Umfrage der Verbraucherzentrale NRW wünschte sich rund ein Drittel der Befragten Rezepte zur Resteverwertung ([Verbraucherzentrale NRW](https://www.verbraucherzentrale.nrw/pressemitteilungen/neue-umfrage-fortschritte-bei-vermeidung-von-lebensmittelabfaellen-111819)). Laut einer Studie der ZHAW verschwenden jüngere Menschen mehr Lebensmittel als ältere ([ZHAW](https://www.zhaw.ch/de/medien/medienmitteilungen/detailansicht-medienmitteilung/event-news/frauen-ernaehren-sich-nachhaltiger-aeltere-verschwenden-weniger-nahrungsmittel/)). Eine Erhebung speziell zu Studierenden liegt dem Team nicht vor.
 
@@ -14,13 +14,16 @@ Alle Nutzer wollen wissen: Was habe ich da, was kann ich damit kochen, was muss 
 
 - **Lena, 22, Studentin (primär):** will schnell entscheiden, was es heute gibt, und nur das Nötigste kaufen.
 - **Andrea, 38, berufstätig:** will vorhandene Lebensmittel aufbrauchen statt sie wegzuwerfen.
-- **Jonas, 19, Lehrling:** kocht erst seit Kurzem und will sein kleines Repertoire nutzen. Jausi wird hauptsächlich auf dem Smartphone genutzt, in der Küche und beim Einkaufen.
+- **Jonas, 19, Lehrling:** kocht erst seit Kurzem und will sein kleines Repertoire nutzen.
+
+Jausi wird hauptsächlich auf dem Smartphone genutzt: in der Küche und beim Einkaufen.
 
 ## Geplanter Funktionsumfang
 
-- Zutaten im Vorrat erfassen und entfernen.
+- Zutaten im Vorrat erfassen und entfernen; vorhandene Zutaten werden beim Tippen vorgeschlagen, neue angelegt.
 - Eigene Rezepte mit Zutaten, optionalen Mengenangaben und Zubereitung verwalten.
 - Passende Rezepte finden und fehlende Zutaten anzeigen.
+- Auf dem Smartphone nutzbar, auch ohne Internet.
 
 Die Suche nach Rezeptnamen gehört nicht zum MVP (Should).
 
@@ -34,7 +37,7 @@ Der MVP prüft ausschließlich, ob Zutaten vorhanden sind. Mengen werden im Reze
 - [Personas](docs/personas.md)
 - [Branding und Maskottchen (Entwurf)](docs/branding.md)
 
-Diese vier Dokumente (einschließlich dieser README) werden bei jeder Projektänderung auf Aktualität geprüft und bei betroffenen Inhalten gemeinsam mit der Änderung aktualisiert. Weitere Dokumentation liegt ausschließlich in `docs/`.
+README, Anforderungen, MVP-Scope, AI-Einsatz und Personas werden bei jeder Projektänderung auf Aktualität geprüft und bei betroffenen Inhalten gemeinsam mit der Änderung aktualisiert. Weitere Dokumentation liegt ausschließlich in `docs/`.
 
 ## Zusammenarbeit
 

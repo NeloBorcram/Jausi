@@ -2,7 +2,7 @@
 
 ## Produktziel
 
-Jausi richtet sich an Studierende und Personen, die unkompliziert mit vorhandenen Zutaten kochen möchten, und verbindet dafür Lebensmittelvorrat und persönliches Rezeptarchiv. Das vierköpfige Team entwickelt einen überschaubaren MVP im Rahmen eines Semesterprojekts.
+Jausi richtet sich an Menschen, die mit vorhandenen Zutaten kochen möchten, primär Studierende (siehe Personas), und verbindet dafür Lebensmittelvorrat und persönliches Rezeptarchiv. Das vierköpfige Team entwickelt einen überschaubaren MVP im Rahmen eines Semesterprojekts.
 
 ## Zielgruppe und Personas
 
@@ -39,7 +39,7 @@ Diese Begriffe gelten verbindlich für alle Projektdokumente. Die unter „Nicht
 
 ## Priorisierungsmaßstab
 
-Must-Anforderungen umfassen den vollständigen Kernanwendungsfall: Vorrat erfassen, Rezepte verwalten, passende Rezepte und fehlende Zutaten erkennen sowie Vorrat und Rezepte dauerhaft speichern. Should-Anforderungen verbessern die Nutzung, sind für diesen Ablauf aber nicht notwendig. Could-Anforderungen bieten zusätzlichen Komfort. Die Suche nach Rezeptnamen ist deshalb Should, denn das Rezeptarchiv bleibt auch ohne Suche nutzbar.
+Must-Anforderungen umfassen den vollständigen Kernanwendungsfall auf dem Smartphone, auch ohne Internetverbindung: Zutaten anlegen und im Vorrat erfassen, Rezepte verwalten, passende Rezepte und fehlende Zutaten erkennen sowie alle Daten dauerhaft speichern. Should-Anforderungen verbessern die Nutzung, sind für diesen Ablauf aber nicht notwendig. Could-Anforderungen bieten zusätzlichen Komfort. Die Suche nach Rezeptnamen ist deshalb Should, denn das Rezeptarchiv bleibt auch ohne Suche nutzbar.
 
 ## Fachliche Regeln
 
@@ -134,4 +134,4 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026. Überholte Befu
 - Der MVP verwendet einen persönlichen Datenbestand ohne Anmeldung, gemeinsam genutzten Haushalt oder Synchronisierung.
 - Ein Ablaufdatum ist eine spätere Idee, keine Anforderung für die aktuelle Umsetzung.
 
-Die Spezifikation ist ein Arbeitsentwurf auf Basis des angenommenen Konzepts. Vor Abschluss von Phase 1 prüfen die vier Teammitglieder Akzeptanzkriterien, Prioritäten, den Vorschlag eines mitwachsenden Zutatenkatalogs und das Leistungsziel. Technische Entscheidungen bleiben Phase 2 vorbehalten.
+Die Spezifikation ist ein Arbeitsentwurf. Vor Abschluss von Phase 1 bestätigt das Team die offenen Punkte in [mvp.md](mvp.md), Abschnitt „Noch in Phase 1 klären“. Technische Entscheidungen bleiben Phase 2 vorbehalten.
