@@ -3,36 +3,14 @@
 > [!NOTE]
 > Arbeitsentwurf. Mehrere Vorschläge vom 09.11.2026 muss das Team noch bestätigen; die Agenda steht in [mvp.md](mvp.md#noch-in-phase-1-klären).
 
-**Inhalt**
+**Inhalt:** [Kontext](#kontext) · [Anwendungsfälle](#wichtigste-anwendungsfälle) · [Begriffe](#begriffe) · [Fachliche Regeln](#fachliche-regeln) · [User Stories](#user-stories-mit-akzeptanzkriterien) · [Funktionale Anforderungen](#funktionale-anforderungen) · [Nichtfunktionale Anforderungen](#nichtfunktionale-anforderungen) · [Einschränkungen und Risiken](#bekannte-einschränkungen-und-risiken)
 
-1. [Produktziel](#produktziel)
-2. [Zielgruppe und Personas](#zielgruppe-und-personas)
-3. [Nutzungskontext](#nutzungskontext)
-4. [Wichtigste Anwendungsfälle](#wichtigste-anwendungsfälle)
-5. [Begriffe](#begriffe)
-6. [Priorisierungsmaßstab](#priorisierungsmaßstab)
-7. [Fachliche Regeln](#fachliche-regeln)
-8. [User Stories mit Akzeptanzkriterien](#user-stories-mit-akzeptanzkriterien)
-9. [Funktionale Anforderungen](#funktionale-anforderungen)
-10. [Nichtfunktionale Anforderungen](#nichtfunktionale-anforderungen)
-11. [Prüfung auf Widersprüche und Unklarheiten](#prüfung-auf-widersprüche-und-unklarheiten)
+## Kontext
 
-## Produktziel
-
-Jausi richtet sich an Menschen, die mit vorhandenen Zutaten kochen möchten, primär Studierende (siehe Personas), und verbindet dafür Lebensmittelvorrat und persönliches Rezeptarchiv. Das vierköpfige Team entwickelt einen überschaubaren MVP im Rahmen eines Semesterprojekts.
-
-## Zielgruppe und Personas
-
-Die Zielgruppe sind Menschen, die mit vorhandenen Zutaten kochen möchten. Ausführliche, fiktive Personas stehen in [personas.md](personas.md): Lena (Studentin, primäre Persona), Andrea (will Lebensmittelverschwendung vermeiden) und Jonas (Kochanfänger). In den User Stories steht „Nutzer“ für alle Personas; wo sich der Nutzen unterscheidet, ist die Persona genannt.
-
-## Nutzungskontext
-
-Jausi wird hauptsächlich auf dem Smartphone genutzt:
-
-- **In der Küche:** nachsehen, welche Rezepte mit dem aktuellen Vorrat möglich sind, und das Rezept beim Kochen lesen.
-- **Beim Einkaufen:** fehlende Zutaten eines Rezepts nachsehen und den Vorrat nach dem Einkauf ergänzen.
-
-Die Oberfläche muss daher auf einem Smartphone-Bildschirm vollständig bedienbar sein. Ob Jausi als native App oder als Web-App umgesetzt wird, ist eine Technologieentscheidung und folgt in Phase 2.
+- **Produkt:** Jausi verbindet Lebensmittelvorrat und persönliches Rezeptarchiv und zeigt, was mit vorhandenen Zutaten kochbar ist. Problem und Zahlen stehen im [README](../README.md).
+- **Zielgruppe:** Menschen, die mit vorhandenen Zutaten kochen möchten, primär Studierende. Die Personas Lena (primär), Andrea und Jonas stehen in [personas.md](personas.md). „Nutzer“ in den Stories meint alle Personas.
+- **Nutzung:** hauptsächlich auf dem Smartphone, in der Küche (Was kann ich kochen? Rezept lesen) und beim Einkaufen (Was fehlt? Vorrat ergänzen). Die App ist vollständig auf dem Smartphone bedienbar, auch ohne Internet.
+- **Rahmen:** Semesterprojekt eines vierköpfigen Teams mit kleinem MVP. Ob native App oder Web-App, entscheidet Phase 2.
 
 ## Wichtigste Anwendungsfälle
 
@@ -92,25 +70,19 @@ flowchart LR
 
 ## Begriffe
 
-Diese Begriffe gelten verbindlich für alle Projektdokumente. Die unter „Nicht verwenden“ genannten Synonyme werden durch den definierten Begriff ersetzt. Wörtliche Zitate früherer Eingaben in [ai-usage.md](ai-usage.md) bleiben unverändert.
+Die Begriffe gelten verbindlich für alle Projektdokumente; wörtliche Zitate in [ai-usage.md](ai-usage.md) bleiben unverändert.
 
-- **Zutatenkatalog:** Persönliche Menge eindeutig benannter Zutaten, die mit den Eingaben des Nutzers wächst. Er ist zu Beginn leer. Jede Zutat hat genau eine Schreibweise. Vorrat und Rezepte verwenden ausschließlich Zutaten aus dem Katalog.
-  *Nicht verwenden: Zutatenliste.*
-- **Vorrat:** Die Zutaten des Zutatenkatalogs, die der Nutzer aktuell zur Verfügung hat. Mengen werden nicht erfasst.
-  *Nicht verwenden: Bestand, Vorratsliste, Inventur, Inventurliste.*
-- **Rezept:** Gespeicherte Kochanleitung mit Namen, mindestens einer Zutat aus dem Zutatenkatalog und einer Zubereitung als Freitext. Mengen und Einheiten sind optional.
-- **Rezeptarchiv:** Alle gespeicherten Rezepte des Nutzers. Kurzform: Archiv.
-  *Nicht verwenden: Rezeptliste, Rezeptsammlung.*
-- **Zutatenvorschlag:** Zutat aus dem Zutatenkatalog, die beim Eintippen eines Zutatennamens zur Auswahl angezeigt wird (US-13). Nicht zu verwechseln mit dem Matching.
-- **Matching:** Abgleich der Zutaten eines Rezepts mit dem Vorrat. Ergebnis ist je Rezept, welche Zutaten vorhanden sind und welche fehlen. Mengen und Einheiten bleiben unberücksichtigt.
-  *Nicht verwenden: Rezeptvorschlag.*
-- **Vollständig passendes Rezept:** Ein Rezept, dessen Zutaten alle im Vorrat stehen.
-- **Fehlende Zutat:** Eine Zutat eines Rezepts, die nicht im Vorrat steht.
-- **Favorit:** Ein vom Nutzer markiertes Rezept (Could, nicht im MVP).
-  *Nicht verwenden: Lieblingsrezept.*
-- **Must / Should / Could:** Prioritätsstufen gemäß Abschnitt „Priorisierungsmaßstab“.
-
-So hängen die Begriffe zusammen:
+| Begriff | Bedeutung | Nicht verwenden |
+| --- | --- | --- |
+| **Zutatenkatalog** | Persönliche Liste aller Zutaten mit genau einer Schreibweise je Zutat. Startet leer und wächst mit jeder neuen Zutat. Vorrat und Rezepte verwenden nur Zutaten daraus. | Zutatenliste |
+| **Vorrat** | Zutaten aus dem Katalog, die gerade daheim sind, ohne Mengen. | Bestand, Vorratsliste, Inventur, Inventurliste |
+| **Rezept** | Name, mindestens eine Zutat und eine Zubereitung als Freitext; Mengen sind optional. | – |
+| **Rezeptarchiv** (kurz: Archiv) | Alle gespeicherten Rezepte. | Rezeptliste, Rezeptsammlung |
+| **Zutatenvorschlag** | Zutat aus dem Katalog, die beim Eintippen angezeigt wird (US-13). Nicht dasselbe wie Matching. | – |
+| **Matching** | Abgleich eines Rezepts mit dem Vorrat: Welche Zutaten sind da, welche fehlen? Mengen zählen nicht. | Rezeptvorschlag |
+| **Vollständig passendes Rezept** | Alle Zutaten des Rezepts stehen im Vorrat. | – |
+| **Fehlende Zutat** | Zutat eines Rezepts, die nicht im Vorrat steht. | – |
+| **Favorit** | Vom Nutzer markiertes Rezept (Could). | Lieblingsrezept |
 
 ```mermaid
 erDiagram
@@ -120,43 +92,41 @@ erDiagram
     REZEPT }o--|{ ZUTAT : "verwendet (Menge optional)"
 ```
 
-## Priorisierungsmaßstab
-
-Must-Anforderungen umfassen den vollständigen Kernanwendungsfall auf dem Smartphone, auch ohne Internetverbindung: Zutaten anlegen und im Vorrat erfassen, Rezepte verwalten, passende Rezepte und fehlende Zutaten erkennen sowie alle Daten dauerhaft speichern. Should-Anforderungen verbessern die Nutzung, sind für diesen Ablauf aber nicht notwendig. Could-Anforderungen bieten zusätzlichen Komfort. Die Suche nach Rezeptnamen ist deshalb Should, denn das Rezeptarchiv bleibt auch ohne Suche nutzbar.
-
 ## Fachliche Regeln
 
-- Vorrat und Rezepte verwenden ausschließlich Zutaten aus dem Zutatenkatalog. Unterschiedliche Schreibweisen dürfen nicht zu falschen Vergleichen führen; die technische Umsetzung folgt in Phase 2.
-- Beim Eingeben einer Zutat werden passende Zutaten aus dem Zutatenkatalog vorgeschlagen. Gibt es keine passende Zutat, legt der Nutzer eine neue an; sie steht danach in Vorrat und Rezepten zur Auswahl.
-- Zwei Zutatennamen gelten als gleich, wenn sie sich nur in Groß-/Kleinschreibung oder in Leerzeichen am Anfang oder Ende unterscheiden. In diesem Fall wird die vorhandene Zutat verwendet und keine neue angelegt. Gespeichert bleibt die Schreibweise der ersten Eingabe.
+**Zutaten**
+- Vorrat und Rezepte verwenden nur Zutaten aus dem Zutatenkatalog.
+- Beim Tippen werden passende Zutaten vorgeschlagen. Fehlt eine, wird sie neu angelegt und steht danach überall zur Auswahl.
+- Namen, die sich nur in Groß-/Kleinschreibung oder in Leerzeichen am Rand unterscheiden, gelten als gleich. Dann wird die vorhandene Zutat verwendet; die zuerst eingegebene Schreibweise bleibt.
 - Ein Zutatenname darf nicht leer sein und nicht nur aus Leerzeichen bestehen.
-- Bekannte Einschränkung: Plural- und Schreibvarianten (z. B. „Tomate“ und „Tomaten“) werden nicht als gleich erkannt. Die Vorschläge beim Tippen sollen solche Duplikate vermeiden helfen.
-- Der Vorrat enthält nur vorhandene Zutaten. Jede Zutat des Zutatenkatalogs kann höchstens einmal im Vorrat stehen; Zutaten, die nicht im Vorrat stehen, gelten als nicht vorhanden. Einträge im Vorrat haben keine Mengenangaben.
-- Ein gültiges Rezept hat einen Namen, mindestens eine Zutat und eine nicht leere Zubereitung. Die Zubereitung ist ein Freitext.
-- Jede Zutat kommt in einem Rezept höchstens einmal vor. Wird sie erneut hinzugefügt, erscheint ein Hinweis und es entsteht kein zweiter Eintrag.
-- Rezeptnamen sind eindeutig. Zwei Rezeptnamen gelten nach derselben Regel wie Zutatennamen als gleich.
-- Mengen und Einheiten sind optionale Rezeptangaben und beeinflussen das Matching nicht.
-- Ein Rezept passt vollständig, wenn alle seine Zutaten im Vorrat vorhanden sind. Es erfolgt keine Aussage über ausreichende Mengen.
-- Salz, Öl und andere Grundzutaten werden wie alle anderen Zutaten behandelt und nicht automatisch als vorhanden angenommen.
-- Änderungen am Vorrat lassen Rezepte und deren Zutaten unverändert. Nach einer Änderung wird das Matching mit dem aktuellen Vorrat berechnet.
+
+**Vorrat**
+- Jede Zutat steht höchstens einmal im Vorrat; was nicht darin steht, gilt als nicht vorhanden. Mengen werden nicht erfasst.
+- Salz, Öl und andere Grundzutaten werden wie alle Zutaten behandelt und nicht automatisch als vorhanden angenommen.
+
+**Rezepte**
+- Ein Rezept ist gültig mit Name, mindestens einer Zutat und einer nicht leeren Zubereitung (Freitext).
+- Jede Zutat steht höchstens einmal in einem Rezept; erneutes Hinzufügen zeigt einen Hinweis.
+- Rezeptnamen sind eindeutig, nach derselben Regel wie Zutatennamen.
+- Mengen und Einheiten sind optional.
+
+**Matching**
+- Ein Rezept passt vollständig, wenn alle seine Zutaten im Vorrat stehen. Mengen werden nicht geprüft.
+- Änderungen am Vorrat ändern keine Rezepte; das Matching verwendet immer den aktuellen Vorrat.
 
 ## User Stories mit Akzeptanzkriterien
 
-Die Stories sind nach Anwendungsfall gruppiert; der Farbpunkt zeigt die Priorität. Ein Klick auf eine Story klappt sie mit ihren Akzeptanzkriterien auf.Alle Kriterien folgen dem Format **Gegeben / Wenn / Dann**; der genaue Wortlaut von Hinweistexten kann im Design (Phase 2) angepasst werden, ihre Aussage bleibt gleich.
-
-US-06 und US-19 sowie US-13, US-17 und US-18 entstanden am 09.11.2026 durch Aufteilung größerer Stories, damit jede Story einzeln umsetzbar und testbar ist.
+Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit ihren Akzeptanzkriterien (Gegeben / Wenn / Dann) auf. Hinweistexte dürfen im Design (Phase 2) umformuliert werden; ihre Aussage bleibt gleich.
 
 ### Story Map
 
-Spalten sind die Anwendungsfälle, Zeilen die Prioritäten. Die Must-Zeile ist der MVP.
+🟣 **Must** ist nötig für den Kernablauf: Zutaten erfassen, Rezepte verwalten, passende Rezepte und fehlende Zutaten sehen, alles dauerhaft gespeichert, auf dem Smartphone auch offline. Die Must-Zeile ist der MVP. 🟢 **Should** verbessert die Nutzung, 🔵 **Could** ist Komfort.
 
 | | 🥕 AF-1<br>Vorrat pflegen | 📖 AF-2<br>Rezepte sammeln | 🍳 AF-3<br>Was kann ich kochen? | 🛒 AF-4<br>Einkauf planen | 👩‍🍳 AF-5<br>Nach Rezept kochen |
 | --- | --- | --- | --- | --- | --- |
 | 🟣 **Must** | [US-01](#us-01)<br>[US-02](#us-02)<br>[US-03](#us-03)<br>[US-13](#us-13)<br>[US-17](#us-17)<br>[US-18](#us-18) | [US-04](#us-04)<br>[US-05](#us-05)<br>[US-06](#us-06)<br>[US-19](#us-19) | [US-08](#us-08)<br>[US-09](#us-09) | – | – |
 | 🟢 **Should** | [US-14](#us-14) | [US-07](#us-07) | – | [US-10](#us-10) | – |
 | 🔵 **Could** | [US-15](#us-15) | [US-11](#us-11) | – | [US-12](#us-12) | [US-16](#us-16) |
-
-Farben: 🟣 Must · 🟢 Should · 🔵 Could
 
 ### 🥕 AF-1 · Vorrat pflegen
 
@@ -585,30 +555,14 @@ Farben: 🟣 Must · 🟢 Should · 🔵 Could
 
 **Referenzdatensatz für NFR-02, NFR-07 und NFR-08:** 200 Zutaten im Zutatenkatalog, die alle im Vorrat stehen, und 100 Rezepte mit je bis zu 20 Zutaten. Die Datenmengen sind ein Referenzwert für die Messung, keine Obergrenze. Testgerät und Messmethode werden nach Festlegung der Plattform dokumentiert.
 
-## Prüfung auf Widersprüche und Unklarheiten
+## Bekannte Einschränkungen und Risiken
 
-Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026. Überholte Befunde bleiben zur Nachvollziehbarkeit stehen und sind als solche markiert.
+- **Mengen:** „Zutat vorhanden“ heißt nicht „genug davon“. Rezeptmengen werden angezeigt, aber nicht mit dem Vorrat verglichen; die Oberfläche macht das sichtbar.
+- **Pluralformen:** „Tomate“ und „Tomaten“ gelten als verschiedene Zutaten. Die Zutatenvorschläge sollen solche Duplikate vermeiden.
+- **Leeres Archiv (AF-3):** Jausi nützt erst, wenn Rezepte erfasst sind; beim ersten Start findet das Matching nichts.
+- **Einzelerfassung (AF-1, Risiko):** Nach einem großen Einkauf müssen Zutaten einzeln eingetragen werden. Ist das zu mühsam, veraltet der Vorrat. Mehrere Zutaten auf einmal hinzuzufügen wäre eine mögliche spätere Erweiterung.
+- **Datenverlust:** Die Daten liegen nur auf dem Gerät, ohne Konto oder Synchronisierung. Bei Geräteverlust oder Löschen der App sind sie weg; Sicherung und Export gehören nicht zum MVP.
+- **Externe Dienste:** Der MVP braucht keine externen APIs oder kostenpflichtigen Dienste. Werden später welche gewählt, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren.
+- **Offen für Phase 2:** Plattform und Speichermethode.
 
-| Befund | Bewertung und Korrektur |
-| --- | --- |
-| Suche war Must, obwohl der Kernablauf über das Rezeptarchiv möglich ist. | US-07 und FR-04 auf Should gesetzt; MVP entsprechend angepasst. |
-| Produktabnahme und Phase-1-Abschluss waren vermischt. | Separate Definition of Done für die Spezifikation ergänzt; App-Tests sind erst später auszuführen. |
-| Technische Vorbereitung wurde zu früh empfohlen. | Technologieauswahl und Architektur auf Phase 2 verschoben; keine Implementierungsarbeiten in Phase 1. |
-| Ein Zutatenkatalog begrenzt die erfassbaren Lebensmittel. | **Überholt (09.11.2026):** Ursprünglich sollte das Team einen festen Startumfang festlegen. Ersetzt durch den mitwachsenden Zutatenkatalog (siehe letzte Zeile dieser Tabelle); ein Startumfang ist nicht mehr nötig. |
-| Die Leistungsgrenze war ein AI-Vorschlag ohne Teamvalidierung. | **Aktualisiert (09.11.2026):** Aufgeteilt in NFR-02, NFR-07 und NFR-08 mit gemeinsamem Referenzdatensatz; alle drei sind Should. Gemeinsame Bestätigung steht aus. |
-| Externe Abhängigkeiten und Kosten waren nicht explizit behandelt. | Der MVP verlangt keine externen APIs oder kostenpflichtigen Dienste. Falls später welche gewählt werden, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren. |
-| Manche Texte waren unklar, Begriffe waren inkonsistent. | Review durch AI und manuelles Review; verständlichere, konsistente Formulierungen und Abschnitt „Begriffe“ ergänzt. |
-| Ein vorgegebener Zutatenkatalog verhindert eigene Rezepte mit Zutaten, die nicht im Katalog stehen; damit scheitert der Kernablauf für diese Nutzer. | Vorschlag aus dem Team (09.11.2026): Der Zutatenkatalog wächst mit den Eingaben des Nutzers (US-13, Must). Komfortfunktionen sind Should bzw. Could (US-14, US-15). Der feste Katalog entfällt, die Anzahl der Must-Anforderungen bleibt bei den funktionalen Anforderungen gleich. Teamentscheidung ausstehend. |
-
-- „Zutat vorhanden“ bedeutet nicht, dass die Menge ausreicht. Die Oberfläche muss diese Einschränkung sichtbar machen.
-- Der Vorrat ist im MVP eine Liste vorhandener Zutaten, keine mengengenaue Bestandsführung.
-- Mengenangaben im Rezept und mengenunabhängiges Matching sind bewusst getrennt.
-- Der Zutatenkatalog ist zu Beginn leer und wächst mit den Eingaben des Nutzers. Ein vorgegebener Startumfang ist daher nicht nötig. Umbenennen, Zusammenführen und Löschen von Zutaten gehören nicht zum MVP.
-- Dauerhafte Speicherung ist verbindlich; Plattform und Speichermethode sind noch offen.
-- Der MVP verwendet einen persönlichen Datenbestand ohne Anmeldung, gemeinsam genutzten Haushalt oder Synchronisierung.
-- Bekannte Einschränkung: Die Daten liegen nur auf dem eigenen Gerät. Geht das Smartphone verloren oder wird die App gelöscht, sind Zutatenkatalog, Vorrat und Rezepte verloren. Sicherung, Export und Synchronisierung gehören nicht zum MVP.
-- Ein Ablaufdatum ist eine spätere Idee, keine Anforderung für die aktuelle Umsetzung.
-- Bekanntes Risiko (AF-1): Nach einem großen Einkauf müssen Zutaten einzeln eingetragen werden. Ist das zu mühsam, wird der Vorrat nicht gepflegt und das Matching verliert seinen Wert. Mehrere Zutaten auf einmal hinzuzufügen wäre eine mögliche spätere Erweiterung; sie ist noch nicht als Anforderung erfasst.
-- Bekannte Einschränkung (AF-3): Jausi bringt erst Nutzen, wenn Rezepte im Archiv stehen. Beim ersten Start findet das Matching nichts (siehe Persona Jonas).
-
-Die Spezifikation ist ein Arbeitsentwurf. Vor Abschluss von Phase 1 bestätigt das Team die offenen Punkte in [mvp.md](mvp.md), Abschnitt „Noch in Phase 1 klären“. Technische Entscheidungen bleiben Phase 2 vorbehalten.
+Die Befunde der AI-Prüfungen, die zu diesem Stand geführt haben, stehen in [ai-usage.md](ai-usage.md#befunde-der-ai-prüfungen).

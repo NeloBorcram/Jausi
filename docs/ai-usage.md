@@ -27,8 +27,24 @@ AI wird zur Strukturierung der Idee, Anforderungsanalyse und Prüfung auf Unklar
 | 09.11.2026 | Claude (Opus 5.5) im Chat | User Stories und Akzeptanzkriterien übersichtlicher anordnen | Der Nutzer empfand die Trennung von Story-Tabelle und Kriterien als unübersichtlich. AI schlug drei Gruppierungen vor; der Nutzer wählte die Gruppierung nach Anwendungsfall. Jede Story steht jetzt direkt bei ihren Kriterien, oben eine verlinkte Übersicht. Inhalte unverändert. |
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Darstellung der User Stories weiter verbessern | Der Nutzer lehnte die ersten zwei Stilvorschläge ab und bat um weitere Ideen. Aus vier Vorschlägen wählte er farbige Karten, aufklappbare Kriterien und eine Story Map. AI prüfte die Darstellung mit dem GitHub-Markdown-Renderer: Hinweisboxen funktionieren nicht innerhalb aufklappbarer Bereiche, daher sind die Karten immer sichtbar und nur die Akzeptanzkriterien aufklappbar. Inhalte unverändert. |
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Hinweisboxen bei den User Stories entfernen | Der Nutzer empfand die englischen Kartentitel („Important“, „Tip“, „Note“) als störend. Die Boxen wurden entfernt; jede Story ist jetzt vollständig aufklappbar, die Priorität zeigt der Farbpunkt. Darstellung erneut mit dem GitHub-Markdown-Renderer geprüft. Inhalte unverändert. |
+| 09.11.2026 | Claude (Opus 5.5) im Chat | `requirements.md` kürzen und lesbarer machen | Der Nutzer empfand das Dokument als zu lang. AI schlug vor, Doppelungen und Projekthistorie zu entfernen; der Nutzer stimmte zu. Produktziel, Zielgruppe und Nutzungskontext zu „Kontext“ zusammengefasst, Begriffe als Tabelle, Priorisierungsmaßstab in die Story Map verschoben, fachliche Regeln gruppiert, Befund-Tabelle nach `ai-usage.md` verschoben, Einschränkungen als kompakte Liste. Keine Anforderung entfernt. |
 
 Damit sind zwei unterschiedliche AI-Anwendungen dokumentiert: **Generierung und Strukturierung von Anforderungen** sowie **kritische Validierung der Spezifikation**. Die Generierung und die erste Prüfung erfolgten mit Codex; die sprachliche und inhaltliche Nachprüfung am 07.11.2026 erfolgte mit einem zweiten Werkzeug (Claude) und diente zugleich als unabhängige zweite Meinung. Darüber hinaus wurde AI am 09.11.2026 für Webrecherche, die Ausarbeitung von Personas und Bildentwürfe (Branding) eingesetzt.
+
+## Befunde der AI-Prüfungen
+
+Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team sie umgesetzt hat. Überholte Befunde bleiben zur Nachvollziehbarkeit stehen. Bis 09.11.2026 stand diese Tabelle in `requirements.md`.
+
+| Befund | Bewertung und Korrektur |
+| --- | --- |
+| Suche war Must, obwohl der Kernablauf über das Rezeptarchiv möglich ist. | US-07 und FR-04 auf Should gesetzt; MVP entsprechend angepasst. |
+| Produktabnahme und Phase-1-Abschluss waren vermischt. | Separate Definition of Done für die Spezifikation ergänzt; App-Tests sind erst später auszuführen. |
+| Technische Vorbereitung wurde zu früh empfohlen. | Technologieauswahl und Architektur auf Phase 2 verschoben; keine Implementierungsarbeiten in Phase 1. |
+| Ein Zutatenkatalog begrenzt die erfassbaren Lebensmittel. | **Überholt (09.11.2026):** Ursprünglich sollte das Team einen festen Startumfang festlegen. Ersetzt durch den mitwachsenden Zutatenkatalog (siehe letzte Zeile dieser Tabelle); ein Startumfang ist nicht mehr nötig. |
+| Die Leistungsgrenze war ein AI-Vorschlag ohne Teamvalidierung. | **Aktualisiert (09.11.2026):** Aufgeteilt in NFR-02, NFR-07 und NFR-08 mit gemeinsamem Referenzdatensatz; alle drei sind Should. Gemeinsame Bestätigung steht aus. |
+| Externe Abhängigkeiten und Kosten waren nicht explizit behandelt. | Der MVP verlangt keine externen APIs oder kostenpflichtigen Dienste. Falls später welche gewählt werden, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren. |
+| Manche Texte waren unklar, Begriffe waren inkonsistent. | Review durch AI und manuelles Review; verständlichere, konsistente Formulierungen und Abschnitt „Begriffe“ ergänzt. |
+| Ein vorgegebener Zutatenkatalog verhindert eigene Rezepte mit Zutaten, die nicht im Katalog stehen; damit scheitert der Kernablauf für diese Nutzer. | Vorschlag aus dem Team (09.11.2026): Der Zutatenkatalog wächst mit den Eingaben des Nutzers (US-13, Must). Komfortfunktionen sind Should bzw. Could (US-14, US-15). Der feste Katalog entfällt, die Anzahl der Must-Anforderungen bleibt bei den funktionalen Anforderungen gleich. Teamentscheidung ausstehend. |
 
 ## Verwendete Eingaben
 
@@ -49,6 +65,7 @@ Damit sind zwei unterschiedliche AI-Anwendungen dokumentiert: **Generierung und 
 - „Geht das eventuell schöner formatiert? Wirkt ein bissel durcheinander, wenn die User Stories oben sind und meine Akzeptanzkriterien unten.“
 - „Können wir das irgendwie noch schöner formatieren?“
 - „Die Box kann weg – das mit dem Important. Das stört dann doch mehr, als es nützt.“
+- „Review von Requirements, das Dokument scheint sehr lang, können wir es kürzen / kompakt machen? Lesbar machen für den Menschen?“
 
 Die vollständigen Phase-1-Vorgaben und Phasentermine wurden vom Nutzer im Chat bereitgestellt. Die verlinkte Moodle-Seite wurde nicht separat geprüft.
 
@@ -66,7 +83,7 @@ Die vollständigen Phase-1-Vorgaben und Phasentermine wurden vom Nutzer im Chat 
 - **Recherche an der Quelle geprüft:** Die Zahlen im README stammen aus Zusammenfassungen einer AI-Websuche; die AI hat die Quellseiten nicht selbst geöffnet. Der Nutzer hat die drei Quellen am 09.11.2026 geprüft; die Angaben stimmen.
 - **Fachbegriff falsch gedeutet:** Die AI hat „Zutatenkatalog“ zunächst als Synonym für „Zutatenliste“ behandelt. Fachliche Begriffe müssen daher vom Team und nicht von der AI festgelegt werden.
 - **Sprachliche Prüfung:** AI hat unklare und fehlerhafte Formulierungen sowie inkonsistente Begriffe zuverlässig gefunden. Das Kursvokabular und die Dozentenvorgaben kennt sie nicht; deren Einhaltung bleibt Aufgabe des Teams.
-- **Nachvollziehbare Prüfung:** Einzelbefunde und Korrekturen stehen in [requirements.md](requirements.md). Eine AI-Prüfung ersetzt keine unabhängige Bewertung durch die Studierenden.
+- **Nachvollziehbare Prüfung:** Einzelbefunde und Korrekturen stehen oben im Abschnitt „Befunde der AI-Prüfungen“. Eine AI-Prüfung ersetzt keine unabhängige Bewertung durch die Studierenden.
 
 ## Fortlaufende Pflege
 
