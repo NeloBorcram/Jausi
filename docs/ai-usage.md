@@ -28,6 +28,7 @@ AI wird zur Strukturierung der Idee, Anforderungsanalyse und Prüfung auf Unklar
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Darstellung der User Stories weiter verbessern | Der Nutzer lehnte die ersten zwei Stilvorschläge ab und bat um weitere Ideen. Aus vier Vorschlägen wählte er farbige Karten, aufklappbare Kriterien und eine Story Map. AI prüfte die Darstellung mit dem GitHub-Markdown-Renderer: Hinweisboxen funktionieren nicht innerhalb aufklappbarer Bereiche, daher sind die Karten immer sichtbar und nur die Akzeptanzkriterien aufklappbar. Inhalte unverändert. |
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Hinweisboxen bei den User Stories entfernen | Der Nutzer empfand die englischen Kartentitel („Important“, „Tip“, „Note“) als störend. Die Boxen wurden entfernt; jede Story ist jetzt vollständig aufklappbar, die Priorität zeigt der Farbpunkt. Darstellung erneut mit dem GitHub-Markdown-Renderer geprüft. Inhalte unverändert. |
 | 09.11.2026 | Claude (Opus 5.5) im Chat | `requirements.md` kürzen und lesbarer machen | Der Nutzer empfand das Dokument als zu lang. AI schlug vor, Doppelungen und Projekthistorie zu entfernen; der Nutzer stimmte zu. Produktziel, Zielgruppe und Nutzungskontext zu „Kontext“ zusammengefasst, Begriffe als Tabelle, Priorisierungsmaßstab in die Story Map verschoben, fachliche Regeln gruppiert, Befund-Tabelle nach `ai-usage.md` verschoben, Einschränkungen als kompakte Liste. Keine Anforderung entfernt. |
+| 09.11.2026 | Claude (Opus 5.5) im Chat | Farbpunkte bei den Prioritäten entfernen | Der Nutzer empfand die farbigen Kreise als zu viel. Entfernt in Story Map und Story-Titeln; die Priorität steht weiterhin als Wort dabei. |
 
 Damit sind zwei unterschiedliche AI-Anwendungen dokumentiert: **Generierung und Strukturierung von Anforderungen** sowie **kritische Validierung der Spezifikation**. Die Generierung und die erste Prüfung erfolgten mit Codex; die sprachliche und inhaltliche Nachprüfung am 07.11.2026 erfolgte mit einem zweiten Werkzeug (Claude) und diente zugleich als unabhängige zweite Meinung. Darüber hinaus wurde AI am 09.11.2026 für Webrecherche, die Ausarbeitung von Personas und Bildentwürfe (Branding) eingesetzt.
 
@@ -66,6 +67,7 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team
 - „Können wir das irgendwie noch schöner formatieren?“
 - „Die Box kann weg – das mit dem Important. Das stört dann doch mehr, als es nützt.“
 - „Review von Requirements, das Dokument scheint sehr lang, können wir es kürzen / kompakt machen? Lesbar machen für den Menschen?“
+- „Die Icon-Kreise können weg, die sind too much.“
 
 Die vollständigen Phase-1-Vorgaben und Phasentermine wurden vom Nutzer im Chat bereitgestellt. Die verlinkte Moodle-Seite wurde nicht separat geprüft.
 

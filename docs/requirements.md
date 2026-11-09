@@ -120,19 +120,19 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 ### Story Map
 
-🟣 **Must** ist nötig für den Kernablauf: Zutaten erfassen, Rezepte verwalten, passende Rezepte und fehlende Zutaten sehen, alles dauerhaft gespeichert, auf dem Smartphone auch offline. Die Must-Zeile ist der MVP. 🟢 **Should** verbessert die Nutzung, 🔵 **Could** ist Komfort.
+**Must** ist nötig für den Kernablauf: Zutaten erfassen, Rezepte verwalten, passende Rezepte und fehlende Zutaten sehen, alles dauerhaft gespeichert, auf dem Smartphone auch offline. Die Must-Zeile ist der MVP. **Should** verbessert die Nutzung, **Could** ist Komfort.
 
 | | 🥕 AF-1<br>Vorrat pflegen | 📖 AF-2<br>Rezepte sammeln | 🍳 AF-3<br>Was kann ich kochen? | 🛒 AF-4<br>Einkauf planen | 👩‍🍳 AF-5<br>Nach Rezept kochen |
 | --- | --- | --- | --- | --- | --- |
-| 🟣 **Must** | [US-01](#us-01)<br>[US-02](#us-02)<br>[US-03](#us-03)<br>[US-13](#us-13)<br>[US-17](#us-17)<br>[US-18](#us-18) | [US-04](#us-04)<br>[US-05](#us-05)<br>[US-06](#us-06)<br>[US-19](#us-19) | [US-08](#us-08)<br>[US-09](#us-09) | – | – |
-| 🟢 **Should** | [US-14](#us-14) | [US-07](#us-07) | – | [US-10](#us-10) | – |
-| 🔵 **Could** | [US-15](#us-15) | [US-11](#us-11) | – | [US-12](#us-12) | [US-16](#us-16) |
+| **Must** | [US-01](#us-01)<br>[US-02](#us-02)<br>[US-03](#us-03)<br>[US-13](#us-13)<br>[US-17](#us-17)<br>[US-18](#us-18) | [US-04](#us-04)<br>[US-05](#us-05)<br>[US-06](#us-06)<br>[US-19](#us-19) | [US-08](#us-08)<br>[US-09](#us-09) | – | – |
+| **Should** | [US-14](#us-14) | [US-07](#us-07) | – | [US-10](#us-10) | – |
+| **Could** | [US-15](#us-15) | [US-11](#us-11) | – | [US-12](#us-12) | [US-16](#us-16) |
 
 ### 🥕 AF-1 · Vorrat pflegen
 
 <a id="us-01"></a>
 <details>
-<summary>🟣 <strong>US-01 · Zutat zum Vorrat hinzufügen</strong> · Must</summary>
+<summary><strong>US-01 · Zutat zum Vorrat hinzufügen</strong> · Must</summary>
 
 > Als Nutzer möchte ich eine Zutat aus dem Zutatenkatalog zum Vorrat hinzufügen, damit Jausi weiß, welche Rezepte ich kochen kann.
 
@@ -152,7 +152,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-02"></a>
 <details>
-<summary>🟣 <strong>US-02 · Vorrat anzeigen</strong> · Must</summary>
+<summary><strong>US-02 · Vorrat anzeigen</strong> · Must</summary>
 
 > Als Nutzer möchte ich meinen Vorrat sehen, damit ich vorhandene Lebensmittel überblicken kann.
 
@@ -172,7 +172,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-03"></a>
 <details>
-<summary>🟣 <strong>US-03 · Zutat aus dem Vorrat entfernen</strong> · Must</summary>
+<summary><strong>US-03 · Zutat aus dem Vorrat entfernen</strong> · Must</summary>
 
 > Als Nutzer möchte ich verbrauchte Zutaten entfernen, damit mein Vorrat aktuell bleibt.
 
@@ -187,7 +187,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-13"></a>
 <details>
-<summary>🟣 <strong>US-13 · Zutatenvorschläge beim Tippen</strong> · Must</summary>
+<summary><strong>US-13 · Zutatenvorschläge beim Tippen</strong> · Must</summary>
 
 > Als Nutzer möchte ich beim Eintippen einer Zutat passende Zutaten aus meinem Zutatenkatalog vorgeschlagen bekommen, damit ich schnell auswähle, statt neu zu tippen.
 
@@ -207,7 +207,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-17"></a>
 <details>
-<summary>🟣 <strong>US-17 · Neue Zutat anlegen</strong> · Must</summary>
+<summary><strong>US-17 · Neue Zutat anlegen</strong> · Must</summary>
 
 > Als Nutzer möchte ich eine Zutat neu anlegen, wenn sie noch nicht im Zutatenkatalog steht, damit ich alle Zutaten meiner eigenen Rezepte verwenden kann.
 
@@ -227,7 +227,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-18"></a>
 <details>
-<summary>🟣 <strong>US-18 · Doppelte Zutaten verhindern</strong> · Must</summary>
+<summary><strong>US-18 · Doppelte Zutaten verhindern</strong> · Must</summary>
 
 > Als Nutzer möchte ich, dass Jausi doppelte Zutaten verhindert, damit das Matching nicht an unterschiedlichen Schreibweisen scheitert.
 
@@ -247,7 +247,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-14"></a>
 <details>
-<summary>🟢 <strong>US-14 · Zutaten umbenennen oder zusammenführen</strong> · Should</summary>
+<summary><strong>US-14 · Zutaten umbenennen oder zusammenführen</strong> · Should</summary>
 
 > Als Nutzer möchte ich Zutaten umbenennen oder zusammenführen, damit ich Tippfehler und Duplikate korrigieren kann.
 
@@ -267,7 +267,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-15"></a>
 <details>
-<summary>🔵 <strong>US-15 · Unbenutzte Zutaten löschen</strong> · Could</summary>
+<summary><strong>US-15 · Unbenutzte Zutaten löschen</strong> · Could</summary>
 
 > Als Nutzer möchte ich unbenutzte Zutaten löschen, damit der Zutatenkatalog übersichtlich bleibt.
 
@@ -289,7 +289,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-04"></a>
 <details>
-<summary>🟣 <strong>US-04 · Rezept anlegen</strong> · Must</summary>
+<summary><strong>US-04 · Rezept anlegen</strong> · Must</summary>
 
 > Als Nutzer möchte ich ein Rezept anlegen, damit ich es später wieder verwenden kann.
 
@@ -319,7 +319,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-05"></a>
 <details>
-<summary>🟣 <strong>US-05 · Archiv und Rezept öffnen</strong> · Must</summary>
+<summary><strong>US-05 · Archiv und Rezept öffnen</strong> · Must</summary>
 
 > Als Nutzer möchte ich das Rezeptarchiv und einzelne Rezepte öffnen, damit ich Zutaten und Zubereitung lesen kann.
 
@@ -344,7 +344,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-06"></a>
 <details>
-<summary>🟣 <strong>US-06 · Rezept bearbeiten</strong> · Must</summary>
+<summary><strong>US-06 · Rezept bearbeiten</strong> · Must</summary>
 
 > Als Nutzer möchte ich ein Rezept bearbeiten, damit ich Korrekturen und Änderungen festhalten kann.
 
@@ -364,7 +364,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-19"></a>
 <details>
-<summary>🟣 <strong>US-19 · Rezept löschen</strong> · Must</summary>
+<summary><strong>US-19 · Rezept löschen</strong> · Must</summary>
 
 > Als Nutzer möchte ich ein Rezept löschen, damit mein Archiv nur Rezepte enthält, die ich noch nutze.
 
@@ -385,7 +385,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-07"></a>
 <details>
-<summary>🟢 <strong>US-07 · Rezepte suchen</strong> · Should</summary>
+<summary><strong>US-07 · Rezepte suchen</strong> · Should</summary>
 
 > Als Nutzer möchte ich Rezepte nach Namen suchen, damit ich ein bestimmtes Gericht finde.
 
@@ -405,7 +405,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-11"></a>
 <details>
-<summary>🔵 <strong>US-11 · Favoriten</strong> · Could</summary>
+<summary><strong>US-11 · Favoriten</strong> · Could</summary>
 
 > Als Nutzer möchte ich Rezepte als Favoriten markieren, damit ich sie schnell wiederfinde.
 
@@ -424,7 +424,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-08"></a>
 <details>
-<summary>🟣 <strong>US-08 · Vollständig passende Rezepte anzeigen</strong> · Must</summary>
+<summary><strong>US-08 · Vollständig passende Rezepte anzeigen</strong> · Must</summary>
 
 > Als Nutzerin wie Lena möchte ich vollständig passende Rezepte anzeigen, damit ich ohne Einkauf schnell etwas kochen kann.
 
@@ -449,7 +449,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-09"></a>
 <details>
-<summary>🟣 <strong>US-09 · Fehlende Zutaten anzeigen</strong> · Must</summary>
+<summary><strong>US-09 · Fehlende Zutaten anzeigen</strong> · Must</summary>
 
 > Als Nutzer möchte ich fehlende Zutaten sehen, damit ich meinen Einkauf planen kann.
 
@@ -471,7 +471,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-10"></a>
 <details>
-<summary>🟢 <strong>US-10 · Höchstens zwei fehlende Zutaten</strong> · Should</summary>
+<summary><strong>US-10 · Höchstens zwei fehlende Zutaten</strong> · Should</summary>
 
 > Als Nutzerin wie Andrea möchte ich Rezepte mit höchstens zwei fehlenden Zutaten finden, damit ich vorhandene Lebensmittel aufbrauche, statt viel neu einzukaufen.
 
@@ -486,7 +486,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-12"></a>
 <details>
-<summary>🔵 <strong>US-12 · Einkaufsliste</strong> · Could</summary>
+<summary><strong>US-12 · Einkaufsliste</strong> · Could</summary>
 
 > Als Nutzer möchte ich fehlende Zutaten auf eine Einkaufsliste übernehmen, damit ich sie gesammelt sehe.
 
@@ -503,7 +503,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-16"></a>
 <details>
-<summary>🔵 <strong>US-16 · Abschnitte in der Zubereitung</strong> · Could</summary>
+<summary><strong>US-16 · Abschnitte in der Zubereitung</strong> · Could</summary>
 
 > Als Nutzer möchte ich die Zubereitung eines Rezepts in Abschnitte gliedern, damit ich beim Kochen nur den aktuellen Teil sehe, etwa „Boden“, „Füllung“ oder „Glasur“.
 
