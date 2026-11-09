@@ -5,8 +5,7 @@
 <h1 align="center">Jausi</h1>
 
 <p align="center">
-  <strong>Rezepte mit dem, was du daheim hast.</strong><br>
-  <sub>Logo: Idee, Teamentscheidung ausstehend (siehe <a href="docs/branding.md">Branding</a>)</sub>
+  <strong>Rezepte mit dem, was du daheim hast.</strong>
 </p>
 
 > [!NOTE]
@@ -42,7 +41,8 @@ Alle Nutzer wollen drei Dinge wissen: **Was habe ich da? Was kann ich damit koch
 
 ```mermaid
 flowchart LR
-    K["🧺 Zutatenkatalog<br/>wächst mit jeder Eingabe"] --> V["🥕 Vorrat<br/>was ich daheim habe"]
+    Q["📚 Zutaten-Datensatz<br/>ggf. aus externer Quelle"] -.->|"vom Team zusammengestellt"| K
+    K["🧺 Zutatenkatalog<br/>fest vorgegeben"] --> V["🥕 Vorrat<br/>was ich daheim habe"]
     K --> R["📖 Rezeptarchiv<br/>meine eigenen Rezepte"]
     V --> M{"Matching"}
     R --> M
@@ -50,16 +50,16 @@ flowchart LR
     M --> F["🛒 Fehlende Zutaten<br/>je Rezept"]
 ```
 
-Zutaten werden beim Tippen aus dem eigenen Zutatenkatalog vorgeschlagen oder neu angelegt; eine Duplikatprüfung verhindert unterschiedliche Schreibweisen. Das Matching prüft nur, **ob** eine Zutat vorhanden ist, nicht die Menge.
+Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschlagen. Das Team stellt ihn zusammen, für einen ausreichend großen Datensatz gegebenenfalls aus einer externen Quelle; eigene Zutaten anzulegen ist eine spätere Erweiterung. Das Matching prüft nur, **ob** eine Zutat vorhanden ist, nicht die Menge.
 
 ## Geplanter Funktionsumfang (MVP)
 
-- Zutaten im Vorrat erfassen und entfernen; vorhandene Zutaten werden beim Tippen vorgeschlagen, neue angelegt.
+- Zutaten aus dem festen Zutatenkatalog im Vorrat erfassen und entfernen; passende Zutaten werden beim Tippen vorgeschlagen.
 - Eigene Rezepte mit Zutaten, optionalen Mengenangaben und Zubereitung verwalten.
 - Passende Rezepte finden und fehlende Zutaten anzeigen.
 - Auf dem Smartphone nutzbar, auch ohne Internet.
 
-**Bewusst nicht im MVP:** Mengenvergleich, Suche nach Rezeptnamen (Should), Favoriten, Einkaufsliste und Kategorien (Could), Nutzerkonten. AI unterstützt die Projektarbeit; eine AI-Funktion in der App ist nicht vorgesehen. Details stehen im [MVP-Scope](docs/mvp.md).
+**Bewusst nicht im MVP:** Mengenvergleich, eigene Zutaten anlegen und Suche nach Rezeptnamen (Should), Favoriten, Einkaufsliste und Kategorien (Could), Nutzerkonten. AI unterstützt die Projektarbeit; eine AI-Funktion in der App ist nicht vorgesehen. Details stehen im [MVP-Scope](docs/mvp.md).
 
 ## Projektdokumentation
 
