@@ -6,37 +6,38 @@ Ein Nutzer erfasst vorhandene Zutaten und eigene Rezepte. Jausi zeigt, welche Re
 
 ## ✅ Im MVP enthalten
 
-- Zutatenkatalog: wächst mit den Eingaben des Nutzers; vorhandene Zutaten werden beim Tippen vorgeschlagen, fehlende neu angelegt, Duplikate verhindert.
-- Vorrat: Zutaten hinzufügen und entfernen.
+- Zutatenkatalog: fest vorgegeben, vom Team zusammengestellt (gegebenenfalls aus einer externen Quelle) und mit der App ausgeliefert; passende Zutaten werden beim Tippen vorgeschlagen.
+- Vorrat: Zutaten aus dem Katalog hinzufügen und entfernen.
 - Rezeptarchiv: Rezepte anlegen, anzeigen, bearbeiten und nach Bestätigung löschen.
 - Matching mit dem Vorrat: Anzahl fehlender Zutaten je Rezept im Archiv, Filter für vollständig passende Rezepte, fehlende Zutaten in den Rezeptdetails.
 - Dauerhafte Speicherung eines persönlichen Datenbestands.
 - Eingabevalidierung und verständliche Hinweise bei leerem Vorrat oder Archiv.
 - Bedienung auf dem Smartphone, auch ohne Internetverbindung.
 
-Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bis US-06, US-08, US-09, US-13 und US-17 bis US-19, die funktionalen Anforderungen FR-01 bis FR-03, FR-05 und FR-06 sowie die nichtfunktionalen Anforderungen NFR-01, NFR-03 bis NFR-06 und NFR-09. Begriffe wie Zutatenkatalog und Matching sind dort im Abschnitt „Begriffe“ definiert. Die gemeinsame Teamprüfung der Spezifikation steht noch aus.
+Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bis US-06, US-08, US-09, US-13 und US-19, die funktionalen Anforderungen FR-01 bis FR-03, FR-05 und FR-06 sowie die nichtfunktionalen Anforderungen NFR-01, NFR-03 bis NFR-06 und NFR-09. Begriffe wie Zutatenkatalog und Matching sind dort im Abschnitt „Begriffe“ definiert. Die gemeinsame Teamprüfung der Spezifikation steht noch aus.
 
 ## ❌ Außerhalb des MVP
 
 - **Mengen:** Mengenvergleich, Umrechnung von Einheiten, automatische Verbrauchsbuchung.
+- **Eigene Zutaten verwalten:** anlegen mit Duplikatprüfung (US-17, US-18, Should), umbenennen (US-14, Should), unbenutzte löschen (US-15, Could). Zutaten außerhalb des Katalogs können im MVP nur in der Zubereitung stehen.
 - **Konten und Daten:** Nutzerkonten, gemeinsame Haushalte, Synchronisierung, Sicherung und Export.
 - **Automatik:** AI-Rezeptgenerierung, Rezeptimporte, Barcode- oder Bilderkennung, Erkennung von Plural- und Schreibvarianten.
 - **Weitere Themen:** Ablaufdaten, Benachrichtigungen, Ernährungs- und Allergiefilter.
-- **Should/Could-Stories (nach dem MVP):** Suche (US-07), Filter „höchstens zwei fehlende Zutaten“ (US-10), Zutaten umbenennen (US-14), Favoriten (US-11), Einkaufsliste (US-12) und Abhaken beim Einkaufen (US-20), Kategorien für Zutaten und Rezepte (US-21, US-22), unbenutzte Zutaten löschen (US-15), Abschnitte in der Zubereitung (US-16).
+- **Weitere Should/Could-Stories (nach dem MVP):** Suche (US-07), Filter „höchstens zwei fehlende Zutaten“ (US-10), Favoriten (US-11), Einkaufsliste (US-12) und Abhaken beim Einkaufen (US-20), Kategorien für Zutaten und Rezepte (US-21, US-22), Abschnitte in der Zubereitung (US-16).
 - **Should-NFRs:** Leistungsziele NFR-02, NFR-07, NFR-08 und Lesbarkeit NFR-10 werden gemessen und dokumentiert, sind aber keine Abnahmebedingung.
 
 ## 🎬 Geplanter vollständiger Demo-Anwendungsfall
 
 Dieser Ablauf beschreibt die spätere Produktabnahme und deckt die Anwendungsfälle AF-1 bis AF-3 aus [requirements.md](requirements.md) ab. In Phase 1 wird seine Eindeutigkeit geprüft; die Software wird noch nicht umgesetzt oder getestet.
 
-> **Voraussetzung:** Die App läuft auf dem dokumentierten Smartphone-Testgerät im Flugmodus; Zutatenkatalog, Vorrat und Archiv sind leer.
+> **Voraussetzung:** Die App läuft auf dem dokumentierten Smartphone-Testgerät im Flugmodus; Vorrat und Archiv sind leer. Der ausgelieferte Zutatenkatalog enthält unter anderem Reis, Tomate und Ei.
 
-1. Im Vorrat Reis und Tomate als neue Zutaten anlegen; sie stehen danach im Zutatenkatalog und im Vorrat.
+1. Im Vorrat „tom“ eintippen und die vorgeschlagene Zutat Tomate wählen, ebenso Reis; beide stehen danach im Vorrat. Die Eingabe „Xyz“ zeigt den Hinweis „Zutat nicht im Katalog“.
 2. Das Rezept „Tomatenreis“ mit den Zutaten Reis und Tomate speichern; beide werden beim Tippen vorgeschlagen.
-3. Das Rezept „Eierreis“ speichern: „reis“ eintippen und die vorgeschlagene Zutat Reis wählen; Ei als neue Zutat anlegen. Der Zutatenkatalog enthält danach genau Reis, Tomate und Ei.
+3. Das Rezept „Eierreis“ speichern: „reis“ eintippen und die vorgeschlagene Zutat Reis wählen, dann Ei aus den Vorschlägen wählen. Ei steht danach im Rezept, aber nicht im Vorrat.
 4. Das Archiv zeigt bei Tomatenreis „alles da“ und bei Eierreis „1 fehlt“. Der Filter für vollständig passende Rezepte zeigt nur Tomatenreis. In den Details von Eierreis wird Ei als fehlende Zutat angezeigt.
 5. Tomate aus dem Vorrat entfernen: Das Archiv zeigt bei Tomatenreis jetzt „1 fehlt“, und in den Details steht Tomate als fehlende Zutat.
-6. Die App neu starten: Zutatenkatalog, Rezepte und aktualisierter Vorrat sind weiterhin vorhanden.
+6. Die App neu starten: Rezepte und aktualisierter Vorrat sind weiterhin vorhanden.
 
 ## ☑️ Definition of Done für Phase 1
 
@@ -65,7 +66,7 @@ Abgehakt sind nur Punkte, die sich anhand der Dokumente nachprüfen lassen. Die 
 
 Vom Team in der Lehrveranstaltung am 09.11.2026 zu bestätigen. Nach dem Termin wird jeder Punkt abgehakt oder mit der abweichenden Entscheidung ergänzt.
 
-- [ ] Mitwachsender Zutatenkatalog statt festem Katalog (US-13 bis US-15, US-17, US-18).
+- [ ] Fester Zutatenkatalog statt mitwachsendem (geändert am 09.11.2026): Das Team stellt einen großen Zutaten-Datensatz zusammen, gegebenenfalls aus einer externen Quelle; mögliche Quellen stehen in [requirements.md](requirements.md#bekannte-einschränkungen-und-risiken). Eigenes Anlegen von Zutaten (US-17, US-18) wird Should; Quelle und Umfang sind noch festzulegen.
 - [ ] Personas Lena, Andrea und Jonas sowie Lena als primäre Persona.
 - [ ] Nutzungskontext Smartphone und Offline-Nutzung (NFR-01, NFR-09).
 - [ ] Aufteilung der Leistungsziele (NFR-02, NFR-07, NFR-08), alle Should.

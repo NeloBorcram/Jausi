@@ -13,7 +13,7 @@ AI hat uns geholfen, die Idee zu strukturieren, Anforderungen zu formulieren und
 **Ergebnis:** Produktidee „Rezepte mit dem, was du daheim hast“, User Stories mit Akzeptanzkriterien, funktionale und nichtfunktionale Anforderungen, MVP-Abgrenzung, später Personas und Anwendungsfälle.
 
 **Was wir geändert haben**
-- Die AI empfahl einen **festen Zutatenkatalog** mit rund 50 Zutaten. Der Nutzer schlug stattdessen einen **mitwachsenden Katalog** vor, weil jeder andere Zutaten verwendet. Die AI ergänzte Duplikatprüfung, Pluralformen als Einschränkung und die Aufteilung in Must, Should und Could.
+- Die AI empfahl einen **festen Zutatenkatalog** mit rund 50 Zutaten. Der Nutzer schlug stattdessen einen **mitwachsenden Katalog** vor, weil jeder andere Zutaten verwendet. Die AI ergänzte Duplikatprüfung, Pluralformen als Einschränkung und die Aufteilung in Must, Should und Could. Später am selben Tag kehrte der Nutzer für den MVP zum **festen Katalog** zurück: Das Team stellt einen großen Zutaten-Datensatz zusammen, gegebenenfalls aus einer externen Quelle; eigene Zutaten werden Should.
 - Die ersten AI-Personas („Studierende“, „Person ohne Verschwendung“) waren dem Nutzer zu vage. Daraus wurden drei ausführliche Personas.
 - Der erste Vorschlag mit drei Anwendungsfällen ließ sieben Stories ohne Zuordnung; nach genauerer Prüfung wurden es fünf.
 
@@ -35,7 +35,7 @@ AI hat uns geholfen, die Idee zu strukturieren, Anforderungen zu formulieren und
 ## Kritische Bewertung
 
 - **Nützlich:** AI übersetzt eine grobe Idee schnell in überprüfbare Anforderungen und findet Begriffsfehler und Widersprüche zuverlässig.
-- **Entscheidende Ideen kamen vom Team:** Den mitwachsenden Katalog und zusammengesetzte Rezepte (daraus US-16) brachte der Nutzer ein. Die AI fragte nach dem Nutzungskontext; Smartphone und Offline-Nutzung hat der Nutzer entschieden. Statt der AI-Idee, fehlende Zutaten einzeln in den Vorrat zu übernehmen, schlug der Nutzer eine Einkaufsliste zum Abhaken während des Einkaufs vor (US-20).
+- **Entscheidende Ideen kamen vom Team:** Den mitwachsenden Katalog (später für den MVP zurückgenommen) und zusammengesetzte Rezepte (daraus US-16) brachte der Nutzer ein. Die AI fragte nach dem Nutzungskontext; Smartphone und Offline-Nutzung hat der Nutzer entschieden. Statt der AI-Idee, fehlende Zutaten einzeln in den Vorrat zu übernehmen, schlug der Nutzer eine Einkaufsliste zum Abhaken während des Einkaufs vor (US-20).
 - **AI geht zu weit:** Sie empfahl früh Technik und ein Grundgerüst, also Arbeit aus späteren Phasen. Das wurde zurückgenommen und als Projektregel festgehalten.
 - **AI geht unsauber mit Begriffen um:** Sie behandelte „Zutatenkatalog“ als Synonym für „Zutatenliste“ und nannte die Akzeptanzkriterien „Szenario“ (Begriff aus BDD), obwohl die Aufgabe „Akzeptanzkriterien“ verlangt. Beides bemerkte der Nutzer. Fachbegriffe legt das Team fest.
 - **AI-Ergebnisse brauchen Kontrolle:** Die Zahlen im README stammen aus einer AI-Websuche, ohne dass die AI die Seiten geöffnet hat; der Nutzer hat alle drei Quellen am 09.11.2026 geprüft. Das erste Developer-Review übersah bei US-11 denselben Formfehler, den es bei US-19 fand. Ein einzelner AI-Durchgang reicht nicht als Prüfung.
@@ -50,18 +50,18 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team
 | Suche war Must, obwohl der Kernablauf über das Rezeptarchiv möglich ist. | US-07 und FR-04 auf Should gesetzt; MVP entsprechend angepasst. |
 | Produktabnahme und Phase-1-Abschluss waren vermischt. | Separate Definition of Done für die Spezifikation ergänzt; App-Tests sind erst später auszuführen. |
 | Technische Vorbereitung wurde zu früh empfohlen. | Technologieauswahl und Architektur auf Phase 2 verschoben; keine Implementierungsarbeiten in Phase 1. |
-| Ein Zutatenkatalog begrenzt die erfassbaren Lebensmittel. | **Überholt (09.11.2026):** Ursprünglich sollte das Team einen festen Startumfang festlegen. Ersetzt durch den mitwachsenden Zutatenkatalog (siehe letzte Zeile dieser Tabelle); ein Startumfang ist nicht mehr nötig. |
+| Ein Zutatenkatalog begrenzt die erfassbaren Lebensmittel. | **Wieder aktuell (09.11.2026):** Nach einem Zwischenstand mit mitwachsendem Katalog (letzte Zeile dieser Tabelle) gilt im MVP wieder ein fester Katalog. Dafür wird gegebenenfalls eine externe Quelle für einen großen Zutaten-Datensatz benötigt; die Begrenzung ist als Einschränkung dokumentiert, eigene Zutaten sind Should (US-17, US-18). Quelle und Umfang sind offen. |
 | Die Leistungsgrenze war ein AI-Vorschlag ohne Teamvalidierung. | **Aktualisiert (09.11.2026):** Aufgeteilt in NFR-02, NFR-07 und NFR-08 mit gemeinsamem Referenzdatensatz; alle drei sind Should. Gemeinsame Bestätigung steht aus. |
 | Externe Abhängigkeiten und Kosten waren nicht explizit behandelt. | Der MVP verlangt keine externen APIs oder kostenpflichtigen Dienste. Falls später welche gewählt werden, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren. |
 | Manche Texte waren unklar, Begriffe waren inkonsistent. | Review durch AI und manuelles Review; verständlichere, konsistente Formulierungen und Abschnitt „Begriffe“ ergänzt. |
-| Ein vorgegebener Zutatenkatalog verhindert eigene Rezepte mit Zutaten, die nicht im Katalog stehen; damit scheitert der Kernablauf für diese Nutzer. | Vorschlag aus dem Team (09.11.2026): Der Zutatenkatalog wächst mit den Eingaben des Nutzers (US-13, Must). Komfortfunktionen sind Should bzw. Could (US-14, US-15). Der feste Katalog entfällt, die Anzahl der Must-Anforderungen bleibt bei den funktionalen Anforderungen gleich. Teamentscheidung ausstehend. |
+| Ein vorgegebener Zutatenkatalog verhindert eigene Rezepte mit Zutaten, die nicht im Katalog stehen; damit scheitert der Kernablauf für diese Nutzer. | **Überholt (09.11.2026):** Rückkehr zum festen Katalog, siehe oben. Ursprünglicher Vorschlag aus dem Team: Der Zutatenkatalog wächst mit den Eingaben des Nutzers (US-13, Must). Komfortfunktionen sind Should bzw. Could (US-14, US-15). Der feste Katalog entfällt, die Anzahl der Must-Anforderungen bleibt bei den funktionalen Anforderungen gleich. Teamentscheidung ausstehend. |
 
 ## Protokoll
 
 Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 
 <details>
-<summary><strong>Protokoll anzeigen (22 Einträge)</strong></summary>
+<summary><strong>Protokoll anzeigen (23 Einträge)</strong></summary>
 
 | Datum | Werkzeug | Aufgabe | Ergebnis / menschliche Entscheidung |
 | --- | --- | --- | --- |
@@ -88,6 +88,7 @@ Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Zweites Developer-Review: „Wo würden die Devs Fragen stellen?“ | AI las alle 22 Stories und fand zehn offene Fragen, darunter: Vorschläge nur am Wortanfang oder mitten im Wort, wohin eine neu angelegte Zutat wandert, wann gespeichert wird, und dass Lena jedes Rezept einzeln öffnen muss, um fehlende Zutaten zu sehen. Außerdem hatte US-11 denselben Formfehler (zwei „Wenn“) wie zuvor US-19, den die AI beim ersten Review übersehen hatte. Der Nutzer übernahm alle Empfehlungen: zehn neue oder aufgeteilte AK, Fehl-Anzahl in der Archivliste (FR-05), Offline für alle Funktionen (NFR-09), Begriffe Einkaufsliste und Kategorie. Teamentscheidung ausstehend. |
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Audit des gesamten Projekts | Automatische Prüfung von Story Map, Prioritäten, MVP-Liste, Anwendungsfällen, Links und Begriffen ohne Befund. Fünf Kleinigkeiten behoben: einheitliche Spalte „Im MVP“ bei den Anwendungsfällen, eigene Regelgruppe für die Einkaufsliste, Demo-Ablauf an die neuen Regeln angepasst, doppeltes Offline-AK in US-20 gestrichen, kritische Bewertung von acht auf sechs Punkte gekürzt. Keine Anforderung inhaltlich geändert. |
 | 09.11.2026 | Codex im Chat | Bereitgestellte ADR-Vorlage an Jausi anpassen und einen ersten ADR zu Infrastruktur und Releases vorbereiten | Manuel gab Infrastruktur als Code und manuelle Produktionsfreigabe vor. Codex formulierte und verglich Optionen; Terraform, GitHub Actions und Azure-Slots sind ein bedingter Vorschlag. Teamfreigabe, Plattform, Budget und Nachweise sind offen. |
+| 09.11.2026 | Claude (Opus 5.5) im Chat | Offene Punkte aus `mvp.md` durchgehen: Aufwand des mitwachsenden Zutatenkatalogs | AI schätzte den Mehraufwand gegenüber einem festen Katalog als gering ein (Neuanlage und Duplikatprüfung). Der Nutzer entschied dennoch, für den MVP zu einem festen Katalog zurückzukehren: Für einen großen Zutaten-Datensatz wird gegebenenfalls eine externe Quelle benötigt; FoodEx2, FoodOn, LanguaL und FooDB aus seiner eigenen Recherche sind als mögliche Quellen dokumentiert, nicht als Entscheidung. AI fragte nach Priorität und Umgang mit fehlenden Zutaten; der Nutzer wählte: US-17 und US-18 Should, fehlende Zutaten nur in der Zubereitung (dokumentierte Einschränkung). AI passte Stories, FR-01, FR-06, neues FR-15, Regeln, Diagramme und Demo an. Die Quellen hat die AI nicht geprüft. Teamentscheidung ausstehend. |
 
 </details>
 

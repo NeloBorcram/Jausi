@@ -38,4 +38,4 @@ Sie unterscheiden sich in Motivation, Erfahrung und Nutzungssituation.
 - **Frust:** Rezepte aus dem Internet passen nie zu dem, was er daheim hat.
 - **Sicht auf Jausi:** Einstieg. Rezepte einfach anlegen und wiederfinden.
 - **Wichtigste User Stories:** US-04, US-05, US-13, US-17.
-- **Erkannte Lücke:** Mit einem leeren Rezeptarchiv bietet Jausi am Anfang wenig Nutzen. Beispielrezepte wären eine mögliche spätere Erweiterung; sie sind nicht Teil des MVP und noch nicht als Anforderung erfasst.
+- **Erkannte Lücken:** Mit einem leeren Rezeptarchiv bietet Jausi am Anfang wenig Nutzen. Enthält der feste Zutatenkatalog eine Zutat seiner Rezepte nicht, kann er sie im MVP nur in der Zubereitung erwähnen; eigene Zutaten (US-17) kommen erst nach dem MVP. Beispielrezepte wären eine mögliche spätere Erweiterung; sie sind nicht Teil des MVP und noch nicht als Anforderung erfasst.

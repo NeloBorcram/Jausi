@@ -41,7 +41,7 @@ Die Begriffe gelten verbindlich für alle Projektdokumente; wörtliche Zitate in
 
 | Begriff | Bedeutung | Nicht verwenden |
 | --- | --- | --- |
-| **Zutatenkatalog** | Persönliche Liste aller Zutaten mit genau einer Schreibweise je Zutat. Startet leer und wächst mit jeder neuen Zutat. Vorrat und Rezepte verwenden nur Zutaten daraus. | Zutatenliste |
+| **Zutatenkatalog** | Fest vorgegebene Liste aller Zutaten mit genau einer Schreibweise je Zutat. Das Team stellt sie zusammen, für einen ausreichend großen Datensatz gegebenenfalls aus einer externen Quelle; sie wird mit der App ausgeliefert. Vorrat und Rezepte verwenden nur Zutaten daraus. Eigene Zutaten anzulegen ist eine spätere Erweiterung (US-17, Should). | Zutatenliste |
 | **Vorrat** | Zutaten aus dem Katalog, die gerade daheim sind, ohne Mengen. | Bestand, Vorratsliste, Inventur, Inventurliste |
 | **Rezept** | Name, mindestens eine Zutat und eine Zubereitung als Freitext; Mengen sind optional und Freitext. | – |
 | **Rezeptarchiv** (kurz: Archiv) | Alle gespeicherten Rezepte. | Rezeptliste, Rezeptsammlung |
@@ -55,7 +55,7 @@ Die Begriffe gelten verbindlich für alle Projektdokumente; wörtliche Zitate in
 
 ```mermaid
 erDiagram
-    ZUTATENKATALOG ||--o{ ZUTAT : "enthält"
+    ZUTATENKATALOG ||--o{ ZUTAT : "enthält (fest vorgegeben)"
     VORRAT }o--o{ ZUTAT : "enthält (ohne Menge)"
     REZEPTARCHIV ||--o{ REZEPT : "enthält"
     REZEPT }o--|{ ZUTAT : "verwendet (Menge optional)"
@@ -64,10 +64,13 @@ erDiagram
 ## Fachliche Regeln
 
 **Zutaten**
-- Vorrat und Rezepte verwenden nur Zutaten aus dem Zutatenkatalog.
+- Vorrat und Rezepte verwenden nur Zutaten aus dem Zutatenkatalog. Im MVP ist der Katalog fest: Nutzer können keine Zutaten anlegen, umbenennen oder löschen.
 - Beim Tippen werden alle Zutaten vorgeschlagen, deren Name die Eingabe enthält, ohne Beachtung der Groß-/Kleinschreibung und alphabetisch sortiert.
-- Fehlt eine Zutat, wird sie neu angelegt, direkt dort übernommen, wo sie eingegeben wurde (Vorrat oder Rezept), und steht danach überall zur Auswahl.
-- Namen, die sich nur in Groß-/Kleinschreibung oder in Leerzeichen am Rand unterscheiden, gelten als gleich. Dann wird die vorhandene Zutat verwendet; die zuerst eingegebene Schreibweise bleibt.
+- Enthält keine Zutat des Katalogs die Eingabe, erscheint ein Hinweis, und es wird nichts übernommen.
+
+**Eigene Zutaten (Should, nach dem MVP)**
+- Fehlt eine Zutat, wird sie neu angelegt, direkt dort übernommen, wo sie eingegeben wurde (Vorrat oder Rezept), und steht danach überall zur Auswahl (US-17).
+- Namen, die sich nur in Groß-/Kleinschreibung oder in Leerzeichen am Rand unterscheiden, gelten als gleich. Dann wird die vorhandene Zutat verwendet; die zuerst eingegebene Schreibweise bleibt (US-18).
 - Ein Zutatenname darf nicht leer sein und nicht nur aus Leerzeichen bestehen.
 
 **Vorrat**
@@ -79,6 +82,7 @@ erDiagram
 - Jede Zutat steht höchstens einmal in einem Rezept; erneutes Hinzufügen zeigt einen Hinweis.
 - Rezeptnamen sind eindeutig, nach derselben Regel wie Zutatennamen.
 - Mengen sind optional und werden je Zutat als Freitext erfasst, etwa „500 g“ oder „1 Prise“.
+- Zutaten, die nicht im Zutatenkatalog stehen, können im MVP nur in der Zubereitung erwähnt werden; sie zählen nicht fürs Matching.
 
 **Anzeige und Speichern**
 - Vorrat und Archiv sind alphabetisch sortiert, ohne Beachtung der Groß-/Kleinschreibung.
@@ -103,8 +107,8 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 | | 🥕 AF-1<br>Vorrat pflegen | 📖 AF-2<br>Rezepte sammeln | 🍳 AF-3<br>Was kann ich kochen? | 🛒 AF-4<br>Einkauf planen | 👩‍🍳 AF-5<br>Nach Rezept kochen |
 | --- | --- | --- | --- | --- | --- |
-| **Must** | [US-01](#us-01)<br>[US-02](#us-02)<br>[US-03](#us-03)<br>[US-13](#us-13)<br>[US-17](#us-17)<br>[US-18](#us-18) | [US-04](#us-04)<br>[US-05](#us-05)<br>[US-06](#us-06)<br>[US-19](#us-19) | [US-08](#us-08)<br>[US-09](#us-09) | – | – |
-| **Should** | [US-14](#us-14) | [US-07](#us-07) | – | [US-10](#us-10) | – |
+| **Must** | [US-01](#us-01)<br>[US-02](#us-02)<br>[US-03](#us-03)<br>[US-13](#us-13) | [US-04](#us-04)<br>[US-05](#us-05)<br>[US-06](#us-06)<br>[US-19](#us-19) | [US-08](#us-08)<br>[US-09](#us-09) | – | – |
+| **Should** | [US-17](#us-17)<br>[US-18](#us-18)<br>[US-14](#us-14) | [US-07](#us-07) | – | [US-10](#us-10) | – |
 | **Could** | [US-15](#us-15)<br>[US-21](#us-21) | [US-11](#us-11)<br>[US-22](#us-22) | – | [US-12](#us-12)<br>[US-20](#us-20) | [US-16](#us-16) |
 
 ### 🥕 AF-1 · Vorrat pflegen
@@ -178,7 +182,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 <details>
 <summary><strong>US-13 · Zutatenvorschläge beim Tippen</strong> · Must</summary>
 
-> Als Nutzer möchte ich beim Eintippen einer Zutat passende Zutaten aus meinem Zutatenkatalog vorgeschlagen bekommen, damit ich schnell auswähle, statt neu zu tippen.
+> Als Nutzer möchte ich beim Eintippen einer Zutat passende Zutaten aus dem Zutatenkatalog vorgeschlagen bekommen, damit ich schnell auswähle, statt den ganzen Namen zu tippen.
 
 *Gehört auch zu AF-2.*
 
@@ -199,13 +203,18 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Wenn** die Person „eis“ eintippt
 - **Dann** werden „Eis“ und „Reis“ in dieser Reihenfolge vorgeschlagen, weil beide „eis“ enthalten.
 
+**AK 4**
+- **Gegeben** keine Zutat im Zutatenkatalog enthält „Xyz“
+- **Wenn** die Person „Xyz“ eintippt
+- **Dann** erscheint der Hinweis „Zutat nicht im Katalog“, und es wird keine Zutat übernommen.
+
 </details>
 
 <a id="us-17"></a>
 <details>
-<summary><strong>US-17 · Neue Zutat anlegen</strong> · Must</summary>
+<summary><strong>US-17 · Neue Zutat anlegen</strong> · Should</summary>
 
-> Als Nutzer möchte ich eine Zutat neu anlegen, wenn sie noch nicht im Zutatenkatalog steht, damit ich alle Zutaten meiner eigenen Rezepte verwenden kann.
+> Als Nutzer möchte ich eine Zutat neu anlegen, wenn sie nicht im Zutatenkatalog steht, damit ich auch Zutaten verwenden kann, die der feste Katalog nicht enthält.
 
 *Gehört auch zu AF-2.*
 
@@ -230,9 +239,9 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-18"></a>
 <details>
-<summary><strong>US-18 · Doppelte Zutaten verhindern</strong> · Must</summary>
+<summary><strong>US-18 · Doppelte Zutaten verhindern</strong> · Should</summary>
 
-> Als Nutzer möchte ich, dass Jausi doppelte Zutaten verhindert, damit das Matching nicht an unterschiedlichen Schreibweisen scheitert.
+> Als Nutzer möchte ich, dass Jausi beim Anlegen eigener Zutaten Duplikate verhindert, damit das Matching nicht an unterschiedlichen Schreibweisen scheitert.
 
 *Gehört auch zu AF-2.*
 
@@ -636,12 +645,12 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 | ID | Anforderung | Priorität | Bezug |
 | --- | --- | --- | --- |
-| FR-01 | Das System führt einen persönlichen Zutatenkatalog: Es schlägt beim Eintippen passende Zutaten vor, legt fehlende Zutaten neu an und verhindert Duplikate gemäß den fachlichen Regeln. | Must | US-01, US-04, US-13, US-17, US-18 |
+| FR-01 | Das System stellt einen fest vorgegebenen Zutatenkatalog bereit und schlägt beim Eintippen passende Zutaten daraus vor. | Must | US-01, US-04, US-13 |
 | FR-02 | Das System zeigt den Vorrat an und erlaubt, Zutaten aus dem Zutatenkatalog hinzuzufügen und zu entfernen; jede Zutat steht höchstens einmal im Vorrat. | Must | US-01–03 |
 | FR-03 | Das System erlaubt, Rezepte anzulegen, anzuzeigen, zu bearbeiten und nach einer Sicherheitsabfrage zu löschen, und prüft dabei die Regeln für gültige Rezepte. | Must | US-04–06, US-19 |
 | FR-04 | Das System findet Rezepte, deren Name den Suchbegriff enthält, ohne Beachtung der Groß-/Kleinschreibung. | Should | US-07 |
 | FR-05 | Das System berechnet für jedes Rezept die fehlenden Zutaten aus dem aktuellen Vorrat, zeigt deren Anzahl im Archiv und bietet einen Filter für vollständig passende Rezepte. | Must | US-08, US-09 |
-| FR-06 | Das System speichert Zutatenkatalog, Vorrat und Rezepte dauerhaft, sodass sie nach einem Neustart unverändert vorhanden sind. | Must | US-01–06, US-08, US-09, US-13, US-17–19 |
+| FR-06 | Das System speichert Vorrat und Rezepte dauerhaft, sodass sie nach einem Neustart unverändert vorhanden sind. | Must | US-01–06, US-08, US-09, US-19 |
 | FR-07 | Das System filtert Rezepte mit höchstens zwei fehlenden Zutaten und zeigt deren Anzahl. | Should | US-10 |
 | FR-08 | Das System erlaubt, Rezepte als Favoriten zu markieren und nach Favoriten zu filtern. | Could | US-11 |
 | FR-09 | Das System übernimmt die fehlenden Zutaten eines Rezepts ohne Duplikate auf eine Einkaufsliste. | Could | US-12 |
@@ -650,6 +659,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 | FR-12 | Das System erlaubt, die Zubereitung in benannte, einklappbare Abschnitte zu gliedern. | Could | US-16 |
 | FR-13 | Das System übernimmt abgehakte Zutaten der Einkaufsliste in den Vorrat und entfernt sie von der Liste. | Could | US-20 |
 | FR-14 | Das System erlaubt, Zutaten und Rezepten optional eine selbst angelegte Kategorie zuzuordnen und Vorrat und Archiv danach zu filtern. | Could | US-21, US-22 |
+| FR-15 | Das System erlaubt, eigene Zutaten anzulegen, speichert sie dauerhaft im Zutatenkatalog und verhindert Duplikate gemäß den fachlichen Regeln. | Should | US-17, US-18 |
 
 ## Nichtfunktionale Anforderungen
 
@@ -671,11 +681,17 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 ## Bekannte Einschränkungen und Risiken
 
 - **Mengen:** „Zutat vorhanden“ heißt nicht „genug davon“. Rezeptmengen werden angezeigt, aber nicht mit dem Vorrat verglichen; die Oberfläche macht das sichtbar.
-- **Pluralformen:** „Tomate“ und „Tomaten“ gelten als verschiedene Zutaten. Die Zutatenvorschläge sollen solche Duplikate vermeiden.
+- **Fester Zutatenkatalog (MVP):** Zutaten, die nicht im Katalog stehen, können nicht erfasst werden. Sie lassen sich nur in der Zubereitung erwähnen und zählen nicht fürs Matching. Eigene Zutaten (US-17, US-18) heben das nach dem MVP auf.
+- **Datensatz für den Zutatenkatalog (offen):** Der feste Katalog braucht einen großen Datensatz an Zutaten. Den von Hand zusammenzustellen ist aufwendig; daher wird gegebenenfalls eine externe Quelle benötigt. Ob und welche, entscheidet das Team; Lizenz, Umfang und deutsche Bezeichnungen sind dabei zu prüfen. Der Katalog wird mit der App ausgeliefert, damit sie offline funktioniert (NFR-09). Mögliche Quellen aus der Recherche des Teams (noch nicht geprüft):
+  - FoodEx2 (EFSA): europäische Klassifikation von Lebensmitteln und Zutaten
+  - FoodOn: offene Ontologie für Lebensmittel
+  - LanguaL: Thesaurus zur Beschreibung von Lebensmitteln
+  - FooDB: Datenbank der chemischen Inhaltsstoffe von Lebensmitteln
+- **Pluralformen:** Ab US-17 gelten „Tomate“ und „Tomaten“ als verschiedene Zutaten. Die Zutatenvorschläge sollen solche Duplikate vermeiden.
 - **Leeres Archiv (AF-3):** Jausi nützt erst, wenn Rezepte erfasst sind; beim ersten Start findet das Matching nichts.
 - **Einzelerfassung (AF-1, Risiko):** Nach einem großen Einkauf müssen Zutaten einzeln eingetragen werden. Ist das zu mühsam, veraltet der Vorrat. Das Abhaken auf der Einkaufsliste (US-20, Could) mildert das nach dem MVP; mehrere Zutaten auf einmal hinzuzufügen wäre eine weitere mögliche Erweiterung.
 - **Datenverlust:** Die Daten liegen nur auf dem Gerät, ohne Konto oder Synchronisierung. Bei Geräteverlust oder Löschen der App sind sie weg; Sicherung und Export gehören nicht zum MVP.
-- **Externe Dienste:** Der MVP braucht keine externen APIs oder kostenpflichtigen Dienste. Werden später welche gewählt, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren.
+- **Externe Dienste:** Der MVP braucht keine externen APIs oder kostenpflichtigen Dienste; eine externe Quelle für den Zutatenkatalog würde nur einmalig als Datengrundlage verwendet. Werden später welche gewählt, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren.
 - **Offen für Phase 2:** Plattform und Speichermethode.
 
 Die Befunde der AI-Prüfungen, die zu diesem Stand geführt haben, stehen in [ai-usage.md](ai-usage.md#befunde-der-ai-prüfungen).
