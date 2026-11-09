@@ -50,6 +50,8 @@ Die Begriffe gelten verbindlich für alle Projektdokumente; wörtliche Zitate in
 | **Vollständig passendes Rezept** | Alle Zutaten des Rezepts stehen im Vorrat. | – |
 | **Fehlende Zutat** | Zutat eines Rezepts, die nicht im Vorrat steht. | – |
 | **Favorit** | Vom Nutzer markiertes Rezept (Could). | Lieblingsrezept |
+| **Einkaufsliste** | Zutaten aus dem Katalog, die der Nutzer kaufen will (Could). Abgehakte Zutaten wandern in den Vorrat. | Shoppingliste |
+| **Kategorie** | Vom Nutzer selbst angelegte Gruppe für Zutaten oder Rezepte, etwa „Gemüse“ oder „Frühstück“ (Could). | Tag, Label |
 
 ```mermaid
 erDiagram
@@ -63,7 +65,8 @@ erDiagram
 
 **Zutaten**
 - Vorrat und Rezepte verwenden nur Zutaten aus dem Zutatenkatalog.
-- Beim Tippen werden passende Zutaten vorgeschlagen. Fehlt eine, wird sie neu angelegt und steht danach überall zur Auswahl.
+- Beim Tippen werden alle Zutaten vorgeschlagen, deren Name die Eingabe enthält, ohne Beachtung der Groß-/Kleinschreibung und alphabetisch sortiert.
+- Fehlt eine Zutat, wird sie neu angelegt, direkt dort übernommen, wo sie eingegeben wurde (Vorrat oder Rezept), und steht danach überall zur Auswahl.
 - Namen, die sich nur in Groß-/Kleinschreibung oder in Leerzeichen am Rand unterscheiden, gelten als gleich. Dann wird die vorhandene Zutat verwendet; die zuerst eingegebene Schreibweise bleibt.
 - Ein Zutatenname darf nicht leer sein und nicht nur aus Leerzeichen bestehen.
 
@@ -77,8 +80,11 @@ erDiagram
 - Rezeptnamen sind eindeutig, nach derselben Regel wie Zutatennamen.
 - Mengen sind optional und werden je Zutat als Freitext erfasst, etwa „500 g“ oder „1 Prise“.
 
-**Anzeige**
+**Anzeige und Speichern**
 - Vorrat und Archiv sind alphabetisch sortiert, ohne Beachtung der Groß-/Kleinschreibung.
+- Das Archiv zeigt bei jedem Rezept, ob alle Zutaten vorhanden sind oder wie viele fehlen.
+- Änderungen am Vorrat werden sofort gespeichert. Rezepte werden mit „Speichern“ gesichert; wer ein Rezept mit ungespeicherten Änderungen verlässt, bekommt eine Sicherheitsabfrage.
+- Die Einkaufsliste enthält nur Zutaten aus dem Zutatenkatalog (Could).
 
 **Matching**
 - Ein Rezept passt vollständig, wenn alle seine Zutaten im Vorrat stehen. Mengen werden nicht geprüft.
@@ -117,6 +123,11 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Gegeben** „Reis“ steht bereits im Vorrat
 - **Wenn** die Person „Reis“ erneut hinzufügt
 - **Dann** steht „Reis“ weiterhin genau einmal im Vorrat.
+
+**AK 3**
+- **Gegeben** die Person hat „Reis“ zum Vorrat hinzugefügt
+- **Wenn** sie die App sofort danach schließt und neu startet
+- **Dann** steht „Reis“ im Vorrat, ohne dass sie etwas speichern musste.
 
 </details>
 
@@ -180,6 +191,11 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Wenn** die Person den Vorschlag wählt
 - **Dann** wird „Reis“ übernommen, ohne dass eine neue Zutat entsteht.
 
+**AK 3**
+- **Gegeben** „Reis“ und „Eis“ stehen im Zutatenkatalog
+- **Wenn** die Person „eis“ eintippt
+- **Dann** werden „Eis“ und „Reis“ in dieser Reihenfolge vorgeschlagen, weil beide „eis“ enthalten.
+
 </details>
 
 <a id="us-17"></a>
@@ -194,10 +210,15 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 **AK 1**
 - **Gegeben** „Ei“ steht nicht im Zutatenkatalog
-- **Wenn** die Person „Ei“ eintippt und neu anlegt
-- **Dann** steht „Ei“ im Zutatenkatalog und ist in Vorrat und Rezepten auswählbar.
+- **Wenn** die Person im Vorrat „Ei“ eintippt und neu anlegt
+- **Dann** steht „Ei“ im Zutatenkatalog und im Vorrat und ist auch in Rezepten auswählbar.
 
 **AK 2**
+- **Gegeben** „Ei“ steht nicht im Zutatenkatalog
+- **Wenn** die Person beim Anlegen eines Rezepts „Ei“ eintippt und neu anlegt
+- **Dann** steht „Ei“ im Zutatenkatalog und im Rezept, aber nicht im Vorrat.
+
+**AK 3**
 - **Gegeben** die Eingabe ist leer oder besteht nur aus Leerzeichen
 - **Wenn** die Person eine Zutat anlegen will
 - **Dann** wird keine Zutat angelegt, und ein Hinweis erscheint.
@@ -244,6 +265,11 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Wenn** die Person „Tomaten“ mit „Tomate“ zusammenführt
 - **Dann** verweisen Vorrat und alle Rezepte nur noch auf „Tomate“, und „Tomaten“ ist nicht mehr im Zutatenkatalog.
 
+**AK 3**
+- **Gegeben** ein Rezept enthält sowohl „Tomate“ als auch „Tomaten“
+- **Wenn** die Person „Tomaten“ mit „Tomate“ zusammenführt
+- **Dann** steht „Tomate“ genau einmal im Rezept.
+
 </details>
 
 <a id="us-15"></a>
@@ -283,6 +309,11 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Gegeben** eine Zutat ohne Kategorie
 - **Wenn** die Person sie zum Vorrat hinzufügt
 - **Dann** ist das möglich; die Kategorie ist optional.
+
+**AK 3**
+- **Gegeben** es gibt noch keine Kategorie „Gewürze“
+- **Wenn** die Person bei Zimt „Gewürze“ eingibt
+- **Dann** wird die Kategorie angelegt und steht danach für weitere Zutaten zur Auswahl.
 
 </details>
 
@@ -368,6 +399,11 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Wenn** die Person speichert
 - **Dann** wird nicht gespeichert, und eine Fehlermeldung erscheint.
 
+**AK 4**
+- **Gegeben** die Person hat die Zubereitung geändert, aber nicht gespeichert
+- **Wenn** sie das Rezept verlässt
+- **Dann** erscheint eine Sicherheitsabfrage; bestätigt sie, wird die Änderung verworfen, bricht sie ab, bleibt sie im Rezept.
+
 </details>
 
 <a id="us-19"></a>
@@ -424,11 +460,14 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 **Akzeptanzkriterien**
 
 **AK 1**
-- **Gegeben** ein Rezept
+- **Gegeben** ein Rezept ist kein Favorit
 - **Wenn** die Person es als Favorit markiert
-- **Dann** erscheint es im Favoritenfilter
-- **Wenn** sie die Markierung entfernt
-- **Dann** nicht mehr.
+- **Dann** erscheint es im Favoritenfilter.
+
+**AK 2**
+- **Gegeben** ein Rezept ist Favorit
+- **Wenn** die Person die Markierung entfernt
+- **Dann** erscheint es nicht mehr im Favoritenfilter.
 
 </details>
 
@@ -449,6 +488,11 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Gegeben** ein Rezept ohne Kategorie
 - **Wenn** die Person es speichert
 - **Dann** ist es gültig; die Kategorie ist optional.
+
+**AK 3**
+- **Gegeben** es gibt noch keine Kategorie „Dessert“
+- **Wenn** die Person bei einem Rezept „Dessert“ eingibt
+- **Dann** wird die Kategorie angelegt und steht danach für weitere Rezepte zur Auswahl.
 
 </details>
 
@@ -499,6 +543,11 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Wenn** die Person es öffnet
 - **Dann** erscheint „Alle Zutaten vorhanden – Mengen nicht geprüft“.
 
+**AK 3**
+- **Gegeben** der Vorrat enthält Reis und Tomate, das Archiv „Tomatenreis“ (Reis, Tomate) und „Eierreis“ (Reis, Ei)
+- **Wenn** die Person das Archiv öffnet
+- **Dann** steht bei „Tomatenreis“ „alles da“ und bei „Eierreis“ „1 fehlt“, ohne dass sie ein Rezept öffnen muss.
+
 </details>
 
 ### 🛒 AF-4 · Einkauf planen
@@ -530,6 +579,11 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Gegeben** Ei fehlt für „Eierreis“ und steht bereits auf der Einkaufsliste
 - **Wenn** die Person die fehlenden Zutaten von „Eierreis“ übernimmt
 - **Dann** steht Ei genau einmal auf der Einkaufsliste.
+
+**AK 2**
+- **Gegeben** Milch steht im Zutatenkatalog, aber in keinem Rezept
+- **Wenn** die Person Milch über die Zutatenvorschläge direkt zur Einkaufsliste hinzufügt
+- **Dann** steht Milch auf der Einkaufsliste.
 
 </details>
 
@@ -588,7 +642,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 | FR-02 | Das System zeigt den Vorrat an und erlaubt, Zutaten aus dem Zutatenkatalog hinzuzufügen und zu entfernen; jede Zutat steht höchstens einmal im Vorrat. | Must | US-01–03 |
 | FR-03 | Das System erlaubt, Rezepte anzulegen, anzuzeigen, zu bearbeiten und nach einer Sicherheitsabfrage zu löschen, und prüft dabei die Regeln für gültige Rezepte. | Must | US-04–06, US-19 |
 | FR-04 | Das System findet Rezepte, deren Name den Suchbegriff enthält, ohne Beachtung der Groß-/Kleinschreibung. | Should | US-07 |
-| FR-05 | Das System berechnet für jedes Rezept die fehlenden Zutaten aus dem aktuellen Vorrat und bietet einen Filter für vollständig passende Rezepte. | Must | US-08, US-09 |
+| FR-05 | Das System berechnet für jedes Rezept die fehlenden Zutaten aus dem aktuellen Vorrat, zeigt deren Anzahl im Archiv und bietet einen Filter für vollständig passende Rezepte. | Must | US-08, US-09 |
 | FR-06 | Das System speichert Zutatenkatalog, Vorrat und Rezepte dauerhaft, sodass sie nach einem Neustart unverändert vorhanden sind. | Must | US-01–06, US-08, US-09, US-13, US-17–19 |
 | FR-07 | Das System filtert Rezepte mit höchstens zwei fehlenden Zutaten und zeigt deren Anzahl. | Should | US-10 |
 | FR-08 | Das System erlaubt, Rezepte als Favoriten zu markieren und nach Favoriten zu filtern. | Could | US-11 |
@@ -597,7 +651,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 | FR-11 | Das System erlaubt, Zutaten nach einer Sicherheitsabfrage zu löschen, wenn sie weder im Vorrat noch in einem Rezept vorkommen. | Could | US-15 |
 | FR-12 | Das System erlaubt, die Zubereitung in benannte, einklappbare Abschnitte zu gliedern. | Could | US-16 |
 | FR-13 | Das System übernimmt abgehakte Zutaten der Einkaufsliste in den Vorrat und entfernt sie von der Liste. | Could | US-20 |
-| FR-14 | Das System erlaubt, Zutaten und Rezepten optional eine Kategorie zuzuordnen und Vorrat und Archiv danach zu filtern. | Could | US-21, US-22 |
+| FR-14 | Das System erlaubt, Zutaten und Rezepten optional eine selbst angelegte Kategorie zuzuordnen und Vorrat und Archiv danach zu filtern. | Could | US-21, US-22 |
 
 ## Nichtfunktionale Anforderungen
 
@@ -606,12 +660,12 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 | NFR-01 | Deutschsprachige Oberfläche, die auf einem Smartphone-Bildschirm mit 360 Pixel Breite ohne horizontales Scrollen bedienbar ist; Vorrat und Archiv sind von der Hauptnavigation mit einem Tipp erreichbar. Prüfung durch manuellen Durchlauf aller Must-Stories auf dem dokumentierten Testgerät. | Must |
 | NFR-02 | Matching (US-08, US-09): Mit dem Referenzdatensatz erscheinen die vollständig passenden Rezepte und die fehlenden Zutaten je Rezept innerhalb einer Sekunde auf dem dokumentierten Testgerät. | Should |
 | NFR-03 | Nach Speichern und Neustart sind Zutatenkatalog, Vorrat und Rezepte unverändert vorhanden. Prüfung mit einem gespeicherten Beispieldatensatz. | Must |
-| NFR-04 | Fehlermeldungen nennen das betroffene Feld und den Grund; bereits eingegebene Daten bleiben nach einer Fehlermeldung erhalten. Das Löschen von Rezepten und Zutaten aus dem Zutatenkatalog erfordert eine Sicherheitsabfrage; das Entfernen einer Zutat aus dem Vorrat nicht. Prüfung mit ungültigen Eingaben und Abbruch einer Löschaktion. | Must |
+| NFR-04 | Fehlermeldungen nennen das betroffene Feld und den Grund; bereits eingegebene Daten bleiben nach einer Fehlermeldung erhalten. Das Löschen von Rezepten und Zutaten aus dem Zutatenkatalog erfordert eine Sicherheitsabfrage; das Entfernen einer Zutat aus dem Vorrat nicht. Wer ein Rezept mit ungespeicherten Änderungen verlässt, bekommt ebenfalls eine Sicherheitsabfrage. Prüfung mit ungültigen Eingaben und Abbruch einer Löschaktion. | Must |
 | NFR-05 | Das Matching ist unabhängig von der Oberfläche testbar; automatisierte Tests prüfen vollständige, teilweise und fehlende Übereinstimmung sowie leeren Vorrat. | Must |
 | NFR-06 | Der MVP erfordert keine personenbezogenen Angaben und übermittelt Vorrats- oder Rezeptdaten an keinen AI-Dienst. Prüfung der Eingabefelder und Datenflüsse. | Must |
 | NFR-07 | Zutatenvorschläge (US-13): Mit dem Referenzdatensatz erscheinen die Zutatenvorschläge innerhalb einer Sekunde nach jeder Eingabe auf dem dokumentierten Testgerät. | Should |
 | NFR-08 | Suche (US-07): Mit dem Referenzdatensatz erscheinen die Suchergebnisse innerhalb einer Sekunde auf dem dokumentierten Testgerät. Gilt nur, wenn die Suche umgesetzt wird. | Should |
-| NFR-09 | Alle Must-Stories funktionieren ohne Internetverbindung. Prüfung durch manuellen Durchlauf aller Must-Stories im Flugmodus. | Must |
+| NFR-09 | Alle Funktionen funktionieren ohne Internetverbindung. Prüfung durch manuellen Durchlauf aller umgesetzten Stories im Flugmodus. | Must |
 | NFR-10 | Rezepte sind beim Kochen gut lesbar: Fließtext in der Rezeptansicht mindestens 16 Pixel groß, Kontrast zwischen Text und Hintergrund mindestens 4,5:1 (WCAG 2.1, Stufe AA). Prüfung auf dem dokumentierten Testgerät mit einem Kontrast-Prüfwerkzeug. | Should |
 
 **Referenzdatensatz für NFR-02, NFR-07 und NFR-08:** 200 Zutaten im Zutatenkatalog, die alle im Vorrat stehen, und 100 Rezepte mit je bis zu 20 Zutaten. Die Datenmengen sind ein Referenzwert für die Messung, keine Obergrenze. Testgerät und Messmethode werden nach Festlegung der Plattform dokumentiert.

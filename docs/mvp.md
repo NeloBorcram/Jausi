@@ -9,7 +9,7 @@ Ein Nutzer erfasst vorhandene Zutaten und eigene Rezepte. Jausi zeigt, welche Re
 - Zutatenkatalog: wächst mit den Eingaben des Nutzers; vorhandene Zutaten werden beim Tippen vorgeschlagen, fehlende neu angelegt, Duplikate verhindert.
 - Vorrat: Zutaten hinzufügen und entfernen.
 - Rezeptarchiv: Rezepte anlegen, anzeigen, bearbeiten und nach Bestätigung löschen.
-- Matching mit dem Vorrat: Filter für vollständig passende Rezepte; fehlende Zutaten je Rezept anzeigen.
+- Matching mit dem Vorrat: Anzahl fehlender Zutaten je Rezept im Archiv, Filter für vollständig passende Rezepte, fehlende Zutaten in den Rezeptdetails.
 - Dauerhafte Speicherung eines persönlichen Datenbestands.
 - Eingabevalidierung und verständliche Hinweise bei leerem Vorrat oder Archiv.
 - Bedienung auf dem Smartphone, auch ohne Internetverbindung.
@@ -34,7 +34,7 @@ Dieser Ablauf beschreibt die spätere Produktabnahme und deckt die Anwendungsfä
 1. Reis und Tomate als neue Zutaten anlegen und zum Vorrat hinzufügen.
 2. Das Rezept „Tomatenreis“ mit den Zutaten Reis und Tomate speichern; beide werden beim Tippen vorgeschlagen.
 3. Das Rezept „Eierreis“ speichern: „reis“ eintippen und die vorgeschlagene Zutat Reis wählen; Ei als neue Zutat anlegen. Der Zutatenkatalog enthält danach genau Reis, Tomate und Ei.
-4. Der Filter für vollständig passende Rezepte zeigt nur Tomatenreis. In den Details von Eierreis wird Ei als fehlende Zutat angezeigt.
+4. Das Archiv zeigt bei Tomatenreis „alles da“ und bei Eierreis „1 fehlt“. Der Filter für vollständig passende Rezepte zeigt nur Tomatenreis. In den Details von Eierreis wird Ei als fehlende Zutat angezeigt.
 5. Tomate aus dem Vorrat entfernen: Tomatenreis passt nicht mehr vollständig und zeigt Tomate als fehlende Zutat.
 6. Die App neu starten: Zutatenkatalog, Rezepte und aktualisierter Vorrat sind weiterhin vorhanden.
 
@@ -75,4 +75,5 @@ Vom Team in der Lehrveranstaltung am 09.11.2026 zu bestätigen. Nach dem Termin 
 - [ ] Aufteilung von US-06 und US-13, Akzeptanzkriterien im Format Gegeben/Wenn/Dann und Lesbarkeit (NFR-10, Should).
 - [ ] Gleiches Verständnis der Akzeptanzkriterien im gesamten Team.
 - [ ] Developer-Review vom 09.11.2026: Mengen als Freitext, Sicherheitsabfrage nur für Rezepte und Katalog-Zutaten (nicht Vorrat), alphabetische Sortierung, Zutaten beim Bearbeiten änderbar; neue Could-Stories US-20 bis US-22.
+- [ ] Zweites Developer-Review vom 09.11.2026: Zutatenvorschläge auch mitten im Wort, neue Zutaten direkt übernehmen, Vorrat speichert sofort, Abfrage beim Verlassen ungespeicherter Rezepte, Fehl-Anzahl in der Archivliste, Offline für alle Funktionen, eigene Kategorien, Einkaufsliste nur mit Katalog-Zutaten.
 - [ ] Logo und Maskottchen als Idee beibehalten; Verwendung später entscheiden (nicht Teil des MVP).
