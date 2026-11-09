@@ -16,7 +16,7 @@ Studierende und Personen, die unkompliziert kochen möchten, verlieren leicht de
 
 Die Suche nach Rezeptnamen gehört nicht zum MVP (Should).
 
-Der MVP prüft ausschließlich, ob Zutaten vorhanden sind. Mengen werden im Rezept dokumentiert, aber nicht mit Vorratsmengen verglichen. Ein gemeinsamer Zutatenkatalog mit einer verbindlichen Schreibweise je Zutat verhindert unterschiedliche Schreibweisen beim Vergleich. AI unterstützt die Projektarbeit; eine AI-Funktion in der App ist nicht vorgesehen.
+Der MVP prüft ausschließlich, ob Zutaten vorhanden sind. Mengen werden im Rezept dokumentiert, aber nicht mit Vorratsmengen verglichen. Ein persönlicher Zutatenkatalog wächst mit den Eingaben des Nutzers; Vorschläge beim Tippen und eine Duplikatprüfung verhindern unterschiedliche Schreibweisen beim Vergleich (Vorschlag, Teamentscheidung ausstehend). AI unterstützt die Projektarbeit; eine AI-Funktion in der App ist nicht vorgesehen.
 
 ## Projektdokumentation
 
