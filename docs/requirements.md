@@ -6,19 +6,30 @@ Jausi richtet sich an Studierende und Personen, die unkompliziert mit vorhandene
 
 ## Begriffe
 
+Diese Begriffe gelten verbindlich für alle Projektdokumente. Die unter „Nicht verwenden“ genannten Synonyme werden durch den definierten Begriff ersetzt. Wörtliche Zitate früherer Eingaben in [ai-usage.md](ai-usage.md) bleiben unverändert.
+
 - **Zutatenkatalog:** Vorgegebene Menge eindeutig benannter Zutaten. Jede Zutat hat genau eine verbindliche Schreibweise. Vorrat und Rezepte verwenden ausschließlich Zutaten aus dem Katalog.
+  *Nicht verwenden: Zutatenliste.*
 - **Vorrat:** Die Zutaten des Zutatenkatalogs, die der Nutzer aktuell zur Verfügung hat. Mengen werden nicht erfasst.
+  *Nicht verwenden: Bestand, Vorratsliste, Inventur, Inventurliste.*
+- **Rezept:** Gespeicherte Kochanleitung mit Namen, mindestens einer Zutat aus dem Zutatenkatalog und mindestens einem Zubereitungsschritt. Mengen und Einheiten sind optional.
+- **Rezeptarchiv:** Alle gespeicherten Rezepte des Nutzers. Kurzform: Archiv.
+  *Nicht verwenden: Rezeptliste, Rezeptsammlung.*
 - **Matching:** Abgleich der Zutaten eines Rezepts mit dem Vorrat. Ergebnis ist je Rezept, welche Zutaten vorhanden sind und welche fehlen. Mengen und Einheiten bleiben unberücksichtigt.
 - **Vollständig passendes Rezept:** Ein Rezept, dessen Zutaten alle im Vorrat stehen.
+- **Fehlende Zutat:** Eine Zutat eines Rezepts, die nicht im Vorrat steht.
+- **Favorit:** Ein vom Nutzer markiertes Rezept (Could, nicht im MVP).
+  *Nicht verwenden: Lieblingsrezept.*
+- **Must / Should / Could:** Prioritätsstufen gemäß Abschnitt „Priorisierungsmaßstab“.
 
 ## Priorisierungsmaßstab
 
-Must-Anforerungen umfassen den vollständigen Kernanwendungsfall: Vorrat erfassen, Rezepte verwalten, passende Rezepte und fehlende Zutaten erkennen sowie Daten erhalten. Should-Anforderungen verbessern die Nutzung, sind für diesen Ablauf aber nicht notwendig. Could-Anforderungen bieten zusätzlichen Komfort. Die Suche nach Rezeptnamen ist deshalb Should, denn die Rezeptliste bleibt auch ohne Suche nutzbar.
+Must-Anforderungen umfassen den vollständigen Kernanwendungsfall: Vorrat erfassen, Rezepte verwalten, passende Rezepte und fehlende Zutaten erkennen sowie Vorrat und Rezepte dauerhaft speichern. Should-Anforderungen verbessern die Nutzung, sind für diesen Ablauf aber nicht notwendig. Could-Anforderungen bieten zusätzlichen Komfort. Die Suche nach Rezeptnamen ist deshalb Should, denn das Rezeptarchiv bleibt auch ohne Suche nutzbar.
 
 ## Fachliche Regeln
 
 - Vorrat und Rezepte verwenden ausschließlich Zutaten aus dem Zutatenkatalog. Unterschiedliche Schreibweisen dürfen nicht zu falschen Vergleichen führen; die technische Umsetzung folgt in Phase 2.
-- Der Vorrat enthält nur vorhandene Zutaten. Jede Zutat des Zutatenkatalogs kann höchstens einmal im Vorrat stehen; Zutaten, die nicht im Vorrat stehen, gelten als nicht vorhanden. Zutaten habe keine Mengenangaben.
+- Der Vorrat enthält nur vorhandene Zutaten. Jede Zutat des Zutatenkatalogs kann höchstens einmal im Vorrat stehen; Zutaten, die nicht im Vorrat stehen, gelten als nicht vorhanden. Einträge im Vorrat haben keine Mengenangaben.
 - Ein gültiges Rezept hat einen Namen, mindestens eine Zutat und mindestens einen Zubereitungsschritt.
 - Mengen und Einheiten sind optionale Rezeptangaben und beeinflussen das Matching nicht.
 - Ein Rezept passt vollständig, wenn alle seine Zutaten im Vorrat vorhanden sind. Es erfolgt keine Aussage über ausreichende Mengen.
@@ -29,24 +40,24 @@ Must-Anforerungen umfassen den vollständigen Kernanwendungsfall: Vorrat erfasse
 
 | ID | User Story | Priorität | Akzeptanzkriterien |
 | --- | --- | --- | --- |
-| US-01 | Als Nutzer möchte ich eine Zutat aus dem Zutatenkatalog zum Vorrat hinzufügen, damit mein Bestand erfasst ist. | Must | Die gewählte Zutat erscheint im Vorrat; erneutes Hinzufügen erzeugt keinen zweiten Eintrag. |
+| US-01 | Als Nutzer möchte ich eine Zutat aus dem Zutatenkatalog zum Vorrat hinzufügen, damit mein Vorrat erfasst ist. | Must | Die gewählte Zutat erscheint im Vorrat; erneutes Hinzufügen erzeugt keinen zweiten Eintrag. |
 | US-02 | Als Nutzer möchte ich meinen Vorrat sehen, damit ich vorhandene Lebensmittel überblicken kann. | Must | Alle vorhandenen Zutaten werden angezeigt; ein leerer Vorrat zeigt einen verständlichen Hinweis. |
 | US-03 | Als Nutzer möchte ich verbrauchte Zutaten entfernen, damit mein Vorrat aktuell bleibt. | Must | Die entfernte Zutat wird nicht mehr als vorhanden gewertet; gespeicherte Rezepte bleiben erhalten. |
 | US-04 | Als Nutzer möchte ich ein Rezept anlegen, damit ich es später wieder verwenden kann. | Must | Name, mindestens eine ausgewählte Zutat und Zubereitung sind erforderlich; ungültige Eingaben zeigen eine Fehlermeldung. |
 | US-05 | Als Nutzer möchte ich das Rezeptarchiv und einzelne Rezepte öffnen, damit ich Zutaten und Zubereitung lesen kann. | Must | Das Archiv zeigt gespeicherte Rezepte; Details zeigen alle erfassten Angaben; ein leeres Archiv zeigt einen Hinweis. |
 | US-06 | Als Nutzer möchte ich Rezepte bearbeiten und löschen, damit mein Archiv aktuell bleibt. | Must | Änderungen sind nach erneutem Öffnen sichtbar; Löschen erfordert Bestätigung und entfernt das Rezept aus dem Archiv. |
-| US-07 | Als Nutzer möchte ich Rezepte nach Namen suchen, damit ich ein bestimmtes Gericht finde. | Should | Teilbegriffe werden ohne Beachtung der Groß-/Kleinschreibung gefunden; Gibt es keine Treffer, wird dies klar angezeigt. |
+| US-07 | Als Nutzer möchte ich Rezepte nach Namen suchen, damit ich ein bestimmtes Gericht finde. | Should | Teilbegriffe werden ohne Beachtung der Groß-/Kleinschreibung gefunden; gibt es keine Treffer, wird dies klar angezeigt. |
 | US-08 | Als Nutzer möchte ich vollständig passende Rezepte anzeigen, damit ich mit vorhandenen Zutaten kochen kann. | Must | Der Filter zeigt genau Rezepte, deren Zutaten vollständig vorhanden sind; Mengen spielen keine Rolle. |
 | US-09 | Als Nutzer möchte ich fehlende Zutaten sehen, damit ich meinen Einkauf planen kann. | Must | Je Rezept werden genau die nicht vorhandenen Zutaten angezeigt; bei vollständiger Übereinstimmung erscheint „Alle Zutaten vorhanden – Mengen nicht geprüft“. |
-| US-10 | Als Nutzer möchte ich Rezepte mit höchstens zwei fehlenden Zutaten finden, damit ich mit geringem Einkaufsaufwan kochen kann. | Should | Ein eigener Filter zeigt Rezepte mit null bis zwei fehlenden Zutaten und die Anzahl der fehlenden Zutaten. |
-| US-11 | Als Nutzer möchte ich Lieblingsrezepte markieren, damit ich sie schnell wiederfinde. | Could | Eine Markierung kann gesetzt und entfernt werden; ein Filter zeigt die markierten Rezepte. |
+| US-10 | Als Nutzer möchte ich Rezepte mit höchstens zwei fehlenden Zutaten finden, damit ich mit geringem Einkaufsaufwand kochen kann. | Should | Ein eigener Filter zeigt Rezepte mit null bis zwei fehlenden Zutaten und die Anzahl der fehlenden Zutaten. |
+| US-11 | Als Nutzer möchte ich Rezepte als Favoriten markieren, damit ich sie schnell wiederfinde. | Could | Eine Markierung kann gesetzt und entfernt werden; ein Filter zeigt die markierten Rezepte. |
 | US-12 | Als Nutzer möchte ich fehlende Zutaten auf eine Einkaufsliste übernehmen, damit ich sie gesammelt sehe. | Could | Fehlende Zutaten eines gewählten Rezepts werden ohne doppelte Einträge übernommen. |
 
 ## Funktionale Anforderungen
 
 | ID | Anforderung | Priorität | Bezug |
 | --- | --- | --- | --- |
-| FR-01 | Gemeinsame, vorgegebene Zutatenliste zur Auswahl in Vorrat und Rezepten bereitstellen. | Must | US-01, US-04 |
+| FR-01 | Gemeinsamen, vorgegebenen Zutatenkatalog zur Auswahl in Vorrat und Rezepten bereitstellen. | Must | US-01, US-04 |
 | FR-02 | Vorrat anzeigen, Zutaten hinzufügen und entfernen. | Must | US-01–03 |
 | FR-03 | Rezepte anlegen, anzeigen, bearbeiten und nach Bestätigung löschen. | Must | US-04–06 |
 | FR-04 | Rezepte per Teiltextsuche nach Namen durchsuchen. | Should | US-07 |
@@ -73,13 +84,13 @@ AI-Prüfung vom 14.10.2026 anhand der vollständig bereitgestellten Phase-1-Vorg
 
 | Befund | Bewertung und Korrektur |
 | --- | --- |
-| Suche war Must, obwohl der Kernablauf über die Rezeptliste möglich ist. | US-07 und FR-04 auf Should gesetzt; MVP entsprechend angepasst. |
+| Suche war Must, obwohl der Kernablauf über das Rezeptarchiv möglich ist. | US-07 und FR-04 auf Should gesetzt; MVP entsprechend angepasst. |
 | Produktabnahme und Phase-1-Abschluss waren vermischt. | Separate Definition of Done für die Spezifikation ergänzt; App-Tests sind erst später auszuführen. |
 | Technische Vorbereitung wurde zu früh empfohlen. | Technologieauswahl und Architektur auf Phase 2 verschoben; keine Implementierungsarbeiten in Phase 1. |
 | Ein Zutatenkatalog begrenzt die erfassbaren Lebensmittel. | Vor dem Abschluss von Phase 1 muss das Team dessen fachlichen Startumfang prüfen und bestätigen. |
 | Die Leistungsgrenze war ein AI-Vorschlag ohne Teamvalidierung. | Eine Sekunde bei den genannten Datenmengen bleibt ein überprüfbarer Zielvorschlag; gemeinsame Bestätigung steht aus. |
 | Externe Abhängigkeiten und Kosten waren nicht explizit behandelt. | Der MVP verlangt keine externen APIs oder kostenpflichtigen Dienste. Falls später welche gewählt werden, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren. |
-Manche Texte waren unklar und Begriffe waren inkonsistent | Review durch KI und manuelle Review. Verständlichere und konstistente Formulierungen und Abschnitt "Begriffe" hinzugefügt.
+| Manche Texte waren unklar, Begriffe waren inkonsistent. | Review durch AI und manuelles Review; verständlichere, konsistente Formulierungen und Abschnitt „Begriffe“ ergänzt. |
 
 - „Zutat vorhanden“ bedeutet nicht, dass die Menge ausreicht. Die Oberfläche muss diese Einschränkung sichtbar machen.
 - Der Vorrat ist im MVP eine Liste vorhandener Zutaten, keine mengengenaue Bestandsführung.
