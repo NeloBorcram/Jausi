@@ -4,6 +4,19 @@
 
 Jausi richtet sich an Studierende und Personen, die unkompliziert mit vorhandenen Zutaten kochen möchten, und verbindet dafür Lebensmittelvorrat und persönliches Rezeptarchiv. Das vierköpfige Team entwickelt einen überschaubaren MVP im Rahmen eines Semesterprojekts.
 
+## Zielgruppe und Personas
+
+Die Zielgruppe sind Menschen, die mit vorhandenen Zutaten kochen möchten. Ausführliche, fiktive Personas stehen in [personas.md](personas.md): Lena (Studentin, primäre Persona), Andrea (will Lebensmittelverschwendung vermeiden) und Jonas (Kochanfänger). In den User Stories steht „Nutzer“ für alle Personas; wo sich der Nutzen unterscheidet, ist die Persona genannt.
+
+## Nutzungskontext
+
+Jausi wird hauptsächlich auf dem Smartphone genutzt:
+
+- **In der Küche:** nachsehen, welche Rezepte mit dem aktuellen Vorrat möglich sind, und das Rezept beim Kochen lesen.
+- **Beim Einkaufen:** fehlende Zutaten eines Rezepts nachsehen und den Vorrat nach dem Einkauf ergänzen.
+
+Die Oberfläche muss daher auf einem Smartphone-Bildschirm vollständig bedienbar sein. Ob Jausi als native App oder als Web-App umgesetzt wird, ist eine Technologieentscheidung und folgt in Phase 2.
+
 ## Begriffe
 
 Diese Begriffe gelten verbindlich für alle Projektdokumente. Die unter „Nicht verwenden“ genannten Synonyme werden durch den definierten Begriff ersetzt. Wörtliche Zitate früherer Eingaben in [ai-usage.md](ai-usage.md) bleiben unverändert.
@@ -15,7 +28,9 @@ Diese Begriffe gelten verbindlich für alle Projektdokumente. Die unter „Nicht
 - **Rezept:** Gespeicherte Kochanleitung mit Namen, mindestens einer Zutat aus dem Zutatenkatalog und mindestens einem Zubereitungsschritt. Mengen und Einheiten sind optional.
 - **Rezeptarchiv:** Alle gespeicherten Rezepte des Nutzers. Kurzform: Archiv.
   *Nicht verwenden: Rezeptliste, Rezeptsammlung.*
+- **Zutatenvorschlag:** Zutat aus dem Zutatenkatalog, die beim Eintippen eines Zutatennamens zur Auswahl angezeigt wird (US-13). Nicht zu verwechseln mit dem Matching.
 - **Matching:** Abgleich der Zutaten eines Rezepts mit dem Vorrat. Ergebnis ist je Rezept, welche Zutaten vorhanden sind und welche fehlen. Mengen und Einheiten bleiben unberücksichtigt.
+  *Nicht verwenden: Rezeptvorschlag.*
 - **Vollständig passendes Rezept:** Ein Rezept, dessen Zutaten alle im Vorrat stehen.
 - **Fehlende Zutat:** Eine Zutat eines Rezepts, die nicht im Vorrat steht.
 - **Favorit:** Ein vom Nutzer markiertes Rezept (Could, nicht im MVP).
@@ -43,16 +58,16 @@ Must-Anforderungen umfassen den vollständigen Kernanwendungsfall: Vorrat erfass
 
 | ID | User Story | Priorität | Akzeptanzkriterien |
 | --- | --- | --- | --- |
-| US-01 | Als Nutzer möchte ich eine Zutat aus dem Zutatenkatalog zum Vorrat hinzufügen, damit mein Vorrat erfasst ist. | Must | Die gewählte Zutat erscheint im Vorrat; erneutes Hinzufügen erzeugt keinen zweiten Eintrag. |
+| US-01 | Als Nutzer möchte ich eine Zutat aus dem Zutatenkatalog zum Vorrat hinzufügen, damit Jausi weiß, welche Rezepte ich kochen kann. | Must | Die gewählte Zutat erscheint im Vorrat; erneutes Hinzufügen erzeugt keinen zweiten Eintrag. |
 | US-02 | Als Nutzer möchte ich meinen Vorrat sehen, damit ich vorhandene Lebensmittel überblicken kann. | Must | Alle vorhandenen Zutaten werden angezeigt; ein leerer Vorrat zeigt einen verständlichen Hinweis. |
 | US-03 | Als Nutzer möchte ich verbrauchte Zutaten entfernen, damit mein Vorrat aktuell bleibt. | Must | Die entfernte Zutat wird nicht mehr als vorhanden gewertet; gespeicherte Rezepte bleiben erhalten. |
 | US-04 | Als Nutzer möchte ich ein Rezept anlegen, damit ich es später wieder verwenden kann. | Must | Name, mindestens eine ausgewählte Zutat und Zubereitung sind erforderlich; ungültige Eingaben zeigen eine Fehlermeldung. |
 | US-05 | Als Nutzer möchte ich das Rezeptarchiv und einzelne Rezepte öffnen, damit ich Zutaten und Zubereitung lesen kann. | Must | Das Archiv zeigt gespeicherte Rezepte; Details zeigen alle erfassten Angaben; ein leeres Archiv zeigt einen Hinweis. |
 | US-06 | Als Nutzer möchte ich Rezepte bearbeiten und löschen, damit mein Archiv aktuell bleibt. | Must | Änderungen sind nach erneutem Öffnen sichtbar; Löschen erfordert Bestätigung und entfernt das Rezept aus dem Archiv. |
 | US-07 | Als Nutzer möchte ich Rezepte nach Namen suchen, damit ich ein bestimmtes Gericht finde. | Should | Teilbegriffe werden ohne Beachtung der Groß-/Kleinschreibung gefunden; gibt es keine Treffer, wird dies klar angezeigt. |
-| US-08 | Als Nutzer möchte ich vollständig passende Rezepte anzeigen, damit ich mit vorhandenen Zutaten kochen kann. | Must | Der Filter zeigt genau Rezepte, deren Zutaten vollständig vorhanden sind; Mengen spielen keine Rolle. |
+| US-08 | Als Nutzerin wie Lena möchte ich vollständig passende Rezepte anzeigen, damit ich ohne Einkauf schnell etwas kochen kann. | Must | Der Filter zeigt genau Rezepte, deren Zutaten vollständig vorhanden sind; Mengen spielen keine Rolle. |
 | US-09 | Als Nutzer möchte ich fehlende Zutaten sehen, damit ich meinen Einkauf planen kann. | Must | Je Rezept werden genau die nicht vorhandenen Zutaten angezeigt; bei vollständiger Übereinstimmung erscheint „Alle Zutaten vorhanden – Mengen nicht geprüft“. |
-| US-10 | Als Nutzer möchte ich Rezepte mit höchstens zwei fehlenden Zutaten finden, damit ich mit geringem Einkaufsaufwand kochen kann. | Should | Ein eigener Filter zeigt Rezepte mit null bis zwei fehlenden Zutaten und die Anzahl der fehlenden Zutaten. |
+| US-10 | Als Nutzerin wie Andrea möchte ich Rezepte mit höchstens zwei fehlenden Zutaten finden, damit ich vorhandene Lebensmittel aufbrauche, statt viel neu einzukaufen. | Should | Ein eigener Filter zeigt Rezepte mit null bis zwei fehlenden Zutaten und die Anzahl der fehlenden Zutaten. |
 | US-11 | Als Nutzer möchte ich Rezepte als Favoriten markieren, damit ich sie schnell wiederfinde. | Could | Eine Markierung kann gesetzt und entfernt werden; ein Filter zeigt die markierten Rezepte. |
 | US-12 | Als Nutzer möchte ich fehlende Zutaten auf eine Einkaufsliste übernehmen, damit ich sie gesammelt sehe. | Could | Fehlende Zutaten eines gewählten Rezepts werden ohne doppelte Einträge übernommen. |
 | US-13 | Als Nutzer möchte ich beim Eingeben einer Zutat vorhandene Zutaten vorgeschlagen bekommen und fehlende neu anlegen, damit ich alle Zutaten meiner eigenen Rezepte verwenden kann, ohne Duplikate zu erzeugen. | Must | Beim Tippen erscheinen Zutaten aus dem Zutatenkatalog, die den eingegebenen Text enthalten, ohne Beachtung der Groß-/Kleinschreibung; eine neue Zutat kann angelegt werden und steht danach in Vorrat und Rezepten zur Auswahl; die Eingabe „ reis “ legt keine neue Zutat an, wenn „Reis“ bereits existiert. |
@@ -79,12 +94,17 @@ Must-Anforderungen umfassen den vollständigen Kernanwendungsfall: Vorrat erfass
 
 | ID | Anforderung und Prüfung | Priorität |
 | --- | --- | --- |
-| NFR-01 | Konsistente, deutschsprachige Oberfläche; Vorrat und Archiv sind von der Hauptnavigation erreichbar. Prüfung durch manuellen Durchlauf aller Must-Stories. | Must |
-| NFR-02 | Bei 100 Rezepten mit je bis zu 20 Zutaten und 200 Vorratszutaten erscheinen Matching-Ergebnisse und, sofern die Suche umgesetzt ist, Suchergebnisse innerhalb einer Sekunde auf dem dokumentierten Testgerät. Messung nach Festlegung der Plattform. | Must |
+| NFR-01 | Deutschsprachige Oberfläche, die auf einem Smartphone-Bildschirm mit 360 Pixel Breite ohne horizontales Scrollen bedienbar ist; Vorrat und Archiv sind von der Hauptnavigation mit einem Tipp erreichbar. Prüfung durch manuellen Durchlauf aller Must-Stories auf dem dokumentierten Testgerät. | Must |
+| NFR-02 | Matching (US-08, US-09): Mit dem Referenzdatensatz erscheinen die vollständig passenden Rezepte und die fehlenden Zutaten je Rezept innerhalb einer Sekunde auf dem dokumentierten Testgerät. | Should |
 | NFR-03 | Nach Speichern und Neustart sind Zutatenkatalog, Vorrat und Rezepte unverändert vorhanden. Prüfung mit einem gespeicherten Beispieldatensatz. | Must |
 | NFR-04 | Ungültige Pflichtfelder werden verständlich gemeldet und nicht gespeichert; Löschen eines Rezepts erfordert Bestätigung. Prüfung mit ungültigen Eingaben und Abbruch der Löschaktion. | Must |
 | NFR-05 | Das Matching ist unabhängig von der Oberfläche testbar; automatisierte Tests prüfen vollständige, teilweise und fehlende Übereinstimmung sowie leeren Vorrat. | Must |
 | NFR-06 | Der MVP erfordert keine personenbezogenen Angaben und übermittelt Vorrats- oder Rezeptdaten an keinen AI-Dienst. Prüfung der Eingabefelder und Datenflüsse. | Must |
+| NFR-07 | Zutatenvorschläge (US-13): Mit dem Referenzdatensatz erscheinen die Zutatenvorschläge innerhalb einer Sekunde nach jeder Eingabe auf dem dokumentierten Testgerät. | Should |
+| NFR-08 | Suche (US-07): Mit dem Referenzdatensatz erscheinen die Suchergebnisse innerhalb einer Sekunde auf dem dokumentierten Testgerät. Gilt nur, wenn die Suche umgesetzt wird. | Should |
+| NFR-09 | Alle Must-Stories funktionieren ohne Internetverbindung. Prüfung durch manuellen Durchlauf aller Must-Stories im Flugmodus. | Must |
+
+**Referenzdatensatz für NFR-02, NFR-07 und NFR-08:** 200 Zutaten im Zutatenkatalog, die alle im Vorrat stehen, und 100 Rezepte mit je bis zu 20 Zutaten. Die Datenmengen sind ein Referenzwert für die Messung, keine Obergrenze. Testgerät und Messmethode werden nach Festlegung der Plattform dokumentiert.
 
 ## Prüfung auf Widersprüche und Unklarheiten
 

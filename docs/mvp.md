@@ -13,7 +13,7 @@ Ein Nutzer erfasst vorhandene Zutaten und eigene Rezepte. Jausi zeigt, welche Re
 - Dauerhafte Speicherung eines persönlichen Datenbestands.
 - Eingabevalidierung und verständliche Hinweise bei leerem Vorrat oder Archiv.
 
-Der MVP umfasst aus [requirements.md](https://github.com/NeloBorcram/Jausi/blob/main/docs/requirements.md) die User Stories US-01 bis US-06, US-08, US-09 und US-13, die funktionalen Anforderungen FR-01 bis FR-03, FR-05 und FR-06 sowie die nichtfunktionalen Anforderungen NFR-01 bis NFR-06. Begriffe wie Zutatenkatalog und Matching sind dort im Abschnitt „Begriffe“ definiert. Die gemeinsame Teamprüfung der Spezifikation steht noch aus.
+Der MVP umfasst aus [requirements.md](https://github.com/NeloBorcram/Jausi/blob/main/docs/requirements.md) die User Stories US-01 bis US-06, US-08, US-09 und US-13, die funktionalen Anforderungen FR-01 bis FR-03, FR-05 und FR-06 sowie die nichtfunktionalen Anforderungen NFR-01, NFR-03 bis NFR-06 und NFR-09. Begriffe wie Zutatenkatalog und Matching sind dort im Abschnitt „Begriffe“ definiert. Die gemeinsame Teamprüfung der Spezifikation steht noch aus.
 
 ## Außerhalb des MVP
 
@@ -26,6 +26,7 @@ Der MVP umfasst aus [requirements.md](https://github.com/NeloBorcram/Jausi/blob/
 - Favoriten und Einkaufsliste (Could).
 - Suche nach Rezeptnamen (Should).
 - Filter für höchstens zwei fehlende Zutaten (Should; erst nach Abschluss des MVP).
+- Leistungsziele NFR-02, NFR-07 und NFR-08 (Should): werden gemessen und dokumentiert, sind aber keine Abnahmebedingung des MVP.
 
 ## Geplanter vollständiger Demo-Anwendungsfall
 

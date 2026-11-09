@@ -8,6 +8,14 @@ Jausi ist ein Semesterprojekt eines vierköpfigen Teams. Die App verbindet einen
 
 Studierende und Personen, die unkompliziert kochen möchten, verlieren leicht den Überblick über ihre Lebensmittel. Jausi beantwortet die Frage: „Was kann ich heute mit meinem Vorrat kochen?“ und unterstützt dabei, vorhandene Zutaten zu nutzen und unnötige Einkäufe zu vermeiden.
 
+Das Problem ist relevant: In österreichischen Haushalten werden pro Person und Jahr rund 69 kg Lebensmittel weggeworfen, davon etwa 37 kg vermeidbar ([BMLUK, Daten 2024](https://www.bmluk.gv.at/themen/abfall-und-kreislaufwirtschaft/abfallvermeidung/lebensmittel/oesterreich/haushalte.html)). In einer Umfrage der Verbraucherzentrale NRW wünschte sich rund ein Drittel der Befragten Rezepte zur Resteverwertung ([Verbraucherzentrale NRW](https://www.verbraucherzentrale.nrw/pressemitteilungen/neue-umfrage-fortschritte-bei-vermeidung-von-lebensmittelabfaellen-111819)). Laut einer Studie der ZHAW verschwenden jüngere Menschen mehr Lebensmittel als ältere ([ZHAW](https://www.zhaw.ch/de/medien/medienmitteilungen/detailansicht-medienmitteilung/event-news/frauen-ernaehren-sich-nachhaltiger-aeltere-verschwenden-weniger-nahrungsmittel/)). Eine Erhebung speziell zu Studierenden liegt dem Team nicht vor.
+
+Alle Nutzer wollen wissen: Was habe ich da, was kann ich damit kochen, was muss ich nachkaufen? Drei fiktive [Personas](docs/personas.md) zeigen unterschiedliche Motivationen:
+
+- **Lena, 22, Studentin (primär):** will schnell entscheiden, was es heute gibt, und nur das Nötigste kaufen.
+- **Andrea, 38, berufstätig:** will vorhandene Lebensmittel aufbrauchen statt sie wegzuwerfen.
+- **Jonas, 19, Lehrling:** kocht erst seit Kurzem und will sein kleines Repertoire nutzen. Jausi wird hauptsächlich auf dem Smartphone genutzt, in der Küche und beim Einkaufen.
+
 ## Geplanter Funktionsumfang
 
 - Zutaten im Vorrat erfassen und entfernen.
@@ -23,6 +31,8 @@ Der MVP prüft ausschließlich, ob Zutaten vorhanden sind. Mengen werden im Reze
 - [Anforderungen und User Stories](docs/requirements.md)
 - [MVP-Scope](docs/mvp.md)
 - [AI-Einsatz und Reflexion](docs/ai-usage.md)
+- [Personas](docs/personas.md)
+- [Branding und Maskottchen (Entwurf)](docs/branding.md)
 
 Diese vier Dokumente (einschließlich dieser README) werden bei jeder Projektänderung auf Aktualität geprüft und bei betroffenen Inhalten gemeinsam mit der Änderung aktualisiert. Weitere Dokumentation liegt ausschließlich in `docs/`.
 
