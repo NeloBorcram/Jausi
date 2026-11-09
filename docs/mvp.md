@@ -31,11 +31,11 @@ Dieser Ablauf beschreibt die spätere Produktabnahme und deckt die Anwendungsfä
 
 > **Voraussetzung:** Die App läuft auf dem dokumentierten Smartphone-Testgerät im Flugmodus; Zutatenkatalog, Vorrat und Archiv sind leer.
 
-1. Reis und Tomate als neue Zutaten anlegen und zum Vorrat hinzufügen.
+1. Im Vorrat Reis und Tomate als neue Zutaten anlegen; sie stehen danach im Zutatenkatalog und im Vorrat.
 2. Das Rezept „Tomatenreis“ mit den Zutaten Reis und Tomate speichern; beide werden beim Tippen vorgeschlagen.
 3. Das Rezept „Eierreis“ speichern: „reis“ eintippen und die vorgeschlagene Zutat Reis wählen; Ei als neue Zutat anlegen. Der Zutatenkatalog enthält danach genau Reis, Tomate und Ei.
 4. Das Archiv zeigt bei Tomatenreis „alles da“ und bei Eierreis „1 fehlt“. Der Filter für vollständig passende Rezepte zeigt nur Tomatenreis. In den Details von Eierreis wird Ei als fehlende Zutat angezeigt.
-5. Tomate aus dem Vorrat entfernen: Tomatenreis passt nicht mehr vollständig und zeigt Tomate als fehlende Zutat.
+5. Tomate aus dem Vorrat entfernen: Das Archiv zeigt bei Tomatenreis jetzt „1 fehlt“, und in den Details steht Tomate als fehlende Zutat.
 6. Die App neu starten: Zutatenkatalog, Rezepte und aktualisierter Vorrat sind weiterhin vorhanden.
 
 ## ☑️ Definition of Done für Phase 1

@@ -18,11 +18,11 @@ Jeder Anwendungsfall beschreibt, wer wann warum handelt und was danach gilt. Jed
 
 | ID | Anwendungsfall | Persona | Auslöser | Ergebnis | User Stories | Im MVP |
 | --- | --- | --- | --- | --- | --- | --- |
-| AF-1 | Vorrat pflegen | alle | nach dem Einkauf oder Kochen | Der Vorrat stimmt mit den Zutaten daheim überein. | US-01–03, US-13–15, US-17, US-18, US-21 | Ja (Kern) |
-| AF-2 | Rezepte sammeln | Jonas | ein neues Gericht gekocht oder entdeckt | Das Rezept ist im Archiv und wiederauffindbar. | US-04–07, US-11, US-13, US-17–19, US-22 | Ja (Kern) |
-| AF-3 | Was kann ich kochen? | Lena | Hunger, Blick in den Kühlschrank | Ein Rezept ist gewählt, dessen Zutaten alle vorhanden sind. | US-08, US-09 | Ja (Hauptanwendungsfall) |
-| AF-4 | Einkauf planen | Andrea | vor dem Wocheneinkauf | Sie weiß, welche Zutaten sie für welche Rezepte nachkaufen muss. | US-09, US-10, US-12, US-20 | Teilweise (nur US-09) |
-| AF-5 | Nach Rezept kochen | alle | am Herd, Smartphone in der Hand | Das Gericht ist zubereitet, ohne lange im Rezept zu suchen. | US-05, US-16 | Teilweise (nur US-05) |
+| AF-1 | Vorrat pflegen | alle | nach dem Einkauf oder Kochen | Der Vorrat stimmt mit den Zutaten daheim überein. | US-01–03, US-13–15, US-17, US-18, US-21 | Teilweise (nur Must-Stories) |
+| AF-2 | Rezepte sammeln | Jonas | ein neues Gericht gekocht oder entdeckt | Das Rezept ist im Archiv und wiederauffindbar. | US-04–07, US-11, US-13, US-17–19, US-22 | Teilweise (nur Must-Stories) |
+| AF-3 | Was kann ich kochen? | Lena | Hunger, Blick in den Kühlschrank | Ein Rezept ist gewählt, dessen Zutaten alle vorhanden sind. | US-08, US-09 | Ja, vollständig (Hauptanwendungsfall) |
+| AF-4 | Einkauf planen | Andrea | vor dem Wocheneinkauf | Sie weiß, welche Zutaten sie für welche Rezepte nachkaufen muss. | US-09, US-10, US-12, US-20 | Teilweise (nur Must-Story US-09) |
+| AF-5 | Nach Rezept kochen | alle | am Herd, Smartphone in der Hand | Das Gericht ist zubereitet, ohne lange im Rezept zu suchen. | US-05, US-16 | Teilweise (nur Must-Story US-05) |
 
 AF-1 und AF-2 sind die Voraussetzung für den Hauptanwendungsfall AF-3:
 
@@ -84,11 +84,14 @@ erDiagram
 - Vorrat und Archiv sind alphabetisch sortiert, ohne Beachtung der Groß-/Kleinschreibung.
 - Das Archiv zeigt bei jedem Rezept, ob alle Zutaten vorhanden sind oder wie viele fehlen.
 - Änderungen am Vorrat werden sofort gespeichert. Rezepte werden mit „Speichern“ gesichert; wer ein Rezept mit ungespeicherten Änderungen verlässt, bekommt eine Sicherheitsabfrage.
-- Die Einkaufsliste enthält nur Zutaten aus dem Zutatenkatalog (Could).
 
 **Matching**
 - Ein Rezept passt vollständig, wenn alle seine Zutaten im Vorrat stehen. Mengen werden nicht geprüft.
 - Änderungen am Vorrat ändern keine Rezepte; das Matching verwendet immer den aktuellen Vorrat.
+
+**Einkaufsliste (Could)**
+- Die Einkaufsliste enthält nur Zutaten aus dem Zutatenkatalog.
+- Abgehakte Zutaten werden in den Vorrat übernommen und von der Liste entfernt.
 
 ## User Stories mit Akzeptanzkriterien
 
@@ -604,11 +607,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Gegeben** Ei und Milch stehen auf der Einkaufsliste
 - **Wenn** die Person nur Ei abhakt
 - **Dann** bleibt Milch auf der Einkaufsliste und steht nicht im Vorrat.
-
-**AK 3**
-- **Gegeben** das Smartphone hat keine Internetverbindung
-- **Wenn** die Person Ei abhakt
-- **Dann** steht Ei trotzdem im Vorrat.
 
 </details>
 
