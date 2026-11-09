@@ -1,8 +1,8 @@
-# Branding und Maskottchen (Entwurf)
+# Branding und Maskottchen (Idee)
 
-**Status:** Ideensammlung. Logo, Maskottchen und Farben sind keine Anforderungen und gehören nicht zum MVP-Scope. Eine Teamentscheidung steht aus.
+**Status:** Idee. Das Team behält Logo und Figuren bei (Entscheidung vom 09.11.2026); ob und wo sie verwendet werden, ist noch offen. Sie sind keine Anforderungen und gehören nicht zum MVP-Scope.
 
-Die Bilder und Figurenbeschreibungen wurden mit einem externen AI-Bildwerkzeug erzeugt und von Roger am 09.11.2026 eingebracht (siehe [AI-Einsatz](ai-usage.md)).
+Die Bilder und Figurenbeschreibungen wurden mit Google Gemini erzeugt und von Roger am 09.11.2026 eingebracht (siehe [AI-Einsatz](ai-usage.md)).
 
 ## Logo-Entwürfe
 
@@ -42,5 +42,5 @@ Die Bilder und Figurenbeschreibungen wurden mit einem externen AI-Bildwerkzeug e
 
 - **Namenskonflikt Apfel:** Die AI-Beschreibung nennt den Apfel „Anton“, das Bild „Apfi“. Hier wird „Apfi“ verwendet, passend zum Namensmuster (Semmi, Käsi, Banani).
 - **Name der Heidelbeere:** Der AI-Vorschlag „Bluey“ ist bereits Titel einer bekannten Kinderserie und wird deshalb nicht übernommen. Ein eigener Name ist offen.
-- **Nutzungsrechte:** Die Nutzungsbedingungen des verwendeten Bildwerkzeugs sind vor einer Verwendung über das Semesterprojekt hinaus zu prüfen.
-- **Auswahl:** Welche Figur das Logo bildet und ob die Figurenfamilie in der App erscheint, entscheidet das Team.
+- **Nutzungsrechte:** Die Nutzungsbedingungen von Gemini sind vor einer Verwendung über das Semesterprojekt hinaus zu prüfen.
+- **Verwendung:** Ob die Figuren in der App erscheinen und welche das Logo bildet, entscheidet das Team, sobald es um das Design geht.

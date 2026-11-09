@@ -14,7 +14,7 @@ Ein Nutzer erfasst vorhandene Zutaten und eigene Rezepte. Jausi zeigt, welche Re
 - Eingabevalidierung und verständliche Hinweise bei leerem Vorrat oder Archiv.
 - Bedienung auf dem Smartphone, auch ohne Internetverbindung.
 
-Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bis US-06, US-08, US-09, US-13 und US-17 bis US-19, die funktionalen Anforderungen FR-01 bis FR-03, FR-05 und FR-06 sowie die nichtfunktionalen Anforderungen NFR-01, NFR-03 bis NFR-06 und NFR-09. Begriffe wie Zutatenkatalog und Matching sind dort im Abschnitt „Begriffe“ definiert. Die gemeinsame Teamprüfung der Spezifikation steht noch aus.
+Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bis US-06, US-08, US-09, US-13 und US-17 bis US-19, die funktionalen Anforderungen FR-01 bis FR-03, FR-05 und FR-06 sowie die nichtfunktionalen Anforderungen NFR-01, NFR-03 bis NFR-06 und NFR-09. Begriffe wie Zutatenkatalog und Matching sind dort im Abschnitt „Begriffe“ definiert.
 
 ## ❌ Außerhalb des MVP
 
@@ -40,17 +40,17 @@ Dieser Ablauf beschreibt die spätere Produktabnahme und deckt die Anwendungsfä
 
 ## ☑️ Definition of Done für Phase 1
 
-Abgehakt sind nur Punkte, die sich anhand der Dokumente nachprüfen lassen. Die übrigen bestätigt das Team.
+Alle Punkte hat das Team am 09.11.2026 bestätigt.
 
-- [ ] Ein anderer Entwickler versteht Produktziel, Problem und Zielgruppe ohne wesentliche Rückfragen.
+- [x] Ein anderer Entwickler versteht Produktziel, Problem und Zielgruppe ohne wesentliche Rückfragen.
 - [x] Mindestens 8–10 User Stories liegen vor; jede Must-Story hat überprüfbare Akzeptanzkriterien.
 - [x] Funktionale und mindestens drei relevante nichtfunktionale Anforderungen sind eindeutig und priorisiert.
 - [x] MVP und spätere Erweiterungen sind klar getrennt; mindestens ein vollständiger demonstrierbarer Anwendungsfall ist beschrieben.
 - [x] Zwei unterschiedliche AI-Anwendungen sind mit Eingaben, Ergebnissen und kritischer Bewertung dokumentiert: Anforderungsgenerierung und Prüfung auf Widersprüche, Lücken und Unklarheiten.
-- [ ] Die fünf gepflegten Dokumente (README, Anforderungen, MVP-Scope, AI-Einsatz, Personas) sind konsistent; das Team hat die noch offenen fachlichen Punkte geprüft und seine Entscheidungen dokumentiert.
+- [x] Die fünf gepflegten Dokumente (README, Anforderungen, MVP-Scope, AI-Einsatz, Personas) sind konsistent; das Team hat die noch offenen fachlichen Punkte geprüft und seine Entscheidungen dokumentiert.
 
 > [!IMPORTANT]
-> **Status:** Dokumentationsentwurf vorhanden; gemeinsame Teamprüfung ausstehend. Phase 1 ist noch nicht als abgeschlossen bestätigt.
+> **Status:** Phase 1 ist abgeschlossen. Das Team hat die Spezifikation am 09.11.2026 gemeinsam bestätigt.
 
 ## Geplante spätere Produktabnahme
 
@@ -61,16 +61,16 @@ Abgehakt sind nur Punkte, die sich anhand der Dokumente nachprüfen lassen. Die 
 - [ ] Die fünf gepflegten Dokumente sind konsistent und aktuell; bekannte Einschränkungen sind dokumentiert.
 - [ ] Installation, Start und Testausführung sind im README nachvollziehbar beschrieben.
 
-## Noch in Phase 1 klären
+## Teamentscheidungen
 
-Vom Team beim Termin zu bestätigen (Vorschläge vom 09.11.2026). Nach dem Termin wird jeder Punkt abgehakt oder mit der abweichenden Entscheidung ergänzt.
+Das Team hat am 09.11.2026 alle Vorschläge ohne Änderung bestätigt:
 
-- [ ] Mitwachsender Zutatenkatalog statt festem Katalog (US-13 bis US-15, US-17, US-18).
-- [ ] Personas Lena, Andrea und Jonas sowie Lena als primäre Persona.
-- [ ] Nutzungskontext Smartphone und Offline-Nutzung (NFR-01, NFR-09).
-- [ ] Aufteilung der Leistungsziele (NFR-02, NFR-07, NFR-08), alle Should.
-- [ ] Sonderfälle: Zutat höchstens einmal je Rezept, eindeutige Rezeptnamen, Zubereitung als Freitext.
-- [ ] Abschnitte in der Zubereitung (US-16, Could).
-- [ ] Wichtigste Anwendungsfälle AF-1 bis AF-5 sowie die dokumentierten Risiken und Einschränkungen, inklusive Datenverlust bei Geräteverlust.
-- [ ] Aufteilung von US-06 und US-13, Akzeptanzkriterien im Format Gegeben/Wenn/Dann und Lesbarkeit (NFR-10, Should).
-- [ ] Gleiches Verständnis der Akzeptanzkriterien im gesamten Team.
+- [x] Mitwachsender Zutatenkatalog statt festem Katalog (US-13 bis US-15, US-17, US-18).
+- [x] Personas Lena, Andrea und Jonas sowie Lena als primäre Persona.
+- [x] Nutzungskontext Smartphone und Offline-Nutzung (NFR-01, NFR-09).
+- [x] Aufteilung der Leistungsziele (NFR-02, NFR-07, NFR-08), alle Should.
+- [x] Sonderfälle: Zutat höchstens einmal je Rezept, eindeutige Rezeptnamen, Zubereitung als Freitext.
+- [x] Abschnitte in der Zubereitung (US-16, Could).
+- [x] Wichtigste Anwendungsfälle AF-1 bis AF-5 sowie die dokumentierten Risiken und Einschränkungen, inklusive Datenverlust bei Geräteverlust.
+- [x] Aufteilung von US-06 und US-13, Akzeptanzkriterien im Format Gegeben/Wenn/Dann und Lesbarkeit (NFR-10, Should).
+- [x] Gleiches Verständnis der Akzeptanzkriterien im gesamten Team.

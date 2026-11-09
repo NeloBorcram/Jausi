@@ -1,8 +1,5 @@
 # Anforderungen und User Stories
 
-> [!NOTE]
-> Arbeitsentwurf. Mehrere Vorschläge vom 09.11.2026 muss das Team noch bestätigen; die Agenda steht in [mvp.md](mvp.md#noch-in-phase-1-klären).
-
 **Inhalt:** [Kontext](#kontext) · [Anwendungsfälle](#wichtigste-anwendungsfälle) · [Begriffe](#begriffe) · [Fachliche Regeln](#fachliche-regeln) · [User Stories](#user-stories-mit-akzeptanzkriterien) · [Funktionale Anforderungen](#funktionale-anforderungen) · [Nichtfunktionale Anforderungen](#nichtfunktionale-anforderungen) · [Einschränkungen und Risiken](#bekannte-einschränkungen-und-risiken)
 
 ## Kontext
@@ -83,7 +80,7 @@ erDiagram
 
 ## User Stories mit Akzeptanzkriterien
 
-Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit ihren Akzeptanzkriterien (Gegeben / Wenn / Dann) auf. Hinweistexte dürfen im Design (Phase 2) umformuliert werden; ihre Aussage bleibt gleich.
+Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit ihren Akzeptanzkriterien (AK) im Format Gegeben / Wenn / Dann auf. Hinweistexte dürfen im Design (Phase 2) umformuliert werden; ihre Aussage bleibt gleich.
 
 ### Story Map
 
@@ -103,12 +100,14 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich eine Zutat aus dem Zutatenkatalog zum Vorrat hinzufügen, damit Jausi weiß, welche Rezepte ich kochen kann.
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** „Reis“ steht im Zutatenkatalog, aber nicht im Vorrat
 - **Wenn** die Person „Reis“ zum Vorrat hinzufügt
 - **Dann** steht „Reis“ im Vorrat.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** „Reis“ steht bereits im Vorrat
 - **Wenn** die Person „Reis“ erneut hinzufügt
 - **Dann** steht „Reis“ weiterhin genau einmal im Vorrat.
@@ -121,12 +120,14 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich meinen Vorrat sehen, damit ich vorhandene Lebensmittel überblicken kann.
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** der Vorrat enthält Reis und Tomate
 - **Wenn** die Person den Vorrat öffnet
 - **Dann** werden genau Reis und Tomate angezeigt.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** der Vorrat ist leer
 - **Wenn** die Person den Vorrat öffnet
 - **Dann** erscheint der Hinweis „Noch keine Zutaten im Vorrat“, und das Hinzufügen einer Zutat ist mit einem Tipp erreichbar.
@@ -139,7 +140,9 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich verbrauchte Zutaten entfernen, damit mein Vorrat aktuell bleibt.
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** Tomate steht im Vorrat und im Rezept „Tomatenreis“
 - **Wenn** die Person Tomate aus dem Vorrat entfernt
 - **Dann** steht Tomate nicht mehr im Vorrat, das Rezept „Tomatenreis“ bleibt unverändert und zeigt Tomate als fehlende Zutat.
@@ -154,12 +157,14 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 *Gehört auch zu AF-2.*
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** „Reis“ und „Paprika“ stehen im Zutatenkatalog
 - **Wenn** die Person „RE“ eintippt
 - **Dann** wird „Reis“ vorgeschlagen und „Paprika“ nicht.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** „Reis“ wird vorgeschlagen
 - **Wenn** die Person den Vorschlag wählt
 - **Dann** wird „Reis“ übernommen, ohne dass eine neue Zutat entsteht.
@@ -174,12 +179,14 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 *Gehört auch zu AF-2.*
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** „Ei“ steht nicht im Zutatenkatalog
 - **Wenn** die Person „Ei“ eintippt und neu anlegt
 - **Dann** steht „Ei“ im Zutatenkatalog und ist in Vorrat und Rezepten auswählbar.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** die Eingabe ist leer oder besteht nur aus Leerzeichen
 - **Wenn** die Person eine Zutat anlegen will
 - **Dann** wird keine Zutat angelegt, und ein Hinweis erscheint.
@@ -194,12 +201,14 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 *Gehört auch zu AF-2.*
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** „Reis“ steht im Zutatenkatalog
 - **Wenn** die Person „ reis “ neu anlegen will
 - **Dann** wird keine neue Zutat angelegt, sondern „Reis“ verwendet.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** „Tomate“ steht im Zutatenkatalog
 - **Wenn** die Person „Tomaten“ anlegt
 - **Dann** entsteht eine zweite Zutat. Das ist die dokumentierte Einschränkung bei Pluralformen.
@@ -212,12 +221,14 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich Zutaten umbenennen oder zusammenführen, damit ich Tippfehler und Duplikate korrigieren kann.
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** „Tomatte“ steht im Vorrat und im Rezept „Tomatenreis“
 - **Wenn** die Person sie in „Tomate“ umbenennt
 - **Dann** erscheint „Tomate“ in Vorrat und Rezept.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** „Tomate“ und „Tomaten“ existieren
 - **Wenn** die Person „Tomaten“ mit „Tomate“ zusammenführt
 - **Dann** verweisen Vorrat und alle Rezepte nur noch auf „Tomate“, und „Tomaten“ ist nicht mehr im Zutatenkatalog.
@@ -230,12 +241,14 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich unbenutzte Zutaten löschen, damit der Zutatenkatalog übersichtlich bleibt.
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** „Zimt“ kommt weder im Vorrat noch in einem Rezept vor
 - **Wenn** die Person „Zimt“ löscht
 - **Dann** ist „Zimt“ nicht mehr im Zutatenkatalog.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** „Reis“ kommt in einem Rezept vor
 - **Wenn** die Person „Reis“ löschen will
 - **Dann** ist das nicht möglich, und ein Hinweis nennt den Grund.
@@ -250,22 +263,24 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich ein Rezept anlegen, damit ich es später wieder verwenden kann.
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** es gibt kein Rezept „Tomatenreis“
 - **Wenn** die Person ein Rezept mit dem Namen „Tomatenreis“, den Zutaten Reis und Tomate und einer Zubereitung speichert
 - **Dann** erscheint es im Archiv.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** Name, Zutaten oder Zubereitung fehlen
 - **Wenn** die Person speichert
 - **Dann** wird nicht gespeichert, und eine Fehlermeldung nennt das fehlende Feld.
 
-**Szenario 3**
+**AK 3**
 - **Gegeben** es gibt bereits „Tomatenreis“
 - **Wenn** die Person ein neues Rezept „tomatenreis“ speichert
 - **Dann** wird nicht gespeichert, und eine Fehlermeldung weist auf den vorhandenen Namen hin.
 
-**Szenario 4**
+**AK 4**
 - **Gegeben** Reis steht bereits im Rezept
 - **Wenn** die Person Reis erneut hinzufügt
 - **Dann** erscheint ein Hinweis, und Reis steht weiterhin genau einmal im Rezept.
@@ -280,17 +295,19 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 *Gehört auch zu AF-5.*
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** das Archiv enthält „Tomatenreis“ und „Eierreis“
 - **Wenn** die Person das Archiv öffnet
 - **Dann** werden beide Rezepte mit Namen angezeigt.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** ein Rezept mit Zutaten, Mengenangaben und Zubereitung
 - **Wenn** die Person es öffnet
 - **Dann** werden alle erfassten Angaben angezeigt.
 
-**Szenario 3**
+**AK 3**
 - **Gegeben** das Archiv ist leer
 - **Wenn** die Person es öffnet
 - **Dann** erscheint der Hinweis „Noch keine Rezepte“, und das Anlegen eines Rezepts ist mit einem Tipp erreichbar.
@@ -303,12 +320,14 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich ein Rezept bearbeiten, damit ich Korrekturen und Änderungen festhalten kann.
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** ein gespeichertes Rezept
 - **Wenn** die Person die Zubereitung ändert und speichert
 - **Dann** ist die Änderung nach erneutem Öffnen sichtbar.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** die Änderung verletzt eine Regel aus US-04, etwa ein leerer Name
 - **Wenn** die Person speichert
 - **Dann** wird nicht gespeichert, und eine Fehlermeldung erscheint.
@@ -321,12 +340,14 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich ein Rezept löschen, damit mein Archiv nur Rezepte enthält, die ich noch nutze.
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** ein gespeichertes Rezept
 - **Wenn** die Person „Löschen“ wählt
 - **Dann** erscheint eine Sicherheitsabfrage.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** die Sicherheitsabfrage
 - **Wenn** die Person bestätigt
 - **Dann** ist das Rezept nicht mehr im Archiv, und seine Zutaten bleiben im Zutatenkatalog
@@ -340,12 +361,14 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich Rezepte nach Namen suchen, damit ich ein bestimmtes Gericht finde.
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** das Archiv enthält „Tomatenreis“ und „Eierreis“
 - **Wenn** die Person „REIS“ sucht
 - **Dann** werden beide Rezepte angezeigt.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** kein Rezeptname enthält den Suchbegriff
 - **Wenn** die Person sucht
 - **Dann** erscheint der Hinweis „Keine Rezepte gefunden“.
@@ -358,7 +381,9 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich Rezepte als Favoriten markieren, damit ich sie schnell wiederfinde.
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** ein Rezept
 - **Wenn** die Person es als Favorit markiert
 - **Dann** erscheint es im Favoritenfilter
@@ -375,17 +400,19 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzerin wie Lena möchte ich vollständig passende Rezepte anzeigen, damit ich ohne Einkauf schnell etwas kochen kann.
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** der Vorrat enthält Reis und Tomate, das Archiv „Tomatenreis“ (Reis, Tomate) und „Eierreis“ (Reis, Ei)
 - **Wenn** die Person den Filter für vollständig passende Rezepte wählt
 - **Dann** wird nur „Tomatenreis“ angezeigt.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** ein Rezept verlangt „500 g Reis“ und Reis steht im Vorrat
 - **Wenn** das Matching läuft
 - **Dann** gilt Reis als vorhanden; Mengen werden nicht geprüft.
 
-**Szenario 3**
+**AK 3**
 - **Gegeben** kein Rezept passt vollständig
 - **Wenn** die Person den Filter wählt
 - **Dann** erscheint der Hinweis „Keine Rezepte mit allen Zutaten vorhanden“.
@@ -400,12 +427,14 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 *Gehört auch zu AF-4.*
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** der Vorrat enthält Reis, das Rezept „Eierreis“ verlangt Reis und Ei
 - **Wenn** die Person „Eierreis“ öffnet
 - **Dann** wird genau Ei als fehlende Zutat angezeigt.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** alle Zutaten von „Tomatenreis“ stehen im Vorrat
 - **Wenn** die Person es öffnet
 - **Dann** erscheint „Alle Zutaten vorhanden – Mengen nicht geprüft“.
@@ -420,7 +449,9 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzerin wie Andrea möchte ich Rezepte mit höchstens zwei fehlenden Zutaten finden, damit ich vorhandene Lebensmittel aufbrauche, statt viel neu einzukaufen.
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** drei Rezepte, denen null, zwei und drei Zutaten fehlen
 - **Wenn** die Person den Filter „höchstens zwei fehlende Zutaten“ wählt
 - **Dann** werden die Rezepte mit null und zwei fehlenden Zutaten samt Anzahl angezeigt, das mit drei nicht.
@@ -433,7 +464,9 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich fehlende Zutaten auf eine Einkaufsliste übernehmen, damit ich sie gesammelt sehe.
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** Ei fehlt für „Eierreis“ und steht bereits auf der Einkaufsliste
 - **Wenn** die Person die fehlenden Zutaten von „Eierreis“ übernimmt
 - **Dann** steht Ei genau einmal auf der Einkaufsliste.
@@ -448,12 +481,14 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich die Zubereitung eines Rezepts in Abschnitte gliedern, damit ich beim Kochen nur den aktuellen Teil sehe, etwa „Boden“, „Füllung“ oder „Glasur“.
 
-**Szenario 1**
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** ein Rezept mit den Abschnitten „Boden“ und „Füllung“
 - **Wenn** die Person nur „Füllung“ aufklappt
 - **Dann** ist nur deren Text sichtbar, und die Zutaten stehen weiterhin in einer gemeinsamen Liste.
 
-**Szenario 2**
+**AK 2**
 - **Gegeben** ein Rezept ohne Abschnitte
 - **Wenn** die Person es speichert
 - **Dann** ist es gültig.

@@ -6,7 +6,7 @@
 
 <p align="center">
   <strong>Rezepte mit dem, was du daheim hast.</strong><br>
-  <sub>Logo: Entwurf, Teamentscheidung ausstehend (siehe <a href="docs/branding.md">Branding</a>)</sub>
+  <sub>Logo: Idee, Verwendung noch offen (siehe <a href="docs/branding.md">Branding</a>)</sub>
 </p>
 
 > [!NOTE]
@@ -14,7 +14,7 @@
 > - **Was:** App, die einen persönlichen Lebensmittelvorrat mit einem Rezeptarchiv verbindet und zeigt, welche Gerichte mit vorhandenen Zutaten möglich sind.
 > - **Für wen:** Menschen, die unkompliziert mit dem kochen möchten, was sie daheim haben, allen voran Studierende.
 > - **Wo:** hauptsächlich auf dem Smartphone, in der Küche und beim Einkaufen, auch ohne Internet.
-> - **Stand:** Phase 1 (Anforderungen), inhaltlich fertig; die Teamprüfung steht aus. Es gibt noch keinen Code.
+> - **Stand:** Phase 1 (Anforderungen) abgeschlossen und vom Team bestätigt. Es gibt noch keinen Code.
 
 ## Problem
 
@@ -66,10 +66,10 @@ Zutaten werden beim Tippen aus dem eigenen Zutatenkatalog vorgeschlagen oder neu
 | Dokument | Inhalt |
 | --- | --- |
 | [Anforderungen](docs/requirements.md) | Anwendungsfälle, Begriffe, User Stories, funktionale und nichtfunktionale Anforderungen |
-| [MVP-Scope](docs/mvp.md) | Was im MVP ist und was nicht, Demo-Ablauf, Definition of Done, Agenda für die Teamprüfung |
+| [MVP-Scope](docs/mvp.md) | Was im MVP ist und was nicht, Demo-Ablauf, Definition of Done, Teamentscheidungen |
 | [Personas](docs/personas.md) | Lena, Andrea und Jonas im Detail |
 | [AI-Einsatz](docs/ai-usage.md) | Wo und wie AI eingesetzt wurde, Prompts und kritische Bewertung |
-| [Branding](docs/branding.md) | Logo- und Maskottchen-Entwürfe (nicht Teil des MVP) |
+| [Branding](docs/branding.md) | Logo- und Maskottchen-Ideen (nicht Teil des MVP) |
 
 ## Team
 
@@ -84,11 +84,11 @@ In der Projektdokumentation verwenden wir ausschließlich Vornamen. Die Verantwo
 
 ## Projektstand
 
-Aktuell läuft nur **Phase 1**; es gibt noch keinen Code. Technik, Architektur und Tests folgen in späteren Phasen. Die Termine stammen aus dem Kursplan und sind keine bestätigten Abgabefristen.
+**Phase 1** ist abgeschlossen; es gibt noch keinen Code. Technik, Architektur und Tests folgen in späteren Phasen. Die Termine stammen aus dem Kursplan und sind keine bestätigten Abgabefristen.
 
 | Phase laut Kursplan | Datum | Stand |
 | --- | --- | --- |
-| 1 – Project Definition & Requirements | 14.10.2026 | ⏳ inhaltlich fertig, Teamprüfung ausstehend |
+| 1 – Project Definition & Requirements | 14.10.2026 | ✅ abgeschlossen, vom Team bestätigt (09.11.2026) |
 | 2 – Architecture & Design | 09.11.2026 | – |
 | 3 – AI-assisted/driven Implementation | 23.11.2026 | – |
 | 4 – Quality Assurance & Testing | 09.12.2026 | – |
