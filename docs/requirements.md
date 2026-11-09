@@ -17,6 +17,46 @@ Jausi wird hauptsächlich auf dem Smartphone genutzt:
 
 Die Oberfläche muss daher auf einem Smartphone-Bildschirm vollständig bedienbar sein. Ob Jausi als native App oder als Web-App umgesetzt wird, ist eine Technologieentscheidung und folgt in Phase 2.
 
+## Wichtigste Anwendungsfälle
+
+Jeder Anwendungsfall beschreibt, wer wann warum handelt und was danach gilt. Jede User Story gehört zu mindestens einem Anwendungsfall.
+
+| ID | Anwendungsfall | Persona | Auslöser | Ergebnis | User Stories | Im MVP |
+| --- | --- | --- | --- | --- | --- | --- |
+| AF-1 | Vorrat pflegen | alle | nach dem Einkauf oder Kochen | Der Vorrat stimmt mit den Zutaten daheim überein. | US-01–03, US-13, US-14, US-15 | Ja (Kern) |
+| AF-2 | Rezepte sammeln | Jonas | ein neues Gericht gekocht oder entdeckt | Das Rezept ist im Archiv und wiederauffindbar. | US-04–07, US-11, US-13 | Ja (Kern) |
+| AF-3 | Was kann ich kochen? | Lena | Hunger, Blick in den Kühlschrank | Ein Rezept ist gewählt, dessen Zutaten alle vorhanden sind. | US-08, US-09 | Ja (Hauptanwendungsfall) |
+| AF-4 | Einkauf planen | Andrea | vor dem Wocheneinkauf | Sie weiß, welche Zutaten sie für welche Rezepte nachkaufen muss. | US-09, US-10, US-12 | Teilweise (nur US-09) |
+| AF-5 | Nach Rezept kochen | alle | am Herd, Smartphone in der Hand | Das Gericht ist zubereitet, ohne lange im Rezept zu suchen. | US-05, US-16 | Teilweise (nur US-05) |
+
+**AF-1 – Vorrat pflegen**
+1. Die Person öffnet den Vorrat.
+2. Sie tippt den Namen einer Zutat und wählt einen Zutatenvorschlag oder legt eine neue Zutat an.
+3. Verbrauchte Zutaten entfernt sie aus dem Vorrat.
+4. Das Matching berücksichtigt sofort den aktuellen Vorrat.
+
+**AF-2 – Rezepte sammeln**
+1. Jonas legt ein neues Rezept an und gibt einen eindeutigen Namen ein.
+2. Er wählt die Zutaten über Zutatenvorschläge aus oder legt fehlende neu an; Mengen sind optional.
+3. Er erfasst die Zubereitung als Freitext und speichert.
+4. Das Rezept erscheint im Archiv und kann später bearbeitet oder gelöscht werden.
+
+**AF-3 – Was kann ich kochen?**
+1. Lena öffnet Jausi und wählt den Filter für vollständig passende Rezepte.
+2. Jausi zeigt alle Rezepte, deren Zutaten im Vorrat stehen.
+3. Ist keines dabei, sieht sie in den Rezeptdetails, welche Zutaten fehlen.
+4. Sie wählt ein Rezept und öffnet die Zubereitung (weiter mit AF-5).
+
+**AF-4 – Einkauf planen**
+1. Andrea öffnet ein Rezept, das sie diese Woche kochen möchte.
+2. Jausi zeigt die fehlenden Zutaten.
+3. Nach dem MVP: Sie filtert Rezepte mit höchstens zwei fehlenden Zutaten (US-10) und übernimmt fehlende Zutaten auf eine Einkaufsliste (US-12).
+
+**AF-5 – Nach Rezept kochen**
+1. Die Person öffnet ein Rezept auf dem Smartphone.
+2. Sie liest Zutaten und Zubereitung.
+3. Nach dem MVP: Sie klappt nur den aktuellen Abschnitt der Zubereitung auf (US-16).
+
 ## Begriffe
 
 Diese Begriffe gelten verbindlich für alle Projektdokumente. Die unter „Nicht verwenden“ genannten Synonyme werden durch den definierten Begriff ersetzt. Wörtliche Zitate früherer Eingaben in [ai-usage.md](ai-usage.md) bleiben unverändert.
@@ -133,5 +173,7 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026. Überholte Befu
 - Dauerhafte Speicherung ist verbindlich; Plattform und Speichermethode sind noch offen.
 - Der MVP verwendet einen persönlichen Datenbestand ohne Anmeldung, gemeinsam genutzten Haushalt oder Synchronisierung.
 - Ein Ablaufdatum ist eine spätere Idee, keine Anforderung für die aktuelle Umsetzung.
+- Bekanntes Risiko (AF-1): Nach einem großen Einkauf müssen Zutaten einzeln eingetragen werden. Ist das zu mühsam, wird der Vorrat nicht gepflegt und das Matching verliert seinen Wert. Mehrere Zutaten auf einmal hinzuzufügen wäre eine mögliche spätere Erweiterung; sie ist noch nicht als Anforderung erfasst.
+- Bekannte Einschränkung (AF-3): Jausi bringt erst Nutzen, wenn Rezepte im Archiv stehen. Beim ersten Start findet das Matching nichts (siehe Persona Jonas).
 
 Die Spezifikation ist ein Arbeitsentwurf. Vor Abschluss von Phase 1 bestätigt das Team die offenen Punkte in [mvp.md](mvp.md), Abschnitt „Noch in Phase 1 klären“. Technische Entscheidungen bleiben Phase 2 vorbehalten.

@@ -31,7 +31,7 @@ Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bi
 
 ## Geplanter vollständiger Demo-Anwendungsfall
 
-Dieser Ablauf beschreibt die spätere Produktabnahme. In Phase 1 wird seine Eindeutigkeit geprüft; die Software wird noch nicht umgesetzt oder getestet.
+Dieser Ablauf beschreibt die spätere Produktabnahme und deckt die Anwendungsfälle AF-1 bis AF-3 aus [requirements.md](requirements.md) ab. In Phase 1 wird seine Eindeutigkeit geprüft; die Software wird noch nicht umgesetzt oder getestet.
 
 Voraussetzung: Die App läuft auf dem dokumentierten Smartphone-Testgerät im Flugmodus; Zutatenkatalog, Vorrat und Archiv sind leer.
 
@@ -72,6 +72,7 @@ Vom Team zu bestätigen (Vorschläge vom 09.11.2026):
 4. Aufteilung der Leistungsziele (NFR-02, NFR-07, NFR-08), alle Should.
 5. Sonderfälle: Zutat höchstens einmal je Rezept, eindeutige Rezeptnamen, Zubereitung als Freitext.
 6. Abschnitte in der Zubereitung (US-16, Could).
-7. Gleiches Verständnis der Akzeptanzkriterien im gesamten Team.
+7. Wichtigste Anwendungsfälle AF-1 bis AF-5 und die zwei dokumentierten Risiken.
+8. Gleiches Verständnis der Akzeptanzkriterien im gesamten Team.
 
 Architektur und Technologieauswahl gehören in Phase 2, die Implementierung in Phase 3, Qualitätssicherung und Testausführung in Phase 4 sowie abschließende Evaluation und Reflexion in Phase 5.
