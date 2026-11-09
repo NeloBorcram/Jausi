@@ -1,45 +1,79 @@
-# Jausi
+<p align="center">
+  <img src="docs/assets/maskottchen/logo-moehrchen.png" alt="Jausi-Logo: Möhrchen mit zwei Einkaufstaschen" width="220">
+</p>
 
-**Rezepte mit dem, was du daheim hast.**
+<h1 align="center">Jausi</h1>
 
-Jausi ist ein Semesterprojekt eines vierköpfigen Teams. Die App verbindet einen persönlichen Lebensmittelvorrat mit einem Rezeptarchiv und zeigt, welche Gerichte mit vorhandenen Zutaten zubereitet werden können.
+<p align="center">
+  <strong>Rezepte mit dem, was du daheim hast.</strong><br>
+  <sub>Logo: Entwurf, Teamentscheidung ausstehend (siehe <a href="docs/branding.md">Branding</a>)</sub>
+</p>
 
-## Problem und Zielgruppe
+> [!NOTE]
+> **Auf einen Blick**
+> - **Was:** App, die einen persönlichen Lebensmittelvorrat mit einem Rezeptarchiv verbindet und zeigt, welche Gerichte mit vorhandenen Zutaten möglich sind.
+> - **Für wen:** Menschen, die unkompliziert mit dem kochen möchten, was sie daheim haben, allen voran Studierende.
+> - **Wo:** hauptsächlich auf dem Smartphone, in der Küche und beim Einkaufen, auch ohne Internet.
+> - **Stand:** Phase 1 (Anforderungen), inhaltlich fertig; die Teamprüfung steht aus. Es gibt noch keinen Code.
 
-Menschen, die unkompliziert kochen möchten, allen voran Studierende, verlieren leicht den Überblick über ihre Lebensmittel. Jausi beantwortet die Frage: „Was kann ich heute mit meinem Vorrat kochen?“ und unterstützt dabei, vorhandene Zutaten zu nutzen und unnötige Einkäufe zu vermeiden.
+## Problem
 
-Das Problem ist relevant: In österreichischen Haushalten werden pro Person und Jahr rund 69 kg Lebensmittel weggeworfen, davon etwa 37 kg vermeidbar ([BMLUK, Daten 2024](https://www.bmluk.gv.at/themen/abfall-und-kreislaufwirtschaft/abfallvermeidung/lebensmittel/oesterreich/haushalte.html)). In einer Umfrage der Verbraucherzentrale NRW wünschte sich rund ein Drittel der Befragten Rezepte zur Resteverwertung ([Verbraucherzentrale NRW](https://www.verbraucherzentrale.nrw/pressemitteilungen/neue-umfrage-fortschritte-bei-vermeidung-von-lebensmittelabfaellen-111819)). Laut einer Studie der ZHAW verschwenden jüngere Menschen mehr Lebensmittel als ältere ([ZHAW](https://www.zhaw.ch/de/medien/medienmitteilungen/detailansicht-medienmitteilung/event-news/frauen-ernaehren-sich-nachhaltiger-aeltere-verschwenden-weniger-nahrungsmittel/)). Eine Erhebung speziell zu Studierenden liegt dem Team nicht vor.
+Menschen, die unkompliziert kochen möchten, allen voran Studierende, verlieren leicht den Überblick über ihre Lebensmittel. Jausi beantwortet die Frage **„Was kann ich heute mit meinem Vorrat kochen?“** und unterstützt dabei, vorhandene Zutaten zu nutzen und unnötige Einkäufe zu vermeiden.
 
-Alle Nutzer wollen wissen: Was habe ich da, was kann ich damit kochen, was muss ich nachkaufen? Drei fiktive [Personas](docs/personas.md) zeigen unterschiedliche Motivationen:
+**Warum das relevant ist:**
 
-- **Lena, 22, Studentin (primär):** will schnell entscheiden, was es heute gibt, und nur das Nötigste kaufen.
-- **Andrea, 38, berufstätig:** will vorhandene Lebensmittel aufbrauchen statt sie wegzuwerfen.
-- **Jonas, 19, Lehrling:** kocht erst seit Kurzem und will sein kleines Repertoire nutzen.
+- In österreichischen Haushalten werden pro Person und Jahr rund **69 kg Lebensmittel** weggeworfen, davon etwa **37 kg vermeidbar** ([BMLUK, Daten 2024](https://www.bmluk.gv.at/themen/abfall-und-kreislaufwirtschaft/abfallvermeidung/lebensmittel/oesterreich/haushalte.html)).
+- In einer Umfrage der Verbraucherzentrale NRW wünschte sich rund **ein Drittel** der Befragten Rezepte zur Resteverwertung ([Verbraucherzentrale NRW](https://www.verbraucherzentrale.nrw/pressemitteilungen/neue-umfrage-fortschritte-bei-vermeidung-von-lebensmittelabfaellen-111819)).
+- Laut einer Studie der ZHAW verschwenden **jüngere Menschen** mehr Lebensmittel als ältere ([ZHAW](https://www.zhaw.ch/de/medien/medienmitteilungen/detailansicht-medienmitteilung/event-news/frauen-ernaehren-sich-nachhaltiger-aeltere-verschwenden-weniger-nahrungsmittel/)).
 
-Jausi wird hauptsächlich auf dem Smartphone genutzt: in der Küche und beim Einkaufen.
+Eine Erhebung speziell zu Studierenden liegt dem Team nicht vor.
 
-## Geplanter Funktionsumfang
+## Zielgruppe
+
+Alle Nutzer wollen drei Dinge wissen: **Was habe ich da? Was kann ich damit kochen? Was muss ich nachkaufen?** Drei fiktive [Personas](docs/personas.md) zeigen unterschiedliche Motivationen:
+
+| Persona | Motivation |
+| --- | --- |
+| 🎓 **Lena, 22, Studentin** (primär) | will schnell entscheiden, was es heute gibt, und nur das Nötigste kaufen |
+| 🌱 **Andrea, 38, berufstätig** | will vorhandene Lebensmittel aufbrauchen statt sie wegzuwerfen |
+| 🍳 **Jonas, 19, Lehrling** | kocht erst seit Kurzem und will sein kleines Repertoire nutzen |
+
+## So funktioniert Jausi
+
+```mermaid
+flowchart LR
+    K["🧺 Zutatenkatalog<br/>wächst mit jeder Eingabe"] --> V["🥕 Vorrat<br/>was ich daheim habe"]
+    K --> R["📖 Rezeptarchiv<br/>meine eigenen Rezepte"]
+    V --> M{"Matching"}
+    R --> M
+    M --> P["✅ Vollständig passend<br/>sofort kochbar"]
+    M --> F["🛒 Fehlende Zutaten<br/>je Rezept"]
+```
+
+Zutaten werden beim Tippen aus dem eigenen Zutatenkatalog vorgeschlagen oder neu angelegt; eine Duplikatprüfung verhindert unterschiedliche Schreibweisen. Das Matching prüft nur, **ob** eine Zutat vorhanden ist, nicht die Menge.
+
+## Geplanter Funktionsumfang (MVP)
 
 - Zutaten im Vorrat erfassen und entfernen; vorhandene Zutaten werden beim Tippen vorgeschlagen, neue angelegt.
 - Eigene Rezepte mit Zutaten, optionalen Mengenangaben und Zubereitung verwalten.
 - Passende Rezepte finden und fehlende Zutaten anzeigen.
 - Auf dem Smartphone nutzbar, auch ohne Internet.
 
-Die Suche nach Rezeptnamen gehört nicht zum MVP (Should).
-
-Der MVP prüft ausschließlich, ob Zutaten vorhanden sind. Mengen werden im Rezept dokumentiert, aber nicht mit Vorratsmengen verglichen. Ein persönlicher Zutatenkatalog wächst mit den Eingaben des Nutzers; Vorschläge beim Tippen und eine Duplikatprüfung verhindern unterschiedliche Schreibweisen beim Vergleich (Vorschlag, Teamentscheidung ausstehend). AI unterstützt die Projektarbeit; eine AI-Funktion in der App ist nicht vorgesehen.
+**Bewusst nicht im MVP:** Mengenvergleich, Suche nach Rezeptnamen (Should), Favoriten und Einkaufsliste (Could), Nutzerkonten. AI unterstützt die Projektarbeit; eine AI-Funktion in der App ist nicht vorgesehen. Details stehen im [MVP-Scope](docs/mvp.md).
 
 ## Projektdokumentation
 
-- [Anforderungen und User Stories](docs/requirements.md)
-- [MVP-Scope](docs/mvp.md)
-- [AI-Einsatz und Reflexion](docs/ai-usage.md)
-- [Personas](docs/personas.md)
-- [Branding und Maskottchen (Entwurf)](docs/branding.md)
+| Dokument | Inhalt |
+| --- | --- |
+| [Anforderungen](docs/requirements.md) | Anwendungsfälle, Begriffe, User Stories, funktionale und nichtfunktionale Anforderungen |
+| [MVP-Scope](docs/mvp.md) | Was im MVP ist und was nicht, Demo-Ablauf, Definition of Done, Agenda für die Teamprüfung |
+| [Personas](docs/personas.md) | Lena, Andrea und Jonas im Detail |
+| [AI-Einsatz](docs/ai-usage.md) | Wo und wie AI eingesetzt wurde, Prompts und kritische Bewertung |
+| [Branding](docs/branding.md) | Logo- und Maskottchen-Entwürfe (nicht Teil des MVP) |
 
 README, Anforderungen, MVP-Scope, AI-Einsatz und Personas werden bei jeder Projektänderung auf Aktualität geprüft und bei betroffenen Inhalten gemeinsam mit der Änderung aktualisiert. Weitere Dokumentation liegt ausschließlich in `docs/`.
 
-## Zusammenarbeit
+## Team
 
 | Teammitglied | E-Mail |
 | --- | --- |
@@ -48,22 +82,19 @@ README, Anforderungen, MVP-Scope, AI-Einsatz und Personas werden bei jeder Proje
 | Manuel | se26m026@technikum-wien.at |
 | Roger | se26m063@technikum-wien.at |
 
-In der Projektdokumentation verwenden wir ausschließlich Vornamen.
+In der Projektdokumentation verwenden wir ausschließlich Vornamen. Die Verantwortung für die Anforderungen liegt beim Team; AI liefert Vorschläge und unterstützt deren Prüfung.
 
-Wir arbeiten zu viert. In Phase 1 prüfen wir gemeinsam Problemdefinition, Anforderungen, Priorisierung und MVP. Die Verantwortung für die Anforderungen liegt beim Team; AI liefert Vorschläge und unterstützt deren Prüfung.
+## Projektstand
 
-## Projektstand und offene Entscheidungen
+> [!IMPORTANT]
+> Aktuell bearbeiten wir ausschließlich **Phase 1**. Es gibt noch keine App-Implementierung und keine ausführbaren Tests. Technologieauswahl, Architektur, Implementierung und Testausführung folgen in den späteren Phasen. Die Phase-1-Abnahmekriterien stehen in [docs/mvp.md](docs/mvp.md).
 
-Phase 1: Projektdefinition und Anforderungen. Es gibt noch keine App-Implementierung und keine ausführbaren Tests.
+| Phase laut Kursplan | Datum | Stand |
+| --- | --- | --- |
+| 1 – Project Definition & Requirements | 14.10.2026 | ⏳ inhaltlich fertig, Teamprüfung ausstehend |
+| 2 – Architecture & Design | 09.11.2026 | – |
+| 3 – AI-assisted/driven Implementation | 23.11.2026 | – |
+| 4 – Quality Assurance & Testing | 09.12.2026 | – |
+| 5 – Evaluation & Reflection | 21.12.2026 | – |
 
-Aktuell bearbeiten wir ausschließlich Phase 1. Technologieauswahl, Architektur, Implementierung und Testausführung folgen in den vorgesehenen späteren Phasen.
-
-| Phase laut bereitgestelltem Kursplan | Datum |
-| --- | --- |
-| 1 – Project Definition & Requirements | 14.10.2026 |
-| 2 – Architecture & Design | 09.11.2026 |
-| 3 – AI-assisted/driven Implementation | 23.11.2026 |
-| 4 – Quality Assurance & Testing | 09.12.2026 |
-| 5 – Evaluation & Reflection | 21.12.2026 |
-
-Die Daten sind die angegebenen Phasentermine; sie werden nicht als bestätigte Abgabefristen interpretiert. Die Phase-1-Abnahmekriterien stehen in [docs/mvp.md](docs/mvp.md).
+Die Daten sind die angegebenen Phasentermine; sie werden nicht als bestätigte Abgabefristen interpretiert.

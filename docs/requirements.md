@@ -1,5 +1,22 @@
 # Anforderungen und User Stories
 
+> [!NOTE]
+> Arbeitsentwurf. Mehrere Vorschläge vom 09.11.2026 muss das Team noch bestätigen; die Agenda steht in [mvp.md](mvp.md#noch-in-phase-1-klären).
+
+**Inhalt**
+
+1. [Produktziel](#produktziel)
+2. [Zielgruppe und Personas](#zielgruppe-und-personas)
+3. [Nutzungskontext](#nutzungskontext)
+4. [Wichtigste Anwendungsfälle](#wichtigste-anwendungsfälle)
+5. [Begriffe](#begriffe)
+6. [Priorisierungsmaßstab](#priorisierungsmaßstab)
+7. [Fachliche Regeln](#fachliche-regeln)
+8. [User Stories mit Akzeptanzkriterien](#user-stories-mit-akzeptanzkriterien)
+9. [Funktionale Anforderungen](#funktionale-anforderungen)
+10. [Nichtfunktionale Anforderungen](#nichtfunktionale-anforderungen)
+11. [Prüfung auf Widersprüche und Unklarheiten](#prüfung-auf-widersprüche-und-unklarheiten)
+
 ## Produktziel
 
 Jausi richtet sich an Menschen, die mit vorhandenen Zutaten kochen möchten, primär Studierende (siehe Personas), und verbindet dafür Lebensmittelvorrat und persönliches Rezeptarchiv. Das vierköpfige Team entwickelt einen überschaubaren MVP im Rahmen eines Semesterprojekts.
@@ -29,6 +46,20 @@ Jeder Anwendungsfall beschreibt, wer wann warum handelt und was danach gilt. Jed
 | AF-4 | Einkauf planen | Andrea | vor dem Wocheneinkauf | Sie weiß, welche Zutaten sie für welche Rezepte nachkaufen muss. | US-09, US-10, US-12 | Teilweise (nur US-09) |
 | AF-5 | Nach Rezept kochen | alle | am Herd, Smartphone in der Hand | Das Gericht ist zubereitet, ohne lange im Rezept zu suchen. | US-05, US-16 | Teilweise (nur US-05) |
 
+AF-1 und AF-2 sind die Voraussetzung für den Hauptanwendungsfall AF-3:
+
+```mermaid
+flowchart LR
+    AF1["AF-1<br/>Vorrat pflegen"] --> AF3{{"AF-3<br/>Was kann ich kochen?"}}
+    AF2["AF-2<br/>Rezepte sammeln"] --> AF3
+    AF3 -->|"alles da"| AF5["AF-5<br/>Nach Rezept kochen"]
+    AF3 -->|"etwas fehlt"| AF4["AF-4<br/>Einkauf planen"]
+    AF4 -.->|"nach dem Einkauf"| AF1
+```
+
+<details>
+<summary><strong>Abläufe der Anwendungsfälle anzeigen</strong></summary>
+
 **AF-1 – Vorrat pflegen**
 1. Die Person öffnet den Vorrat.
 2. Sie tippt den Namen einer Zutat und wählt einen Zutatenvorschlag oder legt eine neue Zutat an.
@@ -57,6 +88,8 @@ Jeder Anwendungsfall beschreibt, wer wann warum handelt und was danach gilt. Jed
 2. Sie liest Zutaten und Zubereitung.
 3. Nach dem MVP: Sie klappt nur den aktuellen Abschnitt der Zubereitung auf (US-16).
 
+</details>
+
 ## Begriffe
 
 Diese Begriffe gelten verbindlich für alle Projektdokumente. Die unter „Nicht verwenden“ genannten Synonyme werden durch den definierten Begriff ersetzt. Wörtliche Zitate früherer Eingaben in [ai-usage.md](ai-usage.md) bleiben unverändert.
@@ -76,6 +109,16 @@ Diese Begriffe gelten verbindlich für alle Projektdokumente. Die unter „Nicht
 - **Favorit:** Ein vom Nutzer markiertes Rezept (Could, nicht im MVP).
   *Nicht verwenden: Lieblingsrezept.*
 - **Must / Should / Could:** Prioritätsstufen gemäß Abschnitt „Priorisierungsmaßstab“.
+
+So hängen die Begriffe zusammen:
+
+```mermaid
+erDiagram
+    ZUTATENKATALOG ||--o{ ZUTAT : "enthält"
+    VORRAT }o--o{ ZUTAT : "enthält (ohne Menge)"
+    REZEPTARCHIV ||--o{ REZEPT : "enthält"
+    REZEPT }o--|{ ZUTAT : "verwendet (Menge optional)"
+```
 
 ## Priorisierungsmaßstab
 
