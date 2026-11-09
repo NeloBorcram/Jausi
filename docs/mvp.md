@@ -23,7 +23,7 @@ Der MVP umfasst aus [requirements.md](https://github.com/NeloBorcram/Jausi/blob/
 - Erkennung von Plural- und Schreibvarianten wie „Tomate“ und „Tomaten“.
 - AI-Rezeptgenerierung, externe Rezeptimporte, Barcode- oder Bilderkennung.
 - Ablaufdaten, Benachrichtigungen sowie Ernährungs- und Allergiefilter.
-- Favoriten und Einkaufsliste (Could).
+- Favoriten, Einkaufsliste und Abschnitte in der Zubereitung (Could).
 - Suche nach Rezeptnamen (Should).
 - Filter für höchstens zwei fehlende Zutaten (Should; erst nach Abschluss des MVP).
 - Leistungsziele NFR-02, NFR-07 und NFR-08 (Should): werden gemessen und dokumentiert, sind aber keine Abnahmebedingung des MVP.
