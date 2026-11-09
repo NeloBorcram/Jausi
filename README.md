@@ -71,8 +71,6 @@ Zutaten werden beim Tippen aus dem eigenen Zutatenkatalog vorgeschlagen oder neu
 | [AI-Einsatz](docs/ai-usage.md) | Wo und wie AI eingesetzt wurde, Prompts und kritische Bewertung |
 | [Branding](docs/branding.md) | Logo- und Maskottchen-Entwürfe (nicht Teil des MVP) |
 
-README, Anforderungen, MVP-Scope, AI-Einsatz und Personas werden bei jeder Projektänderung auf Aktualität geprüft und bei betroffenen Inhalten gemeinsam mit der Änderung aktualisiert. Weitere Dokumentation liegt ausschließlich in `docs/`.
-
 ## Team
 
 | Teammitglied | E-Mail |
@@ -86,8 +84,7 @@ In der Projektdokumentation verwenden wir ausschließlich Vornamen. Die Verantwo
 
 ## Projektstand
 
-> [!IMPORTANT]
-> Aktuell bearbeiten wir ausschließlich **Phase 1**. Es gibt noch keine App-Implementierung und keine ausführbaren Tests. Technologieauswahl, Architektur, Implementierung und Testausführung folgen in den späteren Phasen. Die Phase-1-Abnahmekriterien stehen in [docs/mvp.md](docs/mvp.md).
+Aktuell läuft nur **Phase 1**; es gibt noch keinen Code. Technik, Architektur und Tests folgen in späteren Phasen. Die Termine stammen aus dem Kursplan und sind keine bestätigten Abgabefristen.
 
 | Phase laut Kursplan | Datum | Stand |
 | --- | --- | --- |
@@ -96,5 +93,3 @@ In der Projektdokumentation verwenden wir ausschließlich Vornamen. Die Verantwo
 | 3 – AI-assisted/driven Implementation | 23.11.2026 | – |
 | 4 – Quality Assurance & Testing | 09.12.2026 | – |
 | 5 – Evaluation & Reflection | 21.12.2026 | – |
-
-Die Daten sind die angegebenen Phasentermine; sie werden nicht als bestätigte Abgabefristen interpretiert.

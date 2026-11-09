@@ -35,39 +35,6 @@ flowchart LR
     AF4 -.->|"nach dem Einkauf"| AF1
 ```
 
-<details>
-<summary><strong>Abläufe der Anwendungsfälle anzeigen</strong></summary>
-
-**AF-1 – Vorrat pflegen**
-1. Die Person öffnet den Vorrat.
-2. Sie tippt den Namen einer Zutat und wählt einen Zutatenvorschlag oder legt eine neue Zutat an.
-3. Verbrauchte Zutaten entfernt sie aus dem Vorrat.
-4. Das Matching berücksichtigt sofort den aktuellen Vorrat.
-
-**AF-2 – Rezepte sammeln**
-1. Jonas legt ein neues Rezept an und gibt einen eindeutigen Namen ein.
-2. Er wählt die Zutaten über Zutatenvorschläge aus oder legt fehlende neu an; Mengen sind optional.
-3. Er erfasst die Zubereitung als Freitext und speichert.
-4. Das Rezept erscheint im Archiv und kann später bearbeitet oder gelöscht werden.
-
-**AF-3 – Was kann ich kochen?**
-1. Lena öffnet Jausi und wählt den Filter für vollständig passende Rezepte.
-2. Jausi zeigt alle Rezepte, deren Zutaten im Vorrat stehen.
-3. Ist keines dabei, sieht sie in den Rezeptdetails, welche Zutaten fehlen.
-4. Sie wählt ein Rezept und öffnet die Zubereitung (weiter mit AF-5).
-
-**AF-4 – Einkauf planen**
-1. Andrea öffnet ein Rezept, das sie diese Woche kochen möchte.
-2. Jausi zeigt die fehlenden Zutaten.
-3. Nach dem MVP: Sie filtert Rezepte mit höchstens zwei fehlenden Zutaten (US-10) und übernimmt fehlende Zutaten auf eine Einkaufsliste (US-12).
-
-**AF-5 – Nach Rezept kochen**
-1. Die Person öffnet ein Rezept auf dem Smartphone.
-2. Sie liest Zutaten und Zubereitung.
-3. Nach dem MVP: Sie klappt nur den aktuellen Abschnitt der Zubereitung auf (US-16).
-
-</details>
-
 ## Begriffe
 
 Die Begriffe gelten verbindlich für alle Projektdokumente; wörtliche Zitate in [ai-usage.md](ai-usage.md) bleiben unverändert.
@@ -136,8 +103,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich eine Zutat aus dem Zutatenkatalog zum Vorrat hinzufügen, damit Jausi weiß, welche Rezepte ich kochen kann.
 
-*Must · AF-1*
-
 **Szenario 1**
 - **Gegeben** „Reis“ steht im Zutatenkatalog, aber nicht im Vorrat
 - **Wenn** die Person „Reis“ zum Vorrat hinzufügt
@@ -155,8 +120,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 <summary><strong>US-02 · Vorrat anzeigen</strong> · Must</summary>
 
 > Als Nutzer möchte ich meinen Vorrat sehen, damit ich vorhandene Lebensmittel überblicken kann.
-
-*Must · AF-1*
 
 **Szenario 1**
 - **Gegeben** der Vorrat enthält Reis und Tomate
@@ -176,8 +139,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich verbrauchte Zutaten entfernen, damit mein Vorrat aktuell bleibt.
 
-*Must · AF-1*
-
 **Szenario 1**
 - **Gegeben** Tomate steht im Vorrat und im Rezept „Tomatenreis“
 - **Wenn** die Person Tomate aus dem Vorrat entfernt
@@ -191,7 +152,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich beim Eintippen einer Zutat passende Zutaten aus meinem Zutatenkatalog vorgeschlagen bekommen, damit ich schnell auswähle, statt neu zu tippen.
 
-*Must · AF-1, AF-2*
+*Gehört auch zu AF-2.*
 
 **Szenario 1**
 - **Gegeben** „Reis“ und „Paprika“ stehen im Zutatenkatalog
@@ -211,7 +172,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich eine Zutat neu anlegen, wenn sie noch nicht im Zutatenkatalog steht, damit ich alle Zutaten meiner eigenen Rezepte verwenden kann.
 
-*Must · AF-1, AF-2*
+*Gehört auch zu AF-2.*
 
 **Szenario 1**
 - **Gegeben** „Ei“ steht nicht im Zutatenkatalog
@@ -231,7 +192,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich, dass Jausi doppelte Zutaten verhindert, damit das Matching nicht an unterschiedlichen Schreibweisen scheitert.
 
-*Must · AF-1, AF-2*
+*Gehört auch zu AF-2.*
 
 **Szenario 1**
 - **Gegeben** „Reis“ steht im Zutatenkatalog
@@ -251,8 +212,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich Zutaten umbenennen oder zusammenführen, damit ich Tippfehler und Duplikate korrigieren kann.
 
-*Should · AF-1*
-
 **Szenario 1**
 - **Gegeben** „Tomatte“ steht im Vorrat und im Rezept „Tomatenreis“
 - **Wenn** die Person sie in „Tomate“ umbenennt
@@ -270,8 +229,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 <summary><strong>US-15 · Unbenutzte Zutaten löschen</strong> · Could</summary>
 
 > Als Nutzer möchte ich unbenutzte Zutaten löschen, damit der Zutatenkatalog übersichtlich bleibt.
-
-*Could · AF-1*
 
 **Szenario 1**
 - **Gegeben** „Zimt“ kommt weder im Vorrat noch in einem Rezept vor
@@ -292,8 +249,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 <summary><strong>US-04 · Rezept anlegen</strong> · Must</summary>
 
 > Als Nutzer möchte ich ein Rezept anlegen, damit ich es später wieder verwenden kann.
-
-*Must · AF-2*
 
 **Szenario 1**
 - **Gegeben** es gibt kein Rezept „Tomatenreis“
@@ -323,7 +278,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich das Rezeptarchiv und einzelne Rezepte öffnen, damit ich Zutaten und Zubereitung lesen kann.
 
-*Must · AF-2, AF-5*
+*Gehört auch zu AF-5.*
 
 **Szenario 1**
 - **Gegeben** das Archiv enthält „Tomatenreis“ und „Eierreis“
@@ -348,8 +303,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich ein Rezept bearbeiten, damit ich Korrekturen und Änderungen festhalten kann.
 
-*Must · AF-2*
-
 **Szenario 1**
 - **Gegeben** ein gespeichertes Rezept
 - **Wenn** die Person die Zubereitung ändert und speichert
@@ -367,8 +320,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 <summary><strong>US-19 · Rezept löschen</strong> · Must</summary>
 
 > Als Nutzer möchte ich ein Rezept löschen, damit mein Archiv nur Rezepte enthält, die ich noch nutze.
-
-*Must · AF-2*
 
 **Szenario 1**
 - **Gegeben** ein gespeichertes Rezept
@@ -389,8 +340,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich Rezepte nach Namen suchen, damit ich ein bestimmtes Gericht finde.
 
-*Should · AF-2*
-
 **Szenario 1**
 - **Gegeben** das Archiv enthält „Tomatenreis“ und „Eierreis“
 - **Wenn** die Person „REIS“ sucht
@@ -409,8 +358,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich Rezepte als Favoriten markieren, damit ich sie schnell wiederfinde.
 
-*Could · AF-2*
-
 **Szenario 1**
 - **Gegeben** ein Rezept
 - **Wenn** die Person es als Favorit markiert
@@ -427,8 +374,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 <summary><strong>US-08 · Vollständig passende Rezepte anzeigen</strong> · Must</summary>
 
 > Als Nutzerin wie Lena möchte ich vollständig passende Rezepte anzeigen, damit ich ohne Einkauf schnell etwas kochen kann.
-
-*Must · AF-3*
 
 **Szenario 1**
 - **Gegeben** der Vorrat enthält Reis und Tomate, das Archiv „Tomatenreis“ (Reis, Tomate) und „Eierreis“ (Reis, Ei)
@@ -453,7 +398,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzer möchte ich fehlende Zutaten sehen, damit ich meinen Einkauf planen kann.
 
-*Must · AF-3, AF-4*
+*Gehört auch zu AF-4.*
 
 **Szenario 1**
 - **Gegeben** der Vorrat enthält Reis, das Rezept „Eierreis“ verlangt Reis und Ei
@@ -475,8 +420,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 > Als Nutzerin wie Andrea möchte ich Rezepte mit höchstens zwei fehlenden Zutaten finden, damit ich vorhandene Lebensmittel aufbrauche, statt viel neu einzukaufen.
 
-*Should · AF-4*
-
 **Szenario 1**
 - **Gegeben** drei Rezepte, denen null, zwei und drei Zutaten fehlen
 - **Wenn** die Person den Filter „höchstens zwei fehlende Zutaten“ wählt
@@ -489,8 +432,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 <summary><strong>US-12 · Einkaufsliste</strong> · Could</summary>
 
 > Als Nutzer möchte ich fehlende Zutaten auf eine Einkaufsliste übernehmen, damit ich sie gesammelt sehe.
-
-*Could · AF-4*
 
 **Szenario 1**
 - **Gegeben** Ei fehlt für „Eierreis“ und steht bereits auf der Einkaufsliste
@@ -506,8 +447,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 <summary><strong>US-16 · Abschnitte in der Zubereitung</strong> · Could</summary>
 
 > Als Nutzer möchte ich die Zubereitung eines Rezepts in Abschnitte gliedern, damit ich beim Kochen nur den aktuellen Teil sehe, etwa „Boden“, „Füllung“ oder „Glasur“.
-
-*Could · AF-5*
 
 **Szenario 1**
 - **Gegeben** ein Rezept mit den Abschnitten „Boden“ und „Füllung“

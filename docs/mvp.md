@@ -18,16 +18,12 @@ Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bi
 
 ## ❌ Außerhalb des MVP
 
-- Mengenvergleich, Umrechnung von Einheiten und automatische Verbrauchsbuchung.
-- Nutzerkonten, gemeinsame Haushalte, Synchronisierung sowie Datensicherung und Export.
-- Zutaten umbenennen und zusammenführen (Should) sowie unbenutzte Zutaten löschen (Could).
-- Erkennung von Plural- und Schreibvarianten wie „Tomate“ und „Tomaten“.
-- AI-Rezeptgenerierung, externe Rezeptimporte, Barcode- oder Bilderkennung.
-- Ablaufdaten, Benachrichtigungen sowie Ernährungs- und Allergiefilter.
-- Favoriten, Einkaufsliste und Abschnitte in der Zubereitung (Could).
-- Suche nach Rezeptnamen (Should).
-- Filter für höchstens zwei fehlende Zutaten (Should; erst nach Abschluss des MVP).
-- Leistungsziele NFR-02, NFR-07 und NFR-08 sowie Lesbarkeit NFR-10 (Should): werden gemessen und dokumentiert, sind aber keine Abnahmebedingung des MVP.
+- **Mengen:** Mengenvergleich, Umrechnung von Einheiten, automatische Verbrauchsbuchung.
+- **Konten und Daten:** Nutzerkonten, gemeinsame Haushalte, Synchronisierung, Sicherung und Export.
+- **Automatik:** AI-Rezeptgenerierung, Rezeptimporte, Barcode- oder Bilderkennung, Erkennung von Plural- und Schreibvarianten.
+- **Weitere Themen:** Ablaufdaten, Benachrichtigungen, Ernährungs- und Allergiefilter.
+- **Should/Could-Stories (nach dem MVP):** Suche (US-07), Filter „höchstens zwei fehlende Zutaten“ (US-10), Zutaten umbenennen (US-14), Favoriten (US-11), Einkaufsliste (US-12), unbenutzte Zutaten löschen (US-15), Abschnitte in der Zubereitung (US-16).
+- **Should-NFRs:** Leistungsziele NFR-02, NFR-07, NFR-08 und Lesbarkeit NFR-10 werden gemessen und dokumentiert, sind aber keine Abnahmebedingung.
 
 ## 🎬 Geplanter vollständiger Demo-Anwendungsfall
 
@@ -78,5 +74,3 @@ Vom Team beim Termin zu bestätigen (Vorschläge vom 09.11.2026). Nach dem Termi
 - [ ] Wichtigste Anwendungsfälle AF-1 bis AF-5 sowie die dokumentierten Risiken und Einschränkungen, inklusive Datenverlust bei Geräteverlust.
 - [ ] Aufteilung von US-06 und US-13, Akzeptanzkriterien im Format Gegeben/Wenn/Dann und Lesbarkeit (NFR-10, Should).
 - [ ] Gleiches Verständnis der Akzeptanzkriterien im gesamten Team.
-
-Architektur und Technologieauswahl gehören in Phase 2, die Implementierung in Phase 3, Qualitätssicherung und Testausführung in Phase 4 sowie abschließende Evaluation und Reflexion in Phase 5.

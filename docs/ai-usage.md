@@ -1,10 +1,66 @@
 # AI-Einsatz und Reflexion
 
-## Zweck
+AI hat uns geholfen, die Idee zu strukturieren, Anforderungen zu formulieren und sie auf Widersprüche, Lücken und Unklarheiten zu prüfen. Eine AI-Funktion in der App ist nicht vorgesehen. Für Scope, fachliche Entscheidungen und Qualität bleibt das Team verantwortlich.
 
-AI wird zur Strukturierung der Idee, Anforderungsanalyse und Prüfung auf Unklarheiten eingesetzt. Eine AI-Funktion im Produkt ist für den MVP nicht vorgesehen. Das vierköpfige Team bleibt für Scope, fachliche Entscheidungen und Qualität verantwortlich.
+**Werkzeuge:** Codex (14.10.2026), Claude Sonnet 5.5 (07.11.2026) und Claude Opus 5.5 (09.11.2026), jeweils im Chat; dazu ein externes Bildwerkzeug für Logo-Entwürfe.
 
-## Tatsächlicher Einsatz
+## 1 · Anforderungen generieren und strukturieren
+
+**Ausgewählte Prompts**
+- „Wir wollen eine Jausi app machen. Diese soll ein einfaches SemesterProjekt sein.“ Dazu Rezeptarchiv und Inventurliste als Must-haves.
+- „Kann man es nicht so festsetzen, dass immer Zutaten vorgeschlagen werden, die der Nutzer dokumentiert hat?“
+
+**Ergebnis:** Produktidee „Rezepte mit dem, was du daheim hast“, User Stories mit Akzeptanzkriterien, funktionale und nichtfunktionale Anforderungen, MVP-Abgrenzung, später Personas und Anwendungsfälle.
+
+**Was wir geändert haben**
+- Die AI empfahl einen **festen Zutatenkatalog** mit rund 50 Zutaten. Der Nutzer schlug stattdessen einen **mitwachsenden Katalog** vor, weil jeder andere Zutaten verwendet. Die AI ergänzte Duplikatprüfung, Pluralformen als Einschränkung und die Aufteilung in Must, Should und Could.
+- Die ersten AI-Personas („Studierende“, „Person ohne Verschwendung“) waren dem Nutzer zu vage. Daraus wurden drei ausführliche Personas.
+- Der erste Vorschlag mit drei Anwendungsfällen ließ sieben Stories ohne Zuordnung; nach genauerer Prüfung wurden es fünf.
+
+## 2 · Anforderungen prüfen
+
+**Ausgewählte Prompts**
+- „Prüfe `requirements.md` und `mvp.md`.“ (07.11.2026, zweites Werkzeug als unabhängige Meinung)
+- „Kannst du die Requirements dir nochmal anschauen und nach professionellem Standard bewerten, als wärst du ein Senior Product Owner?“
+- „Alle Requirements sind nach dem besten Stand geschrieben?“
+
+**Ergebnis:** uneinheitliche Begriffe (daraus entstand das Glossar), zu viele Musts, zu große Stories, subjektive und nicht messbare Kriterien, fehlender Nutzungskontext, ungeklärte Sonderfälle. Alle Befunde und ihre Umsetzung stehen unten in [Befunde der AI-Prüfungen](#befunde-der-ai-prüfungen).
+
+**Was wir geändert haben**
+- Suche von Must auf Should, Leistungsziele je Story aufgeteilt und als Should eingestuft.
+- Große Stories aufgeteilt, alle Akzeptanzkriterien im Format Gegeben/Wenn/Dann.
+- Nicht übernommen: Gespräche mit echten Nutzern. Das bleibt eine bekannte Lücke.
+
+## Kritische Bewertung
+
+- **Nützlich:** AI übersetzt eine grobe Idee schnell in überprüfbare Anforderungen und findet Begriffsfehler und Widersprüche zuverlässig.
+- **Entscheidende Ideen kamen vom Team:** Den mitwachsenden Katalog und zusammengesetzte Rezepte (daraus US-16) brachte der Nutzer ein. Die AI fragte nach dem Nutzungskontext; Smartphone und Offline-Nutzung hat der Nutzer entschieden.
+- **AI geht zu weit:** Sie empfahl früh Technik und ein Grundgerüst, also Arbeit aus späteren Phasen. Das wurde zurückgenommen und als Projektregel festgehalten.
+- **AI deutet Fachbegriffe falsch:** „Zutatenkatalog“ wurde zunächst als Synonym für „Zutatenliste“ behandelt. Fachbegriffe legt das Team fest.
+- **Quellen selbst prüfen:** Die Zahlen im README stammen aus einer AI-Websuche; die AI hat die Seiten nicht geöffnet. Der Nutzer hat alle drei Quellen am 09.11.2026 geprüft.
+- **Grenzen:** AI kennt weder Zeitrahmen noch Erfahrung des Teams und keine Kursvorgaben. Es gab keine Nutzerinterviews, Implementierung oder Tests; die gemeinsame Teamprüfung steht aus.
+
+## Befunde der AI-Prüfungen
+
+Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team sie umgesetzt hat. Überholte Befunde bleiben zur Nachvollziehbarkeit stehen.
+
+| Befund | Bewertung und Korrektur |
+| --- | --- |
+| Suche war Must, obwohl der Kernablauf über das Rezeptarchiv möglich ist. | US-07 und FR-04 auf Should gesetzt; MVP entsprechend angepasst. |
+| Produktabnahme und Phase-1-Abschluss waren vermischt. | Separate Definition of Done für die Spezifikation ergänzt; App-Tests sind erst später auszuführen. |
+| Technische Vorbereitung wurde zu früh empfohlen. | Technologieauswahl und Architektur auf Phase 2 verschoben; keine Implementierungsarbeiten in Phase 1. |
+| Ein Zutatenkatalog begrenzt die erfassbaren Lebensmittel. | **Überholt (09.11.2026):** Ursprünglich sollte das Team einen festen Startumfang festlegen. Ersetzt durch den mitwachsenden Zutatenkatalog (siehe letzte Zeile dieser Tabelle); ein Startumfang ist nicht mehr nötig. |
+| Die Leistungsgrenze war ein AI-Vorschlag ohne Teamvalidierung. | **Aktualisiert (09.11.2026):** Aufgeteilt in NFR-02, NFR-07 und NFR-08 mit gemeinsamem Referenzdatensatz; alle drei sind Should. Gemeinsame Bestätigung steht aus. |
+| Externe Abhängigkeiten und Kosten waren nicht explizit behandelt. | Der MVP verlangt keine externen APIs oder kostenpflichtigen Dienste. Falls später welche gewählt werden, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren. |
+| Manche Texte waren unklar, Begriffe waren inkonsistent. | Review durch AI und manuelles Review; verständlichere, konsistente Formulierungen und Abschnitt „Begriffe“ ergänzt. |
+| Ein vorgegebener Zutatenkatalog verhindert eigene Rezepte mit Zutaten, die nicht im Katalog stehen; damit scheitert der Kernablauf für diese Nutzer. | Vorschlag aus dem Team (09.11.2026): Der Zutatenkatalog wächst mit den Eingaben des Nutzers (US-13, Must). Komfortfunktionen sind Should bzw. Could (US-14, US-15). Der feste Katalog entfällt, die Anzahl der Must-Anforderungen bleibt bei den funktionalen Anforderungen gleich. Teamentscheidung ausstehend. |
+
+## Protokoll
+
+Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
+
+<details>
+<summary><strong>Protokoll anzeigen (17 Einträge)</strong></summary>
 
 | Datum | Werkzeug | Aufgabe | Ergebnis / menschliche Entscheidung |
 | --- | --- | --- | --- |
@@ -22,71 +78,10 @@ AI wird zur Strukturierung der Idee, Anforderungsanalyse und Prüfung auf Unklar
 | 09.11.2026 | Externes AI-Bildwerkzeug (vom Nutzer nicht benannt); Claude (Opus 5.5) im Chat | Logo und Maskottchen-Figuren im Kawaii-Stil entwerfen; Entwürfe dokumentieren | Das Bildwerkzeug lieferte drei Bilder und Beschreibungen weiterer Figuren. Claude übertrug sie nach `branding.md` und markierte Widersprüche: Apfel „Anton“ im Text, „Apfi“ im Bild; der Name „Bluey“ ist bereits durch eine Kinderserie belegt. Kein Teil des MVP; Teamentscheidung ausstehend. |
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Gesamtreview aller Projektdokumente nach den Änderungen vom 09.11.2026 | Befunde: Formatfehler im README, veraltete Liste offener Teampunkte, nicht nachgezogene Kern-Definitionen (Produktziel, Priorisierungsmaßstab, MVP-Umfang, Funktionsumfang), Demo ohne Smartphone- und Offline-Bezug, absolute Links, ungeprüfte Recherchequellen. Der Nutzer hat alle Vorschläge übernommen und die drei Quellen selbst geprüft. `personas.md` in die Liste der gepflegten Dokumente aufgenommen. Teamentscheidung ausstehend. |
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Phase-1-TODOs abgleichen und wichtigste Anwendungsfälle aus Sicht eines Senior Product Owners ausarbeiten | Befund: Anwendungsfälle waren nur verstreut beschrieben. Der erste AI-Vorschlag mit drei Anwendungsfällen ließ sieben User Stories ohne Zuordnung; auf Wunsch des Nutzers genauer geprüft und auf fünf Anwendungsfälle mit Persona, Auslöser, Ergebnis und Ablauf erweitert, sodass alle 16 Stories zugeordnet sind. Zwei Risiken dokumentiert: mühsames Einzelerfassen nach großem Einkauf, kein Nutzen bei leerem Archiv. Teamentscheidung ausstehend. |
-| 09.11.2026 | Claude (Opus 5.5) im Chat | README, `requirements.md` und `mvp.md` visuell besser lesbar machen | AI schlug GitHub-Hinweisboxen, Mermaid-Diagramme, Checkboxen, einklappbare Bereiche und ein Inhaltsverzeichnis vor. Der Nutzer wählte drei Dateien und entschied, das Logo als Entwurf im README zu zeigen. In der Definition of Done wurden nur Punkte abgehakt, die sich anhand der Dokumente prüfen lassen; Teamentscheidungen bleiben offen. Inhalte unverändert. |
+| 09.11.2026 | Claude (Opus 5.5) im Chat | Darstellung aller Dokumente verbessern (sechs Durchgänge) | AI schlug Hinweisboxen, Mermaid-Diagramme, Checkboxen, aufklappbare Stories, Story Map und Kürzungen vor. Der Nutzer wählte aus, lehnte mehrere Stilvorschläge ab und ließ Hinweisboxen und Farbpunkte wieder entfernen. AI prüfte die Darstellung mit dem GitHub-Markdown-Renderer (Hinweisboxen funktionieren nicht in aufklappbaren Bereichen). Die Befund-Tabelle wanderte aus `requirements.md` hierher. In der Definition of Done nur dokumentenprüfbare Punkte abgehakt. Keine Anforderung geändert. |
+| 09.11.2026 | Claude (Opus 5.5) im Chat | Alle Dokumente auf Kompaktheit und Lesbarkeit prüfen | Befund: `ai-usage.md` las sich als Textwand; Doppelungen in README, `mvp.md` und `requirements.md`. Der Nutzer ließ alle Vorschläge umsetzen: dieses Dokument nach den zwei AI-Anwendungen gegliedert, Protokoll zugeklappt, Prompt-Liste gekürzt, doppelte Prioritätszeilen und Ablauf-Details entfernt, MVP-Ausschlüsse zusammengefasst. Keine Anforderung geändert. |
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Frage des Nutzers, ob alle Requirements dem besten Stand entsprechen | AI bewertete die Anforderungen selbstkritisch und nannte fünf Schwächen: zu große Stories, subjektive Akzeptanzkriterien, Überschneidungen, fehlende NFRs für Lesbarkeit und Datenverlust, keine Gespräche mit echten Nutzern. Der Nutzer ließ alle außer den Nutzergesprächen umsetzen: US-06 und US-13 aufgeteilt (neu US-17 bis US-19), alle Akzeptanzkriterien im Format Gegeben/Wenn/Dann, FRs als Systemverhalten formuliert, NFR-04 geschärft, NFR-10 Lesbarkeit (Should) und Datenverlust als bekannte Einschränkung ergänzt. Teamentscheidung ausstehend. |
-| 09.11.2026 | Claude (Opus 5.5) im Chat | User Stories und Akzeptanzkriterien übersichtlicher anordnen | Der Nutzer empfand die Trennung von Story-Tabelle und Kriterien als unübersichtlich. AI schlug drei Gruppierungen vor; der Nutzer wählte die Gruppierung nach Anwendungsfall. Jede Story steht jetzt direkt bei ihren Kriterien, oben eine verlinkte Übersicht. Inhalte unverändert. |
-| 09.11.2026 | Claude (Opus 5.5) im Chat | Darstellung der User Stories weiter verbessern | Der Nutzer lehnte die ersten zwei Stilvorschläge ab und bat um weitere Ideen. Aus vier Vorschlägen wählte er farbige Karten, aufklappbare Kriterien und eine Story Map. AI prüfte die Darstellung mit dem GitHub-Markdown-Renderer: Hinweisboxen funktionieren nicht innerhalb aufklappbarer Bereiche, daher sind die Karten immer sichtbar und nur die Akzeptanzkriterien aufklappbar. Inhalte unverändert. |
-| 09.11.2026 | Claude (Opus 5.5) im Chat | Hinweisboxen bei den User Stories entfernen | Der Nutzer empfand die englischen Kartentitel („Important“, „Tip“, „Note“) als störend. Die Boxen wurden entfernt; jede Story ist jetzt vollständig aufklappbar, die Priorität zeigt der Farbpunkt. Darstellung erneut mit dem GitHub-Markdown-Renderer geprüft. Inhalte unverändert. |
-| 09.11.2026 | Claude (Opus 5.5) im Chat | `requirements.md` kürzen und lesbarer machen | Der Nutzer empfand das Dokument als zu lang. AI schlug vor, Doppelungen und Projekthistorie zu entfernen; der Nutzer stimmte zu. Produktziel, Zielgruppe und Nutzungskontext zu „Kontext“ zusammengefasst, Begriffe als Tabelle, Priorisierungsmaßstab in die Story Map verschoben, fachliche Regeln gruppiert, Befund-Tabelle nach `ai-usage.md` verschoben, Einschränkungen als kompakte Liste. Keine Anforderung entfernt. |
-| 09.11.2026 | Claude (Opus 5.5) im Chat | Farbpunkte bei den Prioritäten entfernen | Der Nutzer empfand die farbigen Kreise als zu viel. Entfernt in Story Map und Story-Titeln; die Priorität steht weiterhin als Wort dabei. |
 
-Damit sind zwei unterschiedliche AI-Anwendungen dokumentiert: **Generierung und Strukturierung von Anforderungen** sowie **kritische Validierung der Spezifikation**. Die Generierung und die erste Prüfung erfolgten mit Codex; die sprachliche und inhaltliche Nachprüfung am 07.11.2026 erfolgte mit einem zweiten Werkzeug (Claude) und diente zugleich als unabhängige zweite Meinung. Darüber hinaus wurde AI am 09.11.2026 für Webrecherche, die Ausarbeitung von Personas und Bildentwürfe (Branding) eingesetzt.
+</details>
 
-## Befunde der AI-Prüfungen
-
-Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team sie umgesetzt hat. Überholte Befunde bleiben zur Nachvollziehbarkeit stehen. Bis 09.11.2026 stand diese Tabelle in `requirements.md`.
-
-| Befund | Bewertung und Korrektur |
-| --- | --- |
-| Suche war Must, obwohl der Kernablauf über das Rezeptarchiv möglich ist. | US-07 und FR-04 auf Should gesetzt; MVP entsprechend angepasst. |
-| Produktabnahme und Phase-1-Abschluss waren vermischt. | Separate Definition of Done für die Spezifikation ergänzt; App-Tests sind erst später auszuführen. |
-| Technische Vorbereitung wurde zu früh empfohlen. | Technologieauswahl und Architektur auf Phase 2 verschoben; keine Implementierungsarbeiten in Phase 1. |
-| Ein Zutatenkatalog begrenzt die erfassbaren Lebensmittel. | **Überholt (09.11.2026):** Ursprünglich sollte das Team einen festen Startumfang festlegen. Ersetzt durch den mitwachsenden Zutatenkatalog (siehe letzte Zeile dieser Tabelle); ein Startumfang ist nicht mehr nötig. |
-| Die Leistungsgrenze war ein AI-Vorschlag ohne Teamvalidierung. | **Aktualisiert (09.11.2026):** Aufgeteilt in NFR-02, NFR-07 und NFR-08 mit gemeinsamem Referenzdatensatz; alle drei sind Should. Gemeinsame Bestätigung steht aus. |
-| Externe Abhängigkeiten und Kosten waren nicht explizit behandelt. | Der MVP verlangt keine externen APIs oder kostenpflichtigen Dienste. Falls später welche gewählt werden, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren. |
-| Manche Texte waren unklar, Begriffe waren inkonsistent. | Review durch AI und manuelles Review; verständlichere, konsistente Formulierungen und Abschnitt „Begriffe“ ergänzt. |
-| Ein vorgegebener Zutatenkatalog verhindert eigene Rezepte mit Zutaten, die nicht im Katalog stehen; damit scheitert der Kernablauf für diese Nutzer. | Vorschlag aus dem Team (09.11.2026): Der Zutatenkatalog wächst mit den Eingaben des Nutzers (US-13, Must). Komfortfunktionen sind Should bzw. Could (US-14, US-15). Der feste Katalog entfällt, die Anzahl der Must-Anforderungen bleibt bei den funktionalen Anforderungen gleich. Teamentscheidung ausstehend. |
-
-## Verwendete Eingaben
-
-- „Wir wollen eine Jausi app machen. Diese soll ein einfaches SemesterProjekt sein.“
-- Vorgaben: Rezeptarchiv und Inventurliste als Must-haves; Wunsch nach kombinierten Use Cases.
-- Anschlussauftrag: Konzept übernehmen, vier Pflichtdokumente dauerhaft anlegen und aktualisieren; Teamgröße vier.
-- Weitere Nutzereingabe: vollständige Phase-1-Aufgabenbeschreibung und Phasenplan sowie „Wir sind noch in der Phase 1!!!“ und „Also noch nicht vorarbeiten!!!“.
-- Arbeitsauftrag für die AI-Prüfung, aus dieser Eingabe abgeleitet: Bestehende Dokumente mit den vollständigen Phase-1-Vorgaben abgleichen; Widersprüche, Lücken und überflüssige Musts identifizieren; die Spezifikation korrigieren und spätere Phasen klar abgrenzen.
-- Prüfe `requirements.md` und `mvp.md`.
-- „Was fehlt uns?“ zusammen mit der vollständigen Phase-1-Aufgabenbeschreibung (09.11.2026).
-- „Haben wir bereits irgendwo eine Art Glossar? Um die einheitlichen Begriffe irgendwo zu dokumentieren?“
-- „Kann man es nicht so festsetzen, dass immer Zutaten vorgeschlagen werden, die der Nutzer dokumentiert hat?“
-- „Kannst du die Requirements dir nochmal anschauen und nach professionellem Standard bewerten, als wärst du ein Senior Product Owner?“
-- „Meine Beschreibung find ich bissel meh – können wir das spezifizieren? Gerne auch recherchieren und mir Vorschläge geben.“
-- „Todo Time – was haben wir noch nicht gemacht?“ und „Gerne wie ein Senior Product Owner durchgehen und genau schauen.“
-- „Können wir das Readme oder andere Files irgendwie visuell aufbessern? Besser lesbar machen?“
-- „Alle Requirements sind nach dem besten Stand geschrieben?“
-- „Geht das eventuell schöner formatiert? Wirkt ein bissel durcheinander, wenn die User Stories oben sind und meine Akzeptanzkriterien unten.“
-- „Können wir das irgendwie noch schöner formatieren?“
-- „Die Box kann weg – das mit dem Important. Das stört dann doch mehr, als es nützt.“
-- „Review von Requirements, das Dokument scheint sehr lang, können wir es kürzen / kompakt machen? Lesbar machen für den Menschen?“
-- „Die Icon-Kreise können weg, die sind too much.“
-
-Die vollständigen Phase-1-Vorgaben und Phasentermine wurden vom Nutzer im Chat bereitgestellt. Die verlinkte Moodle-Seite wurde nicht separat geprüft.
-
-## Kritische Bewertung
-
-- **Nützlich:** AI hat die grobe Idee in überprüfbare Anforderungen übersetzt und Vorrat und Rezepte durch ein einfaches Matching verbunden.
-- **Scope begrenzt:** Einkaufsliste, Favoriten und Ablaufdaten erweitern den Aufwand. Sie wurden nicht in den MVP aufgenommen.
-- **Unklarheit aufgelöst:** „Vorhanden“ prüft ausschließlich die Existenz einer Zutat. Mengen werden nicht verrechnet; die Oberfläche muss das kenntlich machen.
-- **Datenkonsistenz:** Ein Zutatenkatalog mit genau einer Schreibweise je Zutat verhindert, dass unterschiedliche Schreibweisen den Vergleich verfälschen. Statt eines festen Katalogs schlägt das Team einen mitwachsenden Katalog mit Vorschlägen und Duplikatprüfung vor; Pluralformen bleiben eine dokumentierte Einschränkung.
-- **Nutzeridee statt AI-Vorschlag:** Die AI hatte einen festen Katalog mit vorgegebenem Umfang empfohlen. Der mitwachsende Katalog kam vom Nutzer und passt besser zu einem persönlichen Rezeptarchiv. Die AI hat die Idee nicht selbst vorgeschlagen, aber ihre Risiken (Duplikate, Pluralformen) und eine sinnvolle Priorisierung ergänzt.
-- **Grenzen:** AI kennt weder den verfügbaren Zeitrahmen noch die technische Erfahrung des Teams. Machbarkeit und vorgeschlagene Leistungsgrenze müssen vom Team geprüft werden.
-- **Validierung offen:** Es wurden noch keine Nutzerinterviews, Implementierung oder App-Tests durchgeführt. Die Akzeptanz des Konzepts durch den Nutzer ersetzt keine gemeinsame Abnahme der gesamten Spezifikation.
-- **AI-Empfehlung korrigiert:** Die frühere Empfehlung, Technik und ein Grundgerüst vorzubereiten, ging über die aktuelle Phase hinaus. Sie wurde nach der Nutzerklarstellung zurückgenommen und die Phasengrenze in den Projektanweisungen festgehalten.
-- **Priorisierung korrigiert:** Suche nach Namen ist für den vollständigen Kernablauf nicht unverzichtbar und wurde von Must auf Should verschoben. Die acht verbleibenden Must-Stories beschreiben Vorrat, Rezeptverwaltung und Zutatenvergleich; mit dem vorgeschlagenen mitwachsenden Zutatenkatalog kommt US-13 als neunte hinzu. Nach der Aufteilung großer Stories am 09.11.2026 sind es zwölf kleinere Must-Stories mit gleichem Umfang.
-- **Recherche an der Quelle geprüft:** Die Zahlen im README stammen aus Zusammenfassungen einer AI-Websuche; die AI hat die Quellseiten nicht selbst geöffnet. Der Nutzer hat die drei Quellen am 09.11.2026 geprüft; die Angaben stimmen.
-- **Fachbegriff falsch gedeutet:** Die AI hat „Zutatenkatalog“ zunächst als Synonym für „Zutatenliste“ behandelt. Fachliche Begriffe müssen daher vom Team und nicht von der AI festgelegt werden.
-- **Sprachliche Prüfung:** AI hat unklare und fehlerhafte Formulierungen sowie inkonsistente Begriffe zuverlässig gefunden. Das Kursvokabular und die Dozentenvorgaben kennt sie nicht; deren Einhaltung bleibt Aufgabe des Teams.
-- **Nachvollziehbare Prüfung:** Einzelbefunde und Korrekturen stehen oben im Abschnitt „Befunde der AI-Prüfungen“. Eine AI-Prüfung ersetzt keine unabhängige Bewertung durch die Studierenden.
-
-## Fortlaufende Pflege
-
-Bei weiterem AI-Einsatz werden Datum, Werkzeug, Aufgabe, Ergebnis und menschliche Prüfung ergänzt. Vorschläge werden anhand von Produktziel, Aufwand und Akzeptanzkriterien bewertet. Nicht übernommene Vorschläge und wesentliche Korrekturen werden mit ihrer Begründung festgehalten. Personenbezogene Daten und Zugangsdaten gehören nicht in AI-Eingaben.
+Bei weiterem AI-Einsatz ergänzen wir eine Zeile. Nicht übernommene Vorschläge halten wir mit Begründung fest. Personenbezogene Daten und Zugangsdaten gehören nicht in AI-Eingaben.
