@@ -1,0 +1,167 @@
+name: Azure hosting release
+
+on:
+  push:
+    branches: [develop]
+
+permissions: {}
+
+concurrency:
+  group: jausi-azure-release
+  cancel-in-progress: false
+
+jobs:
+  package:
+    name: Package welcome page
+    if: vars.AZURE_RELEASE_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Build a versioned ZIP
+        run: |
+          mkdir -p artifact
+          cp infra/azure/probe/server.mjs artifact/server.mjs
+          cp infra/azure/probe/index.html artifact/index.html
+          cp infra/azure/probe/jausi-icon.svg artifact/jausi-icon.svg
+          cp docs/assets/maskottchen/logo-moehrchen.png artifact/jausi-mascot.png
+          printf '%s\n' "$GITHUB_SHA" > artifact/version.txt
+          (cd artifact && zip app.zip server.mjs index.html jausi-icon.svg jausi-mascot.png version.txt && sha256sum app.zip > app.zip.sha256)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: jausi-web
+          path: |
+            artifact/app.zip
+            artifact/app.zip.sha256
+          if-no-files-found: error
+
+  devtest:
+    name: devtest
+    needs: package
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: devtest
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      RESOURCE_GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
+      APP_NAME: ${{ vars.AZURE_WEBAPP_NAME }}
+      APP_URL: ${{ vars.APP_URL }}
+      SLOT: ${{ vars.AZURE_SLOT }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: jausi-web
+          path: artifact
+      - name: Verify package checksum
+        working-directory: artifact
+        run: sha256sum --check app.zip.sha256
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - name: Deploy release package
+        run: |
+          slot_args=()
+          if [[ "$SLOT" == staging ]]; then slot_args=(--slot staging); fi
+          az webapp deploy --resource-group "$RESOURCE_GROUP" --name "$APP_NAME" \
+            "${slot_args[@]}" --src-path artifact/app.zip --type zip --clean true --restart true
+      - name: Check health and released version
+        run: |
+          for attempt in {1..12}; do
+            if curl --fail --silent --show-error --max-time 10 "$APP_URL/healthz" \
+              && [[ "$(curl --fail --silent --show-error --max-time 10 "$APP_URL/version")" == "$GITHUB_SHA" ]]; then
+              exit 0
+            fi
+            sleep 5
+          done
+          echo 'Health or version check failed.' >&2
+          exit 1
+
+  staging:
+    name: staging
+    needs: devtest
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: staging
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      RESOURCE_GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
+      APP_NAME: ${{ vars.AZURE_WEBAPP_NAME }}
+      APP_URL: ${{ vars.APP_URL }}
+      SLOT: ${{ vars.AZURE_SLOT }}
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: jausi-web
+          path: artifact
+      - name: Verify package checksum
+        working-directory: artifact
+        run: sha256sum --check app.zip.sha256
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - name: Deploy release package
+        run: |
+          slot_args=()
+          if [[ "$SLOT" == staging ]]; then slot_args=(--slot staging); fi
+          az webapp deploy --resource-group "$RESOURCE_GROUP" --name "$APP_NAME" \
+            "${slot_args[@]}" --src-path artifact/app.zip --type zip --clean true --restart true
+      - name: Check health and released version
+        run: |
+          for attempt in {1..12}; do
+            if curl --fail --silent --show-error --max-time 10 "$APP_URL/healthz" \
+              && [[ "$(curl --fail --silent --show-error --max-time 10 "$APP_URL/version")" == "$GITHUB_SHA" ]]; then
+              exit 0
+            fi
+            sleep 5
+          done
+          echo 'Health or version check failed.' >&2
+          exit 1
+
+  production:
+    name: production
+    needs: staging
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: production
+    permissions:
+      contents: read
+      id-token: write
+    env:
+      RESOURCE_GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
+      APP_NAME: ${{ vars.AZURE_WEBAPP_NAME }}
+      APP_URL: ${{ vars.APP_URL }}
+      STAGING_URL: ${{ vars.STAGING_URL }}
+    steps:
+      - uses: azure/login@v2
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - name: Verify candidate and swap staging into production
+        run: |
+          current="$(curl --fail --silent --show-error --max-time 15 "$STAGING_URL/version")"
+          [[ "$current" == "$GITHUB_SHA" ]]
+          az webapp deployment slot swap --resource-group "$RESOURCE_GROUP" \
+            --name "$APP_NAME" --slot staging --target-slot production
+      - name: Check health and released version
+        run: |
+          for attempt in {1..12}; do
+            if curl --fail --silent --show-error --max-time 10 "$APP_URL/healthz" \
+              && [[ "$(curl --fail --silent --show-error --max-time 10 "$APP_URL/version")" == "$GITHUB_SHA" ]]; then
+              exit 0
+            fi
+            sleep 5
+          done
+          echo 'Health or version check failed.' >&2
+          exit 1

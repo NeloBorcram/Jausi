@@ -4,6 +4,12 @@
 
 Für vier Personen reicht ein gemeinsames Backlog, etwa GitHub Issues mit einem einfachen Board „Offen → In Arbeit → Review → Erledigt“. Wenn Azure Boards genutzt wird, Aufgaben nur dort pflegen und vom PR aus verlinken.
 
+## Übergang während der Architekturphase
+
+`main` bleibt unverändert und geschützt. Der gemeinsame Arbeitsstand liegt auf `develop`; kurze Feature- und Doku-Branches eröffnen Pull Requests dorthin. Für `develop` gibt es [ein eigenes Ruleset](../.github/rulesets/develop.json) mit derselben Review- und CI-Regel. Importiert es auf GitHub, sobald der erste CI-Lauf auf einem PR nach `develop` den Check **Repository checks** gemeldet hat. Vor Cloud-Deployments muss der Schutz aktiv sein.
+
+`production` ist eine Deployment-Umgebung und kein Git-Branch. Der freigegebene Lauf identifiziert Produktion über Commit und Artefakt. Später kann das Team nach einem geprüften PR von `develop` nach `main` die Release-Quelle und Terraform-Branch-Regeln auf `main` umstellen.
+
 ## Schutz für main aktivieren
 
 1. Die CI-Datei aus diesem Änderungssatz zuerst per PR nach `main` bringen. Prüfen, dass GitHub Actions den Job **Repository checks** tatsächlich ausführt. Ein erfolgreicher Lauf auf `main` erleichtert die Auswahl des Checks in den Einstellungen.
@@ -12,7 +18,9 @@ Für vier Personen reicht ein gemeinsames Backlog, etwa GitHub Issues mit einem 
 
 Die [CI](../.github/workflows/ci.yml) prüft Pull Requests nach `main`, Pushes auf `main` und manuelle Läufe. Sie prüft die Pflichtdokumente und die Änderungen auf von Git erkannte Formatfehler und Konfliktmarker. Sie braucht keine Cloud-Zugangsdaten. App-Build und App-Tests kommen hinzu, sobald es App-Code gibt.
 
-## Hosting später entscheiden
+## Hosting vorbereiten
+
+Die [Azure-Hosting-Anleitung](azure-hosting.md) beschreibt die vorbereitete Infrastruktur und den manuellen Release-Ablauf für die Willkommensseite.
 
 Wenn das Team eine statische Web-App wählt und eine manuelle Freigabe zur Veröffentlichung genügt, zuerst statisches Hosting mit Vorschau prüfen. Wenn ein **echter Slot-Tausch** mit Rücktausch gewünscht bleibt, ist Azure App Service ab **Standard** die passende Option aus [ADR-0001](adr/0001-infrastruktur-und-release.md). In beiden Fällen bleiben Infrastruktur und Release-Regeln versioniert. Erst nach Teamentscheidung und Budgetklärung Ressourcen anlegen und `jausi.at` verbinden.
 

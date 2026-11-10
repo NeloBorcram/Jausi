@@ -72,6 +72,7 @@ Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschla
 | [Branding](docs/branding.md) | Logo- und Maskottchen-Ideen (nicht Teil des MVP) |
 | [Architekturentscheidungen](docs/adr/README.md) | Verbindliche ADR-Vorlage und erste Entscheidungsvorschläge |
 | [Zusammenarbeit auf GitHub](docs/github-workflow.md) | Pull Requests, CI-Prüfung, Schutz für main und Hosting-Optionen |
+| [Azure-Hosting](docs/azure-hosting.md) | Infrastruktur als Code, Willkommensseite, Releases und Rücktausch |
 
 ## Team
 

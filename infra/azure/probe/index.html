@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jausi hilft dir, mit vorhandenen Zutaten zu kochen. Die App ist noch in Arbeit.">
+  <title>Jausi – Was koch ich heute?</title>
+  <link rel="icon" type="image/svg+xml" href="/jausi-icon.svg">
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #301e3d; background: #fbf7ec; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100svh; display: grid; place-items: center; background: radial-gradient(ellipse at 90% 8%, #eee3f6 0%, transparent 52%), #fbf7ec; }
+    main { width: min(71rem, 100%); padding: clamp(1.5rem, 6vw, 5rem); display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: clamp(1.5rem, 5vw, 4rem); }
+    .brand { display: flex; align-items: center; gap: .65rem; margin: 0 0 1.7rem; font-size: 1.15rem; font-weight: 800; }
+    h1 { font-size: clamp(2.65rem, 5.3vw, 5.3rem); letter-spacing: -.075em; line-height: 1; margin: 0; }
+    h1 span { color: #6b3b86; }
+    .intro { max-width: 32ch; font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.55; margin: 1.25rem 0; }
+    .status { display: inline-block; margin: 0; border-radius: 2rem; padding: .5rem .85rem; background: #e5edc7; color: #38491b; font-size: .9rem; font-weight: 700; }
+    figure { margin: 0; overflow: hidden; border-radius: 2rem; background: #fff; border: 1px solid #e6d5eb; box-shadow: 0 1.2rem 3rem #42245d1c; }
+    figure img { display: block; width: 100%; aspect-ratio: 1.08; object-fit: cover; }
+    @media (max-width: 44rem) {
+      main { grid-template-columns: 1fr; max-width: 32rem; }
+      .brand { margin-bottom: 1rem; }
+      figure img { aspect-ratio: 1.35; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section aria-labelledby="headline">
+      <p class="brand"><img src="/jausi-icon.svg" alt="" width="35" height="35"> Jausi</p>
+      <h1 id="headline">Was ist da?<br><span>Was koch ich?</span></h1>
+      <p class="intro">Rezepte mit dem, was du daheim hast. Jausi bringt deinen Vorrat und deine Lieblingsrezepte zusammen.</p>
+      <p class="status">Semesterprojekt · App in Arbeit</p>
+    </section>
+    <figure>
+      <img src="/jausi-mascot.png" width="1024" height="559" alt="Jausis Karotten-Maskottchen mit zwei violetten Einkaufstaschen">
+    </figure>
+  </main>
+</body>
+</html>

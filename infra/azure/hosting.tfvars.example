@@ -1,0 +1,5 @@
+subscription_id         = "00000000-0000-0000-0000-000000000000"
+name_prefix             = "jausi-CHANGE-ME"
+production_reviewer_ids = [123456, 654321]
+bind_production_domain  = false
+enable_release_workflow = false

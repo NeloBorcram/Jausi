@@ -51,7 +51,7 @@ Geplante Nachweise für die spätere Umsetzung:
 - Anhand des Artefakt-Hashs nachweisen, dass Dev/Test, Staging und Produktion dieselbe Version erhalten. Prüfen, dass ohne Freigabe kein Swap erfolgt und eine parallele Ausführung Staging nicht überschreibt.
 - Auf einem Smartphone den Offline-Durchlauf prüfen und vorhandene lokale Daten nach einem Release erneut öffnen. Slot-Rücktausch separat demonstrieren.
 
-Es wurden keine Ressourcen erstellt, keine Pipeline ausgeführt und keine Tests durchgeführt.
+Auf ausdrücklichen Auftrag ist eine [versionierte Hosting-Vorbereitung](../azure-hosting.md) mit einer Willkommensseite vorhanden. Solange `main` unverändert bleibt, dient `develop` als vorläufige Release-Quelle; Produktion ist eine geschützte Deployment-Umgebung. Die geplanten Nachweise in Azure stehen aus; es wurden keine Ressourcen erstellt oder Releases in Azure ausgeführt. Der ADR bleibt vorgeschlagen.
 
 ## Erneute Prüfung und Referenzen
 
