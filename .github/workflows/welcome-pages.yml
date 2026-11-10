@@ -1,0 +1,43 @@
+name: Publish welcome page
+
+on:
+  push:
+    branches: [develop]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: welcome-pages
+  cancel-in-progress: false
+
+jobs:
+  package:
+    if: vars.WELCOME_PAGES_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Package static welcome page
+        run: |
+          mkdir -p public
+          cp infra/azure/probe/{index.html,jausi-icon.svg} public/
+          cp docs/assets/maskottchen/logo-moehrchen.png public/jausi-mascot.png
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+  deploy:
+    needs: package
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

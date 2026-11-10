@@ -93,6 +93,7 @@ Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 | 09.11.2026 | Codex im Chat | Azure-Hosting auf einem Feature-Branch vorbereiten | Bicep für Remote-State, Terraform für Azure-Hosting und GitHub-Umgebungen sowie einen Release-Workflow mit manuellem Produktions-Swap erstellt. Die Beispielauslieferung dient nur der Hosting-Prüfung. Azure-Apply, Betriebskosten und Teamfreigabe bleiben offen. |
 | 10.11.2026 | Codex im Chat | Git-Workflow ohne Änderungen an `main` und eine öffentliche Willkommensseite vorbereiten | `develop` als Integrations- und vorläufigen Release-Branch vorgesehen, Produktionsfreigabe als Umgebung beibehalten und eine Willkommensseite erstellt. Bereitstellung und Teamfreigabe stehen aus. |
 | 10.11.2026 | Codex im Chat | Willkommensseite am Möhrchen-Entwurf ausrichten | Vorhandenes Maskottchen eingebunden, passendes SVG-Icon für die Seite gezeichnet und beide Dateien in das Release-Paket aufgenommen. Keine Entscheidung über das App-Logo. |
+| 10.11.2026 | Codex im Chat | Azure-Regionsrichtlinie und günstige Veröffentlichung der Willkommensseite prüfen | Keine Überschneidung zwischen den erlaubten Regionen und Static Web Apps gefunden; GitHub Pages mit easyname-DNS als Ausweichvorschlag lokal vorbereitet. Keine Veröffentlichung und keine DNS-Änderung. |
 
 </details>
 

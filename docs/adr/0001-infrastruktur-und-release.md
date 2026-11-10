@@ -55,6 +55,8 @@ Auf ausdrücklichen Auftrag ist eine [versionierte Hosting-Vorbereitung](../azur
 
 ## Erneute Prüfung und Referenzen
 
+**Willkommensseite:** Für das aktuelle Azure-for-Students-Abonnement überschneiden sich die erlaubten Regionen nicht mit den Regionen von Static Web Apps. [GitHub Pages](../welcome-hosting.md) ist als Ausweichvorschlag für die statische Seite vorbereitet. Der Azure-Slot-Tausch bleibt eine getrennte Option für die spätere App.
+
 Neu bewerten, wenn eine native App gewählt wird, das Azure-Budget nicht ausreicht oder die Hosting-Anforderungen sich ändern.
 
 - [Azure App Service: Deployment-Slots](https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots)

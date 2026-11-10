@@ -73,6 +73,7 @@ Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschla
 | [Architekturentscheidungen](docs/adr/README.md) | Verbindliche ADR-Vorlage und erste Entscheidungsvorschläge |
 | [Zusammenarbeit auf GitHub](docs/github-workflow.md) | Pull Requests, CI-Prüfung, Schutz für main und Hosting-Optionen |
 | [Azure-Hosting](docs/azure-hosting.md) | Infrastruktur als Code, Willkommensseite, Releases und Rücktausch |
+| [Statische Willkommensseite](docs/welcome-hosting.md) | GitHub Pages als Ausweichvorschlag und DNS bei easyname |
 
 ## Team
 
