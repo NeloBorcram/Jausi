@@ -61,7 +61,7 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team
 Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 
 <details>
-<summary><strong>Protokoll anzeigen (23 Einträge)</strong></summary>
+<summary><strong>Protokoll anzeigen (28 Einträge)</strong></summary>
 
 | Datum | Werkzeug | Aufgabe | Ergebnis / menschliche Entscheidung |
 | --- | --- | --- | --- |
@@ -90,6 +90,9 @@ Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 | 09.11.2026 | Codex im Chat | Bereitgestellte ADR-Vorlage an Jausi anpassen und einen ersten ADR zu Infrastruktur und Releases vorbereiten | Manuel gab Infrastruktur als Code und manuelle Produktionsfreigabe vor. Codex formulierte und verglich Optionen; Terraform, GitHub Actions und Azure-Slots sind ein bedingter Vorschlag. Teamfreigabe, Plattform, Budget und Nachweise sind offen. |
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Offene Punkte aus `mvp.md` durchgehen: Aufwand des mitwachsenden Zutatenkatalogs | AI schätzte den Mehraufwand gegenüber einem festen Katalog als gering ein (Neuanlage und Duplikatprüfung). Der Nutzer entschied dennoch, für den MVP zu einem festen Katalog zurückzukehren: Für einen großen Zutaten-Datensatz wird gegebenenfalls eine externe Quelle benötigt; FoodEx2, FoodOn, LanguaL und FooDB aus seiner eigenen Recherche sind als mögliche Quellen dokumentiert, nicht als Entscheidung. AI fragte nach Priorität und Umgang mit fehlenden Zutaten; der Nutzer wählte: US-17 und US-18 Should, fehlende Zutaten nur in der Zubereitung (dokumentierte Einschränkung). AI passte Stories, FR-01, FR-06, neues FR-15, Regeln, Diagramme und Demo an. Die Quellen hat die AI nicht geprüft. Teamentscheidung ausstehend. |
 | 09.11.2026 | Codex im Chat | Basis-CI, GitHub-Ruleset und Ablauf für die Zusammenarbeit vorbereiten | GitHub Actions prüft die Pflichtdokumente und den Git-Diff. Das Ruleset ist als Vorlage versioniert; Aktivierung und Hosting-Entscheidung sind offen. |
+| 09.11.2026 | Claude (Opus 5.5) im Chat | Offene Punkte durchgehen: Nutzungskontext Smartphone und Offline | AI wies darauf hin, dass Offline-Nutzung als Must den Einkaufs-Anwendungsfall absichert. Der Nutzer entschied zunächst: Offline wird Should, Nutzer bekommen ein Konto mit Daten auf dem Server, das Smartphone bleibt Hauptgerät. AI warnte vor dem größeren Scope (Registrierung, Datenschutz, Serverbetrieb) und arbeitete Konto-Stories, Regeln und NFRs aus. **Am 12.11.2026 zurückgenommen** (siehe unten). |
+| 09.11.2026 | Claude (Opus 5.5) im Chat | Offene Punkte durchgehen: Leistungsziele | AI fand, dass der Referenzdatensatz mit 200 Katalog-Zutaten nicht mehr zum festen, möglicherweise viel größeren Katalog passt. Der Nutzer übernahm den Vorschlag: vollständiger Katalog, 200 Zutaten im Vorrat, 100 Rezepte. Zielwerte und Priorität Should unverändert. Eine zusätzliche Messbedingung für die Netzverbindung entfiel mit der Rücknahme der Serverdaten. |
+| 12.11.2026 | Claude (Opus 5.5) im Chat | Stand nach parallelem Push abgleichen; Punkt 3 zurücknehmen | Die nicht committeten Änderungen zu Punkt 2 bis 4 gingen beim Abgleich mit dem Stand der Kollegen verloren; AI spielte sie aus dem Gesprächsverlauf neu ein und wies auf den Widerspruch zu Manuels ADR-0001 hin (lokale Daten, Offline). Der Nutzer entschied, mit dem ADR zu gehen: Nutzerkonto, Serverdaten und Offline als Should wurden zurückgenommen; Offline-Nutzung bleibt Must, Konten bleiben außerhalb des MVP. Personas und Referenzdatensatz bleiben angepasst. |
 
 </details>
 

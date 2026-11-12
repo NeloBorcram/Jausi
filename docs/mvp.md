@@ -67,9 +67,9 @@ Abgehakt sind nur Punkte, die sich anhand der Dokumente nachprüfen lassen. Die 
 Vom Team in der Lehrveranstaltung am 09.11.2026 zu bestätigen. Nach dem Termin wird jeder Punkt abgehakt oder mit der abweichenden Entscheidung ergänzt.
 
 - [ ] Fester Zutatenkatalog statt mitwachsendem (geändert am 09.11.2026): Das Team stellt einen großen Zutaten-Datensatz zusammen, gegebenenfalls aus einer externen Quelle; mögliche Quellen stehen in [requirements.md](requirements.md#bekannte-einschränkungen-und-risiken). Eigenes Anlegen von Zutaten (US-17, US-18) wird Should; Quelle und Umfang sind noch festzulegen.
-- [ ] Personas Lena, Andrea und Jonas sowie Lena als primäre Persona.
-- [ ] Nutzungskontext Smartphone und Offline-Nutzung (NFR-01, NFR-09).
-- [ ] Aufteilung der Leistungsziele (NFR-02, NFR-07, NFR-08), alle Should.
+- [x] Personas Lena, Andrea und Jonas sowie Lena als primäre Persona.
+- [ ] Nutzungskontext Smartphone und Offline-Nutzung (NFR-01, NFR-09). Am 09.11.2026 kurz auf Nutzerkonto mit Serverdaten umgestellt, am 12.11.2026 zugunsten des vorgeschlagenen [ADR-0001](adr/0001-infrastruktur-und-release.md) zurückgenommen: lokale Daten, Offline-Nutzung bleibt Must, keine Konten im MVP.
+- [x] Aufteilung der Leistungsziele (NFR-02, NFR-07, NFR-08), alle Should. Angepasst am 09.11.2026: Referenzdatensatz mit vollständigem Zutatenkatalog.
 - [ ] Sonderfälle: Zutat höchstens einmal je Rezept, eindeutige Rezeptnamen, Zubereitung als Freitext.
 - [ ] Abschnitte in der Zubereitung (US-16, Could).
 - [ ] Wichtigste Anwendungsfälle AF-1 bis AF-5 sowie die dokumentierten Risiken und Einschränkungen, inklusive Datenverlust bei Geräteverlust.

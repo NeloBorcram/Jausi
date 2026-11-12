@@ -676,7 +676,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 | NFR-09 | Alle Funktionen funktionieren ohne Internetverbindung. Prüfung durch manuellen Durchlauf aller umgesetzten Stories im Flugmodus. | Must |
 | NFR-10 | Rezepte sind beim Kochen gut lesbar: Fließtext in der Rezeptansicht mindestens 16 Pixel groß, Kontrast zwischen Text und Hintergrund mindestens 4,5:1 (WCAG 2.1, Stufe AA). Prüfung auf dem dokumentierten Testgerät mit einem Kontrast-Prüfwerkzeug. | Should |
 
-**Referenzdatensatz für NFR-02, NFR-07 und NFR-08:** 200 Zutaten im Zutatenkatalog, die alle im Vorrat stehen, und 100 Rezepte mit je bis zu 20 Zutaten. Die Datenmengen sind ein Referenzwert für die Messung, keine Obergrenze. Testgerät und Messmethode werden nach Festlegung der Plattform dokumentiert.
+**Referenzdatensatz für NFR-02, NFR-07 und NFR-08:** der vollständige Zutatenkatalog, 200 Zutaten im Vorrat und 100 Rezepte mit je bis zu 20 Zutaten. Die Datenmengen sind ein Referenzwert für die Messung, keine Obergrenze. Testgerät und Messmethode werden nach Festlegung der Plattform dokumentiert.
 
 ## Bekannte Einschränkungen und Risiken
 
@@ -692,6 +692,6 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Einzelerfassung (AF-1, Risiko):** Nach einem großen Einkauf müssen Zutaten einzeln eingetragen werden. Ist das zu mühsam, veraltet der Vorrat. Das Abhaken auf der Einkaufsliste (US-20, Could) mildert das nach dem MVP; mehrere Zutaten auf einmal hinzuzufügen wäre eine weitere mögliche Erweiterung.
 - **Datenverlust:** Die Daten liegen nur auf dem Gerät, ohne Konto oder Synchronisierung. Bei Geräteverlust oder Löschen der App sind sie weg; Sicherung und Export gehören nicht zum MVP.
 - **Externe Dienste:** Der MVP braucht keine externen APIs oder kostenpflichtigen Dienste; eine externe Quelle für den Zutatenkatalog würde nur einmalig als Datengrundlage verwendet. Werden später welche gewählt, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren.
-- **Offen für Phase 2:** Plattform und Speichermethode.
+- **Offen für Phase 2:** Plattform und Speichermethode. Ein Vorschlag zu Hosting und Releases liegt als [ADR-0001](adr/0001-infrastruktur-und-release.md) vor; er setzt lokale Daten und Offline-Nutzung voraus.
 
 Die Befunde der AI-Prüfungen, die zu diesem Stand geführt haben, stehen in [ai-usage.md](ai-usage.md#befunde-der-ai-prüfungen).
