@@ -1,6 +1,6 @@
 # AI-Einsatz und Reflexion
 
-AI hat uns geholfen, die Idee zu strukturieren, Anforderungen zu formulieren und sie auf Widersprüche, Lücken und Unklarheiten zu prüfen. Eine AI-Funktion in der App ist nicht vorgesehen. Für Scope, fachliche Entscheidungen und Qualität bleibt das Team verantwortlich.
+AI hat uns geholfen, die Idee zu strukturieren, Anforderungen zu formulieren und sie auf Widersprüche, Lücken und Unklarheiten zu prüfen (Phase 1) sowie Architektur, Datenmodell, API, Stack und Hosting zu entwerfen und auf Risiken zu prüfen (Phase 2). Eine AI-Funktion in der App ist nicht vorgesehen. Für Scope, fachliche Entscheidungen und Qualität bleibt das Team verantwortlich.
 
 **Werkzeuge:** Codex (14.10.2026), Claude Sonnet 5.5 (07.11.2026) und Claude Opus 5.5 (09.11.2026), jeweils im Chat; dazu Google Gemini für Logo-Entwürfe.
 
@@ -32,7 +32,28 @@ AI hat uns geholfen, die Idee zu strukturieren, Anforderungen zu formulieren und
 - In zwei Durchgängen aus Sicht eines Developers geprüft: Lücken bei Mengenformat, Sortierung, Speichern, Zutatenvorschlägen und Matching-Anzeige sowie ein Widerspruch zur Sicherheitsabfrage geschlossen.
 - Nicht übernommen: Gespräche mit echten Nutzern. Das bleibt eine bekannte Lücke.
 
-## Kritische Bewertung
+## 3 · Architektur und Design (Phase 2)
+
+**Ausgewählte Prompts**
+- „Schau dir vor allem die Kursvorgaben an – und was noch für Phase 2 aussteht“, dazu mehrere Agents, die sich nicht in die Quere kommen.
+- „Gerne in den verschachtelten Chats einen AUDIT starten oder an sich irgendwie eine Überprüfung.“
+
+**Einsatz:** Alternativen vorschlagen (Architekturvarianten V1 bis V3, drei Stacks, neun Hosting-Optionen), Entwürfe erstellen (Komponenten, [Datenmodell](datenmodell.md), [API](api.md)) und Schwachstellen suchen (Risiko-Review, Audit auf Over-Engineering, Gegen-Audit über Kreuz zwischen drei parallelen Sitzungen).
+
+**Kritisch hinterfragte AI-Empfehlungen** (Details in der verlinkten Datei)
+
+| AI-Empfehlung | Was daraus wurde | Wo |
+| --- | --- | --- |
+| PWA ohne Server, bevor die Kenntnisse des Teams bekannt waren; Server-Variante fehlte | Zurückgewiesen; Vergleich neu in drei Ebenen, Client-Server mit Konten vom Nutzer gewählt | [architecture.md](architecture.md#kritische-bewertung-der-ai-beiträge), [ADR-0002](adr/0002-architekturstil-client-server.md) |
+| ASP.NET Core, obwohl niemand C# angegeben hatte | Nach Rogers Kenntnissen Spring Boot mit Vue; gilt erst mit den Kenntnissen der anderen (T3, T4) | [ADR-0003](adr/0003-technologie-stack.md#kritische-prüfung-der-ai-empfehlung) |
+| Preise und Angebote beim Hosting | Sechs Aussagen widerlegt oder korrigiert | [hosting.md](hosting.md#kritische-prüfung-der-ai-empfehlungen) |
+| Mehrere Technik-ADRs, Infrastruktur nach ADR-0001 | Ein ADR-0003; Leitlinie „bewusst einfach“ | [architecture.md](architecture.md#leitlinie-bewusst-einfach) |
+| Modulregel „kein Modul liest Tabellen eines anderen“ | Im Gegen-Audit als zu streng befunden, gelockert | [architecture.md](architecture.md#komponenten-und-verantwortlichkeiten) |
+| Angemeldet bleiben bis zur Abmeldung (US-24 AK 4) | Von Roger auf 30 Minuten nach der letzten Nutzung festgelegt (T10) | [teamfragen.md](teamfragen.md) |
+
+**Lehre:** AI schlägt Architektur und Technik bereitwillig vor, kennt aber weder die Kenntnisse des Teams noch verlässliche Preise. Brauchbar wurden die Ergebnisse erst durch Prüfung gegen Kursvorgaben, Anforderungen und Anbieterseiten und durch eine zweite Sitzung, die gegenprüfte. Entscheiden muss das Team; offen ist, was in [teamfragen.md](teamfragen.md) steht.
+
+## Kritische Bewertung (Phase 1)
 
 - **Nützlich:** AI übersetzt eine grobe Idee schnell in überprüfbare Anforderungen und findet Begriffsfehler und Widersprüche zuverlässig.
 - **Entscheidende Ideen kamen vom Team:** Den mitwachsenden Katalog (später für den MVP zurückgenommen) und zusammengesetzte Rezepte (daraus US-16) brachte der Nutzer ein. Die AI fragte nach dem Nutzungskontext; Smartphone und Offline-Nutzung hat der Nutzer entschieden. Statt der AI-Idee, fehlende Zutaten einzeln in den Vorrat zu übernehmen, schlug der Nutzer eine Einkaufsliste zum Abhaken während des Einkaufs vor (US-20).
@@ -61,7 +82,7 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team
 Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 
 <details>
-<summary><strong>Protokoll anzeigen (53 Einträge)</strong></summary>
+<summary><strong>Protokoll anzeigen (54 Einträge)</strong></summary>
 
 | Datum | Werkzeug | Aufgabe | Ergebnis / menschliche Entscheidung |
 | --- | --- | --- | --- |
@@ -118,6 +139,7 @@ Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 | 13.11.2026 | Claude (Opus 5.5) im Chat | `architecture.md` um Komponenten, Qualitätsanforderungen und Risiken ergänzen | C4-Containersicht mit den Modulen der Backend-API, Modultabelle mit Bezug zu Stories und FR, Blöcke zu Security, Performance und Maintainability, sechs Risiken (u. a. kein Offline-Betrieb, Zugriff auf fremde Konten, ein Abonnement als Single Point of Failure, Aufwand laut ADR-0001, ungeprüfte E-Mail-Adresse). Kritisch: Der Auftrag ordnete NFR-04 fälschlich der Performance zu, AI korrigierte auf NFR-02, NFR-07, NFR-08. Bewertung und Verantwortliche der Risiken legt das Team fest. |
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Phase-2-Doku kürzen und Wiederholungen entfernen | Der Nutzer fand mehrere Dateien zu groß; neue Regel in AGENTS.md: jedes Thema nur in einer Datei, ADR etwa eine Seite. AI kürzte ADR-0003 von rund 2.800 auf 850 Wörter (Spring-Details in Phase 3 verschoben), `architecture.md` von 2.300 auf 1.700 (Abschnitt „Noch offen“ entfällt, Stand steht in `kursvorgaben.md`) und legte fest: Cookies und Kontotrennung in `api.md`, Datenregeln und Kontolöschung in `datenmodell.md`, Risiken in `architecture.md`, Tarif in `hosting.md`. Inhaltlich nichts gestrichen außer Stack-Details, die erst nach der Teamentscheidung gebraucht werden. |
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Offene Teamfragen in einer Datei sammeln | Auf Vorschlag des Nutzers sammelte AI alle Fragen für die Teamsitzung aus ADR-0001 bis ADR-0003, `hosting.md`, `api.md`, `architecture.md` und dem Chat (Merksatz) in `docs/teamfragen.md`: 15 Fragen mit Nummer, Zuständigen und Frist, gegliedert nach 15.11., 23.11. und Beginn der Umsetzung. Die Listen in den anderen Dateien wurden durch Verweise ersetzt; neue Regel in AGENTS.md. Zuständige und Fristen sind AI-Vorschläge. Danach trug Roger erste Antworten ein (T5, T10 bis T12, Impressum als Platzhalter); AI passte US-24 AK 4 (30 Minuten nach der letzten Nutzung statt bis zur Abmeldung) und US-26 (Löschen nur mit Passwort, neues AK 3) sowie `api.md`, `mvp.md` und ADR-0003 an. |
+| 13.11.2026 | Claude (Opus 5.5) im Chat | Phase 2 gegen die Kursvorgaben prüfen; AI-Einsatz der Phase 2 zusammenfassen | AI fand alle Deliverables als Entwurf abgedeckt; offen bleiben die Teamentscheidungen (T1 bis T4) und eine Zusammenfassung des AI-Einsatzes in Phase 2, die bisher nur im Protokoll stand. Auf Wunsch des Nutzers ergänzte AI Abschnitt 3 mit Prompts, Einsatz und einer Tabelle der hinterfragten AI-Empfehlungen, die auf die Details in den jeweiligen Dateien verlinkt. |
 
 </details>
 
