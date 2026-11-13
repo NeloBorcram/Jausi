@@ -36,11 +36,11 @@ Wo liegen Daten und Logik von Jausi, auf dem Gerät oder auf einem Server? Der V
 
 ## Entscheidung und Begründung
 
-**Vorschlag: V3 · Client-Server mit Konten.** Jausi wird im MVP eine Web-App, die im Browser des Smartphones gut bedienbar ist. Daten und Matching liegen auf dem Server und sind einem Konto zugeordnet. Eine eigene App für Android und iPhone sowie Offline-Funktionen folgen nach dem MVP: eine lokale Kopie zum Lesen, auch bei Serverausfall (US-30, Should), ein Export aller Daten (US-29, Should) und die Einkaufsliste ohne Internet (US-28, Could).
+**Vorschlag: V3 · Client-Server mit Konten.** Jausi wird im MVP eine Web-App, die im Browser des Smartphones gut bedienbar ist. Daten und Matching liegen auf dem Server und sind einem Konto zugeordnet. Eine eigene App für Android und iPhone sowie Offline-Funktionen folgen nach dem MVP: eine lokale Kopie zum Lesen, auch bei Serverausfall (US-30, später), ein Export aller Daten (US-29, später) und die Einkaufsliste ohne Internet (US-28, später).
 
 Begründung: V3 erfüllt das langfristige Ziel mit dem geringsten Umbau, nutzt die vorhandenen Kenntnisse und liefert das API-Design, das Phase 2 verlangt. Offline-Nutzung ist dafür im MVP kein Must mehr; das ist eine bewusste Scope-Änderung gegenüber dem Stand vom 13.11.2026.
 
-Offen und in eigenen ADRs zu entscheiden: Technologien für Client und Server, Datenbank, Art der Anmeldung (eigene Lösung des Frameworks oder externer Anbieter), Hosting (siehe [ADR-0001](0001-infrastruktur-und-release.md)).
+Offen und gemeinsam in ADR-0003 „Technologie-Stack“ zu entscheiden: Technologien für Client und Server, Datenbank, Art der Anmeldung (Baustein des Frameworks oder externer Anbieter). Hosting (siehe [ADR-0001](0001-infrastruktur-und-release.md)).
 
 ## Folgen
 

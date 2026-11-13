@@ -61,7 +61,7 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team
 Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 
 <details>
-<summary><strong>Protokoll anzeigen (44 Einträge)</strong></summary>
+<summary><strong>Protokoll anzeigen (46 Einträge)</strong></summary>
 
 | Datum | Werkzeug | Aufgabe | Ergebnis / menschliche Entscheidung |
 | --- | --- | --- | --- |
@@ -109,9 +109,11 @@ Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 | 13.11.2026 | Claude (Opus 5.5) im Chat | EU-Befunde in die Anforderungen übernehmen | Der Nutzer übernahm die Empfehlungen: Konto löschen (US-26) wird Must; neue Must-Story US-31 mit FR-22 für Datenschutzerklärung und Impressum; NFR-06 um Server in der EU, nur technisch notwendige Cookies und kein Tracking ergänzt; Statistik speichert nur Zählungen je Zutat und Woche; rechtlicher Rahmen und Auftragsverarbeitung als Risiko vermerkt. Die rechtliche Einordnung stammt von AI und ist keine Rechtsberatung. |
 | 13.11.2026 | Claude (Opus 5.5) im Chat | `architecture.md` kürzen | Auf Wunsch des Nutzers von 134 auf rund 70 Zeilen verdichtet: Ergebnis zuerst, die Beschreibungen der Varianten in eine Vergleichstabelle übernommen, überholte Ausgangslage (Offline als Must, keine Konten) entfernt, kritische Bewertung auf einen Absatz gekürzt. Inhaltlich keine neue Entscheidung. |
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Diagramme in `architecture.md` überarbeiten | Der Nutzer fand das Variantendiagramm seltsam. AI renderte es in einer lokalen Vorschau: Mermaid stapelte die Varianten in umgekehrter Reihenfolge, und die Pfeilrichtung setzte bei V2 den Server über das Gerät. Neu: drei Spalten V1 bis V3 mit einheitlichem Raster (Gerät, Server, Datenbank), V3 hervorgehoben, dazu ein erster Architekturüberblick der gewählten Variante nach dem C4-Modell. Der Nutzer wählte beide. |
+| 13.11.2026 | Claude (Opus 5.5) im Chat | Umfang für den Kurs prüfen und vereinfachen | Auf die Frage, ob das Projekt zu groß geplant ist, nannte AI die Infrastruktur aus ADR-0001, einen großen externen Zutatenkatalog und wachsenden Scope als Risiken. Der Nutzer entschied: ADR-0001 bleibt unberührt; der Katalog wird von Hand gepflegt, externe Quellen nur als Orientierung; die Architektur bleibt bewusst einfach; das Konto dient nur der Anmeldung. AI schlug für zurückgestellte Funktionen „Won't“ vor; der Nutzer korrigierte: legitime Funktionen, nur nach dem Kurs. Daraus wurde die Priorität „Später“ und der Abschnitt „Für später vorgemerkt“ in `mvp.md` (US-27 bis US-30, eigene App, externe Quelle, Synchronisierung). |
+| 13.11.2026 | Claude (Opus 5.5) im Chat | Audit auf Over-Engineering mit Blick auf die verbleibende Zeit | AI schätzte rund 16 Tage für die Implementierung ab 23.11.2026 und nannte als größtes Risiko die Infrastruktur (ADR-0001, Branch `develop`, Staging und Produktion im Hosting-Vorschlag); daraus der Merksatz „Die Entwicklung der App wartet nicht auf die Infrastruktur“, den der Nutzer mit dem Team aufgreifen will. AI korrigierte die eigene Planung mehrerer Technik-ADRs zu einem ADR-0003 „Technologie-Stack“. Übernommen: Abfrage beim Verlassen ungespeicherter Rezepte als eigene Should-Story US-32 statt Teil von US-06; Should-NFRs nur messen, wenn Zeit bleibt; AI-Protokoll künftig ein Eintrag pro Aufgabe. ADR-0001 und `develop` blieben unberührt. |
 
 </details>
 
 Bewährte Prompts für wiederkehrende Aufgaben liegen als Skills unter [`.agents/skills/`](../.agents/skills/): [Anforderungen prüfen](../.agents/skills/anforderungen-pruefen/SKILL.md), [Dokumentation auf Konsistenz prüfen](../.agents/skills/doku-konsistenz/SKILL.md) und [ADR anlegen](../.agents/skills/adr-anlegen/SKILL.md). Sie sind Vorschläge und werden wie Code über Änderungen im Repository verbessert.
 
-Bei weiterem AI-Einsatz ergänzen wir eine Zeile. Nicht übernommene Vorschläge halten wir mit Begründung fest. Personenbezogene Daten und Zugangsdaten gehören nicht in AI-Eingaben.
+Bei weiterem AI-Einsatz ergänzen wir eine Zeile pro Aufgabe oder Sitzung, nicht pro Arbeitsschritt. Die Einträge vom 13.11.2026 sind noch feiner gegliedert. Nicht übernommene Vorschläge halten wir mit Begründung fest. Personenbezogene Daten und Zugangsdaten gehören nicht in AI-Eingaben.

@@ -8,7 +8,7 @@ Ein Nutzer erfasst vorhandene Zutaten und eigene Rezepte. Jausi zeigt, welche Re
 
 - Konto: mit E-Mail-Adresse und Passwort anlegen, an- und abmelden und löschen; die Daten sind auf jedem Gerät verfügbar.
 - Datenschutzerklärung und Impressum, ohne Anmeldung erreichbar.
-- Zutatenkatalog: fest vorgegeben, vom Team zusammengestellt (gegebenenfalls aus einer externen Quelle) und für alle Konten gleich; passende Zutaten werden beim Tippen vorgeschlagen.
+- Zutatenkatalog: fest vorgegeben, vom Team von Hand gepflegt und für alle Konten gleich; passende Zutaten werden beim Tippen vorgeschlagen.
 - Vorrat: Zutaten aus dem Katalog hinzufügen und entfernen.
 - Rezeptarchiv: Rezepte anlegen, anzeigen, bearbeiten und nach Bestätigung löschen.
 - Matching mit dem Vorrat: Anzahl fehlender Zutaten je Rezept im Archiv, Filter für vollständig passende Rezepte, fehlende Zutaten in den Rezeptdetails.
@@ -22,12 +22,27 @@ Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bi
 
 - **Mengen:** Mengenvergleich, Umrechnung von Einheiten, automatische Verbrauchsbuchung.
 - **Eigene Zutaten verwalten:** anlegen mit Duplikatprüfung (US-17, US-18, Should), umbenennen (US-14, Should), unbenutzte löschen (US-15, Could). Zutaten außerhalb des Katalogs können im MVP nur in der Zubereitung stehen.
-- **Konten und Daten:** Passwort zurücksetzen (US-25, Should), Daten exportieren (US-29, Should), gemeinsame Haushalte.
-- **Offline und eigene App:** lokale Kopie von Vorrat und Rezepten zum Lesen ohne Verbindung oder bei Serverausfall (US-30, NFR-09, Should), Einkaufsliste ohne Internet (US-28, Could), eigene App für Android und iPhone.
+- **Konten:** Passwort zurücksetzen (US-25, Should).
+- **Bedienkomfort:** Abfrage beim Verlassen ungespeicherter Rezepte (US-32, Should).
 - **Automatik:** AI-Rezeptgenerierung, Rezeptimporte, Barcode- oder Bilderkennung, Erkennung von Plural- und Schreibvarianten.
 - **Weitere Themen:** Ablaufdaten, Benachrichtigungen, Ernährungs- und Allergiefilter.
-- **Weitere Should/Could-Stories (nach dem MVP):** Suche (US-07), Filter „höchstens zwei fehlende Zutaten“ (US-10), Favoriten (US-11), Einkaufsliste (US-12) und Abhaken beim Einkaufen (US-20), Kategorien für Zutaten und Rezepte (US-21, US-22), Abschnitte in der Zubereitung (US-16), Verbrauchsstatistik (US-27).
-- **Should-NFRs:** Leistungsziele NFR-02, NFR-07, NFR-08 und Lesbarkeit NFR-10 werden gemessen und dokumentiert, sind aber keine Abnahmebedingung.
+- **Weitere Should/Could-Stories (nach dem MVP):** Suche (US-07), Filter „höchstens zwei fehlende Zutaten“ (US-10), Favoriten (US-11), Einkaufsliste (US-12) und Abhaken beim Einkaufen (US-20), Kategorien für Zutaten und Rezepte (US-21, US-22), Abschnitte in der Zubereitung (US-16).
+- **Später (nach dem Kurs):** siehe Abschnitt „Für später vorgemerkt“.
+- **Should-NFRs:** Leistungsziele NFR-02, NFR-07, NFR-08 und Lesbarkeit NFR-10 werden gemessen und dokumentiert, wenn im Kurs Zeit bleibt; sie sind keine Abnahmebedingung.
+
+## 🗂️ Für später vorgemerkt
+
+Legitime Funktionen für Jausi, die bewusst nicht im Rahmen des Kurses umgesetzt werden. Sie sind dokumentiert, damit sie nicht jedes Mal neu diskutiert werden; aufgenommen werden sie nur durch eine ausdrückliche Entscheidung des Teams.
+
+| Funktion | Bezug | Warum später |
+| --- | --- | --- |
+| Eigene App für Android und iPhone | [architecture.md](architecture.md) | Die Web-App deckt beide Plattformen ab; eine App nutzt später dieselbe Server-API. |
+| Daten ohne Verbindung lesen, auch bei Serverausfall | US-30, NFR-09 | Braucht eine lokale Kopie im Browser oder in einer App. |
+| Daten exportieren | US-29 | Recht auf Datenübertragbarkeit; bis dahin erfüllt das Team Anfragen von Hand. |
+| Einkaufsliste ohne Internet | US-28 | Setzt die Einkaufsliste (US-12, Could) und Offline-Fähigkeit voraus. |
+| Verbrauchsstatistik | US-27 | Braucht über längere Zeit gesammelte Daten. |
+| Zutatenkatalog aus einer externen Quelle | [requirements.md](requirements.md#bekannte-einschränkungen-und-risiken) | Lizenz, Umfang und deutsche Bezeichnungen müssten erst geprüft werden. |
+| Synchronisierung, gemeinsame Haushalte | – | Mehrere Personen an denselben Daten bringen Rechte und Konflikte mit sich. |
 
 ## 🎬 Geplanter vollständiger Demo-Anwendungsfall
 
@@ -72,14 +87,14 @@ Das Team hat die offenen Punkte vom 09.11.2026 geprüft und am 13.11.2026 bestä
 
 | Thema | Entscheidung |
 | --- | --- |
-| Zutatenkatalog | Fest vorgegeben, vom Team zusammengestellt, gegebenenfalls aus einer externen Quelle. Eigene Zutaten (US-17, US-18) sind Should. Quelle und Umfang des Datensatzes sind noch offen, siehe [requirements.md](requirements.md#bekannte-einschränkungen-und-risiken). |
+| Zutatenkatalog | Fest vorgegeben, im Kurs vom Team von Hand gepflegt. Eigene Zutaten (US-17, US-18) sind Should; eine externe Quelle ist eine spätere Erweiterung (siehe unten). |
 | Personas | Lena, Andrea und Jonas; Lena ist die primäre Persona. |
-| Nutzungskontext | Am 13.11.2026 bestätigt: Smartphone, Daten nur auf dem Gerät, Offline-Nutzung als Must, keine Konten. **Danach geändert, vorgeschlagen mit stillschweigender Zustimmung (Einwand bis 15.11.2026):** Web-App im Browser des Smartphones mit Konto und Daten auf dem Server; nach dem MVP eine lokale Kopie zum Lesen (US-30, Should), die Einkaufsliste ohne Internet (US-28, Could) und eine eigene App; Daten exportieren (US-29, Should). Siehe [ADR-0002](adr/0002-architekturstil-client-server.md). |
+| Nutzungskontext | Am 13.11.2026 bestätigt: Smartphone, Daten nur auf dem Gerät, Offline-Nutzung als Must, keine Konten. **Danach geändert, vorgeschlagen mit stillschweigender Zustimmung (Einwand bis 15.11.2026):** Web-App im Browser des Smartphones mit Konto und Daten auf dem Server; nach dem MVP eine lokale Kopie zum Lesen (US-30, später), die Einkaufsliste ohne Internet (US-28, später) und eine eigene App; Daten exportieren (US-29, später). Siehe [ADR-0002](adr/0002-architekturstil-client-server.md). |
 | Leistungsziele | NFR-02, NFR-07 und NFR-08 sind Should; der Referenzdatensatz enthält den vollständigen Zutatenkatalog. |
 | Sonderfälle | Jede Zutat höchstens einmal je Rezept, eindeutige Rezeptnamen, Zubereitung als Freitext. |
 | Abschnitte in der Zubereitung | US-16 bleibt Could; Zutaten je Abschnitt sowie Umbenennen und Umsortieren werden erst bei einer Umsetzung ergänzt. |
 | Anwendungsfälle und Risiken | AF-1 bis AF-5 und die dokumentierten Risiken, darunter Datenverlust bei Geräteverlust oder durch den Browser und mögliche Hosting-Kosten. |
 | Akzeptanzkriterien | US-06 und US-13 aufgeteilt, alle Kriterien im Format Gegeben/Wenn/Dann, Lesbarkeit als NFR-10 (Should); das Team versteht die Kriterien gleich. |
-| Developer-Reviews | Mengen als Freitext; Sicherheitsabfrage nur beim Löschen von Rezepten und Katalog-Zutaten und beim Verlassen ungespeicherter Rezepte; alphabetische Sortierung; Zutaten beim Bearbeiten änderbar; Vorschläge auch mitten im Wort; Vorrat speichert sofort; Fehl-Anzahl in der Archivliste; Offline für alle Funktionen; neue Could-Stories US-20 bis US-22 mit eigenen Kategorien und einer Einkaufsliste nur aus Katalog-Zutaten. Neue Zutaten direkt übernehmen gehört zu US-17 (Should). |
-| Verbrauchsstatistik | Neu als Could (US-27), vorgeschlagen am 13.11.2026 zusammen mit ADR-0002. |
+| Developer-Reviews | Mengen als Freitext; Sicherheitsabfrage nur beim Löschen von Rezepten und Katalog-Zutaten und beim Verlassen ungespeicherter Rezepte (seit 13.11.2026 Should, US-32); alphabetische Sortierung; Zutaten beim Bearbeiten änderbar; Vorschläge auch mitten im Wort; Vorrat speichert sofort; Fehl-Anzahl in der Archivliste; Offline für alle Funktionen; neue Could-Stories US-20 bis US-22 mit eigenen Kategorien und einer Einkaufsliste nur aus Katalog-Zutaten. Neue Zutaten direkt übernehmen gehört zu US-17 (Should). |
+| Verbrauchsstatistik | Neu (US-27), für später vorgemerkt; vorgeschlagen am 13.11.2026 zusammen mit ADR-0002. |
 | Logo und Maskottchen | Bleiben als Idee; die Verwendung wird später entschieden, nicht Teil des MVP. |

@@ -21,7 +21,7 @@ Jeder Anwendungsfall beschreibt, wer wann warum handelt und was danach gilt. Jed
 | ID | Anwendungsfall | Persona | Auslöser | Ergebnis | User Stories | Im MVP |
 | --- | --- | --- | --- | --- | --- | --- |
 | AF-1 | Vorrat pflegen | alle | nach dem Einkauf oder Kochen | Der Vorrat stimmt mit den Zutaten daheim überein. | US-01–03, US-13–15, US-17, US-18, US-21 | Teilweise (nur Must-Stories) |
-| AF-2 | Rezepte sammeln | Jonas | ein neues Gericht gekocht oder entdeckt | Das Rezept ist im Archiv und wiederauffindbar. | US-04–07, US-11, US-13, US-17–19, US-22 | Teilweise (nur Must-Stories) |
+| AF-2 | Rezepte sammeln | Jonas | ein neues Gericht gekocht oder entdeckt | Das Rezept ist im Archiv und wiederauffindbar. | US-04–07, US-11, US-13, US-17–19, US-22, US-32 | Teilweise (nur Must-Stories) |
 | AF-3 | Was kann ich kochen? | Lena | Hunger, Blick in den Kühlschrank | Ein Rezept ist gewählt, dessen Zutaten alle vorhanden sind. | US-08, US-09 | Ja, vollständig (Hauptanwendungsfall) |
 | AF-4 | Einkauf planen | Andrea | vor dem Wocheneinkauf | Sie weiß, welche Zutaten sie für welche Rezepte nachkaufen muss. | US-09, US-10, US-12, US-20, US-28 | Teilweise (nur Must-Story US-09) |
 | AF-5 | Nach Rezept kochen | alle | am Herd, Smartphone in der Hand | Das Gericht ist zubereitet, ohne lange im Rezept zu suchen. | US-05, US-16 | Teilweise (nur Must-Story US-05) |
@@ -48,7 +48,7 @@ Die Begriffe gelten verbindlich für alle Projektdokumente; wörtliche Zitate in
 
 | Begriff | Bedeutung | Nicht verwenden |
 | --- | --- | --- |
-| **Zutatenkatalog** | Fest vorgegebene Liste aller Zutaten mit genau einer Schreibweise je Zutat. Das Team stellt sie zusammen, für einen ausreichend großen Datensatz gegebenenfalls aus einer externen Quelle; sie wird mit der App ausgeliefert. Vorrat und Rezepte verwenden nur Zutaten daraus. Eigene Zutaten anzulegen ist eine spätere Erweiterung (US-17, Should). | Zutatenliste |
+| **Zutatenkatalog** | Fest vorgegebene Liste aller Zutaten mit genau einer Schreibweise je Zutat. Das Team pflegt sie von Hand; sie ist für alle Konten gleich. Vorrat und Rezepte verwenden nur Zutaten daraus. Eigene Zutaten anzulegen ist eine spätere Erweiterung (US-17, Should). | Zutatenliste |
 | **Vorrat** | Zutaten aus dem Katalog, die gerade daheim sind, ohne Mengen. | Bestand, Vorratsliste, Inventur, Inventurliste |
 | **Rezept** | Name, mindestens eine Zutat und eine Zubereitung als Freitext; Mengen sind optional und Freitext. | – |
 | **Rezeptarchiv** (kurz: Archiv) | Alle gespeicherten Rezepte. | Rezeptliste, Rezeptsammlung |
@@ -97,13 +97,14 @@ erDiagram
 **Anzeige und Speichern**
 - Vorrat und Archiv sind alphabetisch sortiert, ohne Beachtung der Groß-/Kleinschreibung.
 - Das Archiv zeigt bei jedem Rezept, ob alle Zutaten vorhanden sind oder wie viele fehlen.
-- Änderungen am Vorrat werden sofort gespeichert. Rezepte werden mit „Speichern“ gesichert; wer ein Rezept mit ungespeicherten Änderungen verlässt, bekommt eine Sicherheitsabfrage.
+- Änderungen am Vorrat werden sofort gespeichert. Rezepte werden mit „Speichern“ gesichert. Wer ein Rezept mit ungespeicherten Änderungen verlässt, bekommt eine Sicherheitsabfrage (US-32, Should).
 
 **Matching**
 - Ein Rezept passt vollständig, wenn alle seine Zutaten im Vorrat stehen. Mengen werden nicht geprüft.
 - Änderungen am Vorrat ändern keine Rezepte; das Matching verwendet immer den aktuellen Vorrat.
 
 **Konto**
+- Das Konto dient nur der Anmeldung und der Zuordnung der Daten. Profilfunktionen wie Name, Bild oder Einstellungen sind nicht vorgesehen.
 - Die E-Mail-Adresse ist eindeutig, ohne Beachtung der Groß-/Kleinschreibung.
 - Ein Passwort hat mindestens 8 Zeichen.
 - Jede Person sieht und ändert nur Vorrat, Rezepte und Einkaufsliste ihres eigenen Kontos.
@@ -118,13 +119,14 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 ### Story Map
 
-**Must** ist nötig für den Kernablauf: anmelden, Zutaten erfassen, Rezepte verwalten, passende Rezepte und fehlende Zutaten sehen, alles dauerhaft im Konto gespeichert und im Browser des Smartphones bedienbar. Die Must-Zeile ist der MVP. **Should** verbessert die Nutzung, **Could** ist Komfort.
+**Must** ist nötig für den Kernablauf: anmelden, Zutaten erfassen, Rezepte verwalten, passende Rezepte und fehlende Zutaten sehen, alles dauerhaft im Konto gespeichert und im Browser des Smartphones bedienbar. Die Must-Zeile ist der MVP. **Should** verbessert die Nutzung, **Could** ist Komfort; beide sind im Kurs möglich, wenn Zeit bleibt. **Später** sind legitime Funktionen, die bewusst erst nach dem Kurs in Frage kommen.
 
 | | 🥕 AF-1<br>Vorrat pflegen | 📖 AF-2<br>Rezepte sammeln | 🍳 AF-3<br>Was kann ich kochen? | 🛒 AF-4<br>Einkauf planen | 👩‍🍳 AF-5<br>Nach Rezept kochen | 🔐 AF-6<br>Konto nutzen | 📊 AF-7<br>Verbrauch nachvollziehen |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Must** | [US-01](#us-01)<br>[US-02](#us-02)<br>[US-03](#us-03)<br>[US-13](#us-13) | [US-04](#us-04)<br>[US-05](#us-05)<br>[US-06](#us-06)<br>[US-19](#us-19) | [US-08](#us-08)<br>[US-09](#us-09) | – | – | [US-23](#us-23)<br>[US-24](#us-24)<br>[US-26](#us-26)<br>[US-31](#us-31) | – |
-| **Should** | [US-17](#us-17)<br>[US-18](#us-18)<br>[US-14](#us-14) | [US-07](#us-07) | – | [US-10](#us-10) | – | [US-25](#us-25)<br>[US-29](#us-29)<br>[US-30](#us-30) | – |
-| **Could** | [US-15](#us-15)<br>[US-21](#us-21) | [US-11](#us-11)<br>[US-22](#us-22) | – | [US-12](#us-12)<br>[US-20](#us-20)<br>[US-28](#us-28) | [US-16](#us-16) | – | [US-27](#us-27) |
+| **Should** | [US-17](#us-17)<br>[US-18](#us-18)<br>[US-14](#us-14) | [US-07](#us-07)<br>[US-32](#us-32) | – | [US-10](#us-10) | – | [US-25](#us-25) | – |
+| **Could** | [US-15](#us-15)<br>[US-21](#us-21) | [US-11](#us-11)<br>[US-22](#us-22) | – | [US-12](#us-12)<br>[US-20](#us-20) | [US-16](#us-16) | – | – |
+| **Später** | – | – | – | [US-28](#us-28) | – | [US-29](#us-29)<br>[US-30](#us-30) | [US-27](#us-27) |
 
 ### 🥕 AF-1 · Vorrat pflegen
 
@@ -426,7 +428,19 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Wenn** die Person speichert
 - **Dann** wird nicht gespeichert, und eine Fehlermeldung erscheint.
 
-**AK 4**
+</details>
+
+<a id="us-32"></a>
+<details>
+<summary><strong>US-32 · Ungespeicherte Änderungen nicht verlieren</strong> · Should</summary>
+
+> Als Nutzer möchte ich gewarnt werden, wenn ich ein Rezept mit ungespeicherten Änderungen verlasse, damit ich keine Eingaben versehentlich verliere.
+
+*Bis 13.11.2026 als AK 4 Teil von US-06 (Must); für den Kurs auf Should gesetzt, weil der Kernablauf ohne die Abfrage funktioniert.*
+
+**Akzeptanzkriterien**
+
+**AK 1**
 - **Gegeben** die Person hat die Zubereitung geändert, aber nicht gespeichert
 - **Wenn** sie das Rezept verlässt
 - **Dann** erscheint eine Sicherheitsabfrage; bestätigt sie, wird die Änderung verworfen, bricht sie ab, bleibt sie im Rezept.
@@ -636,7 +650,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-28"></a>
 <details>
-<summary><strong>US-28 · Einkaufsliste ohne Internet</strong> · Could</summary>
+<summary><strong>US-28 · Einkaufsliste ohne Internet</strong> · Später</summary>
 
 > Als Nutzerin wie Andrea möchte ich die Einkaufsliste auch ohne Internetverbindung lesen und abhaken, damit ich im Supermarkt ohne Netz einkaufen kann.
 
@@ -782,7 +796,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-29"></a>
 <details>
-<summary><strong>US-29 · Daten exportieren</strong> · Should</summary>
+<summary><strong>US-29 · Daten exportieren</strong> · Später</summary>
 
 > Als Nutzer möchte ich alle meine Daten herunterladen, damit ich eine eigene Kopie habe und Jausi jederzeit mit meinen Daten verlassen kann.
 
@@ -802,7 +816,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-30"></a>
 <details>
-<summary><strong>US-30 · Daten ohne Verbindung lesen</strong> · Should</summary>
+<summary><strong>US-30 · Daten ohne Verbindung lesen</strong> · Später</summary>
 
 > Als Nutzer möchte ich Vorrat und Rezepte auch lesen können, wenn ich keine Internetverbindung habe oder der Server ausfällt, damit ich trotzdem nach meinen Rezepten kochen kann.
 
@@ -854,7 +868,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 <a id="us-27"></a>
 <details>
-<summary><strong>US-27 · Verbrauchsstatistik</strong> · Could</summary>
+<summary><strong>US-27 · Verbrauchsstatistik</strong> · Später</summary>
 
 > Als Nutzerin wie Andrea möchte ich sehen, welche Zutaten ich in letzter Zeit wie oft zum Vorrat hinzugefügt und wieder entfernt habe, damit ich mein Konsumverhalten nachvollziehen kann.
 
@@ -893,10 +907,10 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 | FR-15 | Das System erlaubt, eigene Zutaten anzulegen, speichert sie dauerhaft im Zutatenkatalog und verhindert Duplikate gemäß den fachlichen Regeln. | Should | US-17, US-18 |
 | FR-16 | Das System erlaubt, ein Konto mit E-Mail-Adresse und Passwort anzulegen, sich an- und abzumelden und das Konto mit allen Daten zu löschen, und zeigt jeder Person nur die Daten ihres Kontos. | Must | US-23, US-24, US-26 |
 | FR-17 | Das System erlaubt, ein vergessenes Passwort per E-Mail zurückzusetzen. | Should | US-25 |
-| FR-18 | Das System zählt, wie oft Zutaten zum Vorrat hinzugefügt und entfernt wurden, und zeigt das für einen gewählten Zeitraum an. Gespeichert werden nur Zählungen je Zutat und Woche (Datensparsamkeit). | Could | US-27 |
-| FR-19 | Das System hält die Einkaufsliste ohne Internetverbindung lesbar und abhakbar und überträgt die Änderungen, sobald wieder eine Verbindung besteht. | Could | US-28 |
-| FR-20 | Das System erlaubt, alle Daten des eigenen Kontos als Datei in einem gängigen, maschinenlesbaren Format herunterzuladen. | Should | US-29 |
-| FR-21 | Das System hält eine lokale Kopie von Vorrat und Rezepten auf dem Gerät, die ohne Verbindung lesbar ist und beim Abmelden gelöscht wird. | Should | US-30 |
+| FR-18 | Das System zählt, wie oft Zutaten zum Vorrat hinzugefügt und entfernt wurden, und zeigt das für einen gewählten Zeitraum an. Gespeichert werden nur Zählungen je Zutat und Woche (Datensparsamkeit). | Später | US-27 |
+| FR-19 | Das System hält die Einkaufsliste ohne Internetverbindung lesbar und abhakbar und überträgt die Änderungen, sobald wieder eine Verbindung besteht. | Später | US-28 |
+| FR-20 | Das System erlaubt, alle Daten des eigenen Kontos als Datei in einem gängigen, maschinenlesbaren Format herunterzuladen. | Später | US-29 |
+| FR-21 | Das System hält eine lokale Kopie von Vorrat und Rezepten auf dem Gerät, die ohne Verbindung lesbar ist und beim Abmelden gelöscht wird. | Später | US-30 |
 | FR-22 | Das System zeigt eine Datenschutzerklärung und ein Impressum, die ohne Anmeldung erreichbar sind; die Datenschutzerklärung ist bei der Registrierung verlinkt. | Must | US-31 |
 
 ## Nichtfunktionale Anforderungen
@@ -906,21 +920,21 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 | NFR-01 | Deutschsprachige Oberfläche, die im Browser eines Smartphones mit 360 Pixel Breite ohne horizontales Scrollen bedienbar ist; Vorrat und Archiv sind von der Hauptnavigation mit einem Tipp erreichbar. Prüfung durch manuellen Durchlauf aller Must-Stories auf je einem dokumentierten Android- und iPhone-Testgerät. | Must |
 | NFR-02 | Matching (US-08, US-09): Mit dem Referenzdatensatz erscheinen die vollständig passenden Rezepte und die fehlenden Zutaten je Rezept innerhalb einer Sekunde auf dem dokumentierten Testgerät. | Should |
 | NFR-03 | Nach Speichern, Neustart und erneuter Anmeldung, auch auf einem anderen Gerät, sind Zutatenkatalog, Vorrat und Rezepte unverändert vorhanden. Prüfung mit einem gespeicherten Beispieldatensatz. | Must |
-| NFR-04 | Fehlermeldungen nennen das betroffene Feld und den Grund; bereits eingegebene Daten bleiben nach einer Fehlermeldung erhalten. Das Löschen von Rezepten und Zutaten aus dem Zutatenkatalog erfordert eine Sicherheitsabfrage; das Entfernen einer Zutat aus dem Vorrat nicht. Wer ein Rezept mit ungespeicherten Änderungen verlässt, bekommt ebenfalls eine Sicherheitsabfrage. Ohne Internetverbindung erscheint der Hinweis „Keine Internetverbindung“. Prüfung mit ungültigen Eingaben, Abbruch einer Löschaktion und getrennter Verbindung. | Must |
+| NFR-04 | Fehlermeldungen nennen das betroffene Feld und den Grund; bereits eingegebene Daten bleiben nach einer Fehlermeldung erhalten. Das Löschen von Rezepten und Zutaten aus dem Zutatenkatalog erfordert eine Sicherheitsabfrage; das Entfernen einer Zutat aus dem Vorrat nicht. Ohne Internetverbindung erscheint der Hinweis „Keine Internetverbindung“. Prüfung mit ungültigen Eingaben, Abbruch einer Löschaktion und getrennter Verbindung. | Must |
 | NFR-05 | Das Matching ist unabhängig von der Oberfläche testbar; automatisierte Tests prüfen vollständige, teilweise und fehlende Übereinstimmung sowie leeren Vorrat. | Must |
 | NFR-06 | Als personenbezogene Daten werden nur E-Mail-Adresse und Passwort erfasst. Passwörter werden nie im Klartext gespeichert, alle Daten werden verschlüsselt übertragen, und eine Person kann nur die Daten ihres eigenen Kontos lesen und ändern. Server und Datenbank stehen in der EU. Jausi setzt nur technisch notwendige Cookies (Anmeldung) und verwendet kein Tracking und keine Werbung; ein Cookie-Banner ist damit nicht nötig. Vorrats- und Rezeptdaten gehen an keinen AI-Dienst. Prüfung der Eingabefelder, der Datenflüsse, der gesetzten Cookies und eines Zugriffsversuchs auf ein fremdes Konto. | Must |
 | NFR-07 | Zutatenvorschläge (US-13): Mit dem Referenzdatensatz erscheinen die Zutatenvorschläge innerhalb einer Sekunde nach jeder Eingabe auf dem dokumentierten Testgerät. | Should |
 | NFR-08 | Suche (US-07): Mit dem Referenzdatensatz erscheinen die Suchergebnisse innerhalb einer Sekunde auf dem dokumentierten Testgerät. Gilt nur, wenn die Suche umgesetzt wird. | Should |
-| NFR-09 | Ohne Internetverbindung oder bei Serverausfall sind Vorrat und Rezepte lesbar (US-30); die Einkaufsliste ist zusätzlich abhakbar, und Haken werden übertragen, sobald wieder eine Verbindung besteht (US-28). Gilt jeweils, sobald die Story umgesetzt ist. Prüfung im Flugmodus und bei abgeschaltetem Server. Bis 13.11.2026 galt Offline-Nutzung aller Funktionen als Must; geändert mit ADR-0002. | Should |
+| NFR-09 | Ohne Internetverbindung oder bei Serverausfall sind Vorrat und Rezepte lesbar (US-30); die Einkaufsliste ist zusätzlich abhakbar, und Haken werden übertragen, sobald wieder eine Verbindung besteht (US-28). Gilt jeweils, sobald die Story umgesetzt ist. Prüfung im Flugmodus und bei abgeschaltetem Server. Bis 13.11.2026 galt Offline-Nutzung aller Funktionen als Must; geändert mit ADR-0002. | Später |
 | NFR-10 | Rezepte sind beim Kochen gut lesbar: Fließtext in der Rezeptansicht mindestens 16 Pixel groß, Kontrast zwischen Text und Hintergrund mindestens 4,5:1 (WCAG 2.1, Stufe AA). Prüfung auf dem dokumentierten Testgerät mit einem Kontrast-Prüfwerkzeug. | Should |
 
-**Referenzdatensatz für NFR-02, NFR-07 und NFR-08:** der vollständige Zutatenkatalog, 200 Zutaten im Vorrat und 100 Rezepte mit je bis zu 20 Zutaten. Die Datenmengen sind ein Referenzwert für die Messung, keine Obergrenze. Testgerät und Messmethode werden nach Festlegung der Plattform dokumentiert.
+**Referenzdatensatz für NFR-02, NFR-07 und NFR-08:** der vollständige Zutatenkatalog, 200 Zutaten im Vorrat und 100 Rezepte mit je bis zu 20 Zutaten. Die Datenmengen sind ein Referenzwert für die Messung, keine Obergrenze. Testgerät und Messmethode werden nach Festlegung der Plattform dokumentiert. Gemessen wird nur, wenn im Kurs Zeit bleibt; dann genügen die Demo-Daten, falls der Referenzdatensatz zu aufwendig ist.
 
 ## Bekannte Einschränkungen und Risiken
 
 - **Mengen:** „Zutat vorhanden“ heißt nicht „genug davon“. Rezeptmengen werden angezeigt, aber nicht mit dem Vorrat verglichen; die Oberfläche macht das sichtbar.
 - **Fester Zutatenkatalog (MVP):** Zutaten, die nicht im Katalog stehen, können nicht erfasst werden. Sie lassen sich nur in der Zubereitung erwähnen und zählen nicht fürs Matching. Eigene Zutaten (US-17, US-18) heben das nach dem MVP auf.
-- **Datensatz für den Zutatenkatalog (offen):** Der feste Katalog braucht einen großen Datensatz an Zutaten. Den von Hand zusammenzustellen ist aufwendig; daher wird gegebenenfalls eine externe Quelle benötigt. Ob und welche, entscheidet das Team; Lizenz, Umfang und deutsche Bezeichnungen sind dabei zu prüfen. Der Katalog liegt auf dem Server und ist für alle Konten gleich. Mögliche Quellen aus der Recherche des Teams (noch nicht geprüft):
+- **Zutatenkatalog von Hand:** Im Kurs pflegt das Team den Katalog von Hand und beginnt klein; fehlt eine Zutat, wird sie ergänzt. Eine externe Quelle für einen großen Datensatz ist eine spätere Erweiterung. Die folgenden Quellen aus der Recherche des Teams dienen Developern nur als Orientierung, wie Zutaten-Datensätze aufgebaut sein können (Lizenz, Umfang und deutsche Bezeichnungen nicht geprüft):
   - FoodEx2 (EFSA): europäische Klassifikation von Lebensmitteln und Zutaten
   - FoodOn: offene Ontologie für Lebensmittel
   - LanguaL: Thesaurus zur Beschreibung von Lebensmitteln
@@ -928,7 +942,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Pluralformen:** Ab US-17 gelten „Tomate“ und „Tomaten“ als verschiedene Zutaten. Die Zutatenvorschläge sollen solche Duplikate vermeiden.
 - **Leeres Archiv (AF-3):** Jausi nützt erst, wenn Rezepte erfasst sind; beim ersten Start findet das Matching nichts.
 - **Einzelerfassung (AF-1, Risiko):** Nach einem großen Einkauf müssen Zutaten einzeln eingetragen werden. Ist das zu mühsam, veraltet der Vorrat. Das Abhaken auf der Einkaufsliste (US-20, Could) mildert das nach dem MVP; mehrere Zutaten auf einmal hinzuzufügen wäre eine weitere mögliche Erweiterung.
-- **Ohne Internet (AF-4, Risiko):** Im MVP ist Jausi ohne Internetverbindung nicht nutzbar, auch nicht beim Einkaufen; fehlende Zutaten lassen sich im Supermarkt ohne Netz nicht nachsehen. Die lokale Kopie zum Lesen (US-30, Should) und die Einkaufsliste ohne Internet (US-28, Could) mildern das nach dem MVP.
+- **Ohne Internet (AF-4, Risiko):** Im MVP ist Jausi ohne Internetverbindung nicht nutzbar, auch nicht beim Einkaufen; fehlende Zutaten lassen sich im Supermarkt ohne Netz nicht nachsehen. Die lokale Kopie zum Lesen (US-30, später) und die Einkaufsliste ohne Internet (US-28, später) mildern das nach dem MVP.
 - **Datenverlust:** Die Daten liegen auf dem Server und sind an das Konto gebunden; ein verlorenes Gerät kostet keine Daten mehr. Ein Ausfall oder Datenverlust des Servers trifft dagegen alle Konten. Wie der Server gesichert wird, klärt Phase 2. Nach dem MVP mildern der Export (US-29) und die lokale Kopie (US-30) das Risiko und verhindern, dass Daten nur bei uns liegen.
 - **Konten und Sicherheit:** Mit Konten speichert Jausi personenbezogene Daten (E-Mail-Adresse) und muss Zugriffe auf fremde Konten verhindern (NFR-06). Ein vergessenes Passwort lässt sich im MVP nicht zurücksetzen; das kommt mit US-25 (Should). Rechtlicher Rahmen in der EU und in Österreich: DSGVO (Datensparsamkeit, Sicherheit, Auskunft, Löschung, Datenübertragbarkeit), Impressumspflicht (§ 5 ECG, § 25 MedienG) und Cookie-Regeln (§ 165 TKG 2021). Mit dem Hosting-Anbieter ist ein Vertrag zur Auftragsverarbeitung nötig (DSGVO Art. 28). Diese Einordnung hat AI erstellt; sie ist keine Rechtsberatung.
 - **Externe Dienste:** Der MVP braucht einen Server mit Datenbank; das Hosting kann laut [ADR-0001](adr/0001-infrastruktur-und-release.md) kostenpflichtig sein. Für das Zurücksetzen von Passwörtern (US-25, Should) wäre zusätzlich ein E-Mail-Dienst nötig. Eine externe Quelle für den Zutatenkatalog würde nur einmalig als Datengrundlage verwendet. Werden später welche gewählt, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren.

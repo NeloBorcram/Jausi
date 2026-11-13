@@ -29,7 +29,7 @@ Sie unterscheiden sich in Motivation, Erfahrung und Nutzungssituation.
 - **Frust:** Zutaten bleiben liegen, weil ihr kein passendes Rezept einfällt.
 - **Sicht auf Jausi:** Resteverwertung. Rezepte mit wenigen fehlenden Zutaten finden und den Einkauf daraus planen.
 - **Wichtigste User Stories:** US-08, US-09, US-10, US-12, US-20, US-27, US-28.
-- **Erkannte Lücke:** Im MVP braucht Jausi eine Internetverbindung; ohne Netz im Supermarkt sieht sie keine fehlenden Zutaten. Die Einkaufsliste ohne Internet (US-28) und die Verbrauchsstatistik (US-27) kommen erst nach dem MVP.
+- **Erkannte Lücke:** Im MVP braucht Jausi eine Internetverbindung; ohne Netz im Supermarkt sieht sie keine fehlenden Zutaten. Die Einkaufsliste ohne Internet (US-28) und die Verbrauchsstatistik (US-27) sind für die Zeit nach dem Kurs vorgemerkt.
 
 ## Jonas, 19 – Lehrling, erste eigene Wohnung
 

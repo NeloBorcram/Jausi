@@ -12,7 +12,7 @@
 > **Auf einen Blick**
 > - **Was:** App, die einen persönlichen Lebensmittelvorrat mit einem Rezeptarchiv verbindet und zeigt, welche Gerichte mit vorhandenen Zutaten möglich sind.
 > - **Für wen:** Menschen, die unkompliziert mit dem kochen möchten, was sie daheim haben, allen voran Studierende.
-> - **Wo:** im Browser des Smartphones, in der Küche und beim Einkaufen; mit Konto auf jedem Gerät. Eine eigene App ist für später geplant.
+> - **Wo:** im Browser des Smartphones, in der Küche und beim Einkaufen; mit Konto auf jedem Gerät. Eine eigene App ist für die Zeit nach dem Kurs vorgemerkt.
 > - **Stand:** Phase 1 (Anforderungen) ist abgeschlossen und am 13.11.2026 vom Team bestätigt; Phase 2 (Architektur und Design) läuft. Es gibt noch keinen Code.
 
 ## Problem
@@ -41,8 +41,7 @@ Alle Nutzer wollen drei Dinge wissen: **Was habe ich da? Was kann ich damit koch
 
 ```mermaid
 flowchart LR
-    Q["📚 Zutaten-Datensatz<br/>ggf. aus externer Quelle"] -.->|"vom Team zusammengestellt"| K
-    K["🧺 Zutatenkatalog<br/>fest vorgegeben"] --> V["🥕 Vorrat<br/>was ich daheim habe"]
+    K["🧺 Zutatenkatalog<br/>vom Team gepflegt"] --> V["🥕 Vorrat<br/>was ich daheim habe"]
     K --> R["📖 Rezeptarchiv<br/>meine eigenen Rezepte"]
     U["👤 Konto<br/>Daten auf dem Server"] --> V
     U --> R
@@ -52,7 +51,7 @@ flowchart LR
     M --> F["🛒 Fehlende Zutaten<br/>je Rezept"]
 ```
 
-Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschlagen. Das Team stellt ihn zusammen, für einen ausreichend großen Datensatz gegebenenfalls aus einer externen Quelle; eigene Zutaten anzulegen ist eine spätere Erweiterung. Das Matching prüft nur, **ob** eine Zutat vorhanden ist, nicht die Menge.
+Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschlagen. Das Team pflegt ihn von Hand; eigene Zutaten anzulegen ist eine spätere Erweiterung. Das Matching prüft nur, **ob** eine Zutat vorhanden ist, nicht die Menge.
 
 ## Geplanter Funktionsumfang (MVP)
 
@@ -62,7 +61,7 @@ Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschla
 - Passende Rezepte finden und fehlende Zutaten anzeigen.
 - Im Browser des Smartphones nutzbar, auf Android und iPhone; eine Internetverbindung ist nötig.
 
-**Bewusst nicht im MVP:** Mengenvergleich, eigene Zutaten anlegen und Suche nach Rezeptnamen (Should), Favoriten, Einkaufsliste, Kategorien und Verbrauchsstatistik (Could), Offline-Nutzung und eine eigene App. AI unterstützt die Projektarbeit; eine AI-Funktion in der App ist nicht vorgesehen. Details stehen im [MVP-Scope](docs/mvp.md).
+**Bewusst nicht im MVP:** Mengenvergleich, eigene Zutaten anlegen und Suche nach Rezeptnamen (Should), Favoriten, Einkaufsliste und Kategorien (Could). Für die Zeit nach dem Kurs vorgemerkt: eigene App, Offline-Nutzung, Export und Verbrauchsstatistik. AI unterstützt die Projektarbeit; eine AI-Funktion in der App ist nicht vorgesehen. Details stehen im [MVP-Scope](docs/mvp.md).
 
 ## Projektdokumentation
 

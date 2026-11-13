@@ -11,9 +11,9 @@ Die Entscheidung fällt in drei Ebenen, jede engt die nächste ein:
 | --- | --- | --- |
 | 1 · Architekturstil | Wo liegen Daten und Logik? | **Client-Server mit Konten** (V3, [ADR-0002](adr/0002-architekturstil-client-server.md)) |
 | 2 · Plattform | Wie kommt Jausi aufs Smartphone? | **Web-App im Browser** für den MVP; eigene App danach |
-| 3 · Technologien | Sprachen, Frameworks, Datenbank, Anmeldung | offen, folgt als eigene ADRs |
+| 3 · Technologien | Sprachen, Frameworks, Datenbank, Anmeldung | offen, folgt als **ein** ADR-0003 „Technologie-Stack“ |
 
-**Begründung:** Jausi soll langfristig auf mehreren Geräten mit denselben Daten laufen, zuerst im Browser, später als eigene App. Client-Server erreicht das mit dem geringsten Umbau, passt zu den Kenntnissen des Teams (Web sowie Java oder C#, noch nicht für alle bestätigt) und liefert ein vollständiges API-Design. Dafür ist Offline-Nutzung im MVP kein Must mehr; das ist eine bewusste Scope-Änderung gegenüber Phase 1. Nach dem MVP behalten Nutzer eine lesbare lokale Kopie (US-30) und können alle Daten exportieren (US-29), damit sie nicht nur bei uns liegen.
+**Begründung:** Jausi soll langfristig auf mehreren Geräten mit denselben Daten laufen, zuerst im Browser, später als eigene App. Client-Server erreicht das mit dem geringsten Umbau, passt zu den Kenntnissen des Teams (Web sowie Java oder C#, noch nicht für alle bestätigt) und liefert ein vollständiges API-Design. Dafür ist Offline-Nutzung im MVP kein Must mehr; das ist eine bewusste Scope-Änderung gegenüber Phase 1. Für die Zeit nach dem Kurs sind eine lesbare lokale Kopie (US-30) und ein Export aller Daten (US-29) vorgemerkt, damit die Daten nicht nur bei uns liegen.
 
 ### Architekturüberblick (V3)
 
@@ -30,6 +30,26 @@ flowchart LR
 ```
 
 Erste Sicht auf die gewählte Architektur, angelehnt an die Kontext- und Containersicht des C4-Modells. Sobald die Technologien feststehen, bekommen die Bausteine ihre konkreten Namen, und die Sicht wird um die Module der Backend-API ergänzt.
+
+## Leitlinie: bewusst einfach
+
+Der Kurs empfiehlt die einfachste Architektur, die die Anforderungen erfüllt. Für Jausi heißt das:
+
+- **Ein Programm** liefert Oberfläche und API aus (modularer Monolith), mit klar getrennten Modulen für Konto, Zutatenkatalog, Vorrat, Rezepte und Matching.
+- **Eine Datenbank**, ein Repository, ein Deployment.
+- **Anmeldung über die Bausteine des Frameworks**, nicht selbst gebaut; das Konto dient nur der Anmeldung.
+- **Matching als reine Logik** ohne Zugriff auf Oberfläche oder Datenbank, damit es automatisiert testbar ist (NFR-05).
+- **Die Entwicklung der App wartet nicht auf die Infrastruktur.** Gebaut und getestet wird zuerst lokal; Hosting und Deployment kommen parallel dazu und dürfen die Umsetzung der Stories nicht blockieren.
+- **Keine zusätzlichen Dienste** wie Message Queues, Caches oder eigene Microservices, solange keine Anforderung sie verlangt.
+
+## Noch offen in Phase 2
+
+Bewusst knapp, je etwa eine Seite:
+
+- **ADR-0003 · Technologie-Stack:** eine Entscheidung für Sprache und Framework von Oberfläche und Backend, Datenbank und den Baustein für die Anmeldung, mit Begründung aus den Kenntnissen des Teams.
+- **Datenmodell:** ein ER-Diagramm mit Konto, Zutat, Vorrat, Rezept und Rezeptzutat, aufbauend auf dem fachlichen Modell in [requirements.md](requirements.md#begriffe).
+- **API-Design:** eine Tabelle der Endpunkte mit Methode, Pfad, Zweck und Bezug zur Story.
+- **Hosting:** Entscheidung auf Basis des Vergleichs in `hosting.md`.
 
 ## Ebene 1 · Architekturstil
 

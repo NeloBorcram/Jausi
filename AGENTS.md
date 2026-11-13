@@ -12,5 +12,8 @@
 - Git-Ablauf: Solange nur Dokumentation entsteht, wird direkt auf `main` gearbeitet. Sobald App-Code entsteht, gilt der Ablauf mit Branch, Pull Request und Review aus `docs/github-workflow.md`.
 - Feste Prompts für wiederkehrende Aufgaben liegen als Skills unter `.agents/skills/` (offener Standard „Agent Skills“). Passt eine Aufgabe zu einem Skill, lies dessen `SKILL.md` und folge ihm. Die Skills sind Vorschläge; das Team kann sie anpassen.
 - Behalte Mengenvergleich, automatische Verbrauchsbuchung und AI-Rezeptgenerierung außerhalb des MVP, solange das Team keine dokumentierte Scope-Änderung beschließt.
+- Funktionen unter „Für später vorgemerkt“ in `docs/mvp.md` werden im Kurs nicht umgesetzt. Schlage sie nicht erneut als Scope vor, außer das Team beschließt es ausdrücklich.
+- Halte die Architektur bewusst einfach (Leitlinie in `docs/architecture.md`): ein Programm, eine Datenbank, Anmeldung über die Bausteine des Frameworks, keine zusätzlichen Dienste ohne Anforderung.
 - Dokumentiere tatsächlichen AI-Einsatz und offene Entscheidungen ehrlich. Erfinde keine Teamfreigaben, Tests oder implementierten Funktionen.
+- Ergänze im Protokoll von `docs/ai-usage.md` einen Eintrag pro Aufgabe oder Sitzung mit nennenswertem AI-Beitrag, nicht pro Arbeitsschritt. Fasse Folgeschritte derselben Aufgabe im bestehenden Eintrag zusammen.
 - Dokumentiere folgenreiche Architektur-, Infrastruktur- und Deploymententscheidungen vor ihrer Umsetzung mit der Vorlage unter `docs/adr/adr-template.md`. Führe vorgeschlagene Entscheidungen in `docs/adr/README.md`; markiere sie erst nach tatsächlicher Teamfreigabe als angenommen.
