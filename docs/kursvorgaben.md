@@ -5,7 +5,7 @@ Zusammenfassung der Aufgabenstellungen aus dem Moodle-Kurs, damit Team und AI-We
 | Phase | Termin laut Kursplan | Vorgaben hier erfasst | Stand im Projekt |
 | --- | --- | --- | --- |
 | [1 – Project Definition & Requirements](#phase-1--project-definition--requirements) | 14.10.2026 | ✅ am 13.11.2026 | abgeschlossen, vom Team bestätigt |
-| [2 – Architecture & Design](#phase-2--architecture--design) | 09.11.2026 | ✅ am 13.11.2026 | nicht begonnen; ein ADR liegt als Vorschlag vor |
+| [2 – Architecture & Design](#phase-2--architecture--design) | 09.11.2026 | ✅ am 13.11.2026 | freigegeben am 13.11.2026, in Arbeit; ein ADR liegt als Vorschlag vor |
 | [3 – AI-assisted/driven Implementation](#phase-3--ai-assisteddriven-implementation) | 23.11.2026 | ⏳ noch nicht veröffentlicht | – |
 | [4 – Quality Assurance & Testing](#phase-4--quality-assurance--testing) | 09.12.2026 | ⏳ noch nicht veröffentlicht | – |
 | [5 – Evaluation & Reflection](#phase-5--evaluation--reflection) | 21.12.2026 | ⏳ noch nicht veröffentlicht | – |
@@ -41,7 +41,7 @@ Zusammenfassung der Aufgabenstellungen aus dem Moodle-Kurs, damit Team und AI-We
 | `docs/mvp.md` | MVP-Scope, enthaltene und ausgeschlossene Funktionen | [mvp.md](mvp.md) |
 | `docs/ai-usage.md` | AI-Einsatz, ausgewählte Prompts, Ergebnisse, kritische Bewertung | [ai-usage.md](ai-usage.md) |
 
-Zusätzlich vom Team: [personas.md](personas.md).
+Zusätzlich vom Team, nicht vom Kurs verlangt: [personas.md](personas.md). Die Personas helfen Developern, Anforderungen aus verschiedenen Sichten zu prüfen.
 
 **Typische Fehler:** zu großes Projekt, Technologiewahl vor dem Verständnis der Anforderungen, unklare oder nicht prüfbare Stories, AI-Ergebnisse ungeprüft übernehmen, zu viele Musts, nicht testbare Anforderungen.
 

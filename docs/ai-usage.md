@@ -61,7 +61,7 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team
 Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 
 <details>
-<summary><strong>Protokoll anzeigen (36 Einträge)</strong></summary>
+<summary><strong>Protokoll anzeigen (37 Einträge)</strong></summary>
 
 | Datum | Werkzeug | Aufgabe | Ergebnis / menschliche Entscheidung |
 | --- | --- | --- | --- |
@@ -101,6 +101,7 @@ Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Kursvorgaben aus Moodle für das Projekt dokumentieren | Ein Moodle-Export enthielt nur leere Phasenbeschreibungen; der Nutzer fügte die Aufgabenstellungen zu Phase 1 und 2 als Text ein. AI fasste sie in `docs/kursvorgaben.md` in eigenen Worten zusammen und glich die Deliverables mit dem Projektstand ab: Phase 1 ist vollständig abgedeckt; für Phase 2 fehlen `architecture.md`, `hosting.md`, ein zweiter ADR, Architekturdiagramm, technisches Datenmodell und API-Design. Phase 3 bis 5 sind Platzhalter, weil die Vorgaben noch nicht veröffentlicht sind. |
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Projektstruktur aufräumen und Best Practices für AI-gestütztes Software Engineering vorschlagen | AI fand ein doppeltes Logo in `resources/` und eine fehlende `.gitignore` und schlug zehn Verbesserungen vor. Der Nutzer wählte das Aufräumen: Duplikat entfernt, `.gitignore` angelegt, erledigte Agenda in `mvp.md` zu einer Entscheidungstabelle verdichtet. Die Vorschläge zu Prompts, Protokoll und PR-Vorlage sind noch offen. |
 | 13.11.2026 | Claude (Opus 5.5) im Chat, mit Websuche | AGENTS.md prüfen und Best Practices für AI Coding recherchieren | AI fand einen veralteten Phasenstand und einen Widerspruch zwischen dem dokumentierten PR-Ablauf und der Arbeit direkt auf `main`. Recherche zu CLAUDE.md, Agent Skills, spec-driven development, Hooks und Subagents. Der Nutzer entschied: direkt auf `main`, solange nur Dokumentation entsteht, PRs ab App-Code; `CLAUDE.md` importiert `AGENTS.md`; drei feste Prompts als Skills-Vorschläge unter `.agents/skills/`. Nicht übernommen: eine Spalte zur Übernahme von AI-Vorschlägen im Protokoll. Hooks, Prüf-Agent und Tests aus Akzeptanzkriterien sind für Phase 3 vorgemerkt. |
+| 13.11.2026 | Claude (Opus 5.5) im Chat | Repository und Dokumentation mit dem Skill „doku-konsistenz“ prüfen; Phase 2 freigeben | Erster Einsatz des Skills: MVP-Umfang, Story Map, Begriffe, Personas, Status, Links und Anker, Protokollzähler und Formatprüfung ohne Befund. Der Nutzer hatte die Freigabe von Phase 2 an eine fehlerfreie Prüfung geknüpft; AI trug sie in AGENTS.md, README, mvp.md und kursvorgaben.md ein. Personas als Werkzeug des Teams vermerkt, nicht als Kursvorgabe. |
 
 </details>
 

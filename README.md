@@ -13,7 +13,7 @@
 > - **Was:** App, die einen persönlichen Lebensmittelvorrat mit einem Rezeptarchiv verbindet und zeigt, welche Gerichte mit vorhandenen Zutaten möglich sind.
 > - **Für wen:** Menschen, die unkompliziert mit dem kochen möchten, was sie daheim haben, allen voran Studierende.
 > - **Wo:** hauptsächlich auf dem Smartphone, in der Küche und beim Einkaufen, auch ohne Internet.
-> - **Stand:** Phase 1 (Anforderungen) ist abgeschlossen und am 13.11.2026 vom Team bestätigt. Es gibt noch keinen Code.
+> - **Stand:** Phase 1 (Anforderungen) ist abgeschlossen und am 13.11.2026 vom Team bestätigt; Phase 2 (Architektur und Design) läuft. Es gibt noch keinen Code.
 
 ## Problem
 
@@ -88,12 +88,12 @@ In der Projektdokumentation verwenden wir ausschließlich Vornamen. Die Verantwo
 
 ## Projektstand
 
-Phase 1 ist am 13.11.2026 vom Team bestätigt. Ein erster Architekturvorschlag ist auf ausdrücklichen Auftrag als ADR dokumentiert; daraus folgt keine Freigabe zur Umsetzung. Es gibt noch keinen App-Code. Die Termine stammen aus dem Kursplan und sind keine bestätigten Abgabefristen.
+Phase 1 ist am 13.11.2026 vom Team bestätigt; Phase 2 ist seit 13.11.2026 freigegeben. Ein erster Architekturvorschlag liegt als ADR vor; daraus folgt keine Freigabe zur Umsetzung. Es gibt noch keinen App-Code. Die Termine stammen aus dem Kursplan und sind keine bestätigten Abgabefristen.
 
 | Phase laut Kursplan | Datum | Stand |
 | --- | --- | --- |
 | 1 – Project Definition & Requirements | 14.10.2026 | ✅ abgeschlossen, vom Team bestätigt am 13.11.2026 |
-| 2 – Architecture & Design | 09.11.2026 | – |
+| 2 – Architecture & Design | 09.11.2026 | ⏳ in Arbeit, freigegeben am 13.11.2026 |
 | 3 – AI-assisted/driven Implementation | 23.11.2026 | – |
 | 4 – Quality Assurance & Testing | 09.12.2026 | – |
 | 5 – Evaluation & Reflection | 21.12.2026 | – |

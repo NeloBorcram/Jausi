@@ -51,7 +51,7 @@ Abgehakt sind nur Punkte, die sich anhand der Dokumente nachprüfen lassen. Die 
 - [x] Die fünf gepflegten Dokumente (README, Anforderungen, MVP-Scope, AI-Einsatz, Personas) sind konsistent; das Team hat die noch offenen fachlichen Punkte geprüft und seine Entscheidungen dokumentiert.
 
 > [!IMPORTANT]
-> **Status:** Phase 1 ist abgeschlossen; das Team hat die Dokumentation am 13.11.2026 geprüft und bestätigt. Daraus folgt keine Freigabe von ADR-0001 oder einer späteren Phase.
+> **Status:** Phase 1 ist abgeschlossen; das Team hat die Dokumentation am 13.11.2026 geprüft und bestätigt. Phase 2 ist seit 13.11.2026 freigegeben; ADR-0001 bleibt vorgeschlagen, bis das Team ihn annimmt.
 
 ## Geplante spätere Produktabnahme
 
