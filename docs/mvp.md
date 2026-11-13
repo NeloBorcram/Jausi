@@ -14,7 +14,7 @@ Ein Nutzer erfasst vorhandene Zutaten und eigene Rezepte. Jausi zeigt, welche Re
 - Eingabevalidierung und verständliche Hinweise bei leerem Vorrat oder Archiv.
 - Bedienung auf dem Smartphone, auch ohne Internetverbindung.
 
-Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bis US-06, US-08, US-09, US-13 und US-19, die funktionalen Anforderungen FR-01 bis FR-03, FR-05 und FR-06 sowie die nichtfunktionalen Anforderungen NFR-01, NFR-03 bis NFR-06 und NFR-09. Begriffe wie Zutatenkatalog und Matching sind dort im Abschnitt „Begriffe“ definiert. Die gemeinsame Teamprüfung der Spezifikation steht noch aus.
+Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bis US-06, US-08, US-09, US-13 und US-19, die funktionalen Anforderungen FR-01 bis FR-03, FR-05 und FR-06 sowie die nichtfunktionalen Anforderungen NFR-01, NFR-03 bis NFR-06 und NFR-09. Begriffe wie Zutatenkatalog und Matching sind dort im Abschnitt „Begriffe“ definiert. Das Team hat die Spezifikation am 13.11.2026 geprüft und bestätigt.
 
 ## ❌ Außerhalb des MVP
 
@@ -43,15 +43,15 @@ Dieser Ablauf beschreibt die spätere Produktabnahme und deckt die Anwendungsfä
 
 Abgehakt sind nur Punkte, die sich anhand der Dokumente nachprüfen lassen. Die übrigen bestätigt das Team.
 
-- [ ] Ein anderer Entwickler versteht Produktziel, Problem und Zielgruppe ohne wesentliche Rückfragen.
+- [x] Ein anderer Entwickler versteht Produktziel, Problem und Zielgruppe ohne wesentliche Rückfragen.
 - [x] Mindestens 8–10 User Stories liegen vor; jede Must-Story hat überprüfbare Akzeptanzkriterien.
 - [x] Funktionale und mindestens drei relevante nichtfunktionale Anforderungen sind eindeutig und priorisiert.
 - [x] MVP und spätere Erweiterungen sind klar getrennt; mindestens ein vollständiger demonstrierbarer Anwendungsfall ist beschrieben.
 - [x] Zwei unterschiedliche AI-Anwendungen sind mit Eingaben, Ergebnissen und kritischer Bewertung dokumentiert: Anforderungsgenerierung und Prüfung auf Widersprüche, Lücken und Unklarheiten.
-- [ ] Die fünf gepflegten Dokumente (README, Anforderungen, MVP-Scope, AI-Einsatz, Personas) sind konsistent; das Team hat die noch offenen fachlichen Punkte geprüft und seine Entscheidungen dokumentiert.
+- [x] Die fünf gepflegten Dokumente (README, Anforderungen, MVP-Scope, AI-Einsatz, Personas) sind konsistent; das Team hat die noch offenen fachlichen Punkte geprüft und seine Entscheidungen dokumentiert.
 
 > [!IMPORTANT]
-> **Status:** Dokumentationsentwurf vorhanden; gemeinsame Teamprüfung ausstehend. Phase 1 ist noch nicht als abgeschlossen bestätigt.
+> **Status:** Phase 1 ist abgeschlossen; das Team hat die Dokumentation am 13.11.2026 geprüft und bestätigt. Daraus folgt keine Freigabe von ADR-0001 oder einer späteren Phase.
 
 ## Geplante spätere Produktabnahme
 
@@ -64,17 +64,17 @@ Abgehakt sind nur Punkte, die sich anhand der Dokumente nachprüfen lassen. Die 
 
 ## Noch in Phase 1 klären
 
-Vom Team in der Lehrveranstaltung am 09.11.2026 zu bestätigen. Nach dem Termin wird jeder Punkt abgehakt oder mit der abweichenden Entscheidung ergänzt.
+Vom Team in der Lehrveranstaltung am 09.11.2026 zu bestätigen. Nach dem Termin wird jeder Punkt abgehakt oder mit der abweichenden Entscheidung ergänzt. Stand 13.11.2026: alle Punkte vom Team bestätigt.
 
-- [ ] Fester Zutatenkatalog statt mitwachsendem (geändert am 09.11.2026): Das Team stellt einen großen Zutaten-Datensatz zusammen, gegebenenfalls aus einer externen Quelle; mögliche Quellen stehen in [requirements.md](requirements.md#bekannte-einschränkungen-und-risiken). Eigenes Anlegen von Zutaten (US-17, US-18) wird Should; Quelle und Umfang sind noch festzulegen.
+- [x] Fester Zutatenkatalog statt mitwachsendem (geändert am 09.11.2026): Das Team stellt einen großen Zutaten-Datensatz zusammen, gegebenenfalls aus einer externen Quelle; mögliche Quellen stehen in [requirements.md](requirements.md#bekannte-einschränkungen-und-risiken). Eigenes Anlegen von Zutaten (US-17, US-18) wird Should. Am 13.11.2026 für den MVP bestätigt; Quelle und Umfang des Datensatzes bleiben als offene Aufgabe in [requirements.md](requirements.md#bekannte-einschränkungen-und-risiken) erfasst.
 - [x] Personas Lena, Andrea und Jonas sowie Lena als primäre Persona.
-- [ ] Nutzungskontext Smartphone und Offline-Nutzung (NFR-01, NFR-09). Am 09.11.2026 kurz auf Nutzerkonto mit Serverdaten umgestellt, am 12.11.2026 zugunsten des vorgeschlagenen [ADR-0001](adr/0001-infrastruktur-und-release.md) zurückgenommen: lokale Daten, Offline-Nutzung bleibt Must, keine Konten im MVP.
+- [x] Nutzungskontext Smartphone und Offline-Nutzung (NFR-01, NFR-09). Am 09.11.2026 kurz auf Nutzerkonto mit Serverdaten umgestellt, am 12.11.2026 zugunsten des vorgeschlagenen [ADR-0001](adr/0001-infrastruktur-und-release.md) zurückgenommen: lokale Daten, Offline-Nutzung bleibt Must, keine Konten im MVP. Am 13.11.2026 bestätigt; ADR-0001 selbst bleibt vorgeschlagen, bis das Team es annimmt.
 - [x] Aufteilung der Leistungsziele (NFR-02, NFR-07, NFR-08), alle Should. Angepasst am 09.11.2026: Referenzdatensatz mit vollständigem Zutatenkatalog.
-- [ ] Sonderfälle: Zutat höchstens einmal je Rezept, eindeutige Rezeptnamen, Zubereitung als Freitext.
-- [ ] Abschnitte in der Zubereitung (US-16, Could).
-- [ ] Wichtigste Anwendungsfälle AF-1 bis AF-5 sowie die dokumentierten Risiken und Einschränkungen, inklusive Datenverlust bei Geräteverlust.
-- [ ] Aufteilung von US-06 und US-13, Akzeptanzkriterien im Format Gegeben/Wenn/Dann und Lesbarkeit (NFR-10, Should).
-- [ ] Gleiches Verständnis der Akzeptanzkriterien im gesamten Team.
-- [ ] Developer-Review vom 09.11.2026: Mengen als Freitext, Sicherheitsabfrage nur für Rezepte und Katalog-Zutaten (nicht Vorrat), alphabetische Sortierung, Zutaten beim Bearbeiten änderbar; neue Could-Stories US-20 bis US-22.
-- [ ] Zweites Developer-Review vom 09.11.2026: Zutatenvorschläge auch mitten im Wort, neue Zutaten direkt übernehmen, Vorrat speichert sofort, Abfrage beim Verlassen ungespeicherter Rezepte, Fehl-Anzahl in der Archivliste, Offline für alle Funktionen, eigene Kategorien, Einkaufsliste nur mit Katalog-Zutaten.
-- [ ] Logo und Maskottchen als Idee beibehalten; Verwendung später entscheiden (nicht Teil des MVP).
+- [x] Sonderfälle: Zutat höchstens einmal je Rezept, eindeutige Rezeptnamen, Zubereitung als Freitext. Am 12.11.2026 bestätigt; Regel für Rezeptnamen ausgeschrieben, weil die Zutatenregel seit dem festen Katalog zu den Should-Regeln gehört.
+- [x] Abschnitte in der Zubereitung (US-16, Could). Am 12.11.2026 bestätigt; Zuordnung von Zutaten zu Abschnitten sowie Umbenennen und Umsortieren werden erst bei einer Umsetzung ergänzt.
+- [x] Wichtigste Anwendungsfälle AF-1 bis AF-5 sowie die dokumentierten Risiken und Einschränkungen, inklusive Datenverlust bei Geräteverlust. Am 12.11.2026 bestätigt; ergänzt um mögliches Löschen lokaler Daten durch den Browser und Hosting-Kosten laut ADR-0001.
+- [x] Aufteilung von US-06 und US-13, Akzeptanzkriterien im Format Gegeben/Wenn/Dann und Lesbarkeit (NFR-10, Should). Am 12.11.2026 bestätigt.
+- [x] Gleiches Verständnis der Akzeptanzkriterien im gesamten Team. Am 13.11.2026 vom Team bestätigt.
+- [x] Developer-Review vom 09.11.2026: Mengen als Freitext, Sicherheitsabfrage nur für Rezepte und Katalog-Zutaten (nicht Vorrat), alphabetische Sortierung, Zutaten beim Bearbeiten änderbar; neue Could-Stories US-20 bis US-22. Am 13.11.2026 bestätigt.
+- [x] Zweites Developer-Review vom 09.11.2026: Zutatenvorschläge auch mitten im Wort, neue Zutaten direkt übernehmen, Vorrat speichert sofort, Abfrage beim Verlassen ungespeicherter Rezepte, Fehl-Anzahl in der Archivliste, Offline für alle Funktionen, eigene Kategorien, Einkaufsliste nur mit Katalog-Zutaten. Am 13.11.2026 bestätigt; neue Zutaten direkt übernehmen gehört seit dem festen Katalog zu US-17 (Should).
+- [x] Logo und Maskottchen als Idee beibehalten; Verwendung später entscheiden (nicht Teil des MVP). Am 13.11.2026 bestätigt.

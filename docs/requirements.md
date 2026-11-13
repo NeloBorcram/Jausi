@@ -1,7 +1,7 @@
 # Anforderungen und User Stories
 
 > [!NOTE]
-> Arbeitsentwurf. Mehrere Vorschläge vom 09.11.2026 muss das Team noch bestätigen; die Agenda steht in [mvp.md](mvp.md#noch-in-phase-1-klären).
+> Stand Phase 1, am 13.11.2026 vom Team bestätigt. Die offenen Punkte vom 09.11.2026 sind geklärt; Entscheidungen und Abweichungen stehen in [mvp.md](mvp.md#noch-in-phase-1-klären).
 
 **Inhalt:** [Kontext](#kontext) · [Anwendungsfälle](#wichtigste-anwendungsfälle) · [Begriffe](#begriffe) · [Fachliche Regeln](#fachliche-regeln) · [User Stories](#user-stories-mit-akzeptanzkriterien) · [Funktionale Anforderungen](#funktionale-anforderungen) · [Nichtfunktionale Anforderungen](#nichtfunktionale-anforderungen) · [Einschränkungen und Risiken](#bekannte-einschränkungen-und-risiken)
 
@@ -80,7 +80,7 @@ erDiagram
 **Rezepte**
 - Ein Rezept ist gültig mit Name, mindestens einer Zutat und einer nicht leeren Zubereitung (Freitext).
 - Jede Zutat steht höchstens einmal in einem Rezept; erneutes Hinzufügen zeigt einen Hinweis.
-- Rezeptnamen sind eindeutig, nach derselben Regel wie Zutatennamen.
+- Rezeptnamen sind eindeutig; Namen, die sich nur in Groß-/Kleinschreibung oder in Leerzeichen am Rand unterscheiden, gelten als gleich.
 - Mengen sind optional und werden je Zutat als Freitext erfasst, etwa „500 g“ oder „1 Prise“.
 - Zutaten, die nicht im Zutatenkatalog stehen, können im MVP nur in der Zubereitung erwähnt werden; sie zählen nicht fürs Matching.
 
@@ -690,8 +690,8 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Pluralformen:** Ab US-17 gelten „Tomate“ und „Tomaten“ als verschiedene Zutaten. Die Zutatenvorschläge sollen solche Duplikate vermeiden.
 - **Leeres Archiv (AF-3):** Jausi nützt erst, wenn Rezepte erfasst sind; beim ersten Start findet das Matching nichts.
 - **Einzelerfassung (AF-1, Risiko):** Nach einem großen Einkauf müssen Zutaten einzeln eingetragen werden. Ist das zu mühsam, veraltet der Vorrat. Das Abhaken auf der Einkaufsliste (US-20, Could) mildert das nach dem MVP; mehrere Zutaten auf einmal hinzuzufügen wäre eine weitere mögliche Erweiterung.
-- **Datenverlust:** Die Daten liegen nur auf dem Gerät, ohne Konto oder Synchronisierung. Bei Geräteverlust oder Löschen der App sind sie weg; Sicherung und Export gehören nicht zum MVP.
-- **Externe Dienste:** Der MVP braucht keine externen APIs oder kostenpflichtigen Dienste; eine externe Quelle für den Zutatenkatalog würde nur einmalig als Datengrundlage verwendet. Werden später welche gewählt, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren.
+- **Datenverlust:** Die Daten liegen nur auf dem Gerät, ohne Konto oder Synchronisierung. Bei Geräteverlust oder Löschen der App sind sie weg; Sicherung und Export gehören nicht zum MVP. Wird Jausi eine Web-App, kann auch der Browser lokal gespeicherte Daten löschen, etwa bei Speichermangel oder wenn Browserdaten gelöscht werden; ob und wie das zutrifft, klärt Phase 2.
+- **Externe Dienste:** Die Funktionen des MVP brauchen keine externen APIs oder kostenpflichtigen Dienste. Für die Auslieferung der App ist Hosting nötig, das laut [ADR-0001](adr/0001-infrastruktur-und-release.md) kostenpflichtig sein kann. Eine externe Quelle für den Zutatenkatalog würde nur einmalig als Datengrundlage verwendet. Werden später welche gewählt, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren.
 - **Offen für Phase 2:** Plattform und Speichermethode. Ein Vorschlag zu Hosting und Releases liegt als [ADR-0001](adr/0001-infrastruktur-und-release.md) vor; er setzt lokale Daten und Offline-Nutzung voraus.
 
 Die Befunde der AI-Prüfungen, die zu diesem Stand geführt haben, stehen in [ai-usage.md](ai-usage.md#befunde-der-ai-prüfungen).

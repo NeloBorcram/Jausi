@@ -39,7 +39,7 @@ AI hat uns geholfen, die Idee zu strukturieren, Anforderungen zu formulieren und
 - **AI geht zu weit:** Sie empfahl früh Technik und ein Grundgerüst, also Arbeit aus späteren Phasen. Das wurde zurückgenommen und als Projektregel festgehalten.
 - **AI geht unsauber mit Begriffen um:** Sie behandelte „Zutatenkatalog“ als Synonym für „Zutatenliste“ und nannte die Akzeptanzkriterien „Szenario“ (Begriff aus BDD), obwohl die Aufgabe „Akzeptanzkriterien“ verlangt. Beides bemerkte der Nutzer. Fachbegriffe legt das Team fest.
 - **AI-Ergebnisse brauchen Kontrolle:** Die Zahlen im README stammen aus einer AI-Websuche, ohne dass die AI die Seiten geöffnet hat; der Nutzer hat alle drei Quellen am 09.11.2026 geprüft. Das erste Developer-Review übersah bei US-11 denselben Formfehler, den es bei US-19 fand. Ein einzelner AI-Durchgang reicht nicht als Prüfung.
-- **Grenzen:** AI kennt weder Zeitrahmen noch Erfahrung des Teams und keine Kursvorgaben. Es gab keine Nutzerinterviews, Implementierung oder Tests; die gemeinsame Teamprüfung steht aus.
+- **Grenzen:** AI kennt weder Zeitrahmen noch Erfahrung des Teams und keine Kursvorgaben. Es gab keine Nutzerinterviews, Implementierung oder Tests; die gemeinsame Teamprüfung stand zu diesem Zeitpunkt aus (erfolgt am 13.11.2026).
 
 ## Befunde der AI-Prüfungen
 
@@ -51,7 +51,7 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team
 | Produktabnahme und Phase-1-Abschluss waren vermischt. | Separate Definition of Done für die Spezifikation ergänzt; App-Tests sind erst später auszuführen. |
 | Technische Vorbereitung wurde zu früh empfohlen. | Technologieauswahl und Architektur auf Phase 2 verschoben; keine Implementierungsarbeiten in Phase 1. |
 | Ein Zutatenkatalog begrenzt die erfassbaren Lebensmittel. | **Wieder aktuell (09.11.2026):** Nach einem Zwischenstand mit mitwachsendem Katalog (letzte Zeile dieser Tabelle) gilt im MVP wieder ein fester Katalog. Dafür wird gegebenenfalls eine externe Quelle für einen großen Zutaten-Datensatz benötigt; die Begrenzung ist als Einschränkung dokumentiert, eigene Zutaten sind Should (US-17, US-18). Quelle und Umfang sind offen. |
-| Die Leistungsgrenze war ein AI-Vorschlag ohne Teamvalidierung. | **Aktualisiert (09.11.2026):** Aufgeteilt in NFR-02, NFR-07 und NFR-08 mit gemeinsamem Referenzdatensatz; alle drei sind Should. Gemeinsame Bestätigung steht aus. |
+| Die Leistungsgrenze war ein AI-Vorschlag ohne Teamvalidierung. | **Aktualisiert (09.11.2026):** Aufgeteilt in NFR-02, NFR-07 und NFR-08 mit gemeinsamem Referenzdatensatz; alle drei sind Should. Vom Team am 13.11.2026 bestätigt. |
 | Externe Abhängigkeiten und Kosten waren nicht explizit behandelt. | Der MVP verlangt keine externen APIs oder kostenpflichtigen Dienste. Falls später welche gewählt werden, sind Verfügbarkeit, Kosten und Abhängigkeiten zu dokumentieren. |
 | Manche Texte waren unklar, Begriffe waren inkonsistent. | Review durch AI und manuelles Review; verständlichere, konsistente Formulierungen und Abschnitt „Begriffe“ ergänzt. |
 | Ein vorgegebener Zutatenkatalog verhindert eigene Rezepte mit Zutaten, die nicht im Katalog stehen; damit scheitert der Kernablauf für diese Nutzer. | **Überholt (09.11.2026):** Rückkehr zum festen Katalog, siehe oben. Ursprünglicher Vorschlag aus dem Team: Der Zutatenkatalog wächst mit den Eingaben des Nutzers (US-13, Must). Komfortfunktionen sind Should bzw. Could (US-14, US-15). Der feste Katalog entfällt, die Anzahl der Must-Anforderungen bleibt bei den funktionalen Anforderungen gleich. Teamentscheidung ausstehend. |
@@ -61,7 +61,7 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team
 Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 
 <details>
-<summary><strong>Protokoll anzeigen (28 Einträge)</strong></summary>
+<summary><strong>Protokoll anzeigen (33 Einträge)</strong></summary>
 
 | Datum | Werkzeug | Aufgabe | Ergebnis / menschliche Entscheidung |
 | --- | --- | --- | --- |
@@ -93,6 +93,11 @@ Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Offene Punkte durchgehen: Nutzungskontext Smartphone und Offline | AI wies darauf hin, dass Offline-Nutzung als Must den Einkaufs-Anwendungsfall absichert. Der Nutzer entschied zunächst: Offline wird Should, Nutzer bekommen ein Konto mit Daten auf dem Server, das Smartphone bleibt Hauptgerät. AI warnte vor dem größeren Scope (Registrierung, Datenschutz, Serverbetrieb) und arbeitete Konto-Stories, Regeln und NFRs aus. **Am 12.11.2026 zurückgenommen** (siehe unten). |
 | 09.11.2026 | Claude (Opus 5.5) im Chat | Offene Punkte durchgehen: Leistungsziele | AI fand, dass der Referenzdatensatz mit 200 Katalog-Zutaten nicht mehr zum festen, möglicherweise viel größeren Katalog passt. Der Nutzer übernahm den Vorschlag: vollständiger Katalog, 200 Zutaten im Vorrat, 100 Rezepte. Zielwerte und Priorität Should unverändert. Eine zusätzliche Messbedingung für die Netzverbindung entfiel mit der Rücknahme der Serverdaten. |
 | 12.11.2026 | Claude (Opus 5.5) im Chat | Stand nach parallelem Push abgleichen; Punkt 3 zurücknehmen | Die nicht committeten Änderungen zu Punkt 2 bis 4 gingen beim Abgleich mit dem Stand der Kollegen verloren; AI spielte sie aus dem Gesprächsverlauf neu ein und wies auf den Widerspruch zu Manuels ADR-0001 hin (lokale Daten, Offline). Der Nutzer entschied, mit dem ADR zu gehen: Nutzerkonto, Serverdaten und Offline als Should wurden zurückgenommen; Offline-Nutzung bleibt Must, Konten bleiben außerhalb des MVP. Personas und Referenzdatensatz bleiben angepasst. |
+| 12.11.2026 | Claude (Opus 5.5) im Chat | Offene Punkte durchgehen: Sonderfälle | AI fand, dass die Regel für Rezeptnamen auf die Zutatenregel verweist, die seit dem festen Katalog zu den Should-Regeln gehört. Auf Wunsch des Nutzers wurde die Regel ausgeschrieben, ohne inhaltliche Änderung; die drei Sonderfälle bestätigte der Nutzer unverändert. |
+| 12.11.2026 | Claude (Opus 5.5) im Chat | Offene Punkte durchgehen: Abschnitte in der Zubereitung, Anwendungsfälle und Risiken | US-16 bleibt Could; AI wies auf zwei bewusst offene Details hin (Zutaten je Abschnitt, Umbenennen und Umsortieren), die erst bei einer Umsetzung ergänzt werden. AF-1 bis AF-5 unverändert bestätigt. AI schlug zwei Ergänzungen vor, die der Nutzer übernahm: mögliches Löschen lokaler Daten durch den Browser bei einer Web-App und Hosting-Kosten laut ADR-0001. |
+| 13.11.2026 | Claude (Opus 5.5) im Chat | Offene Punkte durchgehen: Zutatenkatalog, Nutzungskontext, Akzeptanzkriterien, Logo | AI listete die sechs offenen Punkte auf und schlug vor, welche nur das Team klären kann. Der Nutzer bestätigte den festen Zutatenkatalog für den MVP, den Nutzungskontext gemäß ADR-0001, das gleiche Verständnis der Akzeptanzkriterien und Logo und Maskottchen als Idee. AI wies darauf hin, dass Quelle und Umfang des Katalogs offen bleiben, ADR-0001 erst vorgeschlagen ist und für die Akzeptanzkriterien keine gemeinsame Durchsicht dokumentiert ist; das steht so in mvp.md. |
+| 13.11.2026 | Claude (Opus 5.5) im Chat | Offene Punkte durchgehen: beide Developer-Reviews | AI fasste die Entscheidungen beider Reviews mit den betroffenen Stories zusammen und fand keinen Widerspruch zum aktuellen Stand; einzige Abweichung: Neue Zutaten direkt übernehmen gehört seit dem festen Katalog zu US-17 (Should). Der Nutzer bestätigte beide Punkte. |
+| 13.11.2026 | Claude (Opus 5.5) im Chat | Teambestätigung von Phase 1 eintragen | Kein inhaltlicher AI-Beitrag. Der Nutzer meldete die Bestätigung des Teams; AI trug sie in Definition of Done, Status, README-Projektstand und Branding ein. ADR-0001 bleibt vorgeschlagen, weil die Bestätigung nur Phase 1 betrifft. |
 
 </details>
 

@@ -1,6 +1,6 @@
 # Branding und Maskottchen (Idee)
 
-**Status:** Idee. Logo und Figuren sollen als Idee erhalten bleiben; ob und wo sie verwendet werden, ist offen. Die Teamentscheidung steht aus. Sie sind keine Anforderungen und gehören nicht zum MVP-Scope.
+**Status:** Idee. Logo und Figuren sollen als Idee erhalten bleiben; ob und wo sie verwendet werden, ist offen. Das hat das Team am 13.11.2026 bestätigt. Sie sind keine Anforderungen und gehören nicht zum MVP-Scope.
 
 Die Bilder und Figurenbeschreibungen wurden mit Google Gemini erzeugt und von Roger am 09.11.2026 eingebracht (siehe [AI-Einsatz](ai-usage.md)).
 
