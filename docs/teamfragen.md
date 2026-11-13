@@ -24,7 +24,7 @@ Alle Fragen, die das Team gemeinsam entscheiden muss, stehen nur hier; die ander
 
 | # | Frage | Wer | Hintergrund |
 | --- | --- | --- | --- |
-| T13 | Inhalt der Datenschutzerklärung: Kontaktadresse, Verantwortliche, Aufbewahrungsfrist der Sicherungen (US-31) | Team | [datenmodell.md](datenmodell.md#entitäten) |
+| T13 | Platzhalter im Entwurf der Datenschutzerklärung füllen: Verantwortliche, Kontakt, Aufbewahrungsfrist der Sicherungen, Server-Protokolle, Vertrag mit dem Hoster; wer beantwortet Anfragen zu Auskunft und Berichtigung (US-31) | Team | [datenschutz.md](../content/datenschutz.md) |
 | T14 | Reihenfolge der Zutaten im Rezept und Längengrenzen für Name, Zubereitung und Menge | Team | [datenmodell.md](datenmodell.md#entitäten) |
 | T15 | AI-Entwurf des Zutatenkatalogs (218 Zutaten) durchsehen: fehlt etwas, stimmen die Bezeichnungen? Wer pflegt ihn? | Team | [architecture.md](architecture.md#risiken-und-schwachstellen-ai-review) |
 

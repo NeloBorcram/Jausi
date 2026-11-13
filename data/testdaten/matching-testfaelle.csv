@@ -1,0 +1,14 @@
+id,beschreibung,rezepte,vorrat,erwartet,bezug
+M01,"Demo Schritt 5: ein Rezept passt vollständig, eines teilweise","Tomatenreis: Reis, Tomate | Eierreis: Reis, Ei",Reis; Tomate,Tomatenreis: alles da | Eierreis: 1 fehlt (Ei),"US-09 AK 1 und 3, mvp.md Demo Schritt 5"
+M02,Demo Schritt 5 mit Filter nur vollständig passende: nur Tomatenreis bleibt,"Tomatenreis: Reis, Tomate | Eierreis: Reis, Ei",Reis; Tomate,Tomatenreis: alles da,"US-08 AK 1, mvp.md Demo Schritt 5"
+M03,Demo Schritt 6: Tomate aus dem Vorrat entfernt,"Tomatenreis: Reis, Tomate | Eierreis: Reis, Ei",Reis,Tomatenreis: 1 fehlt (Tomate) | Eierreis: 1 fehlt (Ei),"US-03 AK 1, mvp.md Demo Schritt 6"
+M04,Alle Zutaten vorhanden; zusätzliche Vorratszutaten stören nicht,"Kaiserschmarrn: Mehl, Milch, Ei, Zucker, Butter",Butter; Ei; Mehl; Milch; Reis; Zucker,Kaiserschmarrn: alles da,"US-09 AK 2, fachliche Regeln Matching"
+M05,Mehrere Zutaten fehlen,"Kaiserschmarrn: Mehl, Milch, Ei, Zucker, Butter",Mehl; Milch,"Kaiserschmarrn: 3 fehlen (Butter, Ei, Zucker)",US-09
+M06,"Keine Rezeptzutat vorhanden, Vorrat enthält nur Zutaten aus keinem Rezept","Tomatenreis: Reis, Tomate",Apfel; Banane,"Tomatenreis: 2 fehlen (Reis, Tomate)",US-09
+M07,Leerer Vorrat: alle Zutaten aller Rezepte fehlen,"Tomatenreis: Reis, Tomate | Eierreis: Reis, Ei",(leer),"Tomatenreis: 2 fehlen (Reis, Tomate) | Eierreis: 2 fehlen (Ei, Reis)","NFR-05, mvp.md Produktabnahme"
+M08,Leeres Archiv: kein Ergebnis,(keine),Reis; Tomate,(keine),"FR-05, Einschränkung Leeres Archiv (AF-3)"
+M09,Rezepte mit nur einer Zutat,Bratapfel: Apfel | Topfencreme: Topfen,Apfel,Bratapfel: alles da | Topfencreme: 1 fehlt (Topfen),"US-09, fachliche Regeln Matching"
+M10,Grundzutat Salz fehlt und zählt wie jede andere Zutat,"Butternudeln: Nudeln, Butter, Salz",Butter; Nudeln,Butternudeln: 1 fehlt (Salz),"fachliche Regeln Vorrat (Grundzutaten), US-09"
+M11,Mengen und Hinweise im Rezept ändern nichts,"Eierreis: Reis (500 g), Ei (2 Stück, Bio)",Ei; Reis,Eierreis: alles da,"US-08 AK 2, fachliche Regeln Rezepte"
+M12,Notiz am Vorratseintrag ändert nichts,"Tomatenreis: Reis, Tomate",Reis (halbe Packung); Tomate,Tomatenreis: alles da,US-33 AK 2
+M13,Filter nur vollständig passende ohne Treffer,"Tomatenreis: Reis, Tomate | Eierreis: Reis, Ei",Reis,(keine),US-08 AK 3

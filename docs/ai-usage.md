@@ -82,7 +82,7 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team
 Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 
 <details>
-<summary><strong>Protokoll anzeigen (37 Einträge)</strong></summary>
+<summary><strong>Protokoll anzeigen (38 Einträge)</strong></summary>
 
 | Datum | Werkzeug | Aufgabe | Ergebnis / menschliche Entscheidung |
 | --- | --- | --- | --- |
@@ -123,6 +123,7 @@ Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Mengen im Vorrat | AI riet vom Mengenvergleich ab (außerhalb des MVP, später ohne großen Umbau nachrüstbar, weil das Matching ein eigenes Modul ist). Roger entschied sich für eine Notiz zum Vorrat als Should (US-33, FR-23). |
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Beispielrezepte und Testvorrat | AI schrieb 24 Rezepte mit eigenen Zubereitungstexten und einen Testvorrat; auf Rogers Hinweis liegen sie wie der Katalog als Tabellen des Datenmodells unter `data/` statt unter `docs/`. Ein Skript prüfte Katalogbezug und Duplikate; Durchsicht durch das Team offen. |
 | 13.11.2026 | Claude (Opus 5.5) im Chat | `docs/` aufräumen | AI fand in `mvp.md` eine überholte Entscheidungstabelle und in `github-workflow.md` einen doppelten, veralteten Hosting-Abschnitt; Roger ließ beide auf Verweise kürzen. |
+| 13.11.2026 | Claude (Opus 5.5), Hauptsitzung und zwei Subagenten | Umsetzungsplan, Matching-Testfälle, Datenschutzerklärung | AI legte Issue #16 (Grundgerüst) an und trug 20 Abhängigkeiten als „Blocked by“ in die Issues ein, ohne Personen zuzuordnen; ein zusätzliches Plan-Issue mit Diagramm verwarf Roger, sowie 13 Matching-Testfälle und einen Entwurf der Datenschutzerklärung mit Platzhaltern. Die Lücken, die der Entwurf zeigte (Server-Protokolle, Vertrag mit dem Hoster, E-Mail ändern), stehen in T13; keine Rechtsberatung. Ein Impressum mit erfundener Firma lehnte AI ab, weil es öffentlich irreführend wäre; stattdessen ein Entwurf mit Platzhaltern. Beide Texte liegen als Website-Inhalt unter `content/`. |
 </details>
 
 Bewährte Prompts für wiederkehrende Aufgaben liegen als Skills unter [`.agents/skills/`](../.agents/skills/): [Anforderungen prüfen](../.agents/skills/anforderungen-pruefen/SKILL.md), [Dokumentation auf Konsistenz prüfen](../.agents/skills/doku-konsistenz/SKILL.md) und [ADR anlegen](../.agents/skills/adr-anlegen/SKILL.md). Sie sind Vorschläge und werden wie Code über Änderungen im Repository verbessert.

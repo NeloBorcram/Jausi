@@ -76,6 +76,7 @@ Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschla
 | [Datenmodell](docs/datenmodell.md) | Entwurf Phase 2: Entitäten, Beziehungen und Regeln für den MVP |
 | [API-Design](docs/api.md) | Entwurf Phase 2: Endpunkte, Datenformate und Fehlerformat |
 | [Hosting](docs/hosting.md) | Entwurf Phase 2: Kostenvergleich, Vorschlag Azure-Guthaben für das Projekt, Eigenhosting als spätere Option |
+| [Datenschutzerklärung](content/datenschutz.md) und [Impressum](content/impressum.md) | Texte für die Website (US-31), Entwürfe mit Platzhaltern |
 | [Offene Teamfragen](docs/teamfragen.md) | Was das Team gemeinsam entscheiden muss, mit Frist und Zuständigen |
 | [Architekturentscheidungen](docs/adr/README.md) | Verbindliche ADR-Vorlage und erste Entscheidungsvorschläge |
 | [Kursvorgaben](docs/kursvorgaben.md) | Aufgabenstellungen der fünf Phasen aus Moodle, zusammengefasst, mit Abgleich zum Projektstand |

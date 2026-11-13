@@ -43,7 +43,7 @@ berechneMatching(rezepte: Liste von {rezeptId, name, zutatIds}, vorrat: Menge vo
   → Liste von {rezeptId, name, anzahlFehlend, fehlendeZutatIds}
 ```
 
-Fehlend ist jede Zutat des Rezepts, die nicht im Vorrat steht; Mengen spielen keine Rolle. Die Funktion ist damit ohne Server testbar, für vollständige, teilweise und fehlende Übereinstimmung sowie leeren Vorrat (NFR-05). Gespeichert wird nichts; jede Abfrage nutzt den aktuellen Vorrat.
+Fehlend ist jede Zutat des Rezepts, die nicht im Vorrat steht; Mengen spielen keine Rolle. Die Funktion ist damit ohne Server testbar, für vollständige, teilweise und fehlende Übereinstimmung sowie leeren Vorrat (NFR-05); die Testfälle stehen in [matching-testfaelle.csv](../data/testdaten/matching-testfaelle.csv). Gespeichert wird nichts; jede Abfrage nutzt den aktuellen Vorrat.
 
 ## Fehler
 
