@@ -18,4 +18,10 @@
 - Halte die Architektur bewusst einfach (Leitlinie in `docs/architecture.md`): ein Programm, eine Datenbank, Anmeldung über die Bausteine des Frameworks, keine zusätzlichen Dienste ohne Anforderung.
 - Dokumentiere tatsächlichen AI-Einsatz und offene Entscheidungen ehrlich. Erfinde keine Teamfreigaben, Tests oder implementierten Funktionen.
 - Ergänze im Protokoll von `docs/ai-usage.md` einen Eintrag pro Aufgabe oder Sitzung mit nennenswertem AI-Beitrag, nicht pro Arbeitsschritt. Fasse Folgeschritte derselben Aufgabe im bestehenden Eintrag zusammen. Ein Eintrag hat höchstens zwei Sätze (AI-Beitrag, menschliche Entscheidung); Details stehen in den Dateien und in Git, nicht im Protokoll.
+- Regeln für App-Code (gelten ab Phase 3):
+  - Setze die API genau nach `api/openapi.yaml` um. Ändert sich eine Schnittstelle, passe zuerst die Spezifikation an, im selben PR.
+  - Füge nur Pakete hinzu, die es im offiziellen Paketverzeichnis gibt und die gepflegt werden; prüfe Name und Version, statt einem AI-Vorschlag zu vertrauen, und begründe neue Abhängigkeiten im PR.
+  - Leite zuerst Tests aus den Akzeptanzkriterien ab. Erzeuge Code und Tests einer Story nicht im selben AI-Durchgang. Lösche, schwäche oder überspringe Tests nie ohne Begründung im PR.
+  - Bestimme das Konto immer aus der Sitzung, nie aus Anfragedaten; halte die Modulregel aus `docs/architecture.md` ein.
+  - Gib keine Zugangsdaten, Tokens oder echten Personendaten in Code, Prompts oder Testdaten; Testdaten stammen aus `data/testdaten/`.
 - Dokumentiere folgenreiche Architektur-, Infrastruktur- und Deploymententscheidungen vor ihrer Umsetzung mit der Vorlage unter `docs/adr/adr-template.md`. Führe vorgeschlagene Entscheidungen in `docs/adr/README.md`; markiere sie erst nach tatsächlicher Teamfreigabe als angenommen.

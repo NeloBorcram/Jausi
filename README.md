@@ -74,7 +74,7 @@ Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschla
 | [Branding](docs/branding.md) | Logo- und Maskottchen-Ideen (nicht Teil des MVP) |
 | [Architektur](docs/architecture.md) | Entwurf Phase 2: Vergleich der Architekturvarianten, Komponenten, Qualitätsanforderungen, Risiken |
 | [Datenmodell](docs/datenmodell.md) | Entwurf Phase 2: Entitäten, Beziehungen und Regeln für den MVP |
-| [API-Design](docs/api.md) | Entwurf Phase 2: Endpunkte, Datenformate und Fehlerformat |
+| [API-Design](docs/api.md) | Entwurf Phase 2: Grundregeln und Begründungen; Vertrag in [api/openapi.yaml](api/openapi.yaml) |
 | [Hosting](docs/hosting.md) | Entwurf Phase 2: Kostenvergleich, Vorschlag Azure-Guthaben für das Projekt, Eigenhosting als spätere Option |
 | [Datenschutzerklärung](content/datenschutz.md) und [Impressum](content/impressum.md) | Texte für die Website (US-31), Entwürfe mit Platzhaltern |
 | [Offene Teamfragen](docs/teamfragen.md) | Was das Team gemeinsam entscheiden muss, mit Frist und Zuständigen |

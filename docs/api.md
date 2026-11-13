@@ -1,7 +1,7 @@
 # API-Design
 
 > [!NOTE]
-> **Entwurf (Phase 2), Stand 13.11.2026**, mit AI erarbeitet, vom Team noch nicht geprüft. Namen wie im [Datenmodell](datenmodell.md); unabhängig vom Stack ([ADR-0003](adr/0003-technologie-stack.md)).
+> **Entwurf (Phase 2), Stand 13.11.2026**, mit AI erarbeitet, vom Team noch nicht geprüft. Grundregeln und Begründungen zur [Spezifikation](../api/openapi.yaml); Namen wie im [Datenmodell](datenmodell.md); unabhängig vom Stack ([ADR-0003](adr/0003-technologie-stack.md)).
 
 ## Grundregeln
 
@@ -12,27 +12,9 @@
 - **Nur eigene Daten:** Der Server bestimmt das Konto ausschließlich aus der Sitzung. Kein Pfad und kein Anfragekörper enthält eine `kontoId`; jede Abfrage auf Vorratseinträge und Rezepte ist auf das Konto der Sitzung eingeschränkt. Die ID eines fremden Rezepts ergibt `404`, als gäbe es es nicht, damit fremde Daten weder lesbar noch erkennbar sind (FR-16, NFR-06).
 - **Sortierung:** Listen kommen alphabetisch nach Name, ohne Beachtung der Groß-/Kleinschreibung.
 
-## Endpunkte
+## Endpunkte und Datenformate
 
-| Methode und Pfad | Zweck | Anfrage → Antwort | Bezug |
-| --- | --- | --- | --- |
-| `POST /api/konto` | Konto anlegen und anmelden | `{"email":"Lena@example.org","passwort":"geheim123"}` → `201 {"email":"lena@example.org"}` + Cookie; `409` bei vorhandener E-Mail (siehe [Fehler](#fehler)) | US-23, FR-16 |
-| `DELETE /api/konto` | Konto mit allen Daten und Sitzungen löschen, nur mit Passwort ([Datenmodell](datenmodell.md#entitäten)); alte Sitzungen erhalten danach `401` | `{"passwort":"…"}` → `204`, Cookie gelöscht; `400` bei falschem Passwort | US-26, FR-16 |
-| `POST /api/sitzung` | Anmelden | `{"email":"…","passwort":"…"}` → `200 {"email":"lena@example.org"}` + Cookie; `401` „E-Mail oder Passwort falsch“ | US-24 |
-| `GET /api/sitzung` | Prüfen, ob angemeldet (beim Öffnen der App) | – → `200 {"email":"lena@example.org"}` oder `401` | US-24 |
-| `DELETE /api/sitzung` | Abmelden | – → `204`, Cookie gelöscht | US-24 |
-| `GET /api/zutaten?suche=eis` | Zutatenvorschläge: Name enthält Suchtext, ohne Groß-/Kleinschreibung. Ohne `suche` oder mit leerem bzw. nur aus Leerzeichen bestehendem Suchtext kommt der ganze Katalog. | – → `200 [{"id":7,"name":"Eis"},{"id":3,"name":"Reis"}]`; leere Liste → Hinweis „Zutat nicht im Katalog“ in der Oberfläche | US-13, FR-01 |
-| `GET /api/vorrat` | Vorrat anzeigen | – → `200 [{"zutatId":3,"name":"Reis"},{"zutatId":5,"name":"Tomate"}]` | US-02, FR-02 |
-| `PUT /api/vorrat/{zutatId}` | Zutat zum Vorrat hinzufügen, idempotent: zweimal hinzufügen ergibt einen Eintrag | – → `200 {"zutatId":3,"name":"Reis"}`; `404` bei unbekannter Zutat | US-01, FR-02 |
-| `DELETE /api/vorrat/{zutatId}` | Zutat aus dem Vorrat entfernen, ohne Sicherheitsabfrage | – → `204`, auch wenn sie nicht im Vorrat stand | US-03, FR-02 |
-| `GET /api/rezepte` | Rezeptarchiv | – → `200 [{"id":12,"name":"Eierreis"},{"id":11,"name":"Tomatenreis"}]` | US-05, FR-03 |
-| `GET /api/rezepte/{id}` | Rezept mit allen Angaben und den fehlenden Zutaten aus dem Matching | – → `200 {"id":12,"name":"Eierreis","zutaten":[{"zutatId":9,"name":"Ei","menge":"2"},{"zutatId":3,"name":"Reis","menge":null}],"zubereitung":"…","fehlendeZutaten":[{"zutatId":9,"name":"Ei"}]}`; `404` | US-05, US-09, FR-03, FR-05 |
-| `POST /api/rezepte` | Rezept anlegen | `{"name":"Tomatenreis","zutaten":[{"zutatId":3,"menge":"200 g"},{"zutatId":5}],"zubereitung":"…"}` → `201` mit dem Rezept wie bei `GET`; `400` bei ungültigem Rezept, `409` bei vorhandenem Namen | US-04, FR-03 |
-| `PUT /api/rezepte/{id}` | Rezept bearbeiten; ersetzt Name, Zutaten und Zubereitung vollständig | wie `POST` → `200` mit dem Rezept; `400`, `404`, `409` | US-06, FR-03 |
-| `DELETE /api/rezepte/{id}` | Rezept löschen; die Sicherheitsabfrage zeigt die Oberfläche vorher | – → `204`; `404` | US-19, FR-03 |
-| `GET /api/matching?nurVollstaendig=true` | Matching für das ganze Archiv; ohne Parameter alle Rezepte | – → `200 [{"rezeptId":11,"name":"Tomatenreis","anzahlFehlend":0,"fehlendeZutaten":[]}]` | US-08, US-09, FR-05 |
-
-Gültige Rezepte nach den [fachlichen Regeln](requirements.md#fachliche-regeln). Die Archivansicht kommt mit `GET /api/matching` allein aus, weil die Antwort den Namen enthält (US-09 AK 3).
+Maßgeblich ist der Vertrag [api/openapi.yaml](../api/openapi.yaml) (OpenAPI 3.1): 15 Endpunkte, alle Anfrage- und Antwortformate sowie das einheitliche Fehlerformat. Daraus lassen sich ein Mock-Server für die Oberfläche, eine Dokumentation und Code erzeugen. Gültige Rezepte nach den [fachlichen Regeln](requirements.md#fachliche-regeln). Die Archivansicht kommt mit `GET /api/matching` allein aus, weil die Antwort den Namen enthält (US-09 AK 3).
 
 ## Matching
 
@@ -47,29 +29,12 @@ Fehlend ist jede Zutat des Rezepts, die nicht im Vorrat steht; Mengen spielen ke
 
 ## Fehler
 
-Jede Fehlerantwort hat dasselbe Format. `felder` nennt bei Eingabefehlern das betroffene Feld und den Grund (NFR-04):
+Format und Codes stehen in der Spezifikation. Bewusste Entscheidungen dazu:
 
-```json
-{
-  "fehler": {
-    "code": "VALIDIERUNG",
-    "meldung": "Das Rezept konnte nicht gespeichert werden.",
-    "felder": [{ "feld": "zutaten", "grund": "Mindestens eine Zutat angeben." }]
-  }
-}
-```
-
-| Status | `code` | Wann |
-| --- | --- | --- |
-| 400 | `VALIDIERUNG` | Pflichtfeld leer, E-Mail ungültig, Passwort kürzer als 8 Zeichen, Zutat doppelt oder nicht im Katalog, falsches Passwort beim Löschen des Kontos |
-| 401 | `NICHT_ANGEMELDET`, `ANMELDUNG_FEHLGESCHLAGEN` | Keine gültige Sitzung, auch die Sitzung eines gelöschten Kontos; falsche E-Mail oder falsches Passwort, ohne zu verraten, was falsch ist (US-24 AK 2) |
-| 403 | `VERBOTEN` | CSRF-Prüfung fehlgeschlagen. Fremde Datensätze ergeben bewusst `404`, nicht `403`. |
-| 404 | `NICHT_GEFUNDEN` | Rezept oder Zutat gibt es nicht oder gehört zu einem anderen Konto |
-| 409 | `KONFLIKT` | E-Mail-Adresse schon vergeben (US-23 AK 2), Rezeptname im Konto schon vorhanden (US-04 AK 3) |
-
-**Bewusst hingenommen:** `409` bei `POST /api/konto` verrät, dass eine E-Mail-Adresse bereits ein Konto hat. US-23 AK 2 verlangt genau diesen Hinweis; anders als bei der Anmeldung (US-24 AK 2) wird die Information daher nicht verborgen.
-
-Der Hinweis „Keine Internetverbindung“ (NFR-04) entsteht in der Web-App, wenn der Server nicht erreichbar ist; die API liefert dafür nichts.
+- **Fremde Daten ergeben `404`, nicht `403`**, damit sie weder lesbar noch erkennbar sind; `403` bedeutet nur „CSRF-Prüfung fehlgeschlagen“.
+- **Anmeldung verrät nichts:** `401` sagt nicht, ob E-Mail oder Passwort falsch war (US-24 AK 2).
+- **Bewusst hingenommen:** `409` bei der Registrierung verrät, dass eine E-Mail-Adresse bereits ein Konto hat, weil US-23 AK 2 genau diesen Hinweis verlangt.
+- Der Hinweis „Keine Internetverbindung“ (NFR-04) entsteht in der Web-App, wenn der Server nicht erreichbar ist; die API liefert dafür nichts.
 
 ## Rückverfolgbarkeit
 

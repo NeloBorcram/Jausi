@@ -1,0 +1,433 @@
+openapi: 3.1.0
+info:
+  title: Jausi API
+  version: 0.1.0
+  description: >-
+    Entwurf (Phase 2), mit AI erarbeitet, vom Team noch nicht geprüft. Maßgeblicher
+    Vertrag für die Schnittstellen des MVP. Grundregeln, Begründungen und Bezug zu den
+    Stories stehen in docs/api.md. Alle Endpunkte außer Registrierung und Anmeldung
+    verlangen eine gültige Sitzung; das Konto ergibt sich nur aus der Sitzung.
+servers:
+  - url: /api
+security:
+  - sitzung: []
+tags:
+  - name: Konto
+  - name: Zutaten
+  - name: Vorrat
+  - name: Rezepte
+  - name: Matching
+
+paths:
+  /konto:
+    post:
+      tags: [Konto]
+      summary: Konto anlegen und anmelden
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Zugangsdaten' }
+            example: { email: Lena@example.org, passwort: geheim123 }
+      responses:
+        '201':
+          description: Konto angelegt, Sitzungscookie gesetzt; die E-Mail kommt normalisiert zurück.
+          headers:
+            Set-Cookie: { $ref: '#/components/headers/SitzungsCookie' }
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Konto' }
+        '400': { $ref: '#/components/responses/Validierung' }
+        '409': { $ref: '#/components/responses/Konflikt' }
+    delete:
+      tags: [Konto]
+      summary: Konto mit allen Daten und Sitzungen löschen
+      description: Nur mit Passwort. Alle Sitzungen des Kontos enden; alte Sitzungen erhalten danach 401.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [passwort]
+              properties:
+                passwort: { type: string }
+      responses:
+        '204':
+          description: Gelöscht, Sitzungscookie entfernt.
+        '400': { $ref: '#/components/responses/Validierung' }
+        '401': { $ref: '#/components/responses/NichtAngemeldet' }
+        '403': { $ref: '#/components/responses/Verboten' }
+
+  /sitzung:
+    post:
+      tags: [Konto]
+      summary: Anmelden
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/Zugangsdaten' }
+      responses:
+        '200':
+          description: Angemeldet, Sitzungscookie gesetzt.
+          headers:
+            Set-Cookie: { $ref: '#/components/headers/SitzungsCookie' }
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Konto' }
+        '401':
+          description: E-Mail oder Passwort falsch, ohne zu verraten, was falsch ist (Code ANMELDUNG_FEHLGESCHLAGEN).
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Fehler' }
+    get:
+      tags: [Konto]
+      summary: Prüfen, ob angemeldet
+      responses:
+        '200':
+          description: Angemeldet.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Konto' }
+        '401': { $ref: '#/components/responses/NichtAngemeldet' }
+    delete:
+      tags: [Konto]
+      summary: Abmelden
+      responses:
+        '204':
+          description: Abgemeldet, Sitzungscookie entfernt.
+        '401': { $ref: '#/components/responses/NichtAngemeldet' }
+
+  /zutaten:
+    get:
+      tags: [Zutaten]
+      summary: Zutatenvorschläge aus dem Katalog
+      description: >-
+        Alle Zutaten, deren Name den Suchtext enthält, ohne Beachtung der Groß-/Kleinschreibung,
+        alphabetisch. Ohne oder mit leerem Suchtext kommt der ganze Katalog. Eine leere Liste
+        führt in der Oberfläche zum Hinweis „Zutat nicht im Katalog“.
+      parameters:
+        - name: suche
+          in: query
+          required: false
+          schema: { type: string }
+          example: eis
+      responses:
+        '200':
+          description: Passende Zutaten.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Zutat' }
+              example: [{ id: 7, name: Eis }, { id: 3, name: Reis }]
+        '401': { $ref: '#/components/responses/NichtAngemeldet' }
+
+  /vorrat:
+    get:
+      tags: [Vorrat]
+      summary: Vorrat anzeigen
+      responses:
+        '200':
+          description: Vorrat, alphabetisch.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Vorratseintrag' }
+        '401': { $ref: '#/components/responses/NichtAngemeldet' }
+
+  /vorrat/{zutatId}:
+    parameters:
+      - $ref: '#/components/parameters/ZutatId'
+    put:
+      tags: [Vorrat]
+      summary: Zutat zum Vorrat hinzufügen
+      description: Idempotent; zweimal hinzufügen ergibt einen Eintrag.
+      responses:
+        '200':
+          description: Zutat steht im Vorrat.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Vorratseintrag' }
+        '401': { $ref: '#/components/responses/NichtAngemeldet' }
+        '403': { $ref: '#/components/responses/Verboten' }
+        '404': { $ref: '#/components/responses/NichtGefunden' }
+    delete:
+      tags: [Vorrat]
+      summary: Zutat aus dem Vorrat entfernen
+      description: Ohne Sicherheitsabfrage; auch 204, wenn die Zutat nicht im Vorrat stand.
+      responses:
+        '204':
+          description: Zutat steht nicht (mehr) im Vorrat.
+        '401': { $ref: '#/components/responses/NichtAngemeldet' }
+        '403': { $ref: '#/components/responses/Verboten' }
+
+  /rezepte:
+    get:
+      tags: [Rezepte]
+      summary: Rezeptarchiv
+      responses:
+        '200':
+          description: Rezepte des Kontos, alphabetisch.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/RezeptKurz' }
+        '401': { $ref: '#/components/responses/NichtAngemeldet' }
+    post:
+      tags: [Rezepte]
+      summary: Rezept anlegen
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/RezeptEingabe' }
+            example:
+              name: Tomatenreis
+              zutaten: [{ zutatId: 3, menge: 200 g }, { zutatId: 5 }]
+              zubereitung: Reis kochen, Tomaten unterheben.
+      responses:
+        '201':
+          description: Rezept angelegt.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Rezept' }
+        '400': { $ref: '#/components/responses/Validierung' }
+        '401': { $ref: '#/components/responses/NichtAngemeldet' }
+        '403': { $ref: '#/components/responses/Verboten' }
+        '409': { $ref: '#/components/responses/Konflikt' }
+
+  /rezepte/{id}:
+    parameters:
+      - $ref: '#/components/parameters/RezeptId'
+    get:
+      tags: [Rezepte]
+      summary: Rezept mit fehlenden Zutaten
+      responses:
+        '200':
+          description: Rezept mit allen Angaben und den fehlenden Zutaten aus dem Matching.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Rezept' }
+        '401': { $ref: '#/components/responses/NichtAngemeldet' }
+        '404': { $ref: '#/components/responses/NichtGefunden' }
+    put:
+      tags: [Rezepte]
+      summary: Rezept bearbeiten
+      description: Ersetzt Name, Zutaten und Zubereitung vollständig.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/RezeptEingabe' }
+      responses:
+        '200':
+          description: Rezept gespeichert.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Rezept' }
+        '400': { $ref: '#/components/responses/Validierung' }
+        '401': { $ref: '#/components/responses/NichtAngemeldet' }
+        '403': { $ref: '#/components/responses/Verboten' }
+        '404': { $ref: '#/components/responses/NichtGefunden' }
+        '409': { $ref: '#/components/responses/Konflikt' }
+    delete:
+      tags: [Rezepte]
+      summary: Rezept löschen
+      description: Die Sicherheitsabfrage zeigt die Oberfläche vorher.
+      responses:
+        '204':
+          description: Gelöscht.
+        '401': { $ref: '#/components/responses/NichtAngemeldet' }
+        '403': { $ref: '#/components/responses/Verboten' }
+        '404': { $ref: '#/components/responses/NichtGefunden' }
+
+  /matching:
+    get:
+      tags: [Matching]
+      summary: Matching für das ganze Archiv
+      parameters:
+        - name: nurVollstaendig
+          in: query
+          required: false
+          description: Nur Rezepte, bei denen keine Zutat fehlt.
+          schema: { type: boolean, default: false }
+      responses:
+        '200':
+          description: Ergebnis je Rezept, alphabetisch nach Name.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/MatchingErgebnis' }
+              example: [{ rezeptId: 11, name: Tomatenreis, anzahlFehlend: 0, fehlendeZutaten: [] }]
+        '401': { $ref: '#/components/responses/NichtAngemeldet' }
+
+components:
+  securitySchemes:
+    sitzung:
+      type: apiKey
+      in: cookie
+      name: SITZUNG
+      description: >-
+        Sitzungscookie des Anmeldebausteins (HttpOnly, Secure, SameSite=Lax), gültig 30 Minuten
+        nach der letzten Nutzung. Der tatsächliche Cookie-Name folgt dem Framework.
+
+  headers:
+    SitzungsCookie:
+      description: Setzt das Sitzungscookie.
+      schema: { type: string }
+
+  parameters:
+    ZutatId:
+      name: zutatId
+      in: path
+      required: true
+      schema: { type: integer }
+    RezeptId:
+      name: id
+      in: path
+      required: true
+      schema: { type: integer }
+
+  schemas:
+    Zugangsdaten:
+      type: object
+      required: [email, passwort]
+      properties:
+        email: { type: string, format: email }
+        passwort: { type: string, minLength: 8, writeOnly: true }
+    Konto:
+      type: object
+      required: [email]
+      properties:
+        email: { type: string, format: email, description: normalisiert }
+    Zutat:
+      type: object
+      required: [id, name]
+      properties:
+        id: { type: integer }
+        name: { type: string }
+    Vorratseintrag:
+      type: object
+      required: [zutatId, name]
+      properties:
+        zutatId: { type: integer }
+        name: { type: string }
+    ZutatKurz:
+      type: object
+      required: [zutatId, name]
+      properties:
+        zutatId: { type: integer }
+        name: { type: string }
+    Rezeptzutat:
+      type: object
+      required: [zutatId, name, menge]
+      properties:
+        zutatId: { type: integer }
+        name: { type: string }
+        menge: { type: [string, 'null'], description: Freitext für Menge und Hinweise }
+    RezeptzutatEingabe:
+      type: object
+      required: [zutatId]
+      properties:
+        zutatId: { type: integer }
+        menge: { type: [string, 'null'] }
+    RezeptKurz:
+      type: object
+      required: [id, name]
+      properties:
+        id: { type: integer }
+        name: { type: string }
+    RezeptEingabe:
+      type: object
+      required: [name, zutaten, zubereitung]
+      description: Gültig nach den fachlichen Regeln in docs/requirements.md.
+      properties:
+        name: { type: string, minLength: 1 }
+        zutaten:
+          type: array
+          minItems: 1
+          items: { $ref: '#/components/schemas/RezeptzutatEingabe' }
+        zubereitung: { type: string, minLength: 1 }
+    Rezept:
+      type: object
+      required: [id, name, zutaten, zubereitung, fehlendeZutaten]
+      properties:
+        id: { type: integer }
+        name: { type: string }
+        zutaten:
+          type: array
+          items: { $ref: '#/components/schemas/Rezeptzutat' }
+        zubereitung: { type: string }
+        fehlendeZutaten:
+          type: array
+          items: { $ref: '#/components/schemas/ZutatKurz' }
+    MatchingErgebnis:
+      type: object
+      required: [rezeptId, name, anzahlFehlend, fehlendeZutaten]
+      properties:
+        rezeptId: { type: integer }
+        name: { type: string }
+        anzahlFehlend: { type: integer, minimum: 0 }
+        fehlendeZutaten:
+          type: array
+          items: { $ref: '#/components/schemas/ZutatKurz' }
+    Fehler:
+      type: object
+      required: [fehler]
+      properties:
+        fehler:
+          type: object
+          required: [code, meldung]
+          properties:
+            code:
+              type: string
+              enum: [VALIDIERUNG, NICHT_ANGEMELDET, ANMELDUNG_FEHLGESCHLAGEN, VERBOTEN, NICHT_GEFUNDEN, KONFLIKT]
+            meldung: { type: string }
+            felder:
+              type: array
+              description: Betroffenes Feld und Grund bei Eingabefehlern (NFR-04).
+              items:
+                type: object
+                required: [feld, grund]
+                properties:
+                  feld: { type: string }
+                  grund: { type: string }
+      example:
+        fehler:
+          code: VALIDIERUNG
+          meldung: Das Rezept konnte nicht gespeichert werden.
+          felder: [{ feld: zutaten, grund: Mindestens eine Zutat angeben. }]
+
+  responses:
+    Validierung:
+      description: Eingabe ungültig, etwa Pflichtfeld leer, E-Mail ungültig, Passwort zu kurz, Zutat doppelt oder nicht im Katalog, falsches Passwort beim Löschen des Kontos (Code VALIDIERUNG).
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Fehler' }
+    NichtAngemeldet:
+      description: Keine gültige Sitzung, auch die eines gelöschten Kontos (Code NICHT_ANGEMELDET).
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Fehler' }
+    Verboten:
+      description: CSRF-Prüfung fehlgeschlagen (Code VERBOTEN).
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Fehler' }
+    NichtGefunden:
+      description: Gibt es nicht oder gehört zu einem anderen Konto (Code NICHT_GEFUNDEN).
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Fehler' }
+    Konflikt:
+      description: E-Mail-Adresse schon vergeben oder Rezeptname im Konto schon vorhanden (Code KONFLIKT).
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Fehler' }

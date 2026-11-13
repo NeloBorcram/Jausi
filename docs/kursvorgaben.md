@@ -87,7 +87,7 @@ Zusätzlich vom Team, nicht vom Kurs verlangt: [personas.md](personas.md). Die P
 | `docs/adr/` | mindestens zwei ADRs | drei Vorschläge: [ADR-0001](adr/0001-infrastruktur-und-release.md), [ADR-0002](adr/0002-architekturstil-client-server.md), [ADR-0003](adr/0003-technologie-stack.md); offene Teamfragen in [teamfragen.md](teamfragen.md) |
 | Architekturdiagramm | wesentliche Komponenten und Beziehungen | C4-Containersicht mit Modulen in [architecture.md](architecture.md#komponenten-und-verantwortlichkeiten), technologieneutral |
 | Datenmodell | zentrale Entitäten und Beziehungen | Entwurf in [datenmodell.md](datenmodell.md): ER-Diagramm mit fünf Entitäten |
-| API-Design | wesentliche Schnittstellen und Datenformate | Entwurf in [api.md](api.md): REST/JSON, 15 Endpunkte, Fehlerformat |
+| API-Design | wesentliche Schnittstellen und Datenformate | Entwurf in [api.md](api.md) und als OpenAPI-Vertrag in [openapi.yaml](../api/openapi.yaml): REST/JSON, 15 Endpunkte, Fehlerformat |
 
 **Typische Fehler:** Overengineering (Microservices, Message Queues, komplexe Infrastruktur), AI-Architektur ungeprüft übernehmen, Technologien, die niemand im Team versteht, Entscheidungen ohne Bezug zu den Anforderungen, Diagramme, die nicht zur Implementierung passen, oberflächliche Vergleiche nur für die Form.
 
