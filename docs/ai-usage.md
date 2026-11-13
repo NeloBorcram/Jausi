@@ -61,7 +61,7 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team
 Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 
 <details>
-<summary><strong>Protokoll anzeigen (33 Einträge)</strong></summary>
+<summary><strong>Protokoll anzeigen (36 Einträge)</strong></summary>
 
 | Datum | Werkzeug | Aufgabe | Ergebnis / menschliche Entscheidung |
 | --- | --- | --- | --- |
@@ -98,7 +98,12 @@ Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Offene Punkte durchgehen: Zutatenkatalog, Nutzungskontext, Akzeptanzkriterien, Logo | AI listete die sechs offenen Punkte auf und schlug vor, welche nur das Team klären kann. Der Nutzer bestätigte den festen Zutatenkatalog für den MVP, den Nutzungskontext gemäß ADR-0001, das gleiche Verständnis der Akzeptanzkriterien und Logo und Maskottchen als Idee. AI wies darauf hin, dass Quelle und Umfang des Katalogs offen bleiben, ADR-0001 erst vorgeschlagen ist und für die Akzeptanzkriterien keine gemeinsame Durchsicht dokumentiert ist; das steht so in mvp.md. |
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Offene Punkte durchgehen: beide Developer-Reviews | AI fasste die Entscheidungen beider Reviews mit den betroffenen Stories zusammen und fand keinen Widerspruch zum aktuellen Stand; einzige Abweichung: Neue Zutaten direkt übernehmen gehört seit dem festen Katalog zu US-17 (Should). Der Nutzer bestätigte beide Punkte. |
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Teambestätigung von Phase 1 eintragen | Kein inhaltlicher AI-Beitrag. Der Nutzer meldete die Bestätigung des Teams; AI trug sie in Definition of Done, Status, README-Projektstand und Branding ein. ADR-0001 bleibt vorgeschlagen, weil die Bestätigung nur Phase 1 betrifft. |
+| 13.11.2026 | Claude (Opus 5.5) im Chat | Kursvorgaben aus Moodle für das Projekt dokumentieren | Ein Moodle-Export enthielt nur leere Phasenbeschreibungen; der Nutzer fügte die Aufgabenstellungen zu Phase 1 und 2 als Text ein. AI fasste sie in `docs/kursvorgaben.md` in eigenen Worten zusammen und glich die Deliverables mit dem Projektstand ab: Phase 1 ist vollständig abgedeckt; für Phase 2 fehlen `architecture.md`, `hosting.md`, ein zweiter ADR, Architekturdiagramm, technisches Datenmodell und API-Design. Phase 3 bis 5 sind Platzhalter, weil die Vorgaben noch nicht veröffentlicht sind. |
+| 13.11.2026 | Claude (Opus 5.5) im Chat | Projektstruktur aufräumen und Best Practices für AI-gestütztes Software Engineering vorschlagen | AI fand ein doppeltes Logo in `resources/` und eine fehlende `.gitignore` und schlug zehn Verbesserungen vor. Der Nutzer wählte das Aufräumen: Duplikat entfernt, `.gitignore` angelegt, erledigte Agenda in `mvp.md` zu einer Entscheidungstabelle verdichtet. Die Vorschläge zu Prompts, Protokoll und PR-Vorlage sind noch offen. |
+| 13.11.2026 | Claude (Opus 5.5) im Chat, mit Websuche | AGENTS.md prüfen und Best Practices für AI Coding recherchieren | AI fand einen veralteten Phasenstand und einen Widerspruch zwischen dem dokumentierten PR-Ablauf und der Arbeit direkt auf `main`. Recherche zu CLAUDE.md, Agent Skills, spec-driven development, Hooks und Subagents. Der Nutzer entschied: direkt auf `main`, solange nur Dokumentation entsteht, PRs ab App-Code; `CLAUDE.md` importiert `AGENTS.md`; drei feste Prompts als Skills-Vorschläge unter `.agents/skills/`. Nicht übernommen: eine Spalte zur Übernahme von AI-Vorschlägen im Protokoll. Hooks, Prüf-Agent und Tests aus Akzeptanzkriterien sind für Phase 3 vorgemerkt. |
 
 </details>
+
+Bewährte Prompts für wiederkehrende Aufgaben liegen als Skills unter [`.agents/skills/`](../.agents/skills/): [Anforderungen prüfen](../.agents/skills/anforderungen-pruefen/SKILL.md), [Dokumentation auf Konsistenz prüfen](../.agents/skills/doku-konsistenz/SKILL.md) und [ADR anlegen](../.agents/skills/adr-anlegen/SKILL.md). Sie sind Vorschläge und werden wie Code über Änderungen im Repository verbessert.
 
 Bei weiterem AI-Einsatz ergänzen wir eine Zeile. Nicht übernommene Vorschläge halten wir mit Begründung fest. Personenbezogene Daten und Zugangsdaten gehören nicht in AI-Eingaben.

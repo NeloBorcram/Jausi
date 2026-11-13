@@ -1,7 +1,7 @@
 # Anforderungen und User Stories
 
 > [!NOTE]
-> Stand Phase 1, am 13.11.2026 vom Team bestätigt. Die offenen Punkte vom 09.11.2026 sind geklärt; Entscheidungen und Abweichungen stehen in [mvp.md](mvp.md#noch-in-phase-1-klären).
+> Stand Phase 1, am 13.11.2026 vom Team bestätigt. Die offenen Punkte vom 09.11.2026 sind geklärt; Entscheidungen und Abweichungen stehen in [mvp.md](mvp.md#entscheidungen-der-teamprüfung).
 
 **Inhalt:** [Kontext](#kontext) · [Anwendungsfälle](#wichtigste-anwendungsfälle) · [Begriffe](#begriffe) · [Fachliche Regeln](#fachliche-regeln) · [User Stories](#user-stories-mit-akzeptanzkriterien) · [Funktionale Anforderungen](#funktionale-anforderungen) · [Nichtfunktionale Anforderungen](#nichtfunktionale-anforderungen) · [Einschränkungen und Risiken](#bekannte-einschränkungen-und-risiken)
 

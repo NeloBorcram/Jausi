@@ -7,7 +7,10 @@
 - Schreibe Projektdokumentation auf Deutsch.
 - Das Team besteht aus vier Personen. Plane einen kleinen, realistischen Semesterprojekt-MVP.
 - Team: Manuela, Alex, Manuel und Roger. Verwende ausschließlich Vornamen. Die zugehörigen E-Mail-Adressen stehen im README.
-- Aktueller Arbeitsumfang ist ausschließlich Phase 1: Projektdefinition und Requirements. Arbeite nicht an Technologieauswahl, Architektur, Implementierung oder Testausführung vor. Beginne spätere Phasen erst nach ausdrücklichem Auftrag des Nutzers; ein Kalenderdatum allein ist keine Freigabe.
+- Die Aufgabenstellungen des Kurses stehen zusammengefasst in `docs/kursvorgaben.md`. Richte Inhalte und Deliverables einer Phase danach aus und ergänze die Datei, sobald weitere Phasen veröffentlicht sind; maßgeblich bleibt Moodle.
+- Phase 1 (Projektdefinition und Requirements) ist abgeschlossen und vom Team bestätigt. Arbeite nicht an Technologieauswahl, Architektur, Implementierung oder Testausführung vor. Beginne eine spätere Phase erst nach ausdrücklichem Auftrag des Nutzers; ein Kalenderdatum oder ein in Moodle freigeschalteter Abschnitt allein ist keine Freigabe.
+- Git-Ablauf: Solange nur Dokumentation entsteht, wird direkt auf `main` gearbeitet. Sobald App-Code entsteht, gilt der Ablauf mit Branch, Pull Request und Review aus `docs/github-workflow.md`.
+- Feste Prompts für wiederkehrende Aufgaben liegen als Skills unter `.agents/skills/` (offener Standard „Agent Skills“). Passt eine Aufgabe zu einem Skill, lies dessen `SKILL.md` und folge ihm. Die Skills sind Vorschläge; das Team kann sie anpassen.
 - Behalte Mengenvergleich, automatische Verbrauchsbuchung und AI-Rezeptgenerierung außerhalb des MVP, solange das Team keine dokumentierte Scope-Änderung beschließt.
 - Dokumentiere tatsächlichen AI-Einsatz und offene Entscheidungen ehrlich. Erfinde keine Teamfreigaben, Tests oder implementierten Funktionen.
 - Dokumentiere folgenreiche Architektur-, Infrastruktur- und Deploymententscheidungen vor ihrer Umsetzung mit der Vorlage unter `docs/adr/adr-template.md`. Führe vorgeschlagene Entscheidungen in `docs/adr/README.md`; markiere sie erst nach tatsächlicher Teamfreigabe als angenommen.

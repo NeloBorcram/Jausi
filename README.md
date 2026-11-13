@@ -71,6 +71,8 @@ Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschla
 | [AI-Einsatz](docs/ai-usage.md) | Wo und wie AI eingesetzt wurde, Prompts und kritische Bewertung |
 | [Branding](docs/branding.md) | Logo- und Maskottchen-Ideen (nicht Teil des MVP) |
 | [Architekturentscheidungen](docs/adr/README.md) | Verbindliche ADR-Vorlage und erste Entscheidungsvorschläge |
+| [Kursvorgaben](docs/kursvorgaben.md) | Aufgabenstellungen der fünf Phasen aus Moodle, zusammengefasst, mit Abgleich zum Projektstand |
+| [Feste Prompts (Skills)](.agents/skills/) | Vorschläge für wiederkehrende AI-Aufgaben: Anforderungen prüfen, Dokumentation auf Konsistenz prüfen, ADR anlegen |
 | [Zusammenarbeit auf GitHub](docs/github-workflow.md) | Pull Requests, CI-Prüfung, Schutz für main und Hosting-Optionen |
 
 ## Team

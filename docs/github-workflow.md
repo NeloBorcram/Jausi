@@ -1,5 +1,8 @@
 # Zusammenarbeit auf GitHub
 
+> [!NOTE]
+> **Vorgehen seit 13.11.2026 (Vorschlag von Roger):** Solange nur Dokumentation entsteht (Phase 1 und 2), arbeitet das Team direkt auf `main`. Der folgende Ablauf mit Branch, Pull Request und Review sowie der Schutz für `main` gelten, sobald App-Code entsteht.
+
 `main` enthält den gemeinsamen, geprüften Stand. Pro Aufgabe arbeitet eine Person auf einem kurzen Branch (z. B. `docs/phase-1-review`). Der Pull Request beschreibt Änderung und Prüfung und verweist bei Bedarf auf ein Issue, eine Story-ID oder einen ADR. Ein anderes Teammitglied prüft den PR. Nach grünem Check, Freigabe und geklärten Review-Kommentaren empfehlen wir **Squash and merge**. Anschließend kann der Branch gelöscht werden.
 
 Für vier Personen reicht ein gemeinsames Backlog, etwa GitHub Issues mit einem einfachen Board „Offen → In Arbeit → Review → Erledigt“. Wenn Azure Boards genutzt wird, Aufgaben nur dort pflegen und vom PR aus verlinken.

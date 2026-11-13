@@ -1,0 +1,36 @@
+# Kursmaterial und Archive (gehören nach Moodle, nicht ins Repo)
+*.zip
+*.7z
+*.rar
+
+# Zugangsdaten und lokale Konfiguration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Betriebssystem und Editoren
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Persönliche Einstellungen von AI-Werkzeugen
+.claude/settings.local.json
+
+# Build, Abhängigkeiten und Testergebnisse (ab Phase 3)
+node_modules/
+dist/
+build/
+coverage/
+*.log
+
+# Terraform (laut ADR-0001)
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!*.tfvars.example
