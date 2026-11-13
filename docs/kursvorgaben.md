@@ -83,7 +83,7 @@ Zusätzlich vom Team, nicht vom Kurs verlangt: [personas.md](personas.md). Die P
 | Datei | Inhalt laut Kurs | Stand |
 | --- | --- | --- |
 | `docs/architecture.md` | Überblick, Variantenvergleich, Technologieentscheidungen | Entwurf: Variantenvergleich in [architecture.md](architecture.md), Architekturstil vorgeschlagen (ADR-0002) |
-| `docs/hosting.md` | Hosting-Möglichkeiten und Kostenvergleich | fehlt; erste Optionen in [github-workflow.md](github-workflow.md) |
+| `docs/hosting.md` | Hosting-Möglichkeiten und Kostenvergleich | Entwurf in [hosting.md](hosting.md): neun Optionen mit Kosten, Vorschlag Azure-Guthaben für das Projekt, Eigenhosting als spätere Option; Teambestätigung offen |
 | `docs/adr/` | mindestens zwei ADRs | zwei Vorschläge: [ADR-0001](adr/0001-infrastruktur-und-release.md), [ADR-0002](adr/0002-architekturstil-client-server.md) |
 | Architekturdiagramm | wesentliche Komponenten und Beziehungen | erster Überblick in [architecture.md](architecture.md), Technologien noch offen |
 | Datenmodell | zentrale Entitäten und Beziehungen | fachliches Modell in [requirements.md](requirements.md#begriffe), technisches fehlt |

@@ -73,6 +73,7 @@ Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschla
 | [AI-Einsatz](docs/ai-usage.md) | Wo und wie AI eingesetzt wurde, Prompts und kritische Bewertung |
 | [Branding](docs/branding.md) | Logo- und Maskottchen-Ideen (nicht Teil des MVP) |
 | [Architektur](docs/architecture.md) | Entwurf Phase 2: Architekturüberblick, Vergleich der Architekturvarianten, vorgeschlagener Architekturstil |
+| [Hosting](docs/hosting.md) | Entwurf Phase 2: Kostenvergleich, Vorschlag Azure-Guthaben für das Projekt, Eigenhosting als spätere Option |
 | [Architekturentscheidungen](docs/adr/README.md) | Verbindliche ADR-Vorlage und erste Entscheidungsvorschläge |
 | [Kursvorgaben](docs/kursvorgaben.md) | Aufgabenstellungen der fünf Phasen aus Moodle, zusammengefasst, mit Abgleich zum Projektstand |
 | [Feste Prompts (Skills)](.agents/skills/) | Vorschläge für wiederkehrende AI-Aufgaben: Anforderungen prüfen, Dokumentation auf Konsistenz prüfen, ADR anlegen |

@@ -17,7 +17,7 @@ Die [CI](../.github/workflows/ci.yml) prüft Pull Requests nach `main`, Pushes a
 
 ## Hosting später entscheiden
 
-Wenn das Team eine statische Web-App wählt und eine manuelle Freigabe zur Veröffentlichung genügt, zuerst statisches Hosting mit Vorschau prüfen. Wenn ein **echter Slot-Tausch** mit Rücktausch gewünscht bleibt, ist Azure App Service ab **Standard** die passende Option aus [ADR-0001](adr/0001-infrastruktur-und-release.md). In beiden Fällen bleiben Infrastruktur und Release-Regeln versioniert. Erst nach Teamentscheidung und Budgetklärung Ressourcen anlegen und `jausi.at` verbinden.
+Wenn das Team eine statische Web-App wählt und eine manuelle Freigabe zur Veröffentlichung genügt, zuerst statisches Hosting mit Vorschau prüfen. Wenn ein **echter Slot-Tausch** mit Rücktausch gewünscht bleibt, ist Azure App Service ab **Standard** die passende Option aus [ADR-0001](adr/0001-infrastruktur-und-release.md). In beiden Fällen bleiben Infrastruktur und Release-Regeln versioniert. Erst nach Teamentscheidung und Budgetklärung Ressourcen anlegen und `jausi.at` verbinden. Den Vergleich der Optionen mit Kosten enthält [hosting.md](hosting.md).
 
 - [GitHub: Rulesets erstellen und importieren](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/creating-rulesets-for-a-repository)
 - [Azure App Service: Staging-Slots](https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots)
