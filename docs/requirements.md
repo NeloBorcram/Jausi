@@ -747,8 +747,8 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 **AK 4**
 - **Gegeben** die Person ist angemeldet und schließt den Browser
-- **Wenn** sie Jausi später wieder öffnet
-- **Dann** ist sie weiterhin angemeldet, bis sie sich abmeldet.
+- **Wenn** sie Jausi innerhalb von 30 Minuten nach der letzten Nutzung wieder öffnet
+- **Dann** ist sie weiterhin angemeldet; danach muss sie sich neu anmelden.
 
 </details>
 
@@ -784,13 +784,18 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 
 **AK 1**
 - **Gegeben** die Person ist angemeldet
-- **Wenn** sie „Konto löschen“ wählt und die Sicherheitsabfrage bestätigt
+- **Wenn** sie „Konto löschen“ wählt, ihr Passwort eingibt und die Sicherheitsabfrage bestätigt
 - **Dann** sind Konto, Vorrat, Rezepte, Einkaufsliste und Statistik gelöscht, und eine Anmeldung mit diesen Daten ist nicht mehr möglich.
 
 **AK 2**
 - **Gegeben** die Sicherheitsabfrage
 - **Wenn** die Person abbricht
 - **Dann** bleibt das Konto unverändert.
+
+**AK 3**
+- **Gegeben** die Person gibt ein falsches Passwort ein
+- **Wenn** sie das Löschen bestätigt
+- **Dann** bleibt das Konto unverändert, und der Hinweis „Passwort falsch“ erscheint.
 
 </details>
 

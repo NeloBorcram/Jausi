@@ -10,3 +10,6 @@ Ein ADR hält eine folgenreiche Entscheidung, ihre Alternativen und ihre Begrün
 | --- | --- | --- |
 | [0001](0001-infrastruktur-und-release.md) | Infrastruktur als Code und kontrollierte Releases | Vorgeschlagen |
 | [0002](0002-architekturstil-client-server.md) | Client-Server-Web-App mit Konten statt rein lokaler App | Vorgeschlagen, gilt ohne Einwand ab 15.11.2026 |
+| [0003](0003-technologie-stack.md) | Technologie-Stack: Oberfläche, Backend, Datenbank und Anmeldung (Empfehlung Spring Boot mit Vue, Spring Security, PostgreSQL) | Vorgeschlagen, abhängig von den Kenntnissen von Manuela, Alex und Manuel |
+
+ADR-0001 und ADR-0002 überschneiden sich; offene Teamfragen zu allen ADRs stehen in [teamfragen.md](../teamfragen.md).

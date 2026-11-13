@@ -68,9 +68,7 @@ Der Vergleich entstand im Dialog mit Claude (Opus 5.5). Sechs AI-Aussagen hielte
 
 ## Offene Punkte
 
-1. Team bestätigt den Vorschlag.
-2. Im Azure-Portal prüfen: Ist PostgreSQL B1ms 12 Monate gratis („Free services“), und ist App Service in den erlaubten Regionen verfügbar (Policy „Allowed resource deployment regions“)?
-3. Manuel und Team: Genügt die Freigabe durch eine Person ohne Slot-Tausch? Danach ADR-0001 anpassen oder ersetzen.
+Siehe [teamfragen.md](teamfragen.md), T6 und T7.
 
 ## Quellen
 

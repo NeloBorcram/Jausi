@@ -7,7 +7,7 @@ Ein Nutzer erfasst vorhandene Zutaten und eigene Rezepte. Jausi zeigt, welche Re
 ## ✅ Im MVP enthalten
 
 - Konto: mit E-Mail-Adresse und Passwort anlegen, an- und abmelden und löschen; die Daten sind auf jedem Gerät verfügbar.
-- Datenschutzerklärung und Impressum, ohne Anmeldung erreichbar.
+- Datenschutzerklärung und Impressum (im MVP als Platzhalter), ohne Anmeldung erreichbar.
 - Zutatenkatalog: fest vorgegeben, vom Team von Hand gepflegt und für alle Konten gleich; passende Zutaten werden beim Tippen vorgeschlagen.
 - Vorrat: Zutaten aus dem Katalog hinzufügen und entfernen.
 - Rezeptarchiv: Rezepte anlegen, anzeigen, bearbeiten und nach Bestätigung löschen.
@@ -22,7 +22,7 @@ Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bi
 
 - **Mengen:** Mengenvergleich, Umrechnung von Einheiten, automatische Verbrauchsbuchung.
 - **Eigene Zutaten verwalten:** anlegen mit Duplikatprüfung (US-17, US-18, Should), umbenennen (US-14, Should), unbenutzte löschen (US-15, Could). Zutaten außerhalb des Katalogs können im MVP nur in der Zubereitung stehen.
-- **Konten:** Passwort zurücksetzen (US-25, Should).
+- **Konten:** Passwort zurücksetzen (US-25, Should); Sperre nach fehlgeschlagenen Anmeldungen nur, wenn Zeit bleibt.
 - **Bedienkomfort:** Abfrage beim Verlassen ungespeicherter Rezepte (US-32, Should).
 - **Automatik:** AI-Rezeptgenerierung, Rezeptimporte, Barcode- oder Bilderkennung, Erkennung von Plural- und Schreibvarianten.
 - **Weitere Themen:** Ablaufdaten, Benachrichtigungen, Ernährungs- und Allergiefilter.

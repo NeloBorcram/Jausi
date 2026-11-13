@@ -5,6 +5,8 @@
 - Prüfe bei jeder Aufgabe alle fünf Dokumente. Aktualisiere betroffene Inhalte im selben Änderungssatz; vermeide inhaltslose Änderungen an unveränderten Dokumenten.
 - Lege zusätzliche Projektdokumentation immer in `docs/` ab. `README.md` und diese Projektanweisungen bleiben im Repository-Stamm.
 - Schreibe Projektdokumentation auf Deutsch.
+- Halte die Dokumentation kompakt und wiederhole nichts: Jedes Thema steht in genau einer Datei, andere Dateien verlinken dorthin. Ein ADR umfasst etwa eine Seite.
+- Fragen, die das Team gemeinsam entscheiden muss, stehen nur in `docs/teamfragen.md` mit Nummer, Zuständigen und Frist; andere Dokumente verweisen auf die Nummer.
 - Das Team besteht aus vier Personen. Plane einen kleinen, realistischen Semesterprojekt-MVP.
 - Team: Manuela, Alex, Manuel und Roger. Verwende ausschließlich Vornamen. Die zugehörigen E-Mail-Adressen stehen im README.
 - Die Aufgabenstellungen des Kurses stehen zusammengefasst in `docs/kursvorgaben.md`. Richte Inhalte und Deliverables einer Phase danach aus und ergänze die Datei, sobald weitere Phasen veröffentlicht sind; maßgeblich bleibt Moodle.

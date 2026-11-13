@@ -72,8 +72,11 @@ Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschla
 | [Personas](docs/personas.md) | Lena, Andrea und Jonas im Detail |
 | [AI-Einsatz](docs/ai-usage.md) | Wo und wie AI eingesetzt wurde, Prompts und kritische Bewertung |
 | [Branding](docs/branding.md) | Logo- und Maskottchen-Ideen (nicht Teil des MVP) |
-| [Architektur](docs/architecture.md) | Entwurf Phase 2: Architekturüberblick, Vergleich der Architekturvarianten, vorgeschlagener Architekturstil |
+| [Architektur](docs/architecture.md) | Entwurf Phase 2: Vergleich der Architekturvarianten, Komponenten, Qualitätsanforderungen, Risiken |
+| [Datenmodell](docs/datenmodell.md) | Entwurf Phase 2: Entitäten, Beziehungen und Regeln für den MVP |
+| [API-Design](docs/api.md) | Entwurf Phase 2: Endpunkte, Datenformate und Fehlerformat |
 | [Hosting](docs/hosting.md) | Entwurf Phase 2: Kostenvergleich, Vorschlag Azure-Guthaben für das Projekt, Eigenhosting als spätere Option |
+| [Offene Teamfragen](docs/teamfragen.md) | Was das Team gemeinsam entscheiden muss, mit Frist und Zuständigen |
 | [Architekturentscheidungen](docs/adr/README.md) | Verbindliche ADR-Vorlage und erste Entscheidungsvorschläge |
 | [Kursvorgaben](docs/kursvorgaben.md) | Aufgabenstellungen der fünf Phasen aus Moodle, zusammengefasst, mit Abgleich zum Projektstand |
 | [Feste Prompts (Skills)](.agents/skills/) | Vorschläge für wiederkehrende AI-Aufgaben: Anforderungen prüfen, Dokumentation auf Konsistenz prüfen, ADR anlegen |
@@ -92,7 +95,7 @@ In der Projektdokumentation verwenden wir ausschließlich Vornamen. Die Verantwo
 
 ## Projektstand
 
-Phase 1 ist am 13.11.2026 vom Team bestätigt; Phase 2 ist seit 13.11.2026 freigegeben. Ebenfalls am 13.11.2026 wurde eine Scope-Änderung zu Konten und Server vorgeschlagen (ADR-0002, gilt ohne Einwand ab 15.11.2026). Zwei Architekturvorschläge liegen als ADR vor; daraus folgt keine Freigabe zur Umsetzung. Es gibt noch keinen App-Code. Die Termine stammen aus dem Kursplan und sind keine bestätigten Abgabefristen.
+Phase 1 ist am 13.11.2026 vom Team bestätigt; Phase 2 ist seit 13.11.2026 freigegeben. Ebenfalls am 13.11.2026 wurde eine Scope-Änderung zu Konten und Server vorgeschlagen (ADR-0002, gilt ohne Einwand ab 15.11.2026). Drei Architekturvorschläge liegen als ADR vor (Infrastruktur, Architekturstil, Technologie-Stack), dazu Entwürfe für Datenmodell, API-Design und Hosting; daraus folgt keine Freigabe zur Umsetzung. Es gibt noch keinen App-Code. Die Termine stammen aus dem Kursplan und sind keine bestätigten Abgabefristen.
 
 | Phase laut Kursplan | Datum | Stand |
 | --- | --- | --- |
