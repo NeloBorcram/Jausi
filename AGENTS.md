@@ -17,5 +17,5 @@
 - Funktionen unter „Für später vorgemerkt“ in `docs/mvp.md` werden im Kurs nicht umgesetzt. Schlage sie nicht erneut als Scope vor, außer das Team beschließt es ausdrücklich.
 - Halte die Architektur bewusst einfach (Leitlinie in `docs/architecture.md`): ein Programm, eine Datenbank, Anmeldung über die Bausteine des Frameworks, keine zusätzlichen Dienste ohne Anforderung.
 - Dokumentiere tatsächlichen AI-Einsatz und offene Entscheidungen ehrlich. Erfinde keine Teamfreigaben, Tests oder implementierten Funktionen.
-- Ergänze im Protokoll von `docs/ai-usage.md` einen Eintrag pro Aufgabe oder Sitzung mit nennenswertem AI-Beitrag, nicht pro Arbeitsschritt. Fasse Folgeschritte derselben Aufgabe im bestehenden Eintrag zusammen.
+- Ergänze im Protokoll von `docs/ai-usage.md` einen Eintrag pro Aufgabe oder Sitzung mit nennenswertem AI-Beitrag, nicht pro Arbeitsschritt. Fasse Folgeschritte derselben Aufgabe im bestehenden Eintrag zusammen. Ein Eintrag hat höchstens zwei Sätze (AI-Beitrag, menschliche Entscheidung); Details stehen in den Dateien und in Git, nicht im Protokoll.
 - Dokumentiere folgenreiche Architektur-, Infrastruktur- und Deploymententscheidungen vor ihrer Umsetzung mit der Vorlage unter `docs/adr/adr-template.md`. Führe vorgeschlagene Entscheidungen in `docs/adr/README.md`; markiere sie erst nach tatsächlicher Teamfreigabe als angenommen.
