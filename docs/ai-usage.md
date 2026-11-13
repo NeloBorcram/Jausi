@@ -82,7 +82,7 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team
 Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 
 <details>
-<summary><strong>Protokoll anzeigen (33 Einträge)</strong></summary>
+<summary><strong>Protokoll anzeigen (35 Einträge)</strong></summary>
 
 | Datum | Werkzeug | Aufgabe | Ergebnis / menschliche Entscheidung |
 | --- | --- | --- | --- |
@@ -119,6 +119,8 @@ Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Kursvorgaben-Check, AI-Einsatz der Phase 2 | Abschnitt 3 ergänzt; offen bleiben die Teamentscheidungen. |
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Projektablauf, GitHub-Issues | 14 Story-Issues und ein Issue für Teamentscheidungen; ein Board unter Rogers Konto ließ sich nicht verknüpfen und wurde gelöscht. |
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Protokoll kürzen | Von 55 Zeilen mit rund 4.700 Wörtern auf 33 kurze Zeilen; Regel für kompakte Einträge. |
+| 13.11.2026 | Claude (Opus 5.5) im Chat | Zutatenkatalog entwerfen | AI erstellte 218 Zutaten in `zutatenkatalog.csv` und prüfte automatisch auf Duplikate; beim Selbstcheck strich sie zu feine Einträge (Basmatireis, Dinkelmehl). Roger legte Bezeichnungen und Detailgrad fest; die Durchsicht durch das Team ist offen (T15). Rogers Idee von Ernährungsmerkmalen riet AI wegen des Allergen-Risikos für den MVP ab; vorgemerkt in `mvp.md`. Stattdessen dürfen im Freitext zur Menge auch Hinweise wie „glutenfrei“ stehen. |
+| 13.11.2026 | Claude (Opus 5.5) im Chat | Mengen im Vorrat | AI riet vom Mengenvergleich ab (außerhalb des MVP, später ohne großen Umbau nachrüstbar, weil das Matching ein eigenes Modul ist). Roger entschied sich für eine Notiz zum Vorrat als Should (US-33, FR-23). |
 </details>
 
 Bewährte Prompts für wiederkehrende Aufgaben liegen als Skills unter [`.agents/skills/`](../.agents/skills/): [Anforderungen prüfen](../.agents/skills/anforderungen-pruefen/SKILL.md), [Dokumentation auf Konsistenz prüfen](../.agents/skills/doku-konsistenz/SKILL.md) und [ADR anlegen](../.agents/skills/adr-anlegen/SKILL.md). Sie sind Vorschläge und werden wie Code über Änderungen im Repository verbessert.

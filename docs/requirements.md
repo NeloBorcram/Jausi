@@ -20,7 +20,7 @@ Jeder Anwendungsfall beschreibt, wer wann warum handelt und was danach gilt. Jed
 
 | ID | Anwendungsfall | Persona | Auslöser | Ergebnis | User Stories | Im MVP |
 | --- | --- | --- | --- | --- | --- | --- |
-| AF-1 | Vorrat pflegen | alle | nach dem Einkauf oder Kochen | Der Vorrat stimmt mit den Zutaten daheim überein. | US-01–03, US-13–15, US-17, US-18, US-21 | Teilweise (nur Must-Stories) |
+| AF-1 | Vorrat pflegen | alle | nach dem Einkauf oder Kochen | Der Vorrat stimmt mit den Zutaten daheim überein. | US-01–03, US-13–15, US-17, US-18, US-21, US-33 | Teilweise (nur Must-Stories) |
 | AF-2 | Rezepte sammeln | Jonas | ein neues Gericht gekocht oder entdeckt | Das Rezept ist im Archiv und wiederauffindbar. | US-04–07, US-11, US-13, US-17–19, US-22, US-32 | Teilweise (nur Must-Stories) |
 | AF-3 | Was kann ich kochen? | Lena | Hunger, Blick in den Kühlschrank | Ein Rezept ist gewählt, dessen Zutaten alle vorhanden sind. | US-08, US-09 | Ja, vollständig (Hauptanwendungsfall) |
 | AF-4 | Einkauf planen | Andrea | vor dem Wocheneinkauf | Sie weiß, welche Zutaten sie für welche Rezepte nachkaufen muss. | US-09, US-10, US-12, US-20, US-28 | Teilweise (nur Must-Story US-09) |
@@ -85,13 +85,14 @@ erDiagram
 
 **Vorrat**
 - Jede Zutat steht höchstens einmal im Vorrat; was nicht darin steht, gilt als nicht vorhanden. Mengen werden nicht erfasst.
+- Eine Zutat im Vorrat kann eine optionale Notiz als Freitext haben, etwa „halbe Packung“ (US-33, Should); sie zählt nicht fürs Matching.
 - Salz, Öl und andere Grundzutaten werden wie alle Zutaten behandelt und nicht automatisch als vorhanden angenommen.
 
 **Rezepte**
 - Ein Rezept ist gültig mit Name, mindestens einer Zutat und einer nicht leeren Zubereitung (Freitext).
 - Jede Zutat steht höchstens einmal in einem Rezept; erneutes Hinzufügen zeigt einen Hinweis.
 - Rezeptnamen sind eindeutig; Namen, die sich nur in Groß-/Kleinschreibung oder in Leerzeichen am Rand unterscheiden, gelten als gleich.
-- Mengen sind optional und werden je Zutat als Freitext erfasst, etwa „500 g“ oder „1 Prise“.
+- Mengen und Hinweise sind optional und werden je Zutat als Freitext erfasst, etwa „500 g“, „1 Prise“ oder „1 Packung, glutenfrei“.
 - Zutaten, die nicht im Zutatenkatalog stehen, können im MVP nur in der Zubereitung erwähnt werden; sie zählen nicht fürs Matching.
 
 **Anzeige und Speichern**
@@ -124,7 +125,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 | | 🥕 AF-1<br>Vorrat pflegen | 📖 AF-2<br>Rezepte sammeln | 🍳 AF-3<br>Was kann ich kochen? | 🛒 AF-4<br>Einkauf planen | 👩‍🍳 AF-5<br>Nach Rezept kochen | 🔐 AF-6<br>Konto nutzen | 📊 AF-7<br>Verbrauch nachvollziehen |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | **Must** | [US-01](#us-01)<br>[US-02](#us-02)<br>[US-03](#us-03)<br>[US-13](#us-13) | [US-04](#us-04)<br>[US-05](#us-05)<br>[US-06](#us-06)<br>[US-19](#us-19) | [US-08](#us-08)<br>[US-09](#us-09) | – | – | [US-23](#us-23)<br>[US-24](#us-24)<br>[US-26](#us-26)<br>[US-31](#us-31) | – |
-| **Should** | [US-17](#us-17)<br>[US-18](#us-18)<br>[US-14](#us-14) | [US-07](#us-07)<br>[US-32](#us-32) | – | [US-10](#us-10) | – | [US-25](#us-25) | – |
+| **Should** | [US-17](#us-17)<br>[US-18](#us-18)<br>[US-14](#us-14)<br>[US-33](#us-33) | [US-07](#us-07)<br>[US-32](#us-32) | – | [US-10](#us-10) | – | [US-25](#us-25) | – |
 | **Could** | [US-15](#us-15)<br>[US-21](#us-21) | [US-11](#us-11)<br>[US-22](#us-22) | – | [US-12](#us-12)<br>[US-20](#us-20) | [US-16](#us-16) | – | – |
 | **Später** | – | – | – | [US-28](#us-28) | – | [US-29](#us-29)<br>[US-30](#us-30) | [US-27](#us-27) |
 
@@ -298,6 +299,31 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 - **Gegeben** ein Rezept enthält sowohl „Tomate“ als auch „Tomaten“
 - **Wenn** die Person „Tomaten“ mit „Tomate“ zusammenführt
 - **Dann** steht „Tomate“ genau einmal im Rezept.
+
+</details>
+
+<a id="us-33"></a>
+<details>
+<summary><strong>US-33 · Notiz zum Vorrat</strong> · Should</summary>
+
+> Als Nutzer möchte ich zu einer Zutat im Vorrat eine kurze Notiz festhalten, etwa „halbe Packung“, damit ich selbst abschätzen kann, ob es für ein Rezept reicht.
+
+**Akzeptanzkriterien**
+
+**AK 1**
+- **Gegeben** Reis steht im Vorrat
+- **Wenn** die Person bei Reis die Notiz „halbe Packung“ einträgt
+- **Dann** steht die Notiz bei Reis, ohne dass sie etwas speichern musste.
+
+**AK 2**
+- **Gegeben** Reis steht mit der Notiz „halbe Packung“ im Vorrat
+- **Wenn** die Person das Archiv öffnet
+- **Dann** gilt Reis für das Matching als vorhanden; die Notiz ändert daran nichts.
+
+**AK 3**
+- **Gegeben** Reis steht mit einer Notiz im Vorrat
+- **Wenn** die Person Reis entfernt und später wieder hinzufügt
+- **Dann** steht Reis ohne Notiz im Vorrat.
 
 </details>
 
@@ -917,6 +943,7 @@ Die Stories sind nach Anwendungsfall gruppiert. Ein Klick klappt eine Story mit 
 | FR-20 | Das System erlaubt, alle Daten des eigenen Kontos als Datei in einem gängigen, maschinenlesbaren Format herunterzuladen. | Später | US-29 |
 | FR-21 | Das System hält eine lokale Kopie von Vorrat und Rezepten auf dem Gerät, die ohne Verbindung lesbar ist und beim Abmelden gelöscht wird. | Später | US-30 |
 | FR-22 | Das System zeigt eine Datenschutzerklärung und ein Impressum, die ohne Anmeldung erreichbar sind; die Datenschutzerklärung ist bei der Registrierung verlinkt. | Must | US-31 |
+| FR-23 | Das System erlaubt, zu jeder Zutat im Vorrat eine optionale Notiz als Freitext zu speichern und zu ändern. | Should | US-33 |
 
 ## Nichtfunktionale Anforderungen
 

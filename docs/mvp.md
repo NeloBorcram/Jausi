@@ -23,7 +23,7 @@ Der MVP umfasst aus [requirements.md](requirements.md) die User Stories US-01 bi
 - **Mengen:** Mengenvergleich, Umrechnung von Einheiten, automatische Verbrauchsbuchung.
 - **Eigene Zutaten verwalten:** anlegen mit Duplikatprüfung (US-17, US-18, Should), umbenennen (US-14, Should), unbenutzte löschen (US-15, Could). Zutaten außerhalb des Katalogs können im MVP nur in der Zubereitung stehen.
 - **Konten:** Passwort zurücksetzen (US-25, Should); Sperre nach fehlgeschlagenen Anmeldungen nur, wenn Zeit bleibt.
-- **Bedienkomfort:** Abfrage beim Verlassen ungespeicherter Rezepte (US-32, Should).
+- **Bedienkomfort:** Abfrage beim Verlassen ungespeicherter Rezepte (US-32, Should); Notiz zu Zutaten im Vorrat (US-33, Should).
 - **Automatik:** AI-Rezeptgenerierung, Rezeptimporte, Barcode- oder Bilderkennung, Erkennung von Plural- und Schreibvarianten.
 - **Weitere Themen:** Ablaufdaten, Benachrichtigungen, Ernährungs- und Allergiefilter.
 - **Weitere Should/Could-Stories (nach dem MVP):** Suche (US-07), Filter „höchstens zwei fehlende Zutaten“ (US-10), Favoriten (US-11), Einkaufsliste (US-12) und Abhaken beim Einkaufen (US-20), Kategorien für Zutaten und Rezepte (US-21, US-22), Abschnitte in der Zubereitung (US-16).
@@ -42,6 +42,7 @@ Legitime Funktionen für Jausi, die bewusst nicht im Rahmen des Kurses umgesetzt
 | Einkaufsliste ohne Internet | US-28 | Setzt die Einkaufsliste (US-12, Could) und Offline-Fähigkeit voraus. |
 | Verbrauchsstatistik | US-27 | Braucht über längere Zeit gesammelte Daten. |
 | Zutatenkatalog aus einer externen Quelle | [requirements.md](requirements.md#bekannte-einschränkungen-und-risiken) | Lizenz, Umfang und deutsche Bezeichnungen müssten erst geprüft werden. |
+| Ernährungsmerkmale wie vegan oder vegetarisch je Zutat, für Rezepte abgeleitet | [datenmodell.md](datenmodell.md#entitäten) | Verlangt einen feineren Katalog (Brot, Pesto oder Brühe sind je nach Produkt verschieden). Allergene wie glutenfrei oder laktosefrei nur mit großer Vorsicht, weil falsche Angaben gesundheitlich gefährlich sind. |
 | Synchronisierung, gemeinsame Haushalte | – | Mehrere Personen an denselben Daten bringen Rechte und Konflikte mit sich. |
 
 ## 🎬 Geplanter vollständiger Demo-Anwendungsfall

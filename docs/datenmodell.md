@@ -61,7 +61,7 @@ Weitere personenbezogene Daten werden nicht erfasst (NFR-06). Sitzungen verwalte
 | id | ID | Primärschlüssel |
 | name | Text | Pflicht, nicht leer, eindeutig ohne Beachtung der Groß-/Kleinschreibung und der Leerzeichen am Rand; genau eine Schreibweise je Zutat |
 
-Der Katalog gehört keinem Konto. Das Team pflegt ihn von Hand als Startdaten des Programms; Nutzer können über die API nichts daran ändern. Eine Zutat, die in einem Vorratseintrag oder einer Rezeptzutat vorkommt, darf nicht gelöscht werden (Fremdschlüssel ohne Kaskade); ein Rezept zu löschen lässt seine Zutaten im Katalog (US-19 AK 2).
+Der Katalog gehört keinem Konto. Das Team pflegt ihn von Hand als Startdaten des Programms in [zutatenkatalog.csv](zutatenkatalog.csv); Nutzer können über die API nichts daran ändern. Regeln für neue Einträge: Bezeichnung wie im österreichischen Alltag (Erdäpfel, Topfen, aber Tomate), Singular außer bei üblichem Plural, nur unterscheiden, was beim Kochen nicht austauschbar ist. Die Spalte „gruppe“ dient nur der Übersicht. Eine Zutat, die in einem Vorratseintrag oder einer Rezeptzutat vorkommt, darf nicht gelöscht werden (Fremdschlüssel ohne Kaskade); ein Rezept zu löschen lässt seine Zutaten im Katalog (US-19 AK 2).
 
 **Vorratseintrag** · FR-02, US-01–03
 
@@ -90,7 +90,7 @@ Ein Rezept hat **mindestens eine** Rezeptzutat (US-04 AK 2). Diese Regel prüft 
 | --- | --- | --- |
 | rezeptId | ID | Teil des Primärschlüssels, Fremdschlüssel auf Rezept, Kaskade beim Löschen des Rezepts |
 | zutatId | ID | Teil des Primärschlüssels, Fremdschlüssel auf Zutat |
-| menge | Text | optional, Freitext wie „500 g“ oder „1 Prise“; zählt nicht fürs Matching (US-08 AK 2) |
+| menge | Text | optional, Freitext für Menge und Hinweise ([fachliche Regeln](requirements.md#fachliche-regeln)); zählt nicht fürs Matching (US-08 AK 2) |
 
 Der zusammengesetzte Schlüssel stellt sicher, dass jede Zutat höchstens einmal in einem Rezept steht (US-04 AK 4).
 
@@ -101,6 +101,7 @@ Der zusammengesetzte Schlüssel stellt sicher, dass jede Zutat höchstens einmal
 Should- und Could-Stories außerhalb des MVP, hier nicht im Detail modelliert; so würden sie hineinpassen. Funktionen mit der Priorität „Später“ (nach dem Kurs) sind bewusst nicht berücksichtigt.
 
 - **Einkaufsliste** (US-12, US-20, Could): eigene Entität wie Vorratseintrag, Konto × Zutat ohne Menge; Abhaken verschiebt den Eintrag in den Vorrat.
+- **Notiz zum Vorrat** (US-33, Should): optionales Textattribut `notiz` am Vorratseintrag; zählt nicht fürs Matching.
 - **Favorit** (US-11, Could): ein Ja/Nein-Attribut am Rezept.
 - **Kategorie** (US-21, US-22, Could): eigene Entität je Konto; Rezept bekommt einen optionalen Verweis darauf, Zutaten eine Zuordnung Konto × Zutat, weil der Katalog für alle Konten gleich ist.
 - **Eigene Zutaten** (US-17, US-18, Should): Zutat bekommt einen optionalen Verweis auf das anlegende Konto; leer bedeutet Katalog für alle. Die Eindeutigkeit gilt dann je Konto zusammen mit dem Katalog.

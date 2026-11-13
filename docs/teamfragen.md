@@ -26,7 +26,7 @@ Alle Fragen, die das Team gemeinsam entscheiden muss, stehen nur hier; die ander
 | --- | --- | --- | --- |
 | T13 | Inhalt der Datenschutzerklärung: Kontaktadresse, Verantwortliche, Aufbewahrungsfrist der Sicherungen (US-31) | Team | [datenmodell.md](datenmodell.md#entitäten) |
 | T14 | Reihenfolge der Zutaten im Rezept und Längengrenzen für Name, Zubereitung und Menge | Team | [datenmodell.md](datenmodell.md#entitäten) |
-| T15 | Umfang des Zutatenkatalogs (mindestens 200 für den Referenzdatensatz) und wer ihn pflegt | Team | [architecture.md](architecture.md#risiken-und-schwachstellen-ai-review) |
+| T15 | AI-Entwurf des Zutatenkatalogs (218 Zutaten) durchsehen: fehlt etwas, stimmen die Bezeichnungen? Wer pflegt ihn? | Team | [architecture.md](architecture.md#risiken-und-schwachstellen-ai-review) |
 
 ## Entschieden
 
@@ -37,3 +37,4 @@ Alle Fragen, die das Team gemeinsam entscheiden muss, stehen nur hier; die ander
 | T11 | Sperre nach fehlgeschlagenen Anmeldungen nur, wenn im Kurs Zeit bleibt. | Roger, 13.11.2026 |
 | T12 | Ein Konto lässt sich nur mit dem Passwort löschen (US-26 AK 1 und AK 3). | Roger, 13.11.2026 |
 | T13a | Das Impressum ist im MVP ein Platzhalter. | Roger, 13.11.2026 |
+| T15a | Zutatenkatalog: Bezeichnungen nach österreichischem Alltagsgebrauch, grob unterteilt ([datenmodell.md](datenmodell.md#entitäten)). | Roger, 13.11.2026 |

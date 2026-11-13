@@ -1,0 +1,219 @@
+name,gruppe
+Tomate,Gemüse
+Erdäpfel,Gemüse
+Zwiebel,Gemüse
+Rote Zwiebel,Gemüse
+Frühlingszwiebel,Gemüse
+Knoblauch,Gemüse
+Karotte,Gemüse
+Paprika,Gemüse
+Gurke,Gemüse
+Zucchini,Gemüse
+Melanzani,Gemüse
+Kürbis,Gemüse
+Brokkoli,Gemüse
+Karfiol,Gemüse
+Kohlsprossen,Gemüse
+Weißkraut,Gemüse
+Rotkraut,Gemüse
+Sauerkraut,Gemüse
+Wirsing,Gemüse
+Chinakohl,Gemüse
+Kohlrabi,Gemüse
+Spinat,Gemüse
+Mangold,Gemüse
+Lauch,Gemüse
+Sellerie,Gemüse
+Stangensellerie,Gemüse
+Fenchel,Gemüse
+Spargel,Gemüse
+Rote Rüben,Gemüse
+Pastinake,Gemüse
+Petersilwurzel,Gemüse
+Süßkartoffel,Gemüse
+Champignon,Gemüse
+Eierschwammerl,Gemüse
+Erbsen,Gemüse
+Fisolen,Gemüse
+Mais,Gemüse
+Radieschen,Gemüse
+Rettich,Gemüse
+Ingwer,Gemüse
+Chili,Gemüse
+Avocado,Gemüse
+Häuptelsalat,Gemüse
+Eisbergsalat,Gemüse
+Vogerlsalat,Gemüse
+Rucola,Gemüse
+Kren,Gemüse
+Rhabarber,Gemüse
+Apfel,Obst
+Birne,Obst
+Banane,Obst
+Zitrone,Obst
+Limette,Obst
+Orange,Obst
+Erdbeere,Obst
+Himbeere,Obst
+Heidelbeere,Obst
+Ribisel,Obst
+Kirsche,Obst
+Marille,Obst
+Zwetschke,Obst
+Pfirsich,Obst
+Weintraube,Obst
+Kiwi,Obst
+Mango,Obst
+Ananas,Obst
+Wassermelone,Obst
+Granatapfel,Obst
+Rosine,Obst
+Dattel,Obst
+Ei,Milchprodukte und Eier
+Milch,Milchprodukte und Eier
+Butter,Milchprodukte und Eier
+Schlagobers,Milchprodukte und Eier
+Sauerrahm,Milchprodukte und Eier
+Crème fraîche,Milchprodukte und Eier
+Topfen,Milchprodukte und Eier
+Joghurt,Milchprodukte und Eier
+Buttermilch,Milchprodukte und Eier
+Frischkäse,Milchprodukte und Eier
+Mascarpone,Milchprodukte und Eier
+Ricotta,Milchprodukte und Eier
+Mozzarella,Milchprodukte und Eier
+Parmesan,Milchprodukte und Eier
+Feta,Milchprodukte und Eier
+Emmentaler,Milchprodukte und Eier
+Gouda,Milchprodukte und Eier
+Bergkäse,Milchprodukte und Eier
+Hüttenkäse,Milchprodukte und Eier
+Pflanzendrink,Milchprodukte und Eier
+Rindfleisch,Fleisch und Fisch
+Schweinefleisch,Fleisch und Fisch
+Kalbfleisch,Fleisch und Fisch
+Lammfleisch,Fleisch und Fisch
+Hühnerfleisch,Fleisch und Fisch
+Putenfleisch,Fleisch und Fisch
+Faschiertes,Fleisch und Fisch
+Speck,Fleisch und Fisch
+Schinken,Fleisch und Fisch
+Salami,Fleisch und Fisch
+Würstel,Fleisch und Fisch
+Leberkäse,Fleisch und Fisch
+Lachs,Fleisch und Fisch
+Thunfisch,Fleisch und Fisch
+Forelle,Fleisch und Fisch
+Kabeljau,Fleisch und Fisch
+Garnelen,Fleisch und Fisch
+Reis,Getreide und Brot
+Risottoreis,Getreide und Brot
+Nudeln,Getreide und Brot
+Lasagneblätter,Getreide und Brot
+Reisnudeln,Getreide und Brot
+Couscous,Getreide und Brot
+Bulgur,Getreide und Brot
+Quinoa,Getreide und Brot
+Polenta,Getreide und Brot
+Grieß,Getreide und Brot
+Haferflocken,Getreide und Brot
+Mehl,Getreide und Brot
+Vollkornmehl,Getreide und Brot
+Roggenmehl,Getreide und Brot
+Semmelbrösel,Getreide und Brot
+Brot,Getreide und Brot
+Toastbrot,Getreide und Brot
+Semmel,Getreide und Brot
+Tortilla,Getreide und Brot
+Blätterteig,Getreide und Brot
+Strudelteig,Getreide und Brot
+Pizzateig,Getreide und Brot
+Zucker,Backen und Süßes
+Staubzucker,Backen und Süßes
+Brauner Zucker,Backen und Süßes
+Vanillezucker,Backen und Süßes
+Vanilleschote,Backen und Süßes
+Honig,Backen und Süßes
+Ahornsirup,Backen und Süßes
+Marmelade,Backen und Süßes
+Germ,Backen und Süßes
+Backpulver,Backen und Süßes
+Natron,Backen und Süßes
+Speisestärke,Backen und Süßes
+Gelatine,Backen und Süßes
+Kakao,Backen und Süßes
+Schokolade,Backen und Süßes
+Nuss-Nougat-Creme,Backen und Süßes
+Walnuss,Nüsse und Samen
+Haselnuss,Nüsse und Samen
+Mandel,Nüsse und Samen
+Erdnuss,Nüsse und Samen
+Cashewkerne,Nüsse und Samen
+Pinienkerne,Nüsse und Samen
+Sonnenblumenkerne,Nüsse und Samen
+Kürbiskerne,Nüsse und Samen
+Sesam,Nüsse und Samen
+Leinsamen,Nüsse und Samen
+Chiasamen,Nüsse und Samen
+Mohn,Nüsse und Samen
+Kokosraspel,Nüsse und Samen
+Erdnussbutter,Nüsse und Samen
+Linsen,Hülsenfrüchte und Tofu
+Rote Linsen,Hülsenfrüchte und Tofu
+Kichererbsen,Hülsenfrüchte und Tofu
+Weiße Bohnen,Hülsenfrüchte und Tofu
+Kidneybohnen,Hülsenfrüchte und Tofu
+Tofu,Hülsenfrüchte und Tofu
+Öl,Öle und Saucen
+Olivenöl,Öle und Saucen
+Kürbiskernöl,Öle und Saucen
+Sesamöl,Öle und Saucen
+Essig,Öle und Saucen
+Balsamessig,Öle und Saucen
+Senf,Öle und Saucen
+Ketchup,Öle und Saucen
+Mayonnaise,Öle und Saucen
+Sojasauce,Öle und Saucen
+Worcestersauce,Öle und Saucen
+Chilisauce,Öle und Saucen
+Tomatenmark,Öle und Saucen
+Passierte Tomaten,Öle und Saucen
+Dosentomaten,Öle und Saucen
+Gemüsebrühe,Öle und Saucen
+Rindsuppe,Öle und Saucen
+Kokosmilch,Öle und Saucen
+Pesto,Öle und Saucen
+Currypaste,Öle und Saucen
+Salz,Gewürze und Kräuter
+Pfeffer,Gewürze und Kräuter
+Paprikapulver,Gewürze und Kräuter
+Kümmel,Gewürze und Kräuter
+Kreuzkümmel,Gewürze und Kräuter
+Majoran,Gewürze und Kräuter
+Oregano,Gewürze und Kräuter
+Thymian,Gewürze und Kräuter
+Rosmarin,Gewürze und Kräuter
+Basilikum,Gewürze und Kräuter
+Petersilie,Gewürze und Kräuter
+Schnittlauch,Gewürze und Kräuter
+Dill,Gewürze und Kräuter
+Koriander,Gewürze und Kräuter
+Minze,Gewürze und Kräuter
+Zimt,Gewürze und Kräuter
+Muskatnuss,Gewürze und Kräuter
+Gewürznelke,Gewürze und Kräuter
+Lorbeerblatt,Gewürze und Kräuter
+Currypulver,Gewürze und Kräuter
+Kurkuma,Gewürze und Kräuter
+Chiliflocken,Gewürze und Kräuter
+Cayennepfeffer,Gewürze und Kräuter
+Wacholderbeere,Gewürze und Kräuter
+Knoblauchpulver,Gewürze und Kräuter
+Oliven,Sonstiges
+Kapern,Sonstiges
+Essiggurkerl,Sonstiges
+Weißwein,Sonstiges
+Rotwein,Sonstiges
+Bier,Sonstiges
+Getrocknete Tomaten,Sonstiges
+Sardellen,Sonstiges
