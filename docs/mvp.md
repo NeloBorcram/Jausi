@@ -84,18 +84,4 @@ Abgehakt sind nur Punkte, die sich anhand der Dokumente nachprüfen lassen. Die 
 
 ## Entscheidungen der Teamprüfung
 
-Das Team hat die offenen Punkte vom 09.11.2026 geprüft und am 13.11.2026 bestätigt. Zwischenstände und Begründungen stehen im [AI-Protokoll](ai-usage.md#protokoll) und in der Git-Historie.
-
-| Thema | Entscheidung |
-| --- | --- |
-| Zutatenkatalog | Fest vorgegeben, im Kurs vom Team von Hand gepflegt. Eigene Zutaten (US-17, US-18) sind Should; eine externe Quelle ist eine spätere Erweiterung (siehe unten). |
-| Personas | Lena, Andrea und Jonas; Lena ist die primäre Persona. |
-| Nutzungskontext | Am 13.11.2026 bestätigt: Smartphone, Daten nur auf dem Gerät, Offline-Nutzung als Must, keine Konten. **Danach geändert, vorgeschlagen mit stillschweigender Zustimmung (Einwand bis 15.11.2026):** Web-App im Browser des Smartphones mit Konto und Daten auf dem Server; nach dem MVP eine lokale Kopie zum Lesen (US-30, später), die Einkaufsliste ohne Internet (US-28, später) und eine eigene App; Daten exportieren (US-29, später). Siehe [ADR-0002](adr/0002-architekturstil-client-server.md). |
-| Leistungsziele | NFR-02, NFR-07 und NFR-08 sind Should; der Referenzdatensatz enthält den vollständigen Zutatenkatalog. |
-| Sonderfälle | Jede Zutat höchstens einmal je Rezept, eindeutige Rezeptnamen, Zubereitung als Freitext. |
-| Abschnitte in der Zubereitung | US-16 bleibt Could; Zutaten je Abschnitt sowie Umbenennen und Umsortieren werden erst bei einer Umsetzung ergänzt. |
-| Anwendungsfälle und Risiken | AF-1 bis AF-5 und die dokumentierten Risiken, darunter Datenverlust bei Geräteverlust oder durch den Browser und mögliche Hosting-Kosten. |
-| Akzeptanzkriterien | US-06 und US-13 aufgeteilt, alle Kriterien im Format Gegeben/Wenn/Dann, Lesbarkeit als NFR-10 (Should); das Team versteht die Kriterien gleich. |
-| Developer-Reviews | Mengen als Freitext; Sicherheitsabfrage nur beim Löschen von Rezepten und Katalog-Zutaten und beim Verlassen ungespeicherter Rezepte (seit 13.11.2026 Should, US-32); alphabetische Sortierung; Zutaten beim Bearbeiten änderbar; Vorschläge auch mitten im Wort; Vorrat speichert sofort; Fehl-Anzahl in der Archivliste; Offline für alle Funktionen; neue Could-Stories US-20 bis US-22 mit eigenen Kategorien und einer Einkaufsliste nur aus Katalog-Zutaten. Neue Zutaten direkt übernehmen gehört zu US-17 (Should). |
-| Verbrauchsstatistik | Neu (US-27), für später vorgemerkt; vorgeschlagen am 13.11.2026 zusammen mit ADR-0002. |
-| Logo und Maskottchen | Bleiben als Idee; die Verwendung wird später entschieden, nicht Teil des MVP. |
+Das Team hat die offenen Punkte vom 09.11.2026 geprüft und Phase 1 am 13.11.2026 bestätigt; die Entscheidungen sind in [requirements.md](requirements.md) eingearbeitet. Danach wurden Nutzungskontext und Konten mit [ADR-0002](adr/0002-architekturstil-client-server.md) geändert (vorgeschlagen, Einwand bis 15.11.2026). Zwischenstände stehen im [AI-Protokoll](ai-usage.md#protokoll) und in der Git-Historie.

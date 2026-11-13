@@ -81,7 +81,7 @@ Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschla
 | [Kursvorgaben](docs/kursvorgaben.md) | Aufgabenstellungen der fünf Phasen aus Moodle, zusammengefasst, mit Abgleich zum Projektstand |
 | [Feste Prompts (Skills)](.agents/skills/) | Vorschläge für wiederkehrende AI-Aufgaben: Anforderungen prüfen, Dokumentation auf Konsistenz prüfen, ADR anlegen |
 | [Issues](https://github.com/NeloBorcram/Jausi/issues) | MVP-Stories als Issues (Milestone „Phase 3 – MVP“) und offene Teamentscheidungen |
-| [Zusammenarbeit auf GitHub](docs/github-workflow.md) | Pull Requests, CI-Prüfung, Schutz für main und Hosting-Optionen |
+| [Zusammenarbeit auf GitHub](docs/github-workflow.md) | Pull Requests, Issues als Backlog, CI-Prüfung und Schutz für main |
 
 ## Team
 
