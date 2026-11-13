@@ -12,7 +12,7 @@
 > **Auf einen Blick**
 > - **Was:** App, die einen persönlichen Lebensmittelvorrat mit einem Rezeptarchiv verbindet und zeigt, welche Gerichte mit vorhandenen Zutaten möglich sind.
 > - **Für wen:** Menschen, die unkompliziert mit dem kochen möchten, was sie daheim haben, allen voran Studierende.
-> - **Wo:** hauptsächlich auf dem Smartphone, in der Küche und beim Einkaufen, auch ohne Internet.
+> - **Wo:** im Browser des Smartphones, in der Küche und beim Einkaufen; mit Konto auf jedem Gerät. Eine eigene App ist für später geplant.
 > - **Stand:** Phase 1 (Anforderungen) ist abgeschlossen und am 13.11.2026 vom Team bestätigt; Phase 2 (Architektur und Design) läuft. Es gibt noch keinen Code.
 
 ## Problem
@@ -44,6 +44,8 @@ flowchart LR
     Q["📚 Zutaten-Datensatz<br/>ggf. aus externer Quelle"] -.->|"vom Team zusammengestellt"| K
     K["🧺 Zutatenkatalog<br/>fest vorgegeben"] --> V["🥕 Vorrat<br/>was ich daheim habe"]
     K --> R["📖 Rezeptarchiv<br/>meine eigenen Rezepte"]
+    U["👤 Konto<br/>Daten auf dem Server"] --> V
+    U --> R
     V --> M{"Matching"}
     R --> M
     M --> P["✅ Vollständig passend<br/>sofort kochbar"]
@@ -54,12 +56,13 @@ Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschla
 
 ## Geplanter Funktionsumfang (MVP)
 
+- Konto mit E-Mail-Adresse und Passwort, jederzeit löschbar; Vorrat und Rezepte sind auf jedem Gerät verfügbar. Datenschutz nach DSGVO, Server in der EU.
 - Zutaten aus dem festen Zutatenkatalog im Vorrat erfassen und entfernen; passende Zutaten werden beim Tippen vorgeschlagen.
 - Eigene Rezepte mit Zutaten, optionalen Mengenangaben und Zubereitung verwalten.
 - Passende Rezepte finden und fehlende Zutaten anzeigen.
-- Auf dem Smartphone nutzbar, auch ohne Internet.
+- Im Browser des Smartphones nutzbar, auf Android und iPhone; eine Internetverbindung ist nötig.
 
-**Bewusst nicht im MVP:** Mengenvergleich, eigene Zutaten anlegen und Suche nach Rezeptnamen (Should), Favoriten, Einkaufsliste und Kategorien (Could), Nutzerkonten. AI unterstützt die Projektarbeit; eine AI-Funktion in der App ist nicht vorgesehen. Details stehen im [MVP-Scope](docs/mvp.md).
+**Bewusst nicht im MVP:** Mengenvergleich, eigene Zutaten anlegen und Suche nach Rezeptnamen (Should), Favoriten, Einkaufsliste, Kategorien und Verbrauchsstatistik (Could), Offline-Nutzung und eine eigene App. AI unterstützt die Projektarbeit; eine AI-Funktion in der App ist nicht vorgesehen. Details stehen im [MVP-Scope](docs/mvp.md).
 
 ## Projektdokumentation
 
@@ -70,6 +73,7 @@ Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschla
 | [Personas](docs/personas.md) | Lena, Andrea und Jonas im Detail |
 | [AI-Einsatz](docs/ai-usage.md) | Wo und wie AI eingesetzt wurde, Prompts und kritische Bewertung |
 | [Branding](docs/branding.md) | Logo- und Maskottchen-Ideen (nicht Teil des MVP) |
+| [Architektur](docs/architecture.md) | Entwurf Phase 2: Architekturüberblick, Vergleich der Architekturvarianten, vorgeschlagener Architekturstil |
 | [Architekturentscheidungen](docs/adr/README.md) | Verbindliche ADR-Vorlage und erste Entscheidungsvorschläge |
 | [Kursvorgaben](docs/kursvorgaben.md) | Aufgabenstellungen der fünf Phasen aus Moodle, zusammengefasst, mit Abgleich zum Projektstand |
 | [Feste Prompts (Skills)](.agents/skills/) | Vorschläge für wiederkehrende AI-Aufgaben: Anforderungen prüfen, Dokumentation auf Konsistenz prüfen, ADR anlegen |
@@ -88,7 +92,7 @@ In der Projektdokumentation verwenden wir ausschließlich Vornamen. Die Verantwo
 
 ## Projektstand
 
-Phase 1 ist am 13.11.2026 vom Team bestätigt; Phase 2 ist seit 13.11.2026 freigegeben. Ein erster Architekturvorschlag liegt als ADR vor; daraus folgt keine Freigabe zur Umsetzung. Es gibt noch keinen App-Code. Die Termine stammen aus dem Kursplan und sind keine bestätigten Abgabefristen.
+Phase 1 ist am 13.11.2026 vom Team bestätigt; Phase 2 ist seit 13.11.2026 freigegeben. Ebenfalls am 13.11.2026 wurde eine Scope-Änderung zu Konten und Server vorgeschlagen (ADR-0002, gilt ohne Einwand ab 15.11.2026). Zwei Architekturvorschläge liegen als ADR vor; daraus folgt keine Freigabe zur Umsetzung. Es gibt noch keinen App-Code. Die Termine stammen aus dem Kursplan und sind keine bestätigten Abgabefristen.
 
 | Phase laut Kursplan | Datum | Stand |
 | --- | --- | --- |

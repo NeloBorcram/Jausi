@@ -9,3 +9,4 @@ Ein ADR hält eine folgenreiche Entscheidung, ihre Alternativen und ihre Begrün
 | ADR | Entscheidung | Status |
 | --- | --- | --- |
 | [0001](0001-infrastruktur-und-release.md) | Infrastruktur als Code und kontrollierte Releases | Vorgeschlagen |
+| [0002](0002-architekturstil-client-server.md) | Client-Server-Web-App mit Konten statt rein lokaler App | Vorgeschlagen, gilt ohne Einwand ab 15.11.2026 |

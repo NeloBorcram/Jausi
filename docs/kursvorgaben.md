@@ -5,7 +5,7 @@ Zusammenfassung der Aufgabenstellungen aus dem Moodle-Kurs, damit Team und AI-We
 | Phase | Termin laut Kursplan | Vorgaben hier erfasst | Stand im Projekt |
 | --- | --- | --- | --- |
 | [1 – Project Definition & Requirements](#phase-1--project-definition--requirements) | 14.10.2026 | ✅ am 13.11.2026 | abgeschlossen, vom Team bestätigt |
-| [2 – Architecture & Design](#phase-2--architecture--design) | 09.11.2026 | ✅ am 13.11.2026 | freigegeben am 13.11.2026, in Arbeit; ein ADR liegt als Vorschlag vor |
+| [2 – Architecture & Design](#phase-2--architecture--design) | 09.11.2026 | ✅ am 13.11.2026 | freigegeben am 13.11.2026, in Arbeit; zwei ADRs liegen als Vorschlag vor |
 | [3 – AI-assisted/driven Implementation](#phase-3--ai-assisteddriven-implementation) | 23.11.2026 | ⏳ noch nicht veröffentlicht | – |
 | [4 – Quality Assurance & Testing](#phase-4--quality-assurance--testing) | 09.12.2026 | ⏳ noch nicht veröffentlicht | – |
 | [5 – Evaluation & Reflection](#phase-5--evaluation--reflection) | 21.12.2026 | ⏳ noch nicht veröffentlicht | – |
@@ -82,10 +82,10 @@ Zusätzlich vom Team, nicht vom Kurs verlangt: [personas.md](personas.md). Die P
 
 | Datei | Inhalt laut Kurs | Stand |
 | --- | --- | --- |
-| `docs/architecture.md` | Überblick, Variantenvergleich, Technologieentscheidungen | fehlt |
+| `docs/architecture.md` | Überblick, Variantenvergleich, Technologieentscheidungen | Entwurf: Variantenvergleich in [architecture.md](architecture.md), Architekturstil vorgeschlagen (ADR-0002) |
 | `docs/hosting.md` | Hosting-Möglichkeiten und Kostenvergleich | fehlt; erste Optionen in [github-workflow.md](github-workflow.md) |
-| `docs/adr/` | mindestens zwei ADRs | ein Vorschlag: [ADR-0001](adr/0001-infrastruktur-und-release.md) |
-| Architekturdiagramm | wesentliche Komponenten und Beziehungen | fehlt |
+| `docs/adr/` | mindestens zwei ADRs | zwei Vorschläge: [ADR-0001](adr/0001-infrastruktur-und-release.md), [ADR-0002](adr/0002-architekturstil-client-server.md) |
+| Architekturdiagramm | wesentliche Komponenten und Beziehungen | erster Überblick in [architecture.md](architecture.md), Technologien noch offen |
 | Datenmodell | zentrale Entitäten und Beziehungen | fachliches Modell in [requirements.md](requirements.md#begriffe), technisches fehlt |
 | API-Design | wesentliche Schnittstellen und Datenformate | fehlt |
 
