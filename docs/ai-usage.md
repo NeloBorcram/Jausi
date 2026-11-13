@@ -82,7 +82,7 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team
 Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 
 <details>
-<summary><strong>Protokoll anzeigen (54 Einträge)</strong></summary>
+<summary><strong>Protokoll anzeigen (55 Einträge)</strong></summary>
 
 | Datum | Werkzeug | Aufgabe | Ergebnis / menschliche Entscheidung |
 | --- | --- | --- | --- |
@@ -140,6 +140,7 @@ Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Phase-2-Doku kürzen und Wiederholungen entfernen | Der Nutzer fand mehrere Dateien zu groß; neue Regel in AGENTS.md: jedes Thema nur in einer Datei, ADR etwa eine Seite. AI kürzte ADR-0003 von rund 2.800 auf 850 Wörter (Spring-Details in Phase 3 verschoben), `architecture.md` von 2.300 auf 1.700 (Abschnitt „Noch offen“ entfällt, Stand steht in `kursvorgaben.md`) und legte fest: Cookies und Kontotrennung in `api.md`, Datenregeln und Kontolöschung in `datenmodell.md`, Risiken in `architecture.md`, Tarif in `hosting.md`. Inhaltlich nichts gestrichen außer Stack-Details, die erst nach der Teamentscheidung gebraucht werden. |
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Offene Teamfragen in einer Datei sammeln | Auf Vorschlag des Nutzers sammelte AI alle Fragen für die Teamsitzung aus ADR-0001 bis ADR-0003, `hosting.md`, `api.md`, `architecture.md` und dem Chat (Merksatz) in `docs/teamfragen.md`: 15 Fragen mit Nummer, Zuständigen und Frist, gegliedert nach 15.11., 23.11. und Beginn der Umsetzung. Die Listen in den anderen Dateien wurden durch Verweise ersetzt; neue Regel in AGENTS.md. Zuständige und Fristen sind AI-Vorschläge. Danach trug Roger erste Antworten ein (T5, T10 bis T12, Impressum als Platzhalter); AI passte US-24 AK 4 (30 Minuten nach der letzten Nutzung statt bis zur Abmeldung) und US-26 (Löschen nur mit Passwort, neues AK 3) sowie `api.md`, `mvp.md` und ADR-0003 an. |
 | 13.11.2026 | Claude (Opus 5.5) im Chat | Phase 2 gegen die Kursvorgaben prüfen; AI-Einsatz der Phase 2 zusammenfassen | AI fand alle Deliverables als Entwurf abgedeckt; offen bleiben die Teamentscheidungen (T1 bis T4) und eine Zusammenfassung des AI-Einsatzes in Phase 2, die bisher nur im Protokoll stand. Auf Wunsch des Nutzers ergänzte AI Abschnitt 3 mit Prompts, Einsatz und einer Tabelle der hinterfragten AI-Empfehlungen, die auf die Details in den jeweiligen Dateien verlinkt. |
+| 13.11.2026 | Claude (Opus 5.5) im Chat | Projektablauf analysieren; MVP-Stories als GitHub-Issues anlegen | AI schlug Skills für Phase 3 vor und wies auf die ungleiche Verteilung der Commits hin (Commits messen nicht alle Beiträge). Der Nutzer wählte GitHub-Issues: AI legte nach seiner Freigabe Labels, den Milestone „Phase 3 – MVP“, 14 Issues für die Must-Stories mit Akzeptanzkriterien als Checkliste und ein Issue für die Teamentscheidungen an. Niemand wurde zugewiesen. Ein Board unter Rogers Konto ließ sich nicht mit dem Repo verknüpfen und wurde wieder gelöscht. |
 
 </details>
 
