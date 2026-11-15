@@ -19,10 +19,11 @@ informiert: []
 
 Selbsteinschätzungen; die AI trägt nichts ein.
 
-| Person | Angegebene Kenntnisse |
-| --- | --- |
-| Roger | Python, Clojure, Vue, Electron, Spring Boot, TypeScript, Gleam, Java (13.11.2026) |
-| Manuela, Alex, Manuel | offen |
+| Person       | Angegebene Kenntnisse                                                             |
+| ------------ | --------------------------------------------------------------------------------- |
+| Roger        | Python, Clojure, Vue, Electron, Spring Boot, TypeScript, Gleam, Java (13.11.2026) |
+| Manuela      | Java, Angular, Spring Boot, TypeScript, CSS, HTML, Python                         |
+| Alex, Manuel | offen                                                                             |
 
 ## Entscheidungskriterien
 
@@ -36,11 +37,11 @@ Selbsteinschätzungen; die AI trägt nichts ein.
 
 Allen gemeinsam: **PostgreSQL** (im Hosting-Vorschlag in der EU verfügbar, lokal einfach zu starten) und eine Oberfläche, die Vite zu statischen Dateien baut und das Backend mit ausliefert.
 
-| Option | Spricht dafür | Spricht dagegen |
-| --- | --- | --- |
-| **A · C# / ASP.NET Core** mit Identity | Anmeldung, Hashing, CSRF und Sperre nach Fehlversuchen fertig im Framework | Niemand hat C# angegeben. Die Variante mit Razor Pages wäre noch einfacher, hätte aber keine eigenständige API nach [api.md](../api.md). |
-| **B · Java / Spring Boot** mit Spring Security und Spring Data JPA | Roger nennt Java und Spring Boot; Hashing, Sitzung und CSRF vom Framework; Konto bleibt eine eigene Tabelle | Für eine JSON-API braucht Spring Security eigene Konfiguration; JVM braucht mehr Speicher; zwei Toolchains (Java und npm) |
-| **C · TypeScript / Node** mit einer Anmeldebibliothek | Eine Sprache für alles; Roger nennt TypeScript | Kein Anmeldebaustein im Framework: Bibliothek selbst wählen und zusammensetzen, größtes NFR-06-Risiko, widerspricht der Leitlinie |
+| Option                                                             | Spricht dafür                                                                                               | Spricht dagegen                                                                                                                          |
+| ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **A · C# / ASP.NET Core** mit Identity                             | Anmeldung, Hashing, CSRF und Sperre nach Fehlversuchen fertig im Framework                                  | Niemand hat C# angegeben. Die Variante mit Razor Pages wäre noch einfacher, hätte aber keine eigenständige API nach [api.md](../api.md). |
+| **B · Java / Spring Boot** mit Spring Security und Spring Data JPA | Roger nennt Java und Spring Boot; Hashing, Sitzung und CSRF vom Framework; Konto bleibt eine eigene Tabelle | Für eine JSON-API braucht Spring Security eigene Konfiguration; JVM braucht mehr Speicher; zwei Toolchains (Java und npm)                |
+| **C · TypeScript / Node** mit einer Anmeldebibliothek              | Eine Sprache für alles; Roger nennt TypeScript                                                              | Kein Anmeldebaustein im Framework: Bibliothek selbst wählen und zusammensetzen, größtes NFR-06-Risiko, widerspricht der Leitlinie        |
 
 **Oberfläche:** **Vue mit TypeScript** (Roger nennt Vue, gilt als leichter zu lernen) oder **React** (verbreiteter, aber von niemandem genannt; Verbreitung allein ist laut Kurs kein Grund).
 
