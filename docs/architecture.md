@@ -11,7 +11,7 @@ Die Entscheidung fällt in drei Ebenen, jede engt die nächste ein:
 | --- | --- | --- |
 | 1 · Architekturstil | Wo liegen Daten und Logik? | **Client-Server mit Konten** (V3, [ADR-0002](adr/0002-architekturstil-client-server.md)) |
 | 2 · Plattform | Wie kommt Jausi aufs Smartphone? | **Web-App im Browser** für den MVP; eigene App danach |
-| 3 · Technologien | Sprachen, Frameworks, Datenbank, Anmeldung | [ADR-0003](adr/0003-technologie-stack.md), Teamprüfung offen |
+| 3 · Technologien | Sprachen, Frameworks, Datenbank, Anmeldung | Bevorzugter Vorschlag: Spring Boot, Vue/TypeScript, PostgreSQL und Spring Security; Freigabestatus in [ADR-0003](adr/0003-technologie-stack.md) |
 
 **Begründung:** Jausi soll langfristig auf mehreren Geräten mit denselben Daten laufen, zuerst im Browser, später als eigene App. Client-Server erreicht das mit dem geringsten Umbau, passt zu den Kenntnissen des Teams (Stand in [ADR-0003](adr/0003-technologie-stack.md)) und liefert ein vollständiges API-Design. Dafür ist Offline-Nutzung im MVP kein Must mehr; das ist eine bewusste Scope-Änderung gegenüber Phase 1. Für die Zeit nach dem Kurs sind eine lesbare lokale Kopie (US-30) und ein Export aller Daten (US-29) vorgemerkt, damit die Daten nicht nur bei uns liegen.
 

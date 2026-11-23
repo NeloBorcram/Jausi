@@ -9,11 +9,11 @@ informiert: []
 # ADR-0003: Technologie-Stack für Oberfläche, Backend, Datenbank und Anmeldung
 
 > [!IMPORTANT]
-> **Vorschlag, mit AI (Claude, Opus 5.5) erarbeitet, keine Teamfreigabe.** Selbsteinschätzungen von Roger, Manuela und Manuel liegen vor; Alex fehlt noch (T3). Die bisherige Empfehlung muss mit diesen Angaben im Team neu bewertet werden (T4).
+> **Vorschlag, mit AI (Claude, Opus 5.5) erarbeitet, keine Teamfreigabe.** Selbsteinschätzungen von Roger, Manuela und Manuel liegen vor; Alex fehlt noch (T3). Manuel berichtet am 23.11.2026 die Teampräferenz Java/Spring Boot mit Vue; die ausdrückliche Freigabe steht noch aus (T4).
 
 ## Kontext und Fragestellung
 
-[ADR-0002](0002-architekturstil-client-server.md) legt eine Client-Server-Web-App mit Konten fest. Zu entscheiden ist **ein** zusammenhängender Stack: Oberfläche, Backend, Datenbank und Anmeldebaustein. Er muss [api.md](../api.md) und [datenmodell.md](../datenmodell.md) umsetzen und der Leitlinie „bewusst einfach“ folgen ([architecture.md](../architecture.md#leitlinie-bewusst-einfach)). Bis zum Start der Umsetzung am 23.11.2026 bleiben 10 Tage, die Umsetzung dauert etwa 16 Tage. Hosting ([hosting.md](../hosting.md)) und Release-Ablauf ([ADR-0001](0001-infrastruktur-und-release.md)) sind nicht Teil dieser Entscheidung.
+[ADR-0002](0002-architekturstil-client-server.md) legt eine Client-Server-Web-App mit Konten fest. Zu entscheiden ist **ein** zusammenhängender Stack: Oberfläche, Backend, Datenbank und Anmeldebaustein. Er muss [api.md](../api.md) und [datenmodell.md](../datenmodell.md) umsetzen und der Leitlinie „bewusst einfach“ folgen ([architecture.md](../architecture.md#leitlinie-bewusst-einfach)). Die Phase-3-Aufgabe liegt seit 23.11.2026 vor; die Umsetzung beginnt erst nach ausdrücklicher Freigabe. Hosting ([hosting.md](../hosting.md)) und Release-Ablauf ([ADR-0001](0001-infrastruktur-und-release.md)) sind nicht Teil dieser Entscheidung.
 
 ## Kenntnisse im Team
 
@@ -48,7 +48,7 @@ Allen gemeinsam: **PostgreSQL** (im Hosting-Vorschlag in der EU verfügbar, loka
 
 ## Entscheidung und Begründung
 
-**Empfehlung: B mit Vue**, unter Vorbehalt der fehlenden Kenntnisse. Spring Boot als ein Programm mit JSON-API, Vue-Oberfläche aus demselben Artefakt, Spring Security mit Sitzungscookie, PostgreSQL, Schema und Zutatenkatalog als versionierte Migrationen, Matching als eigenes Modul ohne Abhängigkeit zu Spring.
+**Bevorzugter Vorschlag: B mit Vue und TypeScript**, entsprechend der von Manuel berichteten Teampräferenz; ausdrückliche Teamfreigabe offen (T4). Spring Boot als ein Programm mit JSON-API, Vue-Oberfläche aus demselben Artefakt, Spring Security mit Sitzungscookie, PostgreSQL, Schema und Zutatenkatalog als versionierte Migrationen, Matching als eigenes Modul ohne Abhängigkeit zu Spring.
 
 - **Kenntnisse:** Die ursprüngliche Begründung beruhte auf unvollständigen Angaben; mit Manuels .NET-Erfahrung und Angular-Kenntnissen ist Option A ebenfalls fundiert zu bewerten (T4).
 - **NFR-06:** Sicherheitsbausteine kommen aus einem Framework; das erfüllt die Leitlinie, C nicht.

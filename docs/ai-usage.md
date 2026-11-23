@@ -82,7 +82,7 @@ Befunde aus den AI-Prüfungen vom 14.10., 07.11. und 09.11.2026 und wie das Team
 Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 
 <details>
-<summary><strong>Protokoll anzeigen (40 Einträge)</strong></summary>
+<summary><strong>Protokoll anzeigen (41 Einträge)</strong></summary>
 
 | Datum | Werkzeug | Aufgabe | Ergebnis / menschliche Entscheidung |
 | --- | --- | --- | --- |
@@ -126,6 +126,7 @@ Jeder AI-Einsatz mit Datum, Werkzeug, Aufgabe und menschlicher Entscheidung.
 | 13.11.2026 | Claude (Opus 5.5), Hauptsitzung und zwei Subagenten | Umsetzungsplan, Matching-Testfälle, Datenschutzerklärung | AI legte Issue #16 (Grundgerüst) an und trug 20 Abhängigkeiten als „Blocked by“ in die Issues ein, ohne Personen zuzuordnen; ein zusätzliches Plan-Issue mit Diagramm verwarf Roger, sowie 13 Matching-Testfälle und einen Entwurf der Datenschutzerklärung mit Platzhaltern. Die Lücken, die der Entwurf zeigte (Server-Protokolle, Vertrag mit dem Hoster, E-Mail ändern), stehen in T13; keine Rechtsberatung. Ein Impressum mit erfundener Firma lehnte AI ab, weil es öffentlich irreführend wäre; stattdessen ein Entwurf mit Platzhaltern. Beide Texte liegen als Website-Inhalt unter `content/`. |
 | 13.11.2026 | Claude (Opus 5.5) mit Websuche | Vorbereitung auf AI-gestützte Umsetzung recherchieren | AI recherchierte Spec-driven Development, Contract-first und OWASP-Empfehlungen zu AI-Code; Roger übernahm Regeln für Code und Sicherheit in AGENTS.md (ab Phase 3) und einen OpenAPI-Vertrag `api/openapi.yaml`, auf den `api.md` jetzt verweist. |
 | 23.11.2026 | Codex im Chat | Manuels Rückmeldungen dokumentieren | Selbsteinschätzung einschließlich Azure/DevOps und Manuels aktualisierten Vorschlag einer PWA mit begrenztem Offline-Modus sowie manueller Produktionsfreigabe dokumentiert; parallele Frontend-/Backend-Arbeit und Doppelimplementierung wurden diskutiert. Scope, Stack und Hosting bleiben Teamentscheidungen. |
+| 23.11.2026 | Codex im Chat | Stack-Präferenz und Phase-3-Vorgaben dokumentieren | Java/Spring Boot mit Vue als von Manuel berichtete Teampräferenz in Architektur und ADR aufgenommen; Phase-3-Aufgabe zusammengefasst. Explizite Stack- und Umsetzungsfreigabe bleiben offen. |
 </details>
 
 Bewährte Prompts für wiederkehrende Aufgaben liegen als Skills unter [`.agents/skills/`](../.agents/skills/): [Anforderungen prüfen](../.agents/skills/anforderungen-pruefen/SKILL.md), [Dokumentation auf Konsistenz prüfen](../.agents/skills/doku-konsistenz/SKILL.md) und [ADR anlegen](../.agents/skills/adr-anlegen/SKILL.md). Sie sind Vorschläge und werden wie Code über Änderungen im Repository verbessert.

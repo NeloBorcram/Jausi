@@ -99,7 +99,19 @@ Zusätzlich vom Team, nicht vom Kurs verlangt: [personas.md](personas.md). Die P
 
 ## Phase 3 – AI-assisted/driven Implementation
 
-Aufgabenstellung noch nicht veröffentlicht. Wird ergänzt, sobald sie in Moodle verfügbar ist.
+Vom Nutzer am 23.11.2026 bereitgestellt; maßgeblich bleibt Moodle. Die Veröffentlichung allein gibt die Umsetzung nicht frei.
+
+**Ziel:** Das definierte MVP auf Basis der Phase-2-Architektur schrittweise und nachvollziehbar mit AI implementieren.
+
+**Aufgaben:** Repository und Entwicklungsumgebung aufsetzen, zentrale Must-Funktionen umsetzen, AI-Code reviewen, Fehler analysieren und beheben, refaktorieren und mindestens eine komplexere Funktion iterativ mit AI entwickeln. Architekturabweichungen dokumentieren; Konfiguration und Zugangsdaten nicht im Quellcode hinterlegen. Abhängigkeiten prüfen und unnötige Bibliotheken vermeiden.
+
+**AI-Nachweise:** Mindestens drei unterschiedliche Anwendungen zeigen (z. B. Funktion generieren, Fehler beheben, refaktorieren), ausgewählte Prompts und Ergebnisse dokumentieren und mindestens einen korrigierten AI-Vorschlag mit Unterschied zur finalen Umsetzung nachvollziehbar machen. Kleine überprüfbare Schritte; das Team muss den Code verstehen und erklären können.
+
+**Deliverables:** Quellcode im Repository, ausführbares MVP, README mit Installation, Konfiguration und Start; `docs/implementation.md` mit Implementierungsüberblick und technischen Entscheidungen sowie `docs/ai-usage.md` mit ausgewählten AI-Beiträgen. Diese Übersicht beschreibt erwartete Ergebnisse, keine bereits vorhandene Implementierung.
+
+**Qualität und Bewertung:** Reproduzierbarer Start, demonstrierbare Must-Funktionen, verständliche Struktur, Eingabevalidierung und Fehlerbehandlung sowie keine bekannten kritischen Sicherheitsprobleme. Bewertet werden Funktionalität, Codequalität, kontrollierter AI-Einsatz, Problemlösung und Nachvollziehbarkeit. Tests werden laut Kurs spätestens in Phase 4 systematisch ergänzt und ausgewertet; die strengeren projektinternen Regeln in AGENTS.md bleiben bestehen.
+
+**Definition of Done:** Funktionsfähiges MVP mit wesentlichen Must-Anforderungen, dokumentiert startbar, versionierter und verständlicher Code, konkrete AI-Nachweise; das Team kann zentrale Implementierungsteile erklären. Keine vollständige App mit einem einzigen Prompt erzeugen, ungeprüften Code übernehmen oder zusätzliche Features vor den Kernfunktionen bauen.
 
 ## Phase 4 – Quality Assurance & Testing
 
