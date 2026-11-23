@@ -13,7 +13,7 @@
 > - **Was:** App, die einen persönlichen Lebensmittelvorrat mit einem Rezeptarchiv verbindet und zeigt, welche Gerichte mit vorhandenen Zutaten möglich sind.
 > - **Für wen:** Menschen, die unkompliziert mit dem kochen möchten, was sie daheim haben, allen voran Studierende.
 > - **Wo:** im Browser des Smartphones, in der Küche und beim Einkaufen; mit Konto auf jedem Gerät. Eine eigene App ist für die Zeit nach dem Kurs vorgemerkt.
-> - **Stand:** Phase 1 (Anforderungen) ist abgeschlossen und am 13.11.2026 vom Team bestätigt; Phase 2 (Architektur und Design) läuft. Es gibt noch keinen Code.
+> - **Stand:** Phase 1 (Anforderungen) ist abgeschlossen und am 13.11.2026 vom Team bestätigt; Phase 2 (Architektur und Design) läuft. Das technische Grundgerüst ist in Arbeit; Fachfunktionen sind noch nicht implementiert.
 
 ## Problem
 
@@ -95,14 +95,18 @@ Zutaten werden beim Tippen aus einem fest vorgegebenen Zutatenkatalog vorgeschla
 
 In der Projektdokumentation verwenden wir ausschließlich Vornamen. Die Verantwortung für die Anforderungen liegt beim Team; AI liefert Vorschläge und unterstützt deren Prüfung.
 
+## Lokal starten
+
+Die [Team-Setup-Anleitung](docs/implementation.md#einrichtung-für-das-team) beschreibt Node und npm über nvm, Java, den vollständigen Build und typische Windows-Probleme. Es ist keine globale Maven-Installation nötig.
+
 ## Projektstand
 
-Phase 1 ist am 13.11.2026 vom Team bestätigt; Phase 2 ist seit 13.11.2026 freigegeben. Ebenfalls am 13.11.2026 wurde eine Scope-Änderung zu Konten und Server vorgeschlagen (ADR-0002, gilt ohne Einwand ab 15.11.2026). Drei Architekturvorschläge liegen als ADR vor (Infrastruktur, Architekturstil, Technologie-Stack), dazu Entwürfe für Datenmodell, API-Design und Hosting; daraus folgt keine Freigabe zur Umsetzung. Es gibt noch keinen App-Code. Die Termine stammen aus dem Kursplan und sind keine bestätigten Abgabefristen.
+Phase 1 ist vom Team bestätigt; Phase 2 liefert die Architekturgrundlage. Manuel hat am 23.11.2026 Phase 3 für das ausführbare Grundgerüst und die Azure-Dummy-Bereitstellung ausdrücklich beauftragt. Der konkrete Implementierungsstand und Setup-Befehle stehen in [implementation.md](docs/implementation.md). Die Termine stammen aus dem Kursplan und sind keine bestätigten Abgabefristen.
 
 | Phase laut Kursplan | Datum | Stand |
 | --- | --- | --- |
 | 1 – Project Definition & Requirements | 14.10.2026 | ✅ abgeschlossen, vom Team bestätigt am 13.11.2026 |
 | 2 – Architecture & Design | 09.11.2026 | ⏳ in Arbeit, freigegeben am 13.11.2026 |
-| 3 – AI-assisted/driven Implementation | 23.11.2026 | – |
+| 3 – AI-assisted/driven Implementation | 23.11.2026 | Grundgerüst in Arbeit, ausdrücklich beauftragt |
 | 4 – Quality Assurance & Testing | 09.12.2026 | – |
 | 5 – Evaluation & Reflection | 21.12.2026 | – |
