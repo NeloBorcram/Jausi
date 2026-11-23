@@ -1,5 +1,7 @@
 # API-Design
 
+Die technische Dummy-Basis stellt zusätzlich `GET /actuator/health` ohne Anmeldung bereit; das ist kein Fachendpunkt des OpenAPI-Vertrags. Alle Fachpfade bleiben bis zur Implementierung geschützt.
+
 > [!NOTE]
 > **Entwurf (Phase 2), Stand 13.11.2026**, mit AI erarbeitet, vom Team noch nicht geprüft. Grundregeln und Begründungen zur [Spezifikation](../api/openapi.yaml); Namen wie im [Datenmodell](datenmodell.md); unabhängig vom Stack ([ADR-0003](adr/0003-technologie-stack.md)).
 

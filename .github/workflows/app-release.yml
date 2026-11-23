@@ -1,0 +1,65 @@
+name: Azure app release
+on:
+  workflow_run:
+    workflows: ['App CI']
+    types: [completed]
+    branches: [main]
+permissions: {}
+concurrency:
+  group: jausi-app-release
+  cancel-in-progress: false
+jobs:
+  staging:
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && vars.APP_RELEASE_ENABLED == 'true'
+    runs-on: ubuntu-24.04
+    environment: staging
+    permissions:
+      actions: read
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
+        with:
+          name: jausi-app
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+      - run: sha256sum --check app.jar.sha256
+      - uses: azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - name: Deploy and check staging
+        env:
+          APP: ${{ vars.AZURE_APP_NAME }}
+          GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
+          URL: ${{ vars.APP_URL }}
+        run: |
+          az webapp deploy -g "$GROUP" -n "$APP" --src-path app.jar --type jar
+          curl --fail --retry 12 --retry-all-errors --retry-delay 5 "$URL/actuator/health"
+  production:
+    needs: staging
+    runs-on: ubuntu-24.04
+    environment: production
+    permissions:
+      actions: read
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7
+        with:
+          name: jausi-app
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+      - run: sha256sum --check app.jar.sha256
+      - uses: azure/login@a641126d1b8aa4d1fa005f4f92df94a3a4c4c906 # v3
+        with:
+          client-id: ${{ vars.AZURE_CLIENT_ID }}
+          tenant-id: ${{ vars.AZURE_TENANT_ID }}
+          subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      - name: Deploy approved artifact
+        env:
+          APP: ${{ vars.AZURE_APP_NAME }}
+          GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
+          URL: ${{ vars.APP_URL }}
+        run: |
+          az webapp deploy -g "$GROUP" -n "$APP" --src-path app.jar --type jar
+          curl --fail --retry 12 --retry-all-errors --retry-delay 5 "$URL/actuator/health"

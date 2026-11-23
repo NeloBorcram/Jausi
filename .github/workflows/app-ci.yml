@@ -1,0 +1,54 @@
+name: App CI
+on:
+  pull_request:
+    branches: [main, develop]
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  build:
+    name: Build and verify
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: temurin
+          java-version: '21'
+          cache: maven
+      - name: Frontend
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run format:check
+          npm test
+          npm run build
+      - name: Backend and packaged frontend
+        run: |
+          mkdir -p backend/target/classes/static
+          cp -r frontend/dist/. backend/target/classes/static/
+          cd backend
+          chmod +x mvnw
+          ./mvnw verify -B
+      - name: Prepare deployable artifact
+        run: |
+          mkdir release
+          cp backend/target/jausi-0.0.1-SNAPSHOT.jar release/app.jar
+          cd release
+          sha256sum app.jar > app.jar.sha256
+      - uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
+        with:
+          name: jausi-app
+          path: release/
+          retention-days: 14
+      - name: Validate Azure infrastructure
+        run: az bicep build --file infra/app/main.bicep --stdout > /dev/null

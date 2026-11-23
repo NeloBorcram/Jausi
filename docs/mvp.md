@@ -73,6 +73,8 @@ Abgehakt sind nur Punkte, die sich anhand der Dokumente nachprüfen lassen. Die 
 > [!IMPORTANT]
 > **Status:** Phase 1 ist abgeschlossen; das Team hat die Dokumentation am 13.11.2026 geprüft und bestätigt. Phase 2 ist seit 13.11.2026 freigegeben. Die danach vorgeschlagene Scope-Änderung (ADR-0002) gilt ohne Einwand ab 15.11.2026; ADR-0001 und ADR-0002 bleiben bis zur Annahme vorgeschlagen.
 
+Phase 3 wurde von Manuel am 23.11.2026 ausdrücklich für das technische Grundgerüst freigegeben. Implementierungsstand und Nachweise stehen in [implementation.md](implementation.md); die Dummy-Seite erfüllt noch keine Must-Story.
+
 ## Geplante spätere Produktabnahme
 
 - [ ] Alle Must-Stories erfüllen ihre Akzeptanzkriterien.

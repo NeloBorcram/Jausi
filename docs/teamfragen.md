@@ -16,7 +16,7 @@ Alle Fragen, die das Team gemeinsam entscheiden muss, stehen nur hier; die ander
 | T3 | Kenntnisse in Java/Spring Boot, TypeScript/Node, Vue, React und C# (jede Person schätzt sich selbst ein) | Alex (Angaben von Manuela und Manuel liegen vor) | [ADR-0003](adr/0003-technologie-stack.md#kenntnisse-im-team) |
 | T4 | Manuel berichtet am 23.11.2026 eine Teampräferenz für Java/Spring Boot und Vue; PostgreSQL und Spring Security bleiben Teil des Vorschlags. Explizite Teamfreigabe bestätigen; nur ein Backend vorsehen. | Team | [ADR-0003](adr/0003-technologie-stack.md) |
 | T6 | Hosting-Vorschlag (Azure mit Studierenden-Guthaben) bestätigen. Manuel genügt Staging-Prüfung mit manueller Produktionsfreigabe ohne Slot-Tausch (23.11.2026); Teamentscheidung zum Hosting offen. | Team, Manuel | [hosting.md](hosting.md) |
-| T7 | Im Azure-Portal prüfen: PostgreSQL B1ms 12 Monate gratis? App Service in den erlaubten Regionen? Reicht der Gratistarif für den gewählten Stack? | offen | [hosting.md](hosting.md) |
+| T7 | Prüfung vom 23.11.2026: App Service B1 in Germany West Central und F1 in allen fünf erlaubten Regionen durch Quote 0 blockiert; Quotenerhöhung oder anderes Abonnement erforderlich. Weiter prüfen: PostgreSQL B1ms 12 Monate gratis? App Service in den erlaubten Regionen? Reicht der Gratistarif für den gewählten Stack? | offen | [hosting.md](hosting.md) |
 | T8 | Verantwortliche für die Risiken festlegen | Team | [architecture.md](architecture.md#risiken-und-schwachstellen-ai-review) |
 | T9 | Merksatz „Die Entwicklung der App wartet nicht auf die Infrastruktur“ gemeinsam bestätigen | Team | [architecture.md](architecture.md#leitlinie-bewusst-einfach) |
 

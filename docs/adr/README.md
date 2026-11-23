@@ -12,4 +12,6 @@ Ein ADR hält eine folgenreiche Entscheidung, ihre Alternativen und ihre Begrün
 | [0002](0002-architekturstil-client-server.md) | Client-Server-Web-App mit Konten statt rein lokaler App | Vorgeschlagen, gilt ohne Einwand ab 15.11.2026 |
 | [0003](0003-technologie-stack.md) | Technologie-Stack: Oberfläche, Backend, Datenbank und Anmeldung (Empfehlung Spring Boot mit Vue, Spring Security, PostgreSQL) | Vorgeschlagen; Teampräferenz laut Manuel vom 23.11.2026, ausdrückliche Freigabe offen (T4) |
 
+| [0004](0004-ausfuehrbare-basis.md) | Ausführbare Spring-/Vue-Basis und Azure-Dummy | Vorgeschlagen; Umsetzungsvorbereitung ausdrücklich von Manuel beauftragt |
+
 ADR-0001 und ADR-0002 überschneiden sich; offene Teamfragen zu allen ADRs stehen in [teamfragen.md](../teamfragen.md).

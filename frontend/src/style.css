@@ -1,0 +1,110 @@
+:root {
+  font-family: system-ui, sans-serif;
+  color: #30213d;
+  background: #faf7ef;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+main {
+  max-width: 1120px;
+  margin: auto;
+  padding: 2rem clamp(1.25rem, 5vw, 4rem);
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 4rem 0;
+}
+.eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #685673;
+}
+h1 {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  line-height: 1.04;
+  letter-spacing: -0.065em;
+  margin: 1rem 0;
+}
+h1 span {
+  color: #71408a;
+}
+.intro {
+  font-size: 1.2rem;
+  line-height: 1.65;
+  max-width: 32ch;
+}
+.status {
+  display: inline-block;
+  padding: 0.55rem 0.85rem;
+  border-radius: 2rem;
+  background: #e3edcd;
+  color: #354923;
+  font-size: 0.85rem;
+}
+.mascot {
+  width: 100%;
+  border-radius: 2rem;
+  background: white;
+  box-shadow: 0 1.5rem 4rem #43245012;
+}
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+.features article {
+  border: 1px solid #e2d9e5;
+  background: #fffdf8;
+  border-radius: 1rem;
+  padding: 1.3rem;
+}
+article span {
+  color: #71408a;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+h2 {
+  font-size: 1.05rem;
+}
+article p {
+  color: #645b68;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+footer {
+  font-size: 0.8rem;
+  color: #645b68;
+  margin-top: 3rem;
+  line-height: 1.7;
+}
+@media (max-width: 680px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 2rem 0;
+    gap: 1.5rem;
+  }
+  .mascot {
+    max-width: 400px;
+  }
+  .features {
+    grid-template-columns: 1fr;
+  }
+}
