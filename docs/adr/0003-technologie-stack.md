@@ -23,7 +23,7 @@ Selbsteinschätzungen; die AI trägt nichts ein.
 | ------------ | --------------------------------------------------------------------------------- |
 | Roger        | Python, Clojure, Vue, Electron, Spring Boot, TypeScript, Gleam, Java (13.11.2026) |
 | Manuela      | Java, Angular, Spring Boot, TypeScript, CSS, HTML, Python                         |
-| Manuel | C#/.NET erfahren, einschließlich Backend, OIDC, Authentifizierungsdiensten und Benutzerverwaltung ausschließlich in .NET; Angular sicher; TypeScript/Node.js Grundlagen; Java/Spring Boot und Vue/React keine Erfahrung (23.11.2026). |
+| Manuel | C#/.NET erfahren, einschließlich Backend, OIDC, Authentifizierungsdiensten und Benutzerverwaltung ausschließlich in .NET; Angular sicher; TypeScript/Node.js Grundlagen; Java/Spring Boot und Vue/React keine Erfahrung; Erfahrung mit DevOps und Azure-Hosting, teilweise Erfahrung mit GitHub (23.11.2026). |
 | Alex | offen |
 
 ## Entscheidungskriterien
