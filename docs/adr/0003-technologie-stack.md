@@ -1,15 +1,15 @@
 ---
 status: "vorgeschlagen"
-datum: "2026-11-13"
+datum: "2026-11-23"
 entscheidende: []
-einbezogen: ["Roger"]
+einbezogen: ["Roger", "Manuela", "Manuel"]
 informiert: []
 ---
 
 # ADR-0003: Technologie-Stack für Oberfläche, Backend, Datenbank und Anmeldung
 
 > [!IMPORTANT]
-> **Vorschlag, mit AI (Claude, Opus 5.5) erarbeitet, keine Teamfreigabe.** Bekannt ist bisher nur Rogers Selbsteinschätzung; die Empfehlung gilt erst, wenn Manuela, Alex und Manuel ihre Kenntnisse angegeben haben. Entscheidung vor dem 23.11.2026.
+> **Vorschlag, mit AI (Claude, Opus 5.5) erarbeitet, keine Teamfreigabe.** Selbsteinschätzungen von Roger, Manuela und Manuel liegen vor; Alex fehlt noch (T3). Die bisherige Empfehlung muss mit diesen Angaben im Team neu bewertet werden (T4).
 
 ## Kontext und Fragestellung
 
@@ -23,7 +23,8 @@ Selbsteinschätzungen; die AI trägt nichts ein.
 | ------------ | --------------------------------------------------------------------------------- |
 | Roger        | Python, Clojure, Vue, Electron, Spring Boot, TypeScript, Gleam, Java (13.11.2026) |
 | Manuela      | Java, Angular, Spring Boot, TypeScript, CSS, HTML, Python                         |
-| Alex, Manuel | offen                                                                             |
+| Manuel | C#/.NET erfahren, einschließlich Backend, OIDC, Authentifizierungsdiensten und Benutzerverwaltung ausschließlich in .NET; Angular sicher; TypeScript/Node.js Grundlagen; Java/Spring Boot und Vue/React keine Erfahrung (23.11.2026). |
+| Alex | offen |
 
 ## Entscheidungskriterien
 
@@ -39,17 +40,17 @@ Allen gemeinsam: **PostgreSQL** (im Hosting-Vorschlag in der EU verfügbar, loka
 
 | Option                                                             | Spricht dafür                                                                                               | Spricht dagegen                                                                                                                          |
 | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **A · C# / ASP.NET Core** mit Identity                             | Anmeldung, Hashing, CSRF und Sperre nach Fehlversuchen fertig im Framework                                  | Niemand hat C# angegeben. Die Variante mit Razor Pages wäre noch einfacher, hätte aber keine eigenständige API nach [api.md](../api.md). |
+| **A · C# / ASP.NET Core** mit Identity                             | Anmeldung, Hashing, CSRF und Sperre nach Fehlversuchen fertig im Framework                                  | Manuel ist in C#/.NET einschließlich Anmeldung und Benutzerverwaltung erfahren; weitere Backend-Verantwortliche sind zu klären. Die Variante mit Razor Pages wäre noch einfacher, hätte aber keine eigenständige API nach [api.md](../api.md). |
 | **B · Java / Spring Boot** mit Spring Security und Spring Data JPA | Roger nennt Java und Spring Boot; Hashing, Sitzung und CSRF vom Framework; Konto bleibt eine eigene Tabelle | Für eine JSON-API braucht Spring Security eigene Konfiguration; JVM braucht mehr Speicher; zwei Toolchains (Java und npm)                |
 | **C · TypeScript / Node** mit einer Anmeldebibliothek              | Eine Sprache für alles; Roger nennt TypeScript                                                              | Kein Anmeldebaustein im Framework: Bibliothek selbst wählen und zusammensetzen, größtes NFR-06-Risiko, widerspricht der Leitlinie        |
 
-**Oberfläche:** **Vue mit TypeScript** (Roger nennt Vue, gilt als leichter zu lernen) oder **React** (verbreiteter, aber von niemandem genannt; Verbreitung allein ist laut Kurs kein Grund).
+**Oberfläche:** Angular wird von Manuela und Manuel genannt und ist bei der Teamentscheidung ebenfalls zu berücksichtigen. **Vue mit TypeScript** (Roger nennt Vue, gilt als leichter zu lernen) oder **React** (verbreiteter, aber von niemandem genannt; Verbreitung allein ist laut Kurs kein Grund).
 
 ## Entscheidung und Begründung
 
 **Empfehlung: B mit Vue**, unter Vorbehalt der fehlenden Kenntnisse. Spring Boot als ein Programm mit JSON-API, Vue-Oberfläche aus demselben Artefakt, Spring Security mit Sitzungscookie, PostgreSQL, Schema und Zutatenkatalog als versionierte Migrationen, Matching als eigenes Modul ohne Abhängigkeit zu Spring.
 
-- **Kenntnisse:** Einzige Option, deren Backend, Anmeldung und Oberfläche alle in der bekannten Einschätzung vorkommen.
+- **Kenntnisse:** Die ursprüngliche Begründung beruhte auf unvollständigen Angaben; mit Manuels .NET-Erfahrung und Angular-Kenntnissen ist Option A ebenfalls fundiert zu bewerten (T4).
 - **NFR-06:** Sicherheitsbausteine kommen aus einem Framework; das erfüllt die Leitlinie, C nicht.
 - **NFR-05:** Ein eigenes Build-Modul für das Matching erzwingt die Trennung.
 
@@ -73,7 +74,7 @@ Allen gemeinsam: **PostgreSQL** (im Hosting-Vorschlag in der EU verfügbar, loka
 ## Kritische Prüfung der AI-Empfehlung
 
 - Der erste AI-Entwurf empfahl ASP.NET Core, obwohl niemand C# angegeben hatte; erst Rogers Angaben korrigierten das.
-- Die neue Empfehlung stützt sich auf eine von vier Personen, und zwar auf die, die mit der AI arbeitet. Können die anderen kein Java, trägt Roger das Backend allein.
+- Die ursprüngliche Empfehlung stützte sich nur auf Roger. Inzwischen liegen weitere Angaben vor; eine neue Teamentscheidung ist noch nicht dokumentiert.
 - Für C spricht mit TypeScript ernsthaft viel; dass eine selbst gewählte Anmeldebibliothek riskanter ist, kann die AI nicht belegen.
 
 ## Offene Fragen

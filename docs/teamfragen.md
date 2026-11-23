@@ -1,6 +1,6 @@
 # Offene Teamfragen
 
-Alle Fragen, die das Team gemeinsam entscheiden muss, stehen nur hier; die anderen Dokumente verlinken auf die Nummer. Nach der Teamsitzung die Entscheidung eintragen, das betroffene Dokument anpassen und die Zeile nach unten zu „Entschieden“ verschieben. Stand: 13.11.2026.
+Alle Fragen, die das Team gemeinsam entscheiden muss, stehen nur hier; die anderen Dokumente verlinken auf die Nummer. Nach der Teamsitzung die Entscheidung eintragen, das betroffene Dokument anpassen und die Zeile nach unten zu „Entschieden“ verschieben. Stand: 23.11.2026.
 
 ## Bis 15.11.2026
 
@@ -12,10 +12,10 @@ Alle Fragen, die das Team gemeinsam entscheiden muss, stehen nur hier; die ander
 
 | # | Frage | Wer | Hintergrund |
 | --- | --- | --- | --- |
-| T2 | ADR-0001 und ADR-0002 konkurrieren: ADR-0001 setzt noch Daten auf dem Gerät und Offline-Nutzung voraus. Mit welchem gehen wir? | Team | [ADR-0001](adr/0001-infrastruktur-und-release.md) |
-| T3 | Kenntnisse in Java/Spring Boot, TypeScript/Node, Vue, React und C# (jede Person schätzt sich selbst ein) | Manuela, Alex, Manuel | [ADR-0003](adr/0003-technologie-stack.md#kenntnisse-im-team) |
+| T2 | Manuel unterstützt die Online-Web-App mit Konten, ohne Offline-MVP (23.11.2026); Teamabgleich offen. ADR-0001 und ADR-0002 konkurrieren: ADR-0001 setzt noch Daten auf dem Gerät und Offline-Nutzung voraus. Mit welchem gehen wir? | Team | [ADR-0001](adr/0001-infrastruktur-und-release.md) |
+| T3 | Kenntnisse in Java/Spring Boot, TypeScript/Node, Vue, React und C# (jede Person schätzt sich selbst ein) | Alex (Angaben von Manuela und Manuel liegen vor) | [ADR-0003](adr/0003-technologie-stack.md#kenntnisse-im-team) |
 | T4 | Technologie-Stack entscheiden (Vorschlag Spring Boot mit Vue). Reicht eine Person mit Spring-Boot-Kenntnissen für das Backend? | Team | [ADR-0003](adr/0003-technologie-stack.md) |
-| T6 | Hosting-Vorschlag (Azure mit Studierenden-Guthaben) bestätigen. Genügt die Freigabe durch eine Person ohne Slot-Tausch? | Team, Manuel | [hosting.md](hosting.md) |
+| T6 | Hosting-Vorschlag (Azure mit Studierenden-Guthaben) bestätigen. Manuel genügt Staging-Prüfung mit manueller Produktionsfreigabe ohne Slot-Tausch (23.11.2026); Teamentscheidung zum Hosting offen. | Team, Manuel | [hosting.md](hosting.md) |
 | T7 | Im Azure-Portal prüfen: PostgreSQL B1ms 12 Monate gratis? App Service in den erlaubten Regionen? Reicht der Gratistarif für den gewählten Stack? | offen | [hosting.md](hosting.md) |
 | T8 | Verantwortliche für die Risiken festlegen | Team | [architecture.md](architecture.md#risiken-und-schwachstellen-ai-review) |
 | T9 | Merksatz „Die Entwicklung der App wartet nicht auf die Infrastruktur“ gemeinsam bestätigen | Team | [architecture.md](architecture.md#leitlinie-bewusst-einfach) |
